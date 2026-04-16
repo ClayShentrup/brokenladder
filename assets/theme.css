@@ -8,9 +8,9 @@
   --accent-bright:  #5a8a5a;
   --accent-2:       #6a7e28;
   --accent-3:       #3a6a8a;
-  --text:           #d4e3df;
-  --text-dim:       #3a5248;
-  --text-muted:     #2a3d36;
+  --text:           #d4dfe8;
+  --text-dim:       #3a5258;
+  --text-muted:     #2a3a3d;
   --font-display:   'Josefin Sans', sans-serif;
   --font-body:      'Cormorant Garamond', Georgia, serif;
   --font-mono:      'Inconsolata', monospace;
@@ -25,6 +25,8 @@ body {
   color: var(--text);
   font-family: var(--font-display);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── nav ── */
