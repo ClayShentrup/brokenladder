@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<link rel="stylesheet" href="{{ '/assets/theme.css' | relative_url }}">
+{% if page.accent or page.bg or page.text %}
+<style>
+  :root {
+    {% if page.accent %}--accent: {{ page.accent }};{% endif %}
+    {% if page.accent_dim %}--accent-dim: {{ page.accent_dim }};{% endif %}
+    {% if page.accent_bright %}--accent-bright: {{ page.accent_bright }};{% endif %}
+    {% if page.accent_2 %}--accent-2: {{ page.accent_2 }};{% endif %}
+    {% if page.bg %}--bg: {{ page.bg }};{% endif %}
+    {% if page.text %}--text: {{ page.text }};{% endif %}
+    {% if page.text_dim %}--text-dim: {{ page.text_dim }};{% endif %}
+  }
+</style>
+{% endif %}
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="{{ '/' | relative_url }}">
+    <span class="nav-logo-mark">{% include helix-nav.svg %}</span>
+    <span class="nav-wordmark">broken ladder</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="{{ '/music/' | relative_url }}">music</a></li>
+    <li><a href="{{ '/about/' | relative_url }}">about</a></li>
+  </ul>
+</nav>
+
+{{ content }}
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 broken ladder</span>
+  <span class="footer-copy">portland, or</span>
+</footer>
+
+</body>
+</html>

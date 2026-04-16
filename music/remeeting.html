@@ -1,0 +1,193 @@
+---
+layout: default
+title: remeeting
+accent: "#c4622a"
+accent_dim: "#6b3518"
+accent_bright: "#e8834a"
+accent_2: "#d4943a"
+bg: "#0d0b0a"
+text: "#e8e0d5"
+text_dim: "#7a7068"
+---
+<style>
+:root {
+  --line: rgba(196,98,42,0.18);
+}
+
+.page {
+  position: relative; z-index: 1;
+  max-width: 560px; margin: 0 auto;
+  padding: 120px 40px 120px;
+}
+
+.header {
+  margin-bottom: 80px;
+  opacity: 0;
+  animation: fadeUp 1.2s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+}
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(52px, 10vw, 84px);
+  font-weight: 300; font-style: italic;
+  letter-spacing: -0.02em; line-height: 0.9;
+  color: var(--text);
+}
+.title-accent {
+  display: block; color: var(--accent);
+  font-weight: 600; font-style: normal;
+}
+.meta {
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 300;
+  letter-spacing: 0.18em; color: var(--text-dim);
+  text-transform: uppercase;
+  display: flex; gap: 20px;
+}
+.meta-divider { color: var(--accent-dim); }
+.rule {
+  width: 40px; height: 1px;
+  background: var(--accent);
+  margin: 32px 0; opacity: 0.6;
+}
+
+.lyrics { display: flex; flex-direction: column; gap: 52px; }
+
+.section {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) var(--anim-delay,0.6s) forwards;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent); opacity: 0.7;
+  margin-bottom: 16px;
+}
+.verse {
+  font-family: var(--font-body);
+  font-size: clamp(16px,2.6vw,19px);
+  font-weight: 300; line-height: 1.85;
+  color: var(--text);
+}
+.verse .line { display: block; }
+
+.chorus .verse {
+  font-style: italic;
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+.chorus-break { height: 24px; }
+
+.bridge .verse {
+  font-size: clamp(15px,2.4vw,17px);
+  color: #b0a89e;
+}
+.outro .verse {
+  font-size: clamp(17px,2.8vw,21px);
+  letter-spacing: 0.01em;
+}
+
+em { font-style: normal; color: var(--accent); }
+
+.footer-inner {
+  margin-top: 100px; padding-top: 32px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  color: var(--text-dim); text-transform: uppercase;
+  display: flex; justify-content: space-between;
+}
+</style>
+
+<div class="page">
+  <header class="header">
+    <h1 class="title">
+      re<span class="title-accent">meeting</span>
+    </h1>
+    <div class="meta">
+      <span>B aeolian / B dorian</span>
+      <span class="meta-divider">—</span>
+      <span>broken ladder</span>
+      <span class="meta-divider">—</span>
+      <span>2026</span>
+    </div>
+    <div class="rule"></div>
+  </header>
+
+  <div class="lyrics">
+
+    <div class="section" style="--anim-delay:0.5s">
+      <div class="section-label">verse i</div>
+      <div class="verse">
+        <span class="line">i see him in his teenage quest for meaning</span>
+        <span class="line">a true soulmate to relate. gravitate.</span>
+        <span class="line">navigate by the stars this lonely world</span>
+        <span class="line">i see you in your work your brow so focused</span>
+        <span class="line">the things you make that i break</span>
+        <span class="line">when i place all of my panic in your hands</span>
+      </div>
+    </div>
+
+    <div class="section chorus" style="--anim-delay:0.7s">
+      <div class="section-label">chorus</div>
+      <div class="verse">
+        <span class="line">i was so deeply broken</span>
+        <span class="line">if you could understand</span>
+        <span class="line">i'd like to think you'd see me</span>
+        <span class="line">the sadness was an ocean…in me</span>
+        <div class="chorus-break"></div>
+        <span class="line">someday the <em>stars will burn out</em></span>
+        <span class="line">and will i know you then?</span>
+        <span class="line">perhaps it's all repeating</span>
+        <span class="line">and we are all <em>remeeting</em></span>
+      </div>
+    </div>
+
+    <div class="section" style="--anim-delay:0.9s">
+      <div class="section-label">verse ii</div>
+      <div class="verse">
+        <span class="line">i've travelled back at times and touched the <em>third rail</em></span>
+        <span class="line">those sprawling small town stroads</span>
+        <span class="line">left for the coast—never looked back—years ago</span>
+        <span class="line">i found my self-esteem in all the vastness</span>
+        <span class="line">but when i'm back the map goes blank</span>
+        <span class="line">i'm still that orphan, on my own</span>
+      </div>
+    </div>
+
+    <div class="section bridge" style="--anim-delay:1.1s">
+      <div class="section-label">bridge</div>
+      <div class="verse">
+        <span class="line">you ask me why i do this?</span>
+        <span class="line">well i don't know myself</span>
+        <span class="line">perhaps i'm made of feelings</span>
+        <span class="line">so deep reason can't reach them</span>
+        <span class="line">know this:</span>
+        <span class="line">my crimes of desperation</span>
+        <span class="line">if i had only known</span>
+        <span class="line">the price would be forever</span>
+        <span class="line">i would have kept myself together</span>
+      </div>
+    </div>
+
+    <div class="section outro" style="--anim-delay:1.3s">
+      <div class="section-label">outro</div>
+      <div class="verse">
+        <span class="line">free the light</span>
+        <span class="line">i said <em>free the light</em></span>
+        <span class="line">lead me…lead me</span>
+        <span class="line">on sunbeams</span>
+        <span class="line">upward thru the sky</span>
+        <span class="line"><em>bleed the darkness from my mind</em></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-inner">
+    <span>broken ladder</span>
+    <span>remeeting</span>
+  </div>
+</div>

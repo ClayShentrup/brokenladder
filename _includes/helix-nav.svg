@@ -1,0 +1,15 @@
+<svg viewBox="0 0 22 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- strand A: sine wave left to right -->
+  <path d="M4 2 C10 6, 12 10, 18 14 C12 18, 10 22, 4 26 C10 30, 12 34, 18 38 C12 42, 10 44, 4 44"
+        stroke="var(--accent-bright)" stroke-width="1" fill="none" opacity="0.8"/>
+  <!-- strand B: opposite phase -->
+  <path d="M18 2 C12 6, 10 10, 4 14 C10 18, 12 22, 18 26 C12 30, 10 34, 4 38 C10 42, 12 44, 18 44"
+        stroke="var(--accent-2)" stroke-width="1" fill="none" opacity="0.6"/>
+  <!-- rungs -->
+  <line x1="11" y1="7"  x2="11" y2="9"  stroke="var(--text-dim)" stroke-width="0.6" opacity="0.5"/>
+  <line x1="11" y1="19" x2="11" y2="21" stroke="var(--text-dim)" stroke-width="0.6" opacity="0.5"/>
+  <!-- broken rung — gap -->
+  <line x1="11" y1="25" x2="8"  y2="25" stroke="var(--text-dim)" stroke-width="0.6" opacity="0.3"/>
+  <line x1="14" y1="27" x2="11" y2="27" stroke="var(--text-dim)" stroke-width="0.6" opacity="0.2"/>
+  <line x1="11" y1="33" x2="11" y2="35" stroke="var(--text-dim)" stroke-width="0.6" opacity="0.4"/>
+</svg>
