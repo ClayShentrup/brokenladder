@@ -110,7 +110,6 @@ html, body { overflow: hidden; height: 100%; }
   letter-spacing: 0.3em;
   color: var(--text);
   line-height: 1;
-  text-transform: uppercase;
   opacity: 0.9;
 }
 .word-ladder {
@@ -121,7 +120,6 @@ html, body { overflow: hidden; height: 100%; }
   letter-spacing: 0.3em;
   color: var(--accent-bright);
   line-height: 1;
-  text-transform: uppercase;
 }
 .slash {
   display: block; width: 32px; height: 1px;
@@ -175,35 +173,38 @@ html, body { overflow: hidden; height: 100%; }
 <div class="sparkle-field" id="sparkles"></div>
 
 <div class="stage">
-  <!-- DNA helix hero motif -->
+  <!-- DNA helix — two crossing sine waves, one broken -->
   <div class="helix-hero">
-    <svg viewBox="0 0 80 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- strand A -->
-      <path d="M16 4 C36 14, 44 26, 64 36 C44 46, 36 58, 16 68 C36 78, 44 90, 64 100 C44 110, 36 122, 16 132 C36 142, 44 154, 64 164 C44 174, 36 182, 16 196"
-            stroke="var(--accent-bright)" stroke-width="1.5" fill="none" opacity="0.85"
-            stroke-linecap="round"/>
-      <!-- strand B -->
-      <path d="M64 4 C44 14, 36 26, 16 36 C36 46, 44 58, 64 68 C44 78, 36 90, 16 100 C36 110, 44 122, 64 132 C44 142, 36 154, 16 164 C36 174, 44 182, 64 196"
-            stroke="var(--accent-2)" stroke-width="1.5" fill="none" opacity="0.65"
-            stroke-linecap="round"/>
-      <!-- rungs -->
-      <line x1="40" y1="20"  x2="40" y2="22"  stroke="var(--text-dim)" stroke-width="1" opacity="0.5"/>
-      <line x1="40" y1="52"  x2="40" y2="54"  stroke="var(--text-dim)" stroke-width="1" opacity="0.5"/>
-      <!-- broken rung — displaced, fractured -->
-      <line x1="40" y1="84"  x2="28"  y2="84"  stroke="var(--text-dim)" stroke-width="1" opacity="0.35"/>
-      <line x1="52" y1="88"  x2="40" y2="88"  stroke="var(--text-dim)" stroke-width="1" opacity="0.2"/>
-      <!-- glow at break -->
-      <circle cx="40" cy="86" r="5" fill="var(--accent)" opacity="0.08"/>
-      <circle cx="40" cy="86" r="2" fill="var(--accent-bright)" opacity="0.35"/>
-      <!-- rungs below break — fading -->
-      <line x1="40" y1="116" x2="40" y2="118" stroke="var(--text-dim)" stroke-width="1" opacity="0.45"/>
-      <line x1="40" y1="148" x2="40" y2="150" stroke="var(--text-dim)" stroke-width="1" opacity="0.3"/>
-      <line x1="40" y1="180" x2="40" y2="182" stroke="var(--text-dim)" stroke-width="1" opacity="0.15"/>
-      <!-- terminal dots -->
-      <circle cx="16" cy="4"   r="2.5" fill="var(--accent-bright)" opacity="0.7"/>
-      <circle cx="64" cy="4"   r="2.5" fill="var(--accent-2)" opacity="0.5"/>
-      <circle cx="16" cy="196" r="2"   fill="var(--accent)" opacity="0.2"/>
-      <circle cx="64" cy="196" r="2"   fill="var(--accent-2)" opacity="0.15"/>
+    <svg viewBox="0 0 60 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Strand A: continuous, goes right at y=20,100,180; left at y=60,140 -->
+      <path d="M30,0
+               C30,10 48,10 48,20
+               C48,30 30,30 30,40
+               C30,50 12,50 12,60
+               C12,70 30,70 30,80
+               C30,90 48,90 48,100
+               C48,110 30,110 30,120
+               C30,130 12,130 12,140
+               C12,150 30,150 30,160
+               C30,170 48,170 48,180
+               C48,190 30,190 30,200"
+            stroke="var(--accent-bright)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".9"/>
+      <!-- Strand B: opposite phase, breaks at right peak y=60 -->
+      <path d="M30,0
+               C30,10 12,10 12,20
+               C12,30 30,30 30,40
+               C30,50 48,50 48,60"
+            stroke="var(--accent-2)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".75"/>
+      <!-- Strand B continued after break, slightly faded -->
+      <path d="M48,66
+               C48,70 30,70 30,80
+               C30,90 12,90 12,100
+               C12,110 30,110 30,120
+               C30,130 48,130 48,140
+               C48,150 30,150 30,160
+               C30,170 12,170 12,180
+               C12,190 30,190 30,200"
+            stroke="var(--accent-2)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".38"/>
     </svg>
   </div>
 
@@ -213,7 +214,7 @@ html, body { overflow: hidden; height: 100%; }
     <span class="word-ladder">ladder</span>
   </div>
 
-  <p class="tagline">portland, or &nbsp;·&nbsp; 2026</p>
+  <p class="tagline">portland, or</p>
 </div>
 
 <script>
