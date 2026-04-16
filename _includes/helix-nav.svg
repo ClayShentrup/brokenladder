@@ -1,11 +1,9 @@
 <svg viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <!-- SEG 1: B back-left, rung, A front-right -->
-  <path d="M12,0 C12,6 4,6 4,12 C4,18 12,18 12,24" stroke="var(--accent-3)" stroke-width="2.5" stroke-linecap="round" opacity=".4"/>
-  <line x1="4" y1="12" x2="20" y2="12" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round"/>
-  <path d="M12,0 C12,6 20,6 20,12 C20,18 12,18 12,24" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" opacity=".95"/>
-  <!-- SEG 2: A back-left, rung, B front-right — B breaks partway -->
-  <path d="M12,24 C12,30 4,30 4,36 C4,42 12,42 12,48" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" opacity=".4"/>
-  <line x1="4" y1="36" x2="20" y2="36" stroke="var(--accent-3)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-  <path d="M12,24 C12,30 20,30 20,36" stroke="var(--accent-3)" stroke-width="3" stroke-linecap="round" opacity=".9"/>
-  <path d="M20,40 C20,42 12,44 12,48" stroke="var(--accent-3)" stroke-width="3" stroke-linecap="round" opacity=".25"/>
+  <path d="M12,0 C9,0 6,3 6,12 C6,21 9,24 12,24" stroke="var(--accent-3)" stroke-width="1.5" fill="none" opacity=".4"/>
+  <path d="M12,24 C15,24 18,27 18,36 C18,45 15,48 12,48" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity=".4"/>
+  <rect x="10.5" y="22" width="3" height="4" fill="var(--bg)"/>
+  <path d="M12,0 C15,0 18,3 18,12 C18,21 15,24 12,24" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity=".92"/>
+  <path d="M12,24 C9,24 6,27 6,36 C6,43 9,46 12,48" stroke="var(--accent-3)" stroke-width="1.5" fill="none" opacity=".55"/>
+  <line x1="6" y1="12" x2="18" y2="12" stroke="var(--accent-2)" stroke-width="1.5"/>
+  <line x1="6" y1="36" x2="14" y2="36" stroke="var(--accent-3)" stroke-width="1.5" opacity=".5"/>
 </svg>

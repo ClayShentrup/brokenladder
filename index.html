@@ -3,7 +3,8 @@ layout: default
 title: home
 ---
 <style>
-html, body { overflow: hidden; height: 100%; }
+html { height: 100%; overflow: hidden; }
+body { height: 100%; display: flex; flex-direction: column; overflow: hidden; }
 
 /* rotating grid */
 .grid {
@@ -83,8 +84,9 @@ html, body { overflow: hidden; height: 100%; }
 /* stage */
 .stage {
   position: relative; z-index: 5;
+  flex: 1;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  min-height: 100vh; gap: 0;
+  gap: 0;
 }
 
 /* DNA helix hero */
@@ -178,25 +180,25 @@ html, body { overflow: hidden; height: 100%; }
     <svg viewBox="0 0 50 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <!-- cx=25, left=10, right=40, half-period=38, peaks at y=19,57,95,133(break),171 -->
       <!-- back strands first -->
-      <path d="M25,0 C25,8 10,8 10,19 C10,30 25,30 25,38" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".4"/>
-      <path d="M25,38 C25,46 10,46 10,57 C10,68 25,68 25,76" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".4"/>
-      <path d="M25,76 C25,84 10,84 10,95 C10,106 25,106 25,114" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".4"/>
-      <path d="M25,114 C25,122 10,122 10,133 C10,144 25,144 25,152" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".4"/>
-      <path d="M25,152 C25,160 10,160 10,171 C10,182 25,182 25,190" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".16"/>
+      <path d="M25,0 C22,0 10,8 10,19 C10,30 22,38 25,38" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,38 C28,38 40,46 40,57 C40,68 28,76 25,76" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,76 C22,76 10,84 10,95 C10,106 22,114 25,114" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,114 C22,114 10,122 10,133 C10,144 22,152 25,152" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,152 C28,152 40,160 40,171 C40,182 28,190 25,190" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".16"/>
       <!-- crossing masks -->
       <rect x="23.5" y="35" width="3" height="6" fill="var(--bg)"/>
       <rect x="23.5" y="73" width="3" height="6" fill="var(--bg)"/>
       <rect x="23.5" y="111" width="3" height="6" fill="var(--bg)"/>
       <rect x="23.5" y="149" width="3" height="6" fill="var(--bg)"/>
       <!-- front strands -->
-      <path d="M25,0 C25,8 40,8 40,19 C40,30 25,30 25,38" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".92"/>
-      <path d="M25,38 C25,46 40,46 40,57 C40,68 25,68 25,76" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".92"/>
-      <path d="M25,76 C25,84 40,84 40,95 C40,106 25,106 25,114" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".92"/>
+      <path d="M25,0 C28,0 40,8 40,19 C40,30 28,38 25,38" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".92"/>
+      <path d="M25,38 C22,38 10,46 10,57 C10,68 22,76 25,76" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".92"/>
+      <path d="M25,76 C28,76 40,84 40,95 C40,106 28,114 25,114" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".92"/>
       <!-- B broken in seg4: stubs only -->
-      <path d="M25,114 C25,122 40,122 40,130" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".55"/>
-      <path d="M25,152 C25,144 40,144 40,136" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".28"/>
+      <path d="M25,114 C28,114 40,122 40,130" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".55"/>
+      <path d="M25,152 C28,152 40,144 40,136" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".28"/>
       <!-- seg5 faded -->
-      <path d="M25,152 C25,160 40,160 40,171 C40,182 25,182 25,190" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".25"/>
+      <path d="M25,152 C22,152 10,160 10,171 C10,182 22,190 25,190" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".25"/>
       <!-- rungs -->
       <line x1="10" y1="19"  x2="25"  y2="19"  stroke="var(--accent-2)" stroke-width="2.2"/>
       <line x1="25"  y1="19"  x2="40" y2="19"  stroke="var(--accent-3)" stroke-width="2.2" opacity=".7"/>
