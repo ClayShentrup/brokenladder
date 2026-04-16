@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<style>
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;background:var(--text);border-radius:50%;animation:twinkle var(--d,4s) ease-in-out infinite var(--delay,0s);opacity:0}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:var(--peak,.4)}}
+</style>
+<div class="stars" id="lyric-stars"></div>
+<script>
+(()=>{
+  const c=document.getElementById('lyric-stars');
+  for(let i=0;i<90;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const sz=Math.random()<.85?1:Math.random()<.7?1.5:2;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${3+Math.random()*6}s;--delay:${Math.random()*8}s;--peak:${.1+Math.random()*.4}`;
+    c.appendChild(s);
+  }
+})();
+</script>
+
+{{ content }}

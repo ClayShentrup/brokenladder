@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,600;1,200;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inconsolata:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,600;1,100;1,200&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inconsolata:wght@200;300;400&display=swap');
 
-/* ── default theme (cool nature palette) ── */
+/* ── default theme (portland nature palette) ── */
 :root {
   --bg:             #070b0e;
   --bg2:            #0c1215;
-  --accent:         #6aada5;
-  --accent-dim:     #1f3d2e;
-  --accent-bright:  #8eccc5;
-  --accent-2:       #b8c24a;
-  --accent-3:       #3a7a9c;
+  --accent:         #3e6840;
+  --accent-dim:     #233d24;
+  --accent-bright:  #5a8a5a;
+  --accent-2:       #6a7e28;
+  --accent-3:       #3a6a8a;
   --text:           #d4e3df;
   --text-dim:       #3a5248;
   --text-muted:     #2a3d36;
-  --font-display:   'Raleway', sans-serif;
+  --font-display:   'Josefin Sans', sans-serif;
   --font-body:      'Cormorant Garamond', Georgia, serif;
   --font-mono:      'Inconsolata', monospace;
 }

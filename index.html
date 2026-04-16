@@ -110,13 +110,13 @@ html, body { overflow: hidden; height: 100%; }
   letter-spacing: 0.3em;
   color: var(--text);
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.75;
 }
 .word-ladder {
   display: block;
   font-family: var(--font-display);
   font-size: clamp(44px, 10vw, 88px);
-  font-weight: 600;
+  font-weight: 100;
   letter-spacing: 0.3em;
   color: var(--accent-bright);
   line-height: 1;
@@ -173,38 +173,39 @@ html, body { overflow: hidden; height: 100%; }
 <div class="sparkle-field" id="sparkles"></div>
 
 <div class="stage">
-  <!-- DNA helix — two crossing sine waves, one broken -->
+  <!-- DNA helix — interlaced strands with crossing masks and base pair rungs -->
   <div class="helix-hero">
-    <svg viewBox="0 0 60 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Strand A: continuous, goes right at y=20,100,180; left at y=60,140 -->
-      <path d="M30,0
-               C30,10 48,10 48,20
-               C48,30 30,30 30,40
-               C30,50 12,50 12,60
-               C12,70 30,70 30,80
-               C30,90 48,90 48,100
-               C48,110 30,110 30,120
-               C30,130 12,130 12,140
-               C12,150 30,150 30,160
-               C30,170 48,170 48,180
-               C48,190 30,190 30,200"
-            stroke="var(--accent-bright)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".9"/>
-      <!-- Strand B: opposite phase, breaks at right peak y=60 -->
-      <path d="M30,0
-               C30,10 12,10 12,20
-               C12,30 30,30 30,40
-               C30,50 48,50 48,60"
-            stroke="var(--accent-2)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".75"/>
-      <!-- Strand B continued after break, slightly faded -->
-      <path d="M48,66
-               C48,70 30,70 30,80
-               C30,90 12,90 12,100
-               C12,110 30,110 30,120
-               C30,130 48,130 48,140
-               C48,150 30,150 30,160
-               C30,170 12,170 12,180
-               C12,190 30,190 30,200"
-            stroke="var(--accent-2)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".38"/>
+    <svg viewBox="0 0 50 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- cx=25, left=10, right=40, half-period=38, peaks at y=19,57,95,133(break),171 -->
+      <!-- back strands first -->
+      <path d="M25,0 C25,8 10,8 10,19 C10,30 25,30 25,38" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,38 C25,46 10,46 10,57 C10,68 25,68 25,76" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,76 C25,84 10,84 10,95 C10,106 25,106 25,114" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,114 C25,122 10,122 10,133 C10,144 25,144 25,152" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".4"/>
+      <path d="M25,152 C25,160 10,160 10,171 C10,182 25,182 25,190" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".16"/>
+      <!-- crossing masks -->
+      <rect x="23.5" y="35" width="3" height="6" fill="var(--bg)"/>
+      <rect x="23.5" y="73" width="3" height="6" fill="var(--bg)"/>
+      <rect x="23.5" y="111" width="3" height="6" fill="var(--bg)"/>
+      <rect x="23.5" y="149" width="3" height="6" fill="var(--bg)"/>
+      <!-- front strands -->
+      <path d="M25,0 C25,8 40,8 40,19 C40,30 25,30 25,38" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".92"/>
+      <path d="M25,38 C25,46 40,46 40,57 C40,68 25,68 25,76" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".92"/>
+      <path d="M25,76 C25,84 40,84 40,95 C40,106 25,106 25,114" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".92"/>
+      <!-- B broken in seg4: stubs only -->
+      <path d="M25,114 C25,122 40,122 40,130" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".55"/>
+      <path d="M25,152 C25,144 40,144 40,136" stroke="var(--accent-3)" stroke-width="1.8" fill="none" opacity=".28"/>
+      <!-- seg5 faded -->
+      <path d="M25,152 C25,160 40,160 40,171 C40,182 25,182 25,190" stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".25"/>
+      <!-- rungs -->
+      <line x1="10" y1="19"  x2="25"  y2="19"  stroke="var(--accent-2)" stroke-width="2.2"/>
+      <line x1="25"  y1="19"  x2="40" y2="19"  stroke="var(--accent-3)" stroke-width="2.2" opacity=".7"/>
+      <line x1="10" y1="57"  x2="25"  y2="57"  stroke="var(--accent-3)" stroke-width="2.2" opacity=".7"/>
+      <line x1="25"  y1="57"  x2="40" y2="57"  stroke="var(--accent-2)" stroke-width="2.2"/>
+      <line x1="10" y1="95"  x2="25"  y2="95"  stroke="var(--accent-2)" stroke-width="2.2"/>
+      <line x1="25"  y1="95"  x2="40" y2="95"  stroke="var(--accent-3)" stroke-width="2.2" opacity=".7"/>
+      <line x1="10" y1="171" x2="25"  y2="171" stroke="var(--accent-3)" stroke-width="2.2" opacity=".18"/>
+      <line x1="25"  y1="171" x2="40" y2="171" stroke="var(--accent-2)" stroke-width="2.2" opacity=".18"/>
     </svg>
   </div>
 
