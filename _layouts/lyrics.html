@@ -68,7 +68,8 @@ em { font-style:normal; color:var(--accent); }
     const played = nums.filter(f => f !== null && f > 0);
     const minF = played.length ? Math.min(...played) : 1;
     const maxF = played.length ? Math.max(...played) : 1;
-    const startFret = minF > 1 ? minF : 1;
+    let startFret = 1;
+    if (maxF >= 5) startFret = minF;
     const displayFrets = Math.max(4, maxF - startFret + 1);
     const sw=24, fh=22, padL=14, padT=24, padB=14;
     const W = 5*sw + padL*2;
