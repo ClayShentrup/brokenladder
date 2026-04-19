@@ -135,20 +135,23 @@ line: "rgba(122,170,40,0.18)"
 
     <div class="section" style="--anim-delay:1.4s">
       <div class="section-label">chords</div>
-      <div class="verse" style="font-family:var(--font-mono);font-size:clamp(11px,1.8vw,13px);line-height:2.2;color:var(--text-dim)">
-        <span class="line">a.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.2.2.2.0.x</span>
-        <span class="line">b/a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.4.4.6.0.x</span>
-        <span class="line">e.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.4.4.4.6.0</span>
-        <span class="line">e.6(add11) &nbsp;&nbsp; 4.4.4.4.7.0</span>
-        <span class="line">e.6(9)(11) &nbsp;&nbsp; 4.4.4.6.7.0</span>
-        <span class="line">e.maj7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0.6.7.7.0</span>
-        <span class="line">f#.m11/e &nbsp;&nbsp;&nbsp;&nbsp; 0.0.8.9.9.0</span>
-        <span class="line">f#.m7/e &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0.8.9.7.0</span>
-        <span class="line">a.add9/c# &nbsp;&nbsp;&nbsp; x.4.2.2.0.x</span>
-        <span class="line">a.6/b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x.2.2.2.0.x</span>
-        <span class="line">e.sus2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5.4.4.x.0</span>
-      </div>
+      <div class="chord-grid" id="chord-grid"></div>
     </div>
+    <script>
+    window.songChords = {
+      "a.6":        "4.2.2.2.0.x",
+      "b/a":        "4.4.4.6.0.x",
+      "e.6":        "4.4.4.4.6.0",
+      "e.6(add11)": "4.4.4.4.7.0",
+      "e.6(9)(11)": "4.4.4.6.7.0",
+      "e.maj7":     "0.0.6.7.7.0",
+      "f#.m11/e":   "0.0.8.9.9.0",
+      "f#.m7/e":    "0.0.8.9.7.0",
+      "a.add9/c#":  "x.4.2.2.0.x",
+      "a.6/b":      "x.2.2.2.0.x",
+      "e.sus2":     "2.5.4.4.x.0"
+    };
+    </script>
 
     <div class="section" style="--anim-delay:1.5s">
       <div class="section-label">on e.sus2</div>

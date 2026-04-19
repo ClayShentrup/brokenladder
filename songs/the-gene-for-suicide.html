@@ -61,7 +61,8 @@ line: "rgba(122,106,154,0.18)"
         <span class="line">childhood swingsets, deep purple sunsets</span>
         <span class="line">the chirping of insects</span>
         <span class="line">through mid-summer dreams</span>
-        <span class="line">fade as our hearts die work suffocates life</span>
+        <span class="line">fade as our hearts die</span>
+        <span class="line">work suffocates life</span>
         <span class="line">and i'm terrified that it's happened to me</span>
       </div>
     </div>
@@ -121,24 +122,27 @@ line: "rgba(122,106,154,0.18)"
 
     <div class="section" style="--anim-delay:1.4s">
       <div class="section-label">chords</div>
-      <div class="verse" style="font-family:var(--font-mono);font-size:clamp(11px,1.8vw,13px);line-height:2.2;color:var(--text-dim)">
-        <span class="line">g.5(add.10) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.x.0.0.0.x</span>
-        <span class="line">g.13(sus.4) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.x.3.0.0.0</span>
-        <span class="line">f.maj.7(#11) &nbsp;&nbsp;&nbsp;&nbsp; 1.x.2.0.0.x</span>
-        <span class="line">f.maj.13(#11) &nbsp;&nbsp;&nbsp; 1.3.0.0.0.x</span>
-        <span class="line">g.6/9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.x.0.2.3.0</span>
-        <span class="line">g.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.x.2.0.3.3</span>
-        <span class="line">c.sus.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x.3.3.0.3.3</span>
-        <span class="line">c.add.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x.3.2.0.3.3</span>
-        <span class="line">eb.6/9/g &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.1.3.1.1</span>
-        <span class="line">f.sus.4/a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.3.3.3.x.x</span>
-        <span class="line">bb.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x.1.3.3.x.x</span>
-        <span class="line">f.6/9/a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.3.3.5.3.3</span>
-        <span class="line">ab.maj.13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.1.1.3.1.1</span>
-        <span class="line">ab.maj.13(#11) &nbsp;&nbsp; 4.3.3.5.3.3</span>
-        <span class="line">db.maj.13/f &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.4.1.3.1.1</span>
-      </div>
+      <div class="chord-grid" id="chord-grid"></div>
     </div>
+    <script>
+    window.songChords = {
+      "g.5(add.10)":    "3.x.0.0.0.x",
+      "g.13(sus.4)":    "3.x.3.0.0.0",
+      "f.maj.7(#11)":   "1.x.2.0.0.x",
+      "f.maj.13(#11)":  "1.3.0.0.0.x",
+      "g.6/9":          "3.x.0.2.3.0",
+      "g.6":            "3.x.2.0.3.3",
+      "c.sus.2":        "x.3.3.0.3.3",
+      "c.add.9":        "x.3.2.0.3.3",
+      "eb.6/9/g":       "3.1.1.3.1.1",
+      "f.sus.4/a":      "5.3.3.3.x.x",
+      "bb.5":           "x.1.3.3.x.x",
+      "f.6/9/a":        "5.3.3.5.3.3",
+      "ab.maj.13":      "4.1.1.3.1.1",
+      "ab.maj.13(#11)": "4.3.3.5.3.3",
+      "db.maj.13/f":    "1.4.1.3.1.1"
+    };
+    </script>
 
   </div>
 </div>

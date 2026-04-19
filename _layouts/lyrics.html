@@ -14,13 +14,18 @@ layout: default
 .lyrics { display:flex; flex-direction:column; gap:52px; }
 .section { opacity:0; transform:translateY(12px); animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1) var(--anim-delay,0.6s) forwards; }
 .section-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.22em; color:var(--accent); opacity:0.7; margin-bottom:16px; }
-.verse { font-family:var(--font-body); font-size:clamp(16px,2.6vw,19px); font-weight:300; line-height:1.85; color:var(--text); }
+.verse { font-family:var(--font-body); font-size:clamp(19px,3.1vw,23px); font-weight:300; line-height:1.85; color:var(--text); }
 .verse .line { display:block; }
 .chorus .verse { font-style:italic; padding-left:20px; border-left:1px solid var(--line); }
 .chorus-break { height:24px; }
-.bridge .verse { font-size:clamp(15px,2.4vw,17px); color:var(--text-dim); }
-.outro .verse { font-size:clamp(17px,2.8vw,21px); }
+.bridge .verse { font-size:clamp(18px,2.9vw,21px); color:var(--text-dim); }
+.outro .verse { font-size:clamp(20px,3.4vw,25px); }
 em { font-style:normal; color:var(--accent); }
+/* ── chord grid ── */
+.chord-grid { display:flex; flex-wrap:wrap; gap:28px 18px; }
+.chord-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.chord-box-name { font-family:var(--font-body); font-size:13px; font-weight:300; font-style:italic; color:var(--text); opacity:0.7; text-align:center; white-space:nowrap; }
+.chord-box-name em { font-style:normal; color:var(--accent-bright); font-weight:400; opacity:1; }
 /* ── stars ── */
 .stars { position:fixed; inset:0; pointer-events:none; z-index:0; }
 .star { position:absolute; background:var(--text); border-radius:50%; animation:twinkle var(--d,4s) ease-in-out infinite var(--delay,0s); opacity:0; }
@@ -41,3 +46,70 @@ em { font-style:normal; color:var(--accent); }
 </script>
 
 {{ content }}
+
+<script>
+(function(){
+  const el = document.getElementById('chord-grid');
+  if (!el || !window.songChords) return;
+  const cs = getComputedStyle(document.documentElement);
+  const accent      = cs.getPropertyValue('--accent').trim();
+  const accentBr    = cs.getPropertyValue('--accent-bright').trim();
+  const textCol     = cs.getPropertyValue('--text').trim();
+  const dimCol      = cs.getPropertyValue('--text-dim').trim();
+
+  function renderSVG(fretStr) {
+    const strings = fretStr.split('.');
+    const nums = strings.map(s => s === 'x' ? null : parseInt(s));
+    const played = nums.filter(f => f !== null && f > 0);
+    const minF = played.length ? Math.min(...played) : 1;
+    const maxF = played.length ? Math.max(...played) : 1;
+    const startFret = minF > 1 ? minF : 1;
+    const displayFrets = Math.max(4, maxF - startFret + 1);
+    const sw=24, fh=22, padL=14, padT=24, padB=14;
+    const W = 5*sw + padL*2;
+    const H = displayFrets*fh + padT + padB;
+    let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+    // nut or position marker
+    if (startFret === 1) {
+      s += `<line x1="${padL}" y1="${padT}" x2="${padL+5*sw}" y2="${padT}" stroke="${textCol}" stroke-width="2" stroke-linecap="round" opacity="0.35"/>`;
+    } else {
+      s += `<text x="${padL-6}" y="${padT+fh*0.7}" font-family="Inconsolata,monospace" font-size="9" fill="${dimCol}" text-anchor="end" opacity="0.7">${startFret}</text>`;
+    }
+    // fret lines
+    for (let f=1; f<=displayFrets; f++) {
+      const y = padT + f*fh;
+      s += `<line x1="${padL}" y1="${y}" x2="${padL+5*sw}" y2="${y}" stroke="${dimCol}" stroke-width="0.5" opacity="0.4"/>`;
+    }
+    // strings + open/mute indicators
+    for (let i=0; i<6; i++) {
+      const x = padL + i*sw;
+      s += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT+displayFrets*fh}" stroke="${dimCol}" stroke-width="0.75" opacity="0.5"/>`;
+      if (strings[i] === 'x') {
+        s += `<text x="${x}" y="${padT-8}" font-family="Inconsolata,monospace" font-size="10" fill="${dimCol}" text-anchor="middle" opacity="0.4">×</text>`;
+      } else if (nums[i] === 0) {
+        s += `<circle cx="${x}" cy="${padT-9}" r="4" fill="none" stroke="${accentBr}" stroke-width="1" opacity="0.5"/>`;
+      }
+    }
+    // finger dots
+    for (let i=0; i<6; i++) {
+      const fret = nums[i];
+      if (fret === null || fret === 0) continue;
+      const x = padL + i*sw;
+      const relF = fret - startFret + 1;
+      const y = padT + (relF - 0.5)*fh;
+      s += `<circle cx="${x}" cy="${y}" r="7.5" fill="${accent}" opacity="0.8"/>`;
+      s += `<text x="${x}" y="${y+3.5}" font-family="Inconsolata,monospace" font-size="9" fill="${textCol}" text-anchor="middle" opacity="0.95">${fret}</text>`;
+    }
+    s += '</svg>';
+    return s;
+  }
+
+  for (const [name, frets] of Object.entries(window.songChords)) {
+    const styledName = name.replace(/^([a-z#b]+)/, '<em>$1</em>');
+    const div = document.createElement('div');
+    div.className = 'chord-box';
+    div.innerHTML = `<div class="chord-box-name">${styledName}</div>${renderSVG(frets)}`;
+    el.appendChild(div);
+  }
+})();
+</script>
