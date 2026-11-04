@@ -27,7 +27,8 @@
     { "id": "T3", "text": "Say Dana would fix your roof for twenty dollars an hour, and you'd gladly pay twenty-five. The job happens, and five dollars of value is created between you." },
     { "id": "T4", "text": "Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worth her while, and you'll only pay twenty-five. The job never happens." },
     { "id": "T5", "text": "The government collects nothing. Dana loses the work, your roof still leaks, and five dollars of value never comes into existence. That's the deadweight loss of taxing a trade." },
-    { "id": "T6", "text": "So here's the first rule of efficient policy: don't get in the way of useful trades.", "gap": 1.0 },
+    { "id": "T5b", "text": "A tax on trading is like a speeding ticket for mutually beneficial interactions." },
+    { "id": "T6", "text": "So here's the first rule of efficient policy. A Pareto improvement makes the world better by definition, so a tax that stops one from happening makes the world worse by definition. Don't get in the way of useful trades.", "gap": 1.2 },
 
     { "id": "B1", "text": "Now look at how we usually try to share the pie." },
     { "id": "B2", "text": "Steep income tax brackets tax the trade of your work for pay, and tax it harder the more of it you do." },

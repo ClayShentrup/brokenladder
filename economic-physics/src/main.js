@@ -713,18 +713,30 @@
       if (t > w('T4', 'never happens')) { xMark(960, 380, popS(w('T4', 'never happens')), 1); txt('no job', 960, 470, 54, { color: P.red }); }
       else KC += 4;
       // tally
-      grp(960, 200, popS(w('T5', 'collects nothing')), 0, () => {
+      grp(960, 200, popS(w('T5', 'collects nothing')) * fadeOut(c('T5b') - 0.2, 0.3), 0, () => {
         rect(-360, -90, 720, 180, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 3 });
         txt('tax collected:  $0', 0, -38, 56);
         txt('value lost:  $5', 0, 38, 56, { color: P.red, alpha: fadeIn(w('T5', 'five dollars')) });
       });
       smokeBurst(X(22.5), 680, w('T5', 'never comes'), 7, 0.9);
       stamp('deadweight loss', 1560, 960, 60, w('T5', 'deadweight'));
+      // T5b: the speeding ticket
+      grp(960, 185, 0.9 * popS(w('T5b', 'speeding ticket')), -0.05, () => {
+        rect(-330, -150, 660, 300, 1, { fill: '#fff6d6', fillStyle: 'solid', strokeWidth: 4 });
+        rect(-330, -150, 660, 64, 1, { fill: P.red, fillStyle: 'solid', strokeWidth: 4 });
+        txt('CITATION', 0, -117, 48, { color: P.cream, font: PRINT });
+        txt('offense: mutually beneficial trade', -300, -40, 40, { align: 'left', font: PRINT });
+        txt('victims: none', -300, 15, 40, { align: 'left', font: PRINT, alpha: fadeIn(w('T5b', 'mutually')) });
+        txt('fine: $8', -300, 80, 56, { align: 'left', color: P.red, alpha: fadeIn(w('T5b', 'interactions')) });
+      });
     }, ph2);
-    grp(960, 540, popS(w('T6', 'first rule')), -0.03, () => {
-      rect(-720, -150, 1440, 300, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 5, stroke: P.green });
-      txt('rule #1', 0, -70, 70, { color: P.green });
-      txt("don't block useful trades", 0, 40, 100);
+    grp(960, 540, popS(w('T6', 'first rule')), -0.02, () => {
+      rect(-800, -300, 1600, 600, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 5, stroke: P.green });
+      txt('rule #1', 0, -220, 64, { color: P.green });
+      txt('Pareto improvement  =  better, by definition', 0, -110, 66, { alpha: fadeIn(w('T6', 'A Pareto')), color: P.blue });
+      txt('so blocking one  =  worse, by definition', 0, -10, 66, { alpha: fadeIn(w('T6', 'so a tax')), color: P.red });
+      line(-620, 70, 620, 70, fadeIn(w('T6', "Don't get")), { strokeWidth: 3, stroke: P.grey });
+      txt("don't tax useful trades", 0, 170, 110, { alpha: fadeIn(w('T6', "Don't get")) });
     });
   }
 
@@ -1171,7 +1183,8 @@
     pops([['T3', 'Dana'], ['T3', 'twenty dollars'], ['T3', 'twenty-five']]); ev('ding', w('T3', 'The job happens')); ev('coin', w('T3', 'five dollars'));
     ev('slide', w('T4', 'eight-dollar')); ev('sad', w('T4', 'never happens')); ev('stamp', w('T4', 'never happens'));
     ev('pop', w('T5', 'collects nothing')); ev('poof', w('T5', 'never comes')); stamps([['T5', 'deadweight']]);
-    ev('pop2', w('T6', 'first rule')); ev('sparkle', w('T6', 'first rule', 0.1));
+    ev('stamp', w('T5b', 'speeding ticket')); ev('tick', w('T5b', 'mutually')); ev('stamp', w('T5b', 'interactions'));
+    ev('pop2', w('T6', 'first rule')); ev('ding', w('T6', 'A Pareto')); ev('sad', w('T6', 'so a tax')); ev('stamp', w('T6', "Don't get")); ev('sparkle', w('T6', "Don't get", 0.1));
     // toolbox
     pops([['B1', 'share the pie'], ['B1', 'usually']], 'pop2'); pops([['B2', 'Steep'], ['B3', 'Minimum'], ['B3', 'rent control']]); ev('sad', w('B3', 'hide'));
     ev('pop', w('B4', 'apartment')); ev('pop2', w('B4', 'tenant')); ev('chaching', w('B4', 'rent voucher')); ev('pop2', w('B4', 'one landlord')); stamps([['B4', 'thousand-dollar tax'], ['B4', 'Why that']]);
