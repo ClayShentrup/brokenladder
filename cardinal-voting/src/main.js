@@ -857,6 +857,30 @@
     } else KC += 300;
   }
 
+
+  // Y1-Y2: the same voters reveal hidden support (Maine 2014)
+  function sHidden() {
+    const t = T;
+    stamp('Maine governor, 2014', 960, 110, 58, c('Y1'), { color: P.blue, rot: -0.03 });
+    const cols = { LePage: P.red, Michaud: P.blue, Cutler: P.green };
+    txt('official result (choose one)', 480, 230, 46, { alpha: fadeIn(w('Y1', 'official vote')), font: PRINT });
+    [['LePage', 48.2], ['Michaud', 43.4], ['Cutler', 8.4]].forEach(([n, v], i) => {
+      const t0 = w('Y1', 'official vote') + i * 0.25;
+      hbar(300, 330 + i * 110, 520, 70, (v / 60) * eOut(prog(t, t0, t0 + 0.8)), cols[n], n, fadeIn(t0) > 0.5 ? v.toFixed(1) + '%' : '', { ls: 42 });
+    });
+    if (t > w('Y1', 'finished last')) stamp('last place', 480, 680, 52, w('Y1', 'finished last')); else KC += 4;
+    txt('same voters, approval exit poll', 1440, 230, 46, { alpha: fadeIn(w('Y2', 'exit poll')), font: PRINT });
+    [['Cutler', 55.0], ['Michaud', 48.8], ['LePage', 46.4]].forEach(([n, v], i) => {
+      const t0 = w('Y2', 'Fifty-five') + i * 0.3;
+      hbar(1260, 330 + i * 110, 520, 70, (v / 60) * eOut(prog(t, t0, t0 + 0.8)), cols[n], n, fadeIn(t0) > 0.5 ? v.toFixed(1) + '%' : '', { ls: 42 });
+    });
+    if (t > w('Y2', 'Head to head') - 0.1) {
+      matchup(560, 860, 0.8 * popS(w('Y2', 'Head to head')), 'Cutler', 'LePage', 0.574, P.green, P.red, w('Y2', 'Head to head'), 1);
+      matchup(1360, 860, 0.8 * popS(w('Y2', 'beat both')), 'Cutler', 'Michaud', 0.599, P.green, P.blue, w('Y2', 'beat both'), 1);
+    } else KC += 100;
+    if (t > w('Y2', 'lowest approval')) stamp('official winner: lowest approval', 1440, 680, 50, w('Y2', 'lowest approval'), { color: P.red }); else KC += 4;
+  }
+
   // M1-M7: majority rule contradicts itself
   function sMajority() {
     const t = T;
@@ -1085,6 +1109,7 @@
       { start: c('B1') - 0.7, draw: sBetray },
       { start: c('C1') - 0.7, draw: sCardinal },
       { start: c('S1') - 0.7, draw: sStrategy },
+      { start: c('Y1') - 0.7, draw: sHidden },
       { start: c('M1') - 0.7, draw: sMajority },
       { start: c('M7b') - 0.7, draw: sCardinality },
       { start: c('M8') - 0.7, draw: sIntensity },
@@ -1122,6 +1147,7 @@
     ev('pop', c('S1')); at('S2', 'Half', 'pop'); at('S2', 'much worse', 'boing'); at('S2', 'forgets', 'stamp');
     ev('pop', c('S3')); at('S3', 'expect to win', 'slide'); at('S3', 'better than', 'ding');
     at('S4', 'Fargo', 'pop'); at('S4', 'St. Louis', 'pop'); at('S4', 'eighty percent', 'ding'); ev('pop', c('S5')); at('S5', 'barely moves', 'slide');
+    ev('stamp', c('Y1')); at('Y1', 'official vote', 'slide'); at('Y1', 'finished last', 'sad'); at('Y2', 'Fifty-five', 'slide'); at('Y2', 'Head to head', 'pop'); at('Y2', 'beat both', 'pop'); at('Y2', 'lowest approval', 'stamp');
     at('M1', 'undemocratic', 'stamp'); at('M2', 'Two proposals', 'pop'); ['Amy', 'Bob', 'Cal'].forEach((x) => at('M3', x, 'pop2'));
     [['Vote on X'], ['Vote on Y'], ['doing both']].forEach(([x]) => { at('M4', x, 'tick'); at('M4', x, 'stamp', 1.2); });
     at('M5', 'contradict', 'stamp'); at('M5', 'slogan', 'stamp'); ev('pop', c('M6')); at('M7', 'scandal', 'poof'); at('M7', 'sixty-five', 'sad'); at('M7', "it's still right", 'stamp');
