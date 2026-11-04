@@ -76,6 +76,12 @@ function serve() {
   fs.writeFileSync(wavPath, Buffer.concat(parts));
   console.log(`audio ${(nBytes / 1e6).toFixed(1)}MB in ${((Date.now() - ta) / 1000).toFixed(1)}s`);
 
+  // Static gain to hit YouTube's -14 LUFS, then a fast peak limiter. (Single-pass loudnorm
+  // rides the gain in real time and pumps audibly every time the narration stops.)
+  const meas = require('child_process').spawnSync('ffmpeg', ['-hide_banner', '-i', wavPath, '-af', 'ebur128', '-f', 'null', '-'], { encoding: 'utf8' }).stderr;
+  const I = Number((meas.match(/I:\s+(-?[\d.]+) LUFS\s*\n\s*Threshold[\s\S]*$/) || meas.match(/I:\s+(-?[\d.]+) LUFS(?![\s\S]*I:)/) || [])[1]);
+  const gainDb = Number.isFinite(I) ? -14 - I : 0;
+  console.log(`mix ${I} LUFS -> gain ${gainDb.toFixed(2)} dB`);
   const name = opt('out', draft ? 'draft.mp4' : 'gift-card-fallacy.mp4');
   const outFile = path.join(OUT, name);
   const ff = spawn('ffmpeg', [
@@ -83,7 +89,7 @@ function serve() {
     '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
     '-ss', String(from), '-t', String(to - from), '-i', wavPath,
     '-c:v', 'libx264', '-preset', draft ? 'veryfast' : 'slow', '-crf', draft ? '26' : '17', '-pix_fmt', 'yuv420p',
-    '-tune', 'animation', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile,
+    '-tune', 'animation', '-af', `volume=${gainDb.toFixed(2)}dB,alimiter=limit=0.84:attack=5:release=60:level=disabled`, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile,
   ], { stdio: ['pipe', 'inherit', 'inherit'] });
 
   const n = Math.round((to - from) * fps), t0 = Date.now();

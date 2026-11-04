@@ -253,8 +253,16 @@ window.EPAudio = (function () {
     ids.forEach((id) => {
       const L = TL.lines[id], buf = narr && narr[id];
       if (!buf || L.start + buf.duration < from) return;
-      const s = ac.createBufferSource(); s.buffer = buf; s.connect(voice);
-      if (L.start >= from) s.start(at(L.start)); else s.start(at(from), from - L.start);
+      // fade each clip in/out: TTS clips end on room tone, and a hard stop reads as a click
+      const s = ac.createBufferSource(); s.buffer = buf;
+      const g = ac.createGain(); s.connect(g).connect(voice);
+      const t0 = at(Math.max(L.start, from)), off = Math.max(0, from - L.start), rem = buf.duration - off;
+      const tEnd = t0 + rem, FO = Math.min(0.25, rem / 3);
+      g.gain.setValueAtTime(off > 0 ? 1 : 0, t0);
+      if (!off) g.gain.linearRampToValueAtTime(1, t0 + 0.015);
+      g.gain.setValueAtTime(1, tEnd - FO);
+      g.gain.linearRampToValueAtTime(0, tEnd);
+      s.start(t0, off);
     });
     return { master, stop: () => timer && clearInterval(timer) };
   }
