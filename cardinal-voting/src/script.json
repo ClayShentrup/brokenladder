@@ -1,0 +1,81 @@
+{
+  "title": "Rate, Don't Rank",
+  "subtitle": "why score and approval voting beat ranked choice",
+  "series": "votewell",
+  "voice": { "elevenlabs": "19STyYD15bswVz51nqLf", "elevenlabs_name": "Samara X", "polly": "Ruth" },
+  "lines": [
+    { "id": "O1", "text": "In August 2022, Alaska held a special election for its one seat in Congress, using ranked choice voting. Three serious candidates: Mary Peltola, a Democrat, and two Republicans, Sarah Palin and Nick Begich.", "say": "In August 2022, Alaska held a special election for its one seat in Congress, using ranked choice voting. Three serious candidates: Mary Peltola, a Democrat, and two Republicans, Sarah Palin and Nick Beggitch." },
+    { "id": "O2", "text": "When the ballots were made public, they showed something remarkable. Head to head, Begich beat Peltola. Head to head, Begich beat Palin, easily. He was the one candidate a majority preferred over each rival.", "say": "When the ballots were made public, they showed something remarkable. Head to head, Beggitch beat Peltola. Head to head, Beggitch beat Palin, easily. He was the one candidate a majority preferred over each rival." },
+    { "id": "O3", "text": "And he was the first of the three to be eliminated.", "gap": 0.9 },
+    { "id": "O4", "text": "That wasn't a glitch. It's how instant runoff works, and it's one of several ways a reform sold as the fix for spoiled elections quietly recreates them." },
+    { "id": "O5", "text": "There's a better fix, and it's almost embarrassingly simple. It's called cardinal voting: instead of ranking candidates, you rate them. This video is about why that one change matters so much.", "gap": 1.2 },
+
+    { "id": "P1", "text": "First, the problem everyone agrees on. Our usual election, choose one candidate, most votes wins, punishes you for having a favorite who might not win." },
+    { "id": "P2", "text": "In 2000, many voters liked Ralph Nader best but feared helping George W. Bush. Survey data later showed that roughly nine in ten voters who rated Nader highest voted for someone else." },
+    { "id": "P3", "text": "When they don't, you get spoilers. In St. Louis in 2017, seven candidates ran in the decisive Democratic mayoral primary. The winner got just thirty-two percent. Most voters wanted someone else, but they split their votes." },
+    { "id": "P4", "text": "This is called vote splitting, and it pushes every election toward two big parties, because voting for anyone else feels like throwing your vote away.", "gap": 1.0 },
+
+    { "id": "F1", "text": "There are two broad ways to fix this. You can let voters rank the candidates, first, second, third. Or you can let voters rate them, the way you'd rate a restaurant." },
+    { "id": "F2", "text": "Ranked choice voting, in the form used in America, is called instant runoff. Here's how it counts. If nobody has a majority of first choices, the candidate with the fewest is eliminated, and those ballots move to their next choice. Repeat until someone has a majority." },
+    { "id": "F3", "text": "Score voting is simpler. Give each candidate a score, say zero to five stars. Add them up. Highest total wins." },
+    { "id": "F4", "text": "And approval voting is score voting at its simplest: the score is either zero or one. You mark every candidate you approve of. Most approvals wins. It's the ballot you already know, with one rule removed: the rule that throws out your ballot if you mark more than one name.", "gap": 1.2 },
+
+    { "id": "R1", "text": "Instant runoff sounds like a perfect fix. Rank your favorite first, and if they lose, your vote moves to your backup. What could go wrong?" },
+    { "id": "R2", "text": "The catch is that your backup choice is invisible while your favorite is still in the race. Instant runoff only ever looks at one preference per ballot at a time." },
+    { "id": "R3", "text": "Picture three candidates: left, center, and right. Thirty-five percent of voters favor the left candidate, thirty-three percent favor the right, and thirty-two percent favor the center. But both the left and right voters rank center second." },
+    { "id": "R4", "text": "Center is the compromise. A landslide majority prefers center over left, and a landslide majority prefers center over right. And center has the fewest first choices, so center is eliminated first." },
+    { "id": "R5", "text": "This is called the center squeeze, and it isn't hypothetical. In Burlington, Vermont, in 2009, Andy Montroll would have beaten each of his opponents head to head, and instant runoff eliminated him. The next year, Burlington voters repealed the system." },
+    { "id": "R6", "text": "Alaska in 2022 was the same story. Begich was squeezed out between Palin and Peltola.", "say": "Alaska in 2022 was the same story. Beggitch was squeezed out between Palin and Peltola.", "gap": 1.0 },
+
+    { "id": "B1", "text": "Now here's the part instant runoff's promoters don't advertise. The center squeeze creates the exact incentive ranked choice voting was supposed to end." },
+    { "id": "B2", "text": "In Alaska, about five thousand votes separated Palin and Begich at the decisive round. If roughly twenty-six hundred voters who ranked Palin first and Begich second had simply flipped them, Begich would have survived, and beaten Peltola.", "say": "In Alaska, about five thousand votes separated Palin and Beggitch at the decisive round. If roughly twenty-six hundred voters who ranked Palin first and Beggitch second had simply flipped them, Beggitch would have survived, and beaten Peltola." },
+    { "id": "B3", "text": "In other words, Palin's supporters could have gotten a better result by ranking their favorite second. That's favorite betrayal, the same lesser-evil voting that sent Nader supporters to Gore." },
+    { "id": "B4", "text": "It gets stranger. Researchers found that if six thousand voters who had backed only Palin had instead ranked Peltola first, Peltola would have lost. More support, and she loses. Mathematicians call that a monotonicity failure." },
+    { "id": "B5", "text": "And there's the no-show paradox: in some instant runoff elections, a group of voters can get a better result by staying home than by voting honestly. Alaska had one of those too." },
+    { "id": "B6", "text": "So instant runoff doesn't end strategic voting. It moves it somewhere harder to see.", "gap": 1.2 },
+
+    { "id": "C1", "text": "Now take that same Alaska voter, who likes Palin best and Begich second, and give them a score ballot instead.", "say": "Now take that same Alaska voter, who likes Palin best and Beggitch second, and give them a score ballot instead." },
+    { "id": "C2", "text": "Palin gets a five. Begich, maybe a four, or a five to be safe. Peltola gets a zero. Notice what they never have to do: score Begich above Palin. There's no ordering to corrupt. Raising your compromise never requires lowering your favorite.", "say": "Palin gets a five. Beggitch, maybe a four, or a five to be safe. Peltola gets a zero. Notice what they never have to do: score Beggitch above Palin. There's no ordering to corrupt. Raising your compromise never requires lowering your favorite." },
+    { "id": "C3", "text": "That's the favorite betrayal criterion, and score and approval voting both pass it. Under them, you can always give your true favorite your top score." },
+    { "id": "C4", "text": "And the center squeeze can't happen, because nothing is eliminated. Every rating on every ballot counts, in every round, because there's only one round." },
+    { "id": "C5", "text": "Imagine you're that Nader voter in 2000, with your pen hovering over Gore. An election official walks up and says: new rule, you can vote for as many candidates as you like. Do you erase your vote for Gore? Of course not. You keep Gore, and add Nader.", "gap": 1.2 },
+
+    { "id": "S1", "text": "The main objection to approval voting goes like this: approving your second choice might help them beat your favorite. So surely smart voters will approve only their favorite, and it all collapses back into choose-one voting." },
+    { "id": "S2", "text": "Half of that is true. Approving your second choice can help them beat your favorite. But it can also help them beat someone much worse. The objection counts the cost and forgets the benefit." },
+    { "id": "S3", "text": "The smart approval strategy is simple: approve every candidate you like better than whoever you expect to win. If your favorite is a long shot, that usually means approving a compromise too." },
+    { "id": "S4", "text": "And real voters do. In Fargo's 2022 mayoral race, the average ballot approved about one and a half candidates. In St. Louis in 2025, a third of voters approved more than one, and among supporters of the two long-shot candidates, more than eighty percent approved someone else as well." },
+    { "id": "S5", "text": "In simulations where voters become more and more strategic, the share of single-candidate ballots barely moves, from about nineteen percent to about twenty-five. Three quarters of voters still approve more than one.", "gap": 1.2 },
+
+    { "id": "M1", "text": "Now we reach the deepest objection, and it deserves a careful answer. Score voting can elect a candidate even when a majority preferred someone else. Isn't that undemocratic?" },
+    { "id": "M2", "text": "It sounds damning, until you look closely at what majority rule actually means. Here's a puzzle. Three voters. Two proposals, X and Y." },
+    { "id": "M3", "text": "Amy loves X a little and hates Y. Bob loves Y a little and hates X. Cal likes both." },
+    { "id": "M4", "text": "Vote on X alone: Amy and Cal say yes. It passes. Vote on Y alone: Bob and Cal say yes. It passes. Now vote on doing both: Amy and Bob both say no, because each one's hated proposal outweighs their favorite. Both fails, two to one." },
+    { "id": "M5", "text": "Three majorities, and they contradict each other. Whatever you do, a majority loses one of the votes. So the rule that the majority should always win can't even be followed consistently. It isn't a principle. It's a slogan." },
+    { "id": "M6", "text": "Here's another way to see it. Say thirty-five percent of voters rank X, then Y, then Z. Thirty-three percent rank Z, X, Y. And thirty-two percent rank Y, Z, X. Suppose you think X is the group's best choice." },
+    { "id": "M7", "text": "Now Y gets caught in a scandal and drops to last place for everyone. Nobody's opinion of X or Z changes at all. But suddenly sixty-five percent of voters have Z as their favorite. If X was right before, it's still right now, because nothing about X versus Z changed. So a group can rightly prefer a candidate who isn't the favorite of a majority." },
+    { "id": "M8", "text": "What's missing from majority rule is intensity. Imagine two elections. In the first you're in a narrow majority, and you barely care. In the second you're in the minority, and you care enormously. Most people would happily trade the first win for the second." },
+    { "id": "M9", "text": "Score voting lets everyone make that trade at once. It doesn't ask how many people prefer a candidate. It asks how much. And it never takes away a majority's power: any majority that wants to win can still give its candidate a five, and everyone else a zero. Majority rule becomes a right, not an obligation." },
+    { "id": "M10", "text": "Here's the cleanest test of all. Suppose you didn't know which voter you'd be: rich or poor, majority or minority, intense or indifferent. What rule would you choose? The economist John Harsanyi showed that a rational person behind that veil would choose to maximize average well-being. That's exactly what score voting aims at.", "say": "Here's the cleanest test of all. Suppose you didn't know which voter you'd be: rich or poor, majority or minority, intense or indifferent. What rule would you choose? The economist John Harshahnyi showed that a rational person behind that veil would choose to maximize average well-being. That's exactly what score voting aims at.", "gap": 1.2 },
+
+    { "id": "V1", "text": "But we can do better than arguments. We can measure." },
+    { "id": "V2", "text": "Researchers simulate millions of elections with voters whose preferences are known in advance. Then they run each voting method on the same electorate, and measure how happy voters are with the winner. Picking the best possible candidate scores a hundred percent. Picking at random scores zero. This is called voter satisfaction efficiency." },
+    { "id": "V3", "text": "The mathematician Warren Smith ran a hundred and forty-four of these experiments, varying the number of voters, candidates, and issues. Of all the practical methods, score voting did the best in every single one." },
+    { "id": "V4", "text": "In his most realistic setup, honest voters did better under every method than strategic ones. But here's the striking part: score voting with every voter strategizing still beat instant runoff with every voter honest." },
+    { "id": "V5", "text": "Later studies add nuance. Some hybrid methods sometimes edge out plain approval. But across a wide range of models, score and approval voting land at or near the top, and instant runoff lands near the bottom." },
+    { "id": "V6", "text": "Even by the head-to-head standard instant runoff's fans prefer, it struggles. In one set of simulations mixing honest and strategic voters, approval voting picked the candidate who beat everyone head to head more often than methods designed for that very purpose, and far more often than instant runoff.", "gap": 1.2 },
+
+    { "id": "W1", "text": "This isn't just theory. In 2018, Fargo, North Dakota, became the first American city to adopt approval voting, with sixty-four percent of the vote." },
+    { "id": "W2", "text": "In 2020, St. Louis followed, with sixty-eight percent, using approval voting in its primary to choose two finalists. The vote splitting that decided 2017 was over." },
+    { "id": "W3", "text": "In 2025, when a Forward Party state senator in Utah resigned, his party let every voter in the district choose his replacement by approval voting. It's believed to be the first time approval voting filled a seat in a state legislature." },
+    { "id": "W4", "text": "And then came the backlash, which tells you something too. In 2024, Missouri amended its constitution to ban both ranked choice and approval voting, while letting St. Louis keep its system. In 2025, North Dakota banned both statewide, ending approval voting in Fargo." },
+    { "id": "W5", "text": "Officials rarely ban reforms that don't threaten anyone.", "gap": 1.2 },
+
+    { "id": "X1", "text": "There's one more advantage, and it may matter most. Approval voting is the only reform that's a subtraction, not an addition." },
+    { "id": "X2", "text": "Same ballot. Same machines. Same count: just add up the marks. Every precinct can report its totals, and the totals simply add. Instant runoff needs every ballot gathered in one place before anyone knows who won." },
+    { "id": "X3", "text": "And with ranked choice, the winner can start with almost nothing. In a six-way race, a candidate with barely three percent of first choices can survive every round and win. With approval, the winner is the candidate the most voters said yes to.", "gap": 1.2 },
+
+    { "id": "E1", "text": "So here's the whole case in one breath. Choose-one voting punishes you for having a favorite. Instant runoff hides the problem and then squeezes out the compromise. Score and approval voting let you support your favorite and your compromise at the same time, they never punish honesty about your favorite, and in study after study, they pick winners voters are happier with." },
+    { "id": "E2", "text": "Don't rank. Rate." },
+    { "id": "E3", "text": "And if you can only change one thing, change one rule: let people vote for every candidate they approve of.", "gap": 0.2 }
+  ]
+}
