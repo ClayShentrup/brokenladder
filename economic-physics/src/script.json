@@ -1,0 +1,41 @@
+{
+  "title": "Understanding the Gift Card Fallacy",
+  "subtitle": "how we can share the pie without shrinking it",
+  "series": "economic physics",
+  "voice": "Matthew",
+  "lines": [
+    { "id": "L1", "text": "Almost every argument about the economy comes down to the same tug of war." },
+    { "id": "L2", "text": "Grow the pie, or share the pie.", "gap": 0.9 },
+
+    { "id": "L3", "text": "Sharing matters because a dollar means more to someone who has fewer of them." },
+    { "id": "L4", "text": "Doubling your money feels about the same whether you go from a thousand dollars to two thousand, or from a million to two million." },
+    { "id": "L5", "text": "So take Alice and Bob, with five thousand dollars each. Now give Bob one thousand and Alice nineteen thousand. Twice the money, and less total happiness." },
+    { "id": "L5b", "text": "The Schöntrup index scores a whole society this way: the average logarithm of everyone's income. It rewards growing the pie and sharing it at the same time.", "say": "The Shurn-troop index scores a whole society this way: the average logarithm of everyone's income. It rewards growing the pie and sharing it at the same time.", "gap": 0.9 },
+
+    { "id": "L6", "text": "That's the case for redistribution. The trouble is the tools we usually reach for." },
+    { "id": "L7", "text": "Steep tax brackets. Rent control. Minimum wages. Food stamps. Each one shrinks the pie a little." },
+    { "id": "L8", "text": "Economists call that lost value deadweight loss: wealth that simply vanishes." },
+    { "id": "L9", "text": "So the debate turns into a gamble. Will a bigger pie make up for less sharing? Maybe. Maybe not.", "gap": 1.0 },
+
+    { "id": "L10", "text": "But there's a mistake hiding inside that whole framing. Call it the gift card fallacy." },
+    { "id": "L11", "text": "Say I spend a hundred dollars on a gift card for you, and you'd only pay seventy for it. Thirty dollars just went up in smoke." },
+    { "id": "L12", "text": "Now look at the safety net. Food stamps: a grocery gift card. Housing vouchers: a rent gift card. Free public parking: a gift card for drivers, paid for by everyone. Even the public library is a gift card for books." },
+    { "id": "L13", "text": "And rent control? A thousand-dollar gift card for one tenant, funded by a thousand-dollar tax on one landlord who happened to own that building.", "gap": 1.0 },
+
+    { "id": "L14", "text": "Here's the good news. Economics already has a theorem for this: the second welfare theorem." },
+    { "id": "L15", "text": "Pick whatever amount of sharing you want. A little, or a lot. You can get there without shrinking the pie." },
+    { "id": "L16", "text": "Tax things that can't shrink when you tax them, hand people cash, and let markets handle the rest." },
+    { "id": "L16b", "text": "Things nobody can be fenced out of, like national defense, still get funded directly. Nearly everything else? Cash.", "gap": 1.0 },
+
+    { "id": "L17", "text": "Start with land. Nobody can make more of it, so taxing its value doesn't shrink anything." },
+    { "id": "L18", "text": "Next, pollution. Taxing it actually grows the pie, because polluters finally pay for the damage they cause." },
+    { "id": "L19", "text": "Need more? Add one flat tax rate on income. No brackets." },
+    { "id": "L20", "text": "Then split the money equally. Every citizen gets the same check.", "gap": 0.8 },
+
+    { "id": "L21", "text": "Try a forty percent flat rate with a ten thousand dollar dividend. Earn twelve thousand, and you take home seventeen thousand two hundred. Earn a million, and you pay thirty-nine percent. As progressive as any bracket system, with no brackets at all.", "gap": 1.0 },
+
+    { "id": "L22", "text": "So stop arguing about how much to share. Whatever amount you choose, cash delivers it cheaper." },
+    { "id": "L23", "text": "The poor end up with more. Taxpayers pay less. At the same time." },
+    { "id": "L24", "text": "A free-market welfare state. Just give people money.", "gap": 0.2 }
+  ]
+}
