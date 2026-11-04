@@ -2,7 +2,7 @@
   "title": "Understanding the Gift Card Fallacy",
   "subtitle": "how we can share the pie without shrinking it",
   "series": "economic physics",
-  "voice": "Matthew",
+  "voice": { "elevenlabs": "Xb7hH8MSUJpSbSDYk0k2", "elevenlabs_name": "Alice", "elevenlabs_fallback": "EXAVITQu4vr4xnSDxMaL", "polly": "Ruth" },
   "lines": [
     { "id": "L1", "text": "Almost every argument about the economy comes down to the same tug of war." },
     { "id": "L2", "text": "Grow the pie, or share the pie.", "gap": 0.9 },

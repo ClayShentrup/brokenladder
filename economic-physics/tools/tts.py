@@ -7,6 +7,7 @@ re-times itself to the manifest automatically, so re-run render.cjs afterwards.
 Providers (pick with --provider, default: whichever key is present):
 
   elevenlabs   needs ELEVENLABS_API_KEY            (network: api.elevenlabs.io)
+               default voice: "Alice" (src/script.json), fallback "Sarah"
   polly        needs POLLY_AWS_ACCESS_KEY_ID and    (network: polly.<region>.amazonaws.com)
                POLLY_AWS_SECRET_ACCESS_KEY
 
@@ -43,7 +44,8 @@ def elevenlabs(text, voice, prev_text, next_text, out):
     body = {
         'text': text,
         'model_id': os.environ.get('ELEVENLABS_MODEL', 'eleven_multilingual_v2'),
-        'voice_settings': {'stability': 0.45, 'similarity_boost': 0.8, 'style': 0.25, 'use_speaker_boost': True},
+        # measured, lecture-hall delivery: steadier and less theatrical than the defaults
+        'voice_settings': {'stability': 0.6, 'similarity_boost': 0.8, 'style': 0.12, 'use_speaker_boost': True},
     }
     if prev_text: body['previous_text'] = prev_text
     if next_text: body['next_text'] = next_text
@@ -55,6 +57,13 @@ def elevenlabs(text, voice, prev_text, next_text, out):
             f.write(r.read())
     except urllib.error.HTTPError as e:
         sys.exit(f'elevenlabs error {e.code}: {e.read().decode()[:400]}')
+
+
+def list_voices():
+    req = urllib.request.Request('https://api.elevenlabs.io/v1/voices', headers={'xi-api-key': os.environ['ELEVENLABS_API_KEY']})
+    for v in json.load(urllib.request.urlopen(req, timeout=60))['voices']:
+        lab = v.get('labels') or {}
+        print(f"{v['voice_id']}  {v['name']:12} {lab.get('gender', ''):7} {lab.get('accent', ''):12} {lab.get('description', '') or lab.get('descriptive', '')}")
 
 
 def polly(text, voice, out, region):
@@ -81,15 +90,17 @@ def main():
     ap.add_argument('--voice', help='ElevenLabs voice_id or Polly VoiceId')
     ap.add_argument('--region', default='us-east-1')
     ap.add_argument('--only', help='comma-separated line ids')
+    ap.add_argument('--list-voices', action='store_true', help='print ElevenLabs voices on this account')
     a = ap.parse_args()
 
     provider = a.provider or ('elevenlabs' if os.environ.get('ELEVENLABS_API_KEY')
                               else 'polly' if os.environ.get('POLLY_AWS_ACCESS_KEY_ID') else None)
     if not provider:
         sys.exit('No TTS key found. Set ELEVENLABS_API_KEY, or POLLY_AWS_ACCESS_KEY_ID + POLLY_AWS_SECRET_ACCESS_KEY.')
-    voice = a.voice or ('JBFqnCBsd6RMkjVDRZzb' if provider == 'elevenlabs' else 'Matthew')
-
     script = json.load(open(os.path.join(ROOT, 'src', 'script.json')))
+    voice = a.voice or script.get('voice', {}).get(provider)
+    if a.list_voices:
+        list_voices(); return
     lines = script['lines']
     only = set(a.only.split(',')) if a.only else None
     os.makedirs(NARR, exist_ok=True)
