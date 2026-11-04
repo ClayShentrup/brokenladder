@@ -1,0 +1,9 @@
+{
+  "title": "Explainer Title",
+  "subtitle": "a one-line hook",
+  "series": "series name",
+  "voice": { "elevenlabs": "19STyYD15bswVz51nqLf", "elevenlabs_name": "Samara X", "polly": "Ruth" },
+  "lines": [
+    { "id": "L1", "text": "This is an example scene. Replace it with your first line.", "gap": 1.0 }
+  ]
+}
