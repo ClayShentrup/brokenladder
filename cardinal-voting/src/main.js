@@ -732,9 +732,9 @@
       }, out);
     } else KC += 400;
     if (t > c('R5') - 0.2) {
-      card(560, 520, 720, 460, 'Burlington, VT 2009', [['Montroll beat each rival', fadeIn(w('R5', 'beaten each'))], ['head to head', fadeIn(w('R5', 'beaten each'))], ['...and was eliminated', fadeIn(w('R5', 'eliminated him'))]], P.blue, popS(w('R5', 'Burlington')), 1, -0.03);
+      card(560, 500, 760, 330, 'Burlington, VT 2009', [['Montroll beat Kiss 54-46', fadeIn(w('R5', 'beaten each'))], ['Montroll beat Wright 56-44', fadeIn(w('R5', 'beaten each', 0.4))], ['...and finished third', fadeIn(w('R5', 'eliminated him'))]], P.blue, popS(w('R5', 'Burlington')), 1, -0.03);
       stamp('repealed 2010', 560, 860, 60, w('R5', 'repealed'));
-      card(1360, 520, 720, 460, 'Alaska 2022', [['Begich beat each rival', fadeIn(w('R6', 'Begich'))], ['head to head', fadeIn(w('R6', 'Begich'))], ['...and was eliminated', fadeIn(w('R6', 'squeezed'))]], P.red, popS(w('R6', 'Alaska')), 1, 0.03);
+      card(1360, 500, 760, 330, 'Alaska 2022', [['Begich beat Peltola 52-48', fadeIn(w('R6', 'Beggitch'))], ['Begich beat Palin 61-39', fadeIn(w('R6', 'Beggitch', 0.4))], ['...and was eliminated', fadeIn(w('R6', 'squeezed'))]], P.red, popS(w('R6', 'Alaska')), 1, 0.03);
     } else KC += 200;
   }
 
