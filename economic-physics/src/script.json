@@ -50,7 +50,7 @@
     { "id": "X3", "text": "Next, land. Picture an empty lot. A train station opens nearby. Then shops, then a hospital, then thousands of neighbors. The lot is suddenly worth far more." },
     { "id": "X4", "text": "The owner didn't do any of that. The lot soaked up its value from everything around it." },
     { "id": "X5", "text": "So a tax on land value falls on value the owner didn't create. The bill doesn't change based on anything they do: whether they work, build, sell, or trade. The person paying the tax isn't the person who made the value, so no trade gets blocked, and there's no deadweight loss." },
-    { "id": "X6", "text": "Need more than that? Add one flat tax on income. It does tax trades, so keep it as low as you can. But one rate means no brackets punishing a good year.", "gap": 1.0 },
+    { "id": "X6", "text": "Need more than that? Only then start taxing trades, beginning with the least harmful. First, a flat tax on consumption, which doesn't punish saving and investing. Income taxes come dead last. And keep each one to a single flat rate, so no bracket punishes a good year.", "gap": 1.0 },
 
     { "id": "V1", "text": "Then split the money equally. Every citizen gets the same check." },
     { "id": "V2", "text": "Try a forty percent flat rate with a ten thousand dollar dividend. Earn twelve thousand, and you take home seventeen thousand two hundred. Earn a million, and you pay thirty-nine percent. As progressive as any bracket system, with no brackets at all." },

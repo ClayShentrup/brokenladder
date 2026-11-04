@@ -983,17 +983,26 @@
         stamp('no deadweight loss', 1490, 800, 56, w('X5', 'no deadweight'), { color: P.green, rot: 0.04 });
       } else KC += 200;
     }, ph);
-    // X6: flat income tax, last resort
+    // X6: the order of resort: pollution, land, then consumption, income dead last
     if (t > c('X6') - 0.2) {
-      grp(700, 540, popS(w('X6', 'flat tax')), 0, () => {
-        rect(-220, -140, 440, 280, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 4 });
-        txt('40%', 0, -20, 150, { color: P.blue });
-        line(-150, 80, 150, 80, 1, { strokeWidth: 6, stroke: P.blue });
+      wt('the order of taxes', 960, 120, 84, c('X6'), w('X6', 'least harmful'), { color: P.blue });
+      const rows = [
+        ['1', 'pollution', 'grows the pie', P.green, c('X6')],
+        ['2', 'land value', 'no deadweight loss', P.green, c('X6') + 0.25],
+        ['3', 'consumption', "taxes trades, spares saving", P.gold, w('X6', 'consumption')],
+        ['4', 'income', 'dead last', P.red, w('X6', 'Income taxes')],
+      ];
+      rows.forEach(([n, name, note, col, t0], i) => {
+        const y = 290 + i * 150, s = popS(t0);
+        grp(560, y, s, 0, () => {
+          circ(-200, 0, 90, 1, { fill: col, fillStyle: 'solid' });
+          txt(n, -200, 2, 60, { color: P.cream });
+          txt(name, -120, 0, 72, { align: 'left' });
+        });
+        txt(note, 1080, y, 54, { color: col, alpha: fadeIn(t0 + 0.3), align: 'left' });
+        if (i < 2) { if (s > 0.5) checkMark(1000, y, 0.6, 1); else KC += 2; } else KC += 2;
       });
-      txt('flat income tax', 700, 770, 60, { alpha: fadeIn(w('X6', 'flat tax')) });
-      wt('does tax trades: keep it low', 1350, 450, 54, w('X6', 'does tax trades'), w('X6', 'as low', 0.5), { color: P.red });
-      wt('one rate: no brackets', 1350, 560, 54, w('X6', 'one rate'), w('X6', 'brackets'), { color: P.teal });
-      wt('no penalty for a good year', 1350, 650, 54, w('X6', 'good year', -0.3), ce('X6', 0.3), { color: P.teal });
+      wt('one flat rate each: no brackets', 960, 960, 60, w('X6', 'single flat rate'), w('X6', 'good year'), { color: P.teal });
     } else KC += 100;
   }
 
@@ -1003,7 +1012,7 @@
     jar(960, 500, 0.95 * popS(c('V1') - 0.4), 1, 0.55 - 0.3 * prog(t, w('V1', 'split'), ce('V1')));
     grp(330, 230, popS(c('V1') - 0.3), 0, () => factory(0, 0, 0.7, 1));
     grp(960, 150, popS(c('V1') - 0.2), 0, () => lot(0, 0, 0.45, 1, 0.6));
-    grp(1590, 230, popS(c('V1') - 0.1), 0, () => { rect(-100, -60, 200, 120, 1, { fill: P.cream, fillStyle: 'solid' }); txt('40%', 0, 2, 76, { color: P.blue }); });
+    grp(1590, 230, popS(c('V1') - 0.1), 0, () => { rect(-120, -60, 240, 120, 1, { fill: P.cream, fillStyle: 'solid' }); txt('flat tax', 0, 2, 64, { color: P.blue }); });
     [[420, 260, 790, 400], [960, 230, 960, 330], [1500, 260, 1130, 400]].forEach(([a, b, cc, d]) => arrow(a, b, cc, d, fadeIn(c('V1') - 0.3), { stroke: P.gold, strokeWidth: 5 }));
     const people = [[200, P.red, 1, HAIR_A], [560, P.blue, 4, HAIR_B], [960, P.gold, 2, null], [1360, P.plum, 3, HAIR_B], [1720, P.teal, 0, HAIR_A]];
     const t0 = w('V1', 'split'), t1 = w('V1', 'same check');
@@ -1186,7 +1195,7 @@
     ev('pop', w('X4', 'owner')); ev('scribble', w('X4', "didn't"), 0.6);
     stamps([['X5', 'tax on land value']]); ev('pop', w('X5', "doesn't change")); ['work', 'build', 'sell', 'or trade'].forEach((x) => ev('tick', w('X5', x, 0.2)));
     stamps([['X5', "isn't the person"], ['X5', 'no deadweight']]); ev('ding', w('X5', 'no deadweight', 0.1));
-    ev('pop', w('X6', 'flat tax')); ev('scribble', w('X6', 'does tax trades'), 0.6); ev('scribble', w('X6', 'one rate'), 0.6);
+    ev('scribble', c('X6'), 0.8); ev('pop', c('X6')); ev('pop', c('X6') + 0.25); ev('pop', w('X6', 'consumption')); ev('pop', w('X6', 'Income taxes')); ev('sad', w('X6', 'dead last')); ev('scribble', w('X6', 'single flat rate'), 0.8);
     // dividend
     ev('pop', c('V1') - 0.4); [0, 1, 2, 3, 4].forEach((i) => { const t0 = w('V1', 'split'), t1 = w('V1', 'same check'); ev('chaching', t0 + (t1 - t0) * (i / 5) + 0.55); }); stamps([['V1', 'same check']]);
     ev('scribble', c('V2') - 0.1, 1.0); [['V2', 'Earn twelve'], ['V2', 'take home'], ['V2', 'two hundred'], ['V2', 'Earn a million']].forEach(([id, x]) => ev('tick', w(id, x)));
