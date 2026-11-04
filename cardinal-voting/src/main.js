@@ -880,6 +880,30 @@
     } else KC += 100;
     if (t > w('Y2', 'lowest approval')) stamp('official winner: lowest approval', 1440, 680, 50, w('Y2', 'lowest approval'), { color: P.red }); else KC += 4;
   }
+  function sOccupy() {
+    const t = T;
+    stamp('Manhattan, Election Day 2012', 960, 110, 54, c('Y3'), { color: P.blue, rot: -0.03 });
+    wt('507 voters, each voting four ways', 960, 200, 46, w('Y3', 'polled'), w('Y3', 'four different'), { font: PRINT });
+    const rows = [['Stein (Green)', 3.3, 52, P.green, w('Y4', 'Jill Stein'), w('Y4', 'more than half')], ['Johnson (Libertarian)', 2.0, 27, P.gold, w('Y4', 'Gary Johnson'), w('Y4', 'over a quarter')], ['Romney', 8.4, 13, P.red, w('Y4', 'Gary Johnson', 1.2), w('Y4', 'over a quarter', 0.6)]];
+    txt('choose one', 760, 300, 40, { alpha: fadeIn(w('Y4', 'choose-one')), font: PRINT, color: P.grey });
+    txt('approval', 1390, 300, 40, { alpha: fadeIn(w('Y4', 'approving')), font: PRINT, color: P.teal });
+    rows.forEach(([n, a, b, col, t0, t1], i) => {
+      const y = 400 + i * 130;
+      hbar(560, y, 400, 70, (a / 60) * eOut(prog(t, t0, t0 + 0.6)), P.grey, n, fadeIn(t0) > 0.5 ? '~' + a.toFixed(0) + '%' : '', { ls: 42 });
+      hbar(1190, y, 400, 70, (b / 60) * eOut(prog(t, t1, t1 + 0.8)), col, '', fadeIn(t1) > 0.5 ? '~' + b + '%' : '');
+    });
+    txt('Obama won every way', 960, 790, 48, { alpha: fadeIn(w('Y4', 'Obama won')), color: P.blue });
+    stamp('instant runoff never looked at 2nd and 3rd choices', 960, 890, 50, w('Y4', 'never counted'), { color: P.red });
+    stamp('same voters. different ballot.', 960, 1000, 58, w('Y4', 'Same voters'), { color: P.green, rot: 0.02 });
+    if (t > c('Y5') - 0.2) {
+      ctx.save(); ctx.globalAlpha = fadeIn(c('Y5') - 0.2, 0.4); ctx.drawImage(PAPER, -W, 0, W * 3, H); ctx.restore();
+      txt('Jill Stein (Green)', 960, 230, 60, { alpha: fadeIn(c('Y5')), color: P.green });
+      [['choose one', 3.3, P.grey, c('Y5')], ['instant runoff, round 1', 4.0, P.red, w('Y5', 'four percent')], ['approval', 52, P.green, w('Y5', 'every candidate')]].forEach(([n, v, col, t0], i) => {
+        hbar(760, 400 + i * 150, 900, 90, (v / 60) * eOut(prog(t, t0, t0 + 0.8)), col, n, fadeIn(t0) > 0.5 ? '~' + v.toFixed(0) + '%' : '', { ls: 46 });
+      });
+      stamp('devastating for third parties under instant runoff', 960, 900, 52, w('Y5', 'devastating'), { color: P.red });
+    } else KC += 100;
+  }
 
   // M1-M7: majority rule contradicts itself
   function sMajority() {
@@ -1110,6 +1134,7 @@
       { start: c('C1') - 0.7, draw: sCardinal },
       { start: c('S1') - 0.7, draw: sStrategy },
       { start: c('Y1') - 0.7, draw: sHidden },
+      { start: c('Y3') - 0.7, draw: sOccupy },
       { start: c('M1') - 0.7, draw: sMajority },
       { start: c('M7b') - 0.7, draw: sCardinality },
       { start: c('M8') - 0.7, draw: sIntensity },
@@ -1147,7 +1172,7 @@
     ev('pop', c('S1')); at('S2', 'Half', 'pop'); at('S2', 'much worse', 'boing'); at('S2', 'forgets', 'stamp');
     ev('pop', c('S3')); at('S3', 'expect to win', 'slide'); at('S3', 'better than', 'ding');
     at('S4', 'Fargo', 'pop'); at('S4', 'St. Louis', 'pop'); at('S4', 'eighty percent', 'ding'); ev('pop', c('S5')); at('S5', 'barely moves', 'slide');
-    ev('stamp', c('Y1')); at('Y1', 'official vote', 'slide'); at('Y1', 'finished last', 'sad'); at('Y2', 'Fifty-five', 'slide'); at('Y2', 'Head to head', 'pop'); at('Y2', 'beat both', 'pop'); at('Y2', 'lowest approval', 'stamp');
+    ev('stamp', c('Y1')); at('Y1', 'official vote', 'slide'); at('Y1', 'finished last', 'sad'); at('Y2', 'Fifty-five', 'slide'); at('Y2', 'Head to head', 'pop'); at('Y2', 'beat both', 'pop'); at('Y2', 'lowest approval', 'stamp'); ev('stamp', c('Y3')); at('Y4', 'Jill Stein', 'pop'); at('Y4', 'more than half', 'slide'); at('Y4', 'over a quarter', 'slide'); at('Y4', 'never counted', 'stamp'); at('Y4', 'Same voters', 'stamp'); ev('whoosh', c('Y5') - 0.2); at('Y5', 'devastating', 'stamp'); at('Y5', 'four percent', 'slide'); at('Y5', 'every candidate', 'slide');
     at('M1', 'undemocratic', 'stamp'); at('M2', 'Two proposals', 'pop'); ['Amy', 'Bob', 'Cal'].forEach((x) => at('M3', x, 'pop2'));
     [['Vote on X'], ['Vote on Y'], ['doing both']].forEach(([x]) => { at('M4', x, 'tick'); at('M4', x, 'stamp', 1.2); });
     at('M5', 'contradict', 'stamp'); at('M5', 'slogan', 'stamp'); ev('pop', c('M6')); at('M7', 'scandal', 'poof'); at('M7', 'sixty-five', 'sad'); at('M7', "it's still right", 'stamp');

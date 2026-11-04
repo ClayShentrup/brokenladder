@@ -1,0 +1,320 @@
+2012 Occupy Wall Street polls
+In 2012, the Politics and Electoral Reform Working Group of 
+Occupy Wall Street
+ conducted experimental
+surveys in New York City to investigate how voters behave under four different voting methods: 
+Plurality
+voting
+, 
+Approval voting
+, 
+Score voting
+ (0-5), and 
+Instant-Runoff Voting
+ (with a maximum of 3 rankings).
+[
+1
+]
+[
+2
+]
+[
+3
+]
+The polls were taken using custom software on iPads.
+[
+4
+]
+They first polled 316 people at Occupy protest sites and events around Manhattan, in the spring of 2012, to test
+the software and people's reactions.
+[
+1
+]
+ In this poll, voters selected a candidate under Plurality voting, and then
+were randomly assigned two of the other voting systems.
+[
+5
+]
+The poll asked "If this year's elections were held today, what party's candidates would you favor?" with this list
+of candidates:
+[
+5
+]
+▪ 
+Democratic Party
+▪ 
+Green Party
+▪ 
+Independent candidates
+▪ 
+Republican Party
+▪ 
+Libertarian Party
+▪ 
+Socialist Party
+▪ 
+A write-in option
+No adjustment was made to correct for the unrepresentativeness of the voters; who were primarily OWS
+participants;
+[
+5
+]
+ it was just to compare voting behavior under different systems.
+[
+6
+]
+The Democratic Party won the plurality election by a small margin, with a total of 35% of the votes. The Green
+Party won under the other 3 methods.
+Support for third parties was much higher under the cardinal systems compared to Plurality, moving the
+Democratic party down to 4th place:
+[
+5
+]
+Preliminary pilot study
+Democratic Green Independent Socialist Libertarian Republican Write-inCandidate
+0
+10
+20
+30
+40
+50
+60
+70
+80
+Votes (% of possible)
+Legend
+Plurality
+Approval
+Score
+The first preferences for the IRV election were similar to the plurality election, though with a little more
+support for third parties:
+[
+5
+]
+Democratic Green Independent Socialist Libertarian Republican Write-inCandidate
+0
+5
+10
+15
+20
+25
+30
+35
+Votes (% of possible)
+Legend
+Plurality
+IRV (ﬁrst preferences)
+Since no one obtained a majority in the first round, the IRV election proceeded through 13 elimination rounds
+to find a winner, which was the Green Party.
+The votes were tallied by hand, and the organizers found it much easier to tally the Approval and Score votes
+than the Instant-Runoff votes.
+[
+6
+]
+On Election Day, November 6, 2012, they polled 507 voters inside polling places
+[
+4
+]
+ in Manhattan's left-leaning
+69th Assembly District. In this poll, every voter participated in all 4 voting systems.
+[
+5
+]
+The candidates were the same as those in the real election:
+[
+1
+]
+▪ 
+Barack Obama (Democratic Party)
+▪ 
+Mitt Romney (Republican Party)
+▪ 
+Jill Stein (Green Party)
+▪ 
+Peta Lindsay (Socialism and Liberation Party)
+▪ 
+Gary Johnson (Libertarian)
+▪ 
+Virgil Goode (Constitution Party)
+▪ 
+Write-in option
+No adjustment was made to correct for the unrepresentativeness of the district, though polling only took place
+in a single district, so that the poll's plurality results could be compared with the results of the actual plurality
+election in that district. The plurality results were similar for both, indicating that the exit poll was reasonably
+accurate to the district:
+[
+1
+]
+[
+5
+]
+Obama Romney Stein Johnson Lindsay Goode Write-inCandidate
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Votes (% of possible)
+Legend
+Actual election
+OWS exit poll
+Obama easily won under all 4 voting systems, though Approval and Score showed that there was much higher
+support for third parties than traditional plurality elections would imply. Romney's position in the overall
+ranking dropped from second place to last place (ignoring write-ins) under the cardinal systems:
+[
+5
+]
+Exit poll
+Obama Romney Stein Johnson Lindsay Goode Write-inCandidate
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Votes (% of possible)
+Legend
+Plurality
+Approval
+Score
+The first preferences for the IRV election were similar to the plurality election. Obama won the IRV election
+without any elimination rounds necessary, so second and third preferences (which favored the Green Party)
+were ignored:
+[
+5
+]
+Obama Romney Stein Johnson Lindsay Goode Write-inCandidate
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Votes (% of possible)
+Legend
+Plurality
+IRV (ﬁrst preferences)
+In the IRV election, 29% 
+bullet-voted
+ for only one candidate, while the others selected two or three candidates
+(the maximum allowed):
+[
+5
+]
+1 2 3Number of candidates ranked
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+Voters (%)
+29
+12
+58
+The polling group concluded that "Any of the alternative methods we tested would be better than the method
+we currently use for our elections."
+[
+4
+]
+1. 
+"Podcast 2013-05-27: Follow-up with Occupy Wall Street's TJ Frawls"
+ (
+https://electology.org/podcasts/201
+3-05-27_tj_frawls
+)
+. 
+The Center for Election Science
+. 2013-05-27
+. Retrieved 
+2018-09-23
+.
+2. 
+"Results from Occupy Wall Street voting methods study"
+ (
+https://groups.google.com/d/msg/electionscienc
+e/1cFXfrwU_CE/aGreAqJh4rYJ
+)
+. 
+Google Groups
+. 2013-03-11
+. Retrieved 
+2018-09-23
+.
+3. 
+"Press release: Occupy Wall Street Politics & Electoral Reform Working Group Releases Report on First
+Voting Experiment Survey Sample, Prepares for Election Day Alternative Voting Study"
+ (
+http://web.archiv
+e.org/web/20130728110015/http://www.paercom.net/downloads/ﬁles/Press%20Release.pdf
+)
+(PDF)
+. July
+2012. Archived from 
+the original
+ (
+http://www.paercom.net/downloads/ﬁles/Press%20Release.pdf
+)
+(PDF)
+ on
+2013-07-28
+. Retrieved 
+2018-09-23
+.
+4. 
+"Occupy Wall Street's TJ Frawley on how to ﬁx the US Electoral System - Manhattan Libertarian Party"
+ (
+htt
+p://manhattanlp.org/occupy-wall-streets-tj-frawley-on-how-to-ﬁx-the-us-electoral-system/
+)
+. 
+Manhattan
+Libertarian Party
+. 2013-01-09
+. Retrieved 
+2018-09-23
+.
+5. 
+"Make Voting Count: an Experiment in Alternative Voting Methods"
+ (
+https://electology.org/sites/default/ﬁles/
+Full%20Report.pdf
+)
+(PDF)
+. Politics and Electoral Reform Working Group. March 2013.
+6. 
+"Podcast 2012-08-20: Interview with Occupy Wall Street's TJ Frawls on Electoral System Pilot Poll"
+ (
+https://
+electology.org/podcasts/2012-08-20_tj_rawls
+)
+. 
+The Center for Election Science
+. 2012-08-20
+. Retrieved
+2018-09-23
+.
+Retrieved from "
+https://electowiki.org/wiki/2012_Occupy_Wall_Street_polls?oldid=17784
+"
+References
