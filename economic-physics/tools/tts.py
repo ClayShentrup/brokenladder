@@ -7,7 +7,7 @@ re-times itself to the manifest automatically, so re-run render.cjs afterwards.
 Providers (pick with --provider, default: whichever key is present):
 
   elevenlabs   needs ELEVENLABS_API_KEY            (network: api.elevenlabs.io)
-               default voice: "Alice" (src/script.json), fallback "Sarah"
+               default voice: "Helen" (src/script.json)
   polly        needs POLLY_AWS_ACCESS_KEY_ID and    (network: polly.<region>.amazonaws.com)
                POLLY_AWS_SECRET_ACCESS_KEY
 
