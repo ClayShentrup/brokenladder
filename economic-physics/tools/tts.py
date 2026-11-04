@@ -7,7 +7,7 @@ re-times itself to the manifest automatically, so re-run render.cjs afterwards.
 Providers (pick with --provider, default: whichever key is present):
 
   elevenlabs   needs ELEVENLABS_API_KEY            (network: api.elevenlabs.io)
-               default voice: "Helen" (src/script.json)
+               default voice: "Samara X" (src/script.json)
   polly        needs POLLY_AWS_ACCESS_KEY_ID and    (network: polly.<region>.amazonaws.com)
                POLLY_AWS_SECRET_ACCESS_KEY
 
@@ -30,11 +30,11 @@ def duration(path):
     return float(out.strip())
 
 
-def trim(path):
-    """Strip leading/trailing silence so lines butt up against the animation cues."""
+def trim(path, lead=True):
+    """Strip trailing (and optionally leading) silence so lines butt up against the animation cues."""
     tmp = path + '.tmp.mp3'
-    flt = ('silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,'
-           'areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.12,areverse')
+    flt = ('silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,' if lead else '') + \
+          'areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.12,areverse'
     subprocess.check_call(['ffmpeg', '-v', 'error', '-y', '-i', path, '-af', flt, '-c:a', 'libmp3lame', '-q:a', '2', tmp])
     os.replace(tmp, path)
 
@@ -50,13 +50,19 @@ def elevenlabs(text, voice, prev_text, next_text, out):
     if prev_text: body['previous_text'] = prev_text
     if next_text: body['next_text'] = next_text
     req = urllib.request.Request(
-        f'https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_192',
+        f'https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128',
         data=json.dumps(body).encode(), headers={'xi-api-key': key, 'Content-Type': 'application/json'})
     try:
-        with urllib.request.urlopen(req, timeout=120) as r, open(out, 'wb') as f:
-            f.write(r.read())
+        with urllib.request.urlopen(req, timeout=180) as r:
+            res = json.load(r)
     except urllib.error.HTTPError as e:
         sys.exit(f'elevenlabs error {e.code}: {e.read().decode()[:400]}')
+    import base64
+    with open(out, 'wb') as f:
+        f.write(base64.b64decode(res['audio_base64']))
+    al = res.get('alignment') or res.get('normalized_alignment')
+    # per-character start times, so animation cues can land on exact words
+    return [round(x, 3) for x in al['character_start_times_seconds']] if al else None
 
 
 def list_voices():
@@ -116,11 +122,15 @@ def main():
         if provider == 'elevenlabs':
             prev = lines[i - 1].get('say', lines[i - 1]['text']) if i else None
             nxt = lines[i + 1].get('say', lines[i + 1]['text']) if i + 1 < len(lines) else None
-            elevenlabs(say, voice, prev, nxt, out)
+            chars = elevenlabs(say, voice, prev, nxt, out)
+            trim(out, lead=False)  # keep leading audio so character timings stay valid
         else:
+            chars = None
             polly(say, voice, out, a.region)
-        trim(out)
+            trim(out)
         man['lines'][l['id']] = {'file': f"{l['id']}.mp3", 'duration': round(duration(out), 3)}
+        if chars:
+            man['lines'][l['id']]['chars'] = chars
         print(f"{l['id']:5} {man['lines'][l['id']]['duration']:6.2f}s  {say[:70]}")
 
     json.dump(man, open(man_path, 'w'), indent=2)

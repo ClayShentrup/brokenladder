@@ -17,7 +17,7 @@
   // ---------- math ----------
   const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
   const lerp = (a, b, u) => a + (b - a) * u;
-  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const prog = (t, a, b) => { if (b < a + 0.12) b = a + 0.35; return clamp((t - a) / (b - a)); };
   const eIO = (u) => (u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2);
   const eOut = (u) => 1 - Math.pow(1 - u, 3);
   const eBack = (u) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); };
@@ -34,13 +34,55 @@
   function buildTimeline(script, durs) {
     const lines = {}; let t = 3.8;
     script.lines.forEach((l) => {
-      const d = (durs && durs[l.id]) || estimate(l.say || l.text);
-      lines[l.id] = Object.assign({}, l, { start: t, dur: d, end: t + d });
+      const info = durs && durs[l.id];
+      const d = (info && info.duration) || estimate(l.say || l.text);
+      lines[l.id] = Object.assign({}, l, { start: t, dur: d, end: t + d, chars: info && info.chars });
       t += d + (l.gap != null ? l.gap : 0.42);
     });
     return { lines, order: script.lines.map((l) => l.id), total: t + 4.2 };
   }
-  const c = (id, f = 0) => TL.lines[id].start + f * TL.lines[id].dur;
+  // Moments that should land on a specific spoken word (used once real narration timings exist).
+  const WORD_CUES = {
+    'L2:0': 'Grow', 'L2:0.02': 'Grow', 'L2:0.42': 'share', 'L2:0.5': 'share', 'L2:0.55': 'share',
+    'L4:0.25': 'a thousand', 'L4:0.32': 'to two', 'L4:0.36': 'two thousand', 'L4:0.47': 'or from',
+    'L4:0.7': 'a million', 'L4:0.74': 'to two million', 'L4:0.78': 'two million', 'L4:0.9': 'million.',
+    'L5:0.02': 'Alice', 'L5:0.08': 'Bob', 'L5:0.4': 'Now give', 'L5:0.42': 'one thousand', 'L5:0.5': 'nineteen', 'L5:0.8': 'Twice',
+    'L5b:0.6': 'growing', 'L5b:0.72': 'sharing', 'L5b:0.75': 'sharing', 'L5b:0.82': 'at the same', 'L5b:0.9': 'same time',
+    'L7:0.02': 'Steep', 'L7:0.15': 'Rent', 'L7:0.29': 'Minimum', 'L7:0.43': 'Food', 'L7:0.62': 'Each one', 'L7:0.65': 'shrinks',
+    'L8:0.0': 'Economists', 'L8:0.05': 'lost value', 'L8:0.18': 'deadweight', 'L8:0.38': 'simply', 'L8:0.6': 'simply',
+    'L9:0.0': 'So the', 'L9:0.1': 'gamble', 'L9:0.25': 'Will', 'L9:0.72': 'Maybe.', 'L9:0.85': 'Maybe not',
+    'L10:0.55': 'Call it', 'L10:0.85': 'fallacy',
+    'L11:0.12': 'gift card', 'L11:0.13': 'gift card', 'L11:0.35': "you'd only", 'L11:0.36': "you'd only", 'L11:0.5': 'seventy',
+    'L11:0.62': 'Thirty', 'L11:0.66': 'Thirty', 'L11:0.7': 'went up', 'L11:0.72': 'went up', 'L11:0.86': 'smoke',
+    'L12:0.13': 'Food stamps', 'L12:0.3': 'Housing', 'L12:0.48': 'Free public', 'L12:0.6': 'paid for', 'L12:0.78': 'public library',
+    'L13:0.15': 'gift card', 'L13:0.2': 'gift card', 'L13:0.5': 'funded', 'L13:0.62': 'tax on', 'L13:0.9': 'happened',
+    'L14:0.25': 'theorem for', 'L14:0.55': 'the second', 'L14:0.6': 'the second',
+    'L15:0.1': 'A little', 'L15:0.55': 'You can', 'L15:0.75': 'shrinking', 'L15:0.8': 'shrinking',
+    'L16:0.05': 'Tax things', 'L16:0.45': 'hand people', 'L16:0.72': 'let markets',
+    'L16b:0.68': 'Nearly', 'L16b:0.75': 'Cash.',
+    'L17:0.5': 'Nobody', 'L18:0.4': 'Taxing', 'L18:0.5': 'grows', 'L19:0.4': 'Add one', 'L19:0.5': 'No brackets',
+    'L20:0.3': 'split', 'L20:0.4': 'split', 'L20:0.75': 'same check', 'L20:0.9': 'check',
+    'L21:0.2': 'Earn twelve', 'L21:0.3': 'seventeen', 'L21:0.33': 'take home', 'L21:0.38': 'two hundred', 'L21:0.43': 'Earn a million',
+    'L21:0.52': 'pay thirty', 'L21:0.55': 'thirty-nine', 'L21:0.62': 'percent. As', 'L21:0.6': 'As progressive', 'L21:0.64': 'As progressive',
+    'L21:0.72': 'bracket system', 'L21:0.9': 'no brackets',
+    'L22:0.25': 'how much', 'L22:0.55': 'Whatever', 'L22:0.8': 'cash delivers',
+    'L23:0.35': 'Taxpayers', 'L23:0.4': 'Taxpayers', 'L23:0.72': 'At the same',
+    'L24:0.2': 'welfare', 'L24:0.5': 'Just', 'L24:0.55': 'Just', 'L24:0.6': 'Just give', 'L24:0.62': 'Just give', 'L24:0.7': 'money',
+  };
+  // cue: fraction f through a line. With word timings, f means "f of the way through the
+  // text", mapped to when that character is actually spoken.
+  const c = (id, f = 0) => {
+    const L = TL.lines[id];
+    const w = WORD_CUES[id + ':' + f];
+    if (w && L.chars) {
+      const txt = L.say || L.text, i = txt.indexOf(w);
+      if (i >= 0) return L.start + L.chars[i];
+      console.warn('word cue not found', id, w);
+    }
+    if (!L.chars || f <= 0) return L.start + f * L.dur;
+    if (f >= 1) return L.end;
+    return L.start + L.chars[Math.min(L.chars.length - 1, Math.floor(f * L.chars.length))];
+  };
   const ce = (id, extra = 0) => TL.lines[id].end + extra;
 
   // ---------- drawing primitives ----------
@@ -942,7 +984,7 @@
     const durs = {}, bufs = {};
     await Promise.all(Object.keys(man.lines).map(async (id) => {
       const info = man.lines[id];
-      durs[id] = info.duration;
+      durs[id] = { duration: info.duration, chars: info.chars };
       if (ac) {
         try { const r = await fetch('../narration/' + info.file); bufs[id] = await ac.decodeAudioData(await r.arrayBuffer()); } catch (e) { console.warn('narration', id, e); }
       }
