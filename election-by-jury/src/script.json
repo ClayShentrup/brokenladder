@@ -17,7 +17,9 @@
     { "id": "A2", "text": "Candidates need money to buy name recognition, so they spend their time courting donors. Plenty of capable people never run at all." },
     { "id": "A3", "text": "Now picture a different approach. Draw a few hundred citizens at random, the way we already draw trial juries." },
     { "id": "A4", "text": "A random sample is a mirror of the population. Every age, every income, every political leaning shows up in roughly its real proportions. Nobody chose them, so nobody owns them." },
-    { "id": "A5", "text": "And you need far fewer people than you'd think. With a randomly chosen jury of just twenty-three, if sixteen favor one candidate, you can be more than ninety percent confident the whole population would too. That holds whether the town has a thousand people or a million.", "gap": 1.0 },
+    { "id": "A5", "text": "And you need far fewer people than you'd think. With a randomly chosen jury of just twenty-three, if sixteen favor one candidate, you can be more than ninety percent confident the whole population would too. That holds whether the town has a thousand people or a million." },
+
+    { "id": "A5b", "text": "Simulations by election researcher Marcus Ogren back this up. With ten candidates and score voting, a jury of just twenty-four closes about ninety-five percent of the gap between a random winner and the best possible one. A jury of ninety-six closes ninety-eight percent. Polling the entire population only gets you to ninety-nine.", "gap": 1.0 },
 
     { "id": "S1", "text": "So why use bigger juries at all? Security. Every juror is one more person a briber would have to reach." },
     { "id": "S2", "text": "Suppose each bribe attempt has just a five percent chance of being reported. Try to corrupt fourteen jurors, and you're more likely than not to get caught. Thirty jurors, and it's nearly four in five." },
