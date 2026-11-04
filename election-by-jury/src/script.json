@@ -1,0 +1,62 @@
+{
+  "title": "Election by Jury",
+  "subtitle": "what if we chose our leaders the way we choose juries?",
+  "series": "election by jury",
+  "voice": { "elevenlabs": "19STyYD15bswVz51nqLf", "elevenlabs_name": "Samara X", "polly": "Ruth" },
+  "lines": [
+    { "id": "H1", "text": "In 2021, a county in Georgia tried something unusual. It created an ethics board, and let a jury of randomly chosen citizens pick most of its members." },
+    { "id": "H2", "text": "Four years later, that board did something ethics boards almost never do. It investigated the most powerful politician in the county." },
+    { "id": "H3", "text": "What happened next is one of the best arguments we have for an idea called election by jury. We'll come back to it. First, the idea.", "gap": 1.0 },
+
+    { "id": "P1", "text": "Any system for choosing leaders has to get two things right." },
+    { "id": "P2", "text": "Alignment: the people making the choice should want what the public wants." },
+    { "id": "P3", "text": "And competence: they need enough information, and enough time, to choose well. Good intentions with bad information still produce bad results." },
+    { "id": "P4", "text": "Mass elections struggle with both.", "gap": 1.0 },
+
+    { "id": "A1", "text": "Start with alignment. Elections are decided by whoever shows up, and the people who show up tend to be older, wealthier, and more partisan than the public as a whole." },
+    { "id": "A2", "text": "Candidates need money to buy name recognition, so they spend their time courting donors. Plenty of capable people never run at all." },
+    { "id": "A3", "text": "Now picture a different approach. Draw a few hundred citizens at random, the way we already draw trial juries." },
+    { "id": "A4", "text": "A random sample is a mirror of the population. Every age, every income, every political leaning shows up in roughly its real proportions. Nobody chose them, so nobody owns them." },
+    { "id": "A5", "text": "And you need far fewer people than you'd think. With a randomly chosen jury of just twenty-three, if sixteen favor one candidate, you can be more than ninety percent confident the whole population would too. That holds whether the town has a thousand people or a million.", "gap": 1.0 },
+
+    { "id": "S1", "text": "So why use bigger juries at all? Security. Every juror is one more person a briber would have to reach." },
+    { "id": "S2", "text": "Suppose each bribe attempt has just a five percent chance of being reported. Try to corrupt fourteen jurors, and you're more likely than not to get caught. Thirty jurors, and it's nearly four in five." },
+    { "id": "S3", "text": "Add a secret ballot, so nobody can verify a bought vote, and corruption gets very expensive. One simple rule for jury size is the cube root of the electorate: about twenty jurors for a town of eight thousand, about six hundred for a whole nation.", "gap": 1.0 },
+
+    { "id": "C1", "text": "Now, competence. Today's voters swim in an information environment that rewards whatever spreads, not whatever is true." },
+    { "id": "C2", "text": "Studies find Americans imagine about twice as many of their political opponents hold extreme views as actually do. And the people who follow the news most closely often have the most distorted picture." },
+    { "id": "C3", "text": "Meanwhile, AI has made persuasion and fake content cheap, and foreign governments are already aiming it at our elections." },
+    { "id": "C4", "text": "A jury changes the information diet. For a week or two, jurors get paid, protected time to do one thing: evaluate the candidates." },
+    { "id": "C5", "text": "Every candidate gets the same amount of time. Money buys nothing in the room." },
+    { "id": "C6", "text": "Candidates make their case, then cross-examine each other. Nobody pretends to be neutral. Each one argues as hard as they can, and the jury hears all of them. Call it omni-biased: balance through vigorous opposition, the way a courtroom works." },
+    { "id": "C7", "text": "Does simply watching that kind of exchange change minds? In Intelligence Squared debates, where the audience votes before and after, about a third of the audience typically switches sides, without any discussion among themselves." },
+    { "id": "C8", "text": "And jurors don't need to be experts. People are surprisingly good at recognizing competence they don't have themselves, the way you can tell a good doctor from a bad one without going to medical school.", "gap": 1.0 },
+
+    { "id": "F1", "text": "Why not just require voters to pass a test? Because whoever writes the test controls the outcome. America tried literacy tests, and they became a tool for keeping people from voting. Randomness is the one selection method nobody can rig.", "gap": 1.0 },
+
+    { "id": "R1", "text": "None of this is new. Ancient Athens filled most public offices by lot. Aristotle wrote that choosing by lot is democratic, and election is oligarchic." },
+    { "id": "R2", "text": "Venice chose its head of state for five centuries through rounds that alternated lotteries and votes, and stayed remarkably stable." },
+    { "id": "R3", "text": "In 1903, H. G. Wells argued that the jury method was the only practical improvement on mass polling." },
+    { "id": "R4", "text": "Modern citizens' assemblies, in places like Ireland and British Columbia, have tackled hard questions well. But most are only advisory, so politicians can ignore them." },
+    { "id": "R5", "text": "Election by jury is different in two ways. The jury's choice is binding. And the jury only chooses leaders; it doesn't govern. So service lasts weeks, not years, and can be mandatory, like jury duty." },
+    { "id": "R6", "text": "And in Georgia, a version of it already exists. Grand juries, drawn at random, appoint members of election boards, water authorities, and ethics boards across the state.", "gap": 1.0 },
+
+    { "id": "D1", "text": "A typical design might look like this. Candidates get equal time on a chess clock, and spend it however they like: presenting, rebutting, or questioning their opponents." },
+    { "id": "D2", "text": "Jurors submit questions anonymously, and each question goes to every candidate at once, so no single juror can steer the process." },
+    { "id": "D3", "text": "A referee enforces the rules, and nothing else. Then jurors score every candidate, say from zero to five, by secret ballot. Highest average score wins.", "gap": 1.0 },
+
+    { "id": "K1", "text": "Which brings us back to Georgia, and Henry County." },
+    { "id": "K2", "text": "In 2021, a state senator wrote the law creating the county's ethics board. Five of its seven members would be chosen by the grand jury. He called it a model for accountability." },
+    { "id": "K3", "text": "In late 2025, the board subpoenaed nine county employees as witnesses in an ethics case. Midway through the hearing, the board's administrator announced on the record that the chair of the county commission had asked that they not testify. All nine walked out." },
+    { "id": "K4", "text": "Most boards would have let it go. This one opened an investigation into the chair herself. Her public response: they could investigate all they wanted, but she would not be answering." },
+    { "id": "K5", "text": "Over the following weeks, the board documented being denied money to hire an attorney, barred from the county's broadcast-equipped meeting room, and refused the cameras to stream its hearings." },
+    { "id": "K6", "text": "Critics called it a political hit squad. But when a separate complaint accused the county manager of nepotism, the board checked the record, found her husband had been hired thirteen years before she took the job, and dismissed the case unanimously." },
+    { "id": "K7", "text": "Then the legislature stepped in. A rewritten bill, sponsored by the same senator who created the board, passed both chambers overwhelmingly, and the governor signed it in May 2026." },
+    { "id": "K8", "text": "Read the text, and the grand jury is simply gone. All five seats on the new board go to elected county officials. And the board is now barred from hearing complaints against county employees, the very kind of case that started all this." },
+    { "id": "K9", "text": "On January first, 2027, the independent board is replaced.", "gap": 1.2 },
+
+    { "id": "E1", "text": "Look at what that sequence shows. Citizens chosen by lot owed nothing to anyone, so they did their job, even when the job meant investigating the most powerful official in the county." },
+    { "id": "E2", "text": "That independence wasn't a flaw in the design. It was the design. And it's exactly why it was taken away." },
+    { "id": "E3", "text": "Election by jury: alignment through randomness, competence through deliberation, and leaders who answer to the public, instead of to whoever appointed them.", "gap": 0.2 }
+  ]
+}
