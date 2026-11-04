@@ -83,7 +83,7 @@ function serve() {
     '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
     '-ss', String(from), '-t', String(to - from), '-i', wavPath,
     '-c:v', 'libx264', '-preset', draft ? 'veryfast' : 'slow', '-crf', draft ? '26' : '17', '-pix_fmt', 'yuv420p',
-    '-tune', 'animation', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile,
+    '-tune', 'animation', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile,
   ], { stdio: ['pipe', 'inherit', 'inherit'] });
 
   const n = Math.round((to - from) * fps), t0 = Date.now();

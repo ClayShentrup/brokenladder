@@ -597,12 +597,23 @@
         ['PARKING ONLY', 'free public parking', P.plum, 0.48],
         ['BOOKS ONLY', 'public library', P.gold, 0.78],
       ];
+      // the safety net the cards land in
+      grp(0, 0, 1, 0, () => {
+        const np = eOut(prog(t, c('L12') - 0.1, c('L12', 0.1)));
+        const sag = (x) => 640 + 110 * Math.sin(((x - 100) / 1720) * Math.PI);
+        const top = []; for (let x = 100; x <= 1820; x += 86) top.push([x, sag(x)]);
+        curveP(top, np, { strokeWidth: 5, stroke: '#8a6a3a' });
+        curveP(top.map(([x, y]) => [x, y + 70]), np, { strokeWidth: 3, stroke: '#8a6a3a' });
+        top.forEach(([x, y], i) => { if (i % 2 === 0) line(x, y, x + 43, sag(x + 43) + 70, np, { strokeWidth: 2, stroke: '#8a6a3a' }); else line(x, y + 70, x + 43, sag(x + 43), np, { strokeWidth: 2, stroke: '#8a6a3a' }); });
+        line(100, 640, 60, 560, np, { strokeWidth: 4 }); line(1820, 640, 1860, 560, np, { strokeWidth: 4 });
+        txt('the safety net', 960, 870, 60, { alpha: fadeIn(c('L12') - 0.1, 0.4) });
+      }, out);
       cards.forEach(([tag, sub, col, f], i) => {
         const s = popS(c('L12', f), 0.5), x = 280 + i * 455, y = 470 + (i % 2 ? 40 : -10);
         giftCard(x, y, 0.95 * s, { tag, amount: '$100', color: col, sub: s > 0.5 ? sub : null, r: (i - 1.5) * 0.05 + Math.sin(t * 1.5 + i) * 0.03, alpha: out });
         if (t > c('L12', f) + 1.0) grp(x + 150, y - 120, 0.55, 0, () => flame(0, 0, 1), out); else KC += 6;
       });
-      wt('paid for by everyone', 960, 840, 56, c('L12', 0.6), c('L12', 0.7), { color: P.plum, alpha: out });
+      wt('paid for by everyone', 960, 960, 56, c('L12', 0.6), c('L12', 0.7), { color: P.plum, alpha: out });
     } else KC += 400;
 
     // L13: rent control = gift card + tax on one landlord
