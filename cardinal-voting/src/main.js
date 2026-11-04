@@ -763,7 +763,14 @@
         card(1360, 440, 760, 440, 'no-show paradox', [['some voters do better', fadeIn(w('B5', 'better result'))], ['by staying home', fadeIn(w('B5', 'staying home'))], ['Alaska had one too', fadeIn(w('B5', 'Alaska'))]], P.teal, popS(w('B5', 'no-show')), 1, 0.03);
         house(1360, 860, 0.6 * popS(w('B5', 'staying home')), {});
       }, b4);
-      if (t > c('B6') - 0.2) stamp('strategy moved somewhere harder to see', 960, 400, 66, w('B6', 'moves it'), { color: P.red }); else KC += 4;
+      if (t > c('B6') - 0.2) stamp('strategy moved somewhere harder to see', 960, 400, 66, w('B6', 'moves it'), { color: P.red, alpha: fadeOut(c('B6a') - 0.2, 0.4) }); else KC += 4;
+      if (t > c('B6a') - 0.2) {
+        const o = fadeOut(c('B6b') - 0.3, 0.4);
+        card(560, 380, 760, 300, 'betray your favorite', [['cost: almost nothing', fadeIn(w('B6a', 'costs you'))], ['(your favorite rarely wins)', fadeIn(w('B6a', 'costs you', 0.4))]], P.green, popS(w('B6a', 'almost never')), o, -0.02);
+        card(1360, 380, 760, 300, 'stay honest', [['risk: your worst choice wins', fadeIn(w('B6a', 'risks'))]], P.red, popS(w('B6a', 'Ranking your favorite')), o, 0.02);
+        stamp('so: betray every time, just in case', 960, 640, 58, w('B6a', 'every time'), { color: P.plum, alpha: o });
+        wt('third parties stay small', 960, 760, 54, w('B6a', 'third parties stay'), ce('B6a'), { color: P.red, alpha: o });
+      } else KC += 100;
       if (t > c('B6b') - 0.2) card(960, 760, 980, 300, 'Australia', [['instant runoff since 1918', fadeIn(w('B6b', 'over a century'))], ['still a two-party contest', fadeIn(w('B6b', 'two major'))]], P.blue, popS(c('B6b')), 1, -0.02); else KC += 40;
     } else KC += 300;
   }
@@ -1104,6 +1111,7 @@
     at('R5', 'Burlington', 'pop'); at('R5', 'repealed', 'stamp'); at('R6', 'Alaska', 'pop');
     at('B1', 'center squeeze', 'scribble'); at('B2', 'flipped', 'slide'); at('B2', 'survived', 'stamp'); at('B3', 'favorite betrayal', 'stamp'); at('B3', 'favorite betrayal', 'sad', 0.3);
     at('B4', 'stranger', 'pop'); at('B4', 'would have lost', 'boing'); at('B5', 'no-show', 'pop'); at('B5', 'staying home', 'pop2'); at('B6', 'moves it', 'stamp');
+    at('B6a', 'almost never', 'pop'); at('B6a', 'Ranking your favorite', 'pop'); at('B6a', 'every time', 'stamp'); at('B6a', 'third parties stay', 'sad');
     ev('pop', c('B6b')); at('B6b', 'two major', 'stamp');
     at('M7b', 'One hat', 'pop'); at('M7b', 'The other', 'pop'); at('M7b', 'Which hat', 'boing'); at('M7b', 'a score keeps', 'stamp');
     at('M7c', 'one room', 'pop2'); at('M7c', 'second room', 'pop2'); at('M7c', 'both towns together', 'whoosh'); at('M7c', 'can fail', 'sad');
