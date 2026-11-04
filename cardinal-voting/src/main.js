@@ -883,8 +883,8 @@
   function sOccupy() {
     const t = T;
     stamp('Manhattan, Election Day 2012', 960, 110, 54, c('Y3'), { color: P.blue, rot: -0.03 });
-    wt('507 voters, each voting four ways', 960, 200, 46, w('Y3', 'polled'), w('Y3', 'four different'), { font: PRINT });
-    const rows = [['Stein (Green)', 3.3, 52, P.green, w('Y4', 'Jill Stein'), w('Y4', 'more than half')], ['Johnson (Libertarian)', 2.0, 27, P.gold, w('Y4', 'Gary Johnson'), w('Y4', 'over a quarter')], ['Romney', 8.4, 13, P.red, w('Y4', 'Gary Johnson', 1.2), w('Y4', 'over a quarter', 0.6)]];
+    wt('507 voters, each voting four ways', 960, 195, 40, w('Y3', 'polled'), w('Y3', 'four different'), { font: PRINT });
+    const rows = [['Stein (Green)', 3.3, 52, P.green, w('Y4', 'Jill Stein'), w('Y4', 'more than half')], ['Johnson (Libertarian)', 2.0, 27, P.gold, w('Y4', 'Gary Johnson'), w('Y4', 'over a quarter')], ['Romney', 8.4, 13, P.red, w('Y4', 'Every third-party'), w('Y4', 'Every third-party', 0.5)]];
     txt('choose one', 760, 300, 40, { alpha: fadeIn(w('Y4', 'choose-one')), font: PRINT, color: P.grey });
     txt('approval', 1390, 300, 40, { alpha: fadeIn(w('Y4', 'approving')), font: PRINT, color: P.teal });
     rows.forEach(([n, a, b, col, t0, t1], i) => {
@@ -892,7 +892,8 @@
       hbar(560, y, 400, 70, (a / 60) * eOut(prog(t, t0, t0 + 0.6)), P.grey, n, fadeIn(t0) > 0.5 ? '~' + a.toFixed(0) + '%' : '', { ls: 42 });
       hbar(1190, y, 400, 70, (b / 60) * eOut(prog(t, t1, t1 + 0.8)), col, '', fadeIn(t1) > 0.5 ? '~' + b + '%' : '');
     });
-    txt('Obama won every way', 960, 790, 48, { alpha: fadeIn(w('Y4', 'Obama won')), color: P.blue });
+    txt('a heavily Democratic area: Obama won every way', 960, 255, 40, { alpha: fadeIn(w('Y4', 'trounced')), color: P.blue, font: PRINT });
+    stamp('every third party out-approved Romney', 960, 790, 52, w('Y4', 'Every third-party', 0.6), { color: P.plum });
     stamp('instant runoff never looked at 2nd and 3rd choices', 960, 890, 50, w('Y4', 'never counted'), { color: P.red });
     stamp('same voters. different ballot.', 960, 1000, 58, w('Y4', 'Same voters'), { color: P.green, rot: 0.02 });
     if (t > c('Y5') - 0.2) {
