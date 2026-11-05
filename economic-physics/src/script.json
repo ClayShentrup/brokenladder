@@ -17,9 +17,8 @@
 
     { "id": "D1", "text": "Now, the cost of sharing. Economists call it deadweight loss, and the easiest way to see it is a gift." },
     { "id": "D2", "text": "Say I buy you a sweater for ten dollars. But you'd only pay seven dollars for it yourself." },
-    { "id": "D3", "text": "Let's do the accounting. The store got ten dollars, and gave up a sweater it could have sold to anyone for ten. The store breaks even." },
     { "id": "D4", "text": "I'm down ten dollars. You're up a sweater that's worth seven dollars to you." },
-    { "id": "D5", "text": "Add it all up, and three dollars of value just disappeared. Nobody received it. Not me, not you, not the store." },
+    { "id": "D5", "text": "That's three dollars of value that just disappeared. Nobody received it." },
     { "id": "D6", "text": "If I'd handed you a ten-dollar bill instead, you'd be up ten, and nothing would be lost. That missing three dollars is deadweight loss: value that could have existed, and doesn't.", "gap": 1.0 },
 
     { "id": "T1", "text": "Here's why that matters so much. When two people trade voluntarily, both expect to come out ahead, or they'd walk away." },

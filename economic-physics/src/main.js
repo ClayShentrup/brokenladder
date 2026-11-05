@@ -621,29 +621,26 @@
     wt('deadweight loss', 960, 110, 96, w('D1', 'deadweight'), w('D1', 'loss', 0.3), { color: P.red });
     grp(0, 0, 1, 0, () => {
       person(300, 470, { s: popS(w('D2', 'I buy')), color: P.blue, arms: t > w('D2', 'sweater') ? 'give' : 'down', mood: lerp(0.5, -0.2, prog(t, w('D4', "I'm down"), w('D4', 'ten'))), k: 5, label: 'me', hair: HAIR_B });
-      grp(960, 470, popS(w('D1', 'gift')), 0, () => stall(0, 0, 1.15, 1));
-      txt('the store', 960, 640, 46, { alpha: fadeIn(w('D1', 'gift')) });
       const youMood = t < w('D2', 'only pay') ? 0.6 : 0.15;
       person(1620, 470, { s: popS(w('D2', 'you')), color: P.gold, arms: 'take', mood: t > w('D6', 'ten-dollar') ? 0.9 : youMood, k: 6, label: 'you', skin: P.skin[2], hair: HAIR_A });
-      // sweater: store -> you
+      // sweater: me -> you
       const mv = eIO(prog(t, w('D2', 'ten dollars'), w('D2', 'But')));
       if (t > w('D2', 'sweater')) {
-        const sx = lerp(960, 1450, mv), sy = 360 - Math.sin(mv * Math.PI) * 120;
+        const sx = lerp(470, 1450, mv), sy = 360 - Math.sin(mv * Math.PI) * 160;
         sweater(sx, sy, 0.7 * popS(w('D2', 'sweater')), 1);
         priceTag(sx + 90, sy - 70, 0.75, 'cost $10', popS(w('D2', 'ten dollars')));
       } else KC += 60;
       bubble(1640, 170, 420, 150, popS(w('D2', 'only pay')), 'worth $7 to me', 52, { tail: 30 });
       // ledgers
       const ly = 760;
-      ledger(960, ly, 'store', [['+$10 cash', P.green, w('D3', 'got ten')], ['-$10 sweater', P.red, w('D3', 'gave up')], ['= $0', P.ink, w('D3', 'breaks even')]], fadeIn(w('D3', 'accounting')));
-      ledger(300, ly, 'me', [['-$10', P.red, w('D4', "I'm down")]], fadeIn(w('D3', 'accounting')));
-      ledger(1620, ly, 'you', [[t > w('D6', 'ten-dollar bill') ? '+$10' : '+$7', P.green, w('D4', "You're up")]], fadeIn(w('D3', 'accounting')));
-      line(150, ly + 25, 1770, ly + 25, fadeIn(w('D3', 'accounting')), { strokeWidth: 2, stroke: P.grey });
+      ledger(300, ly, 'me', [['-$10', P.red, w('D4', "I'm down")]], fadeIn(w('D4', "I'm down", -0.3)));
+      ledger(1620, ly, 'you', [[t > w('D6', 'ten-dollar bill') ? '+$10' : '+$7', P.green, w('D4', "You're up")]], fadeIn(w('D4', "I'm down", -0.3)));
+      line(150, ly + 25, 1770, ly + 25, fadeIn(w('D4', "I'm down", -0.3)), { strokeWidth: 2, stroke: P.grey });
       // total
       const after = t > w('D6', 'ten-dollar bill', 0.6);
       stamp(after ? 'total: $0' : 'total: -$3', 960, 1010, 64, w('D5', 'three dollars'), { color: after ? P.green : P.red });
       smokeBurst(1450, 300, w('D5', 'disappeared'), 8, 1.1);
-      wt('nobody received it', 1450, 950, 48, w('D5', 'Nobody'), w('D5', 'store'), { color: P.plum, alpha: after ? 0 : 1 });
+      wt('nobody received it', 1450, 950, 48, w('D5', 'Nobody'), w('D5', 'received', 0.5), { color: P.plum, alpha: after ? 0 : 1 });
       if (t > w('D6', 'ten-dollar') && t < w('D6', 'deadweight')) {
         const u = eIO(prog(t, w('D6', 'ten-dollar'), w('D6', 'ten-dollar', 0.9)));
         grp(lerp(380, 1500, u), 330 - Math.sin(u * Math.PI) * 140, 0.6, 0, () => cash(0, 0, 1, 1, 1));
@@ -1173,7 +1170,6 @@
     // deadweight
     ev('scribble', w('D1', 'deadweight'), 0.9); ev('pop', w('D1', 'gift'));
     pops([['D2', 'I buy'], ['D2', 'you']], 'pop2'); ev('pop', w('D2', 'sweater')); ev('whoosh', w('D2', 'ten dollars')); ev('coin', w('D2', 'ten dollars')); ev('pop', w('D2', 'only pay'));
-    ['got ten', 'gave up', 'breaks even'].forEach((x) => ev('tick', w('D3', x)));
     ev('tick', w('D4', "I'm down")); ev('tick', w('D4', "You're up"));
     stamps([['D5', 'three dollars']]); ev('poof', w('D5', 'disappeared')); ev('scribble', w('D5', 'Nobody'), 0.6);
     ev('whoosh', w('D6', 'ten-dollar')); ev('chaching', w('D6', 'up ten')); ev('pop', w('D6', 'deadweight')); ev('sparkle', w('D6', 'deadweight', 0.1));
