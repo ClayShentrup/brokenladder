@@ -97,39 +97,69 @@ line: "rgba(201,168,106,0.18)"
     <div class="rule"></div>
 
     <div class="section" style="--anim-delay:1.3s">
-      <div class="section-label">chords</div>
-      <div class="chord-grid" id="chord-grid"></div>
+      <div class="section-label">chords — intro, verses, outro</div>
+      <div class="chord-grid" data-chords="chordsVerse"></div>
     </div>
     <script>
-    window.songChords = {
-      "em(add9)":       "0.2.4.0.0.0",
-      "c.maj7/e":       "0.3.2.0.0.0",
-      "g6":             "3.2.0.0.0.0",
-      "d.add9/f#":      "2.0.0.2.3.0",
-      "am7":            "x.0.2.0.1.0",
-      "em":             "0.2.2.0.0.0",
-      "bm":             "x.2.4.4.3.2",
-      "em7":            "0.2.2.0.3.0",
-      "g/b":            "x.2.0.0.3.3",
-      "d.sus4/f#":      "2.x.0.2.3.3",
-      "d/f#":           "2.x.0.2.3.2",
-      "em/g":           "3.2.2.0.0.0",
-      "b7(b9)":         "x.x.4.5.4.5",
-      "f#.maj7/e":      "0.x.4.3.2.1"
+    window.chordsVerse = {
+      "em(add9)":         "0.2.4.0.0.0",
+      "c.maj7/e":         "0.3.2.0.0.0",
+      "g6":               "3.2.0.0.0.0",
+      "d.add9/f#":        "2.0.0.2.3.0"
+    };
+    </script>
+
+    <div class="section" style="--anim-delay:1.35s">
+      <div class="section-label">chords — pre-chorus</div>
+      <div class="chord-grid" data-chords="chordsPre"></div>
+    </div>
+    <script>
+    window.chordsPre = {
+      "am7":              "x.0.2.0.1.0",
+      "em":               "0.2.2.0.0.0",
+      "g6":               "3.2.0.0.0.0",
+      "bm":               "x.2.4.4.3.2"
     };
     </script>
 
     <div class="section" style="--anim-delay:1.4s">
-      <div class="section-label">bridge — second guitar, up the neck</div>
+      <div class="section-label">chords — chorus</div>
+      <div class="chord-grid" data-chords="chordsChorus"></div>
+    </div>
+    <script>
+    window.chordsChorus = {
+      "em7":              "0.2.2.0.3.0",
+      "g/b":              "x.2.0.0.3.3",
+      "d.sus4/f#":        "2.x.0.2.3.3",
+      "d/f#":             "2.x.0.2.3.2"
+    };
+    </script>
+
+    <div class="section" style="--anim-delay:1.45s">
+      <div class="section-label">chords — bridge</div>
+      <div class="chord-grid" data-chords="chordsBridge"></div>
+    </div>
+    <script>
+    window.chordsBridge = {
+      "am7":              "x.0.2.0.1.0",
+      "em/g":             "3.2.2.0.0.0",
+      "c.maj7":           "0.3.2.0.0.0",
+      "b7(b9)":           "x.x.4.5.4.5",
+      "f#.maj7/e":        "0.x.4.3.2.1"
+    };
+    </script>
+
+    <div class="section" style="--anim-delay:1.5s">
+      <div class="section-label">chords — bridge, second guitar up the neck</div>
       <div class="chord-grid" data-chords="bridgeHigh"></div>
     </div>
     <script>
     window.bridgeHigh = {
-      "am7":            "x.x.10.9.8.0",
-      "em/g":           "x.x.9.9.8.0",
-      "c.maj7":         "x.x.10.9.12.0",
-      "b7(b9)":         "x.x.7.8.7.8",
-      "f#.maj7/e":      "x.x.11.11.11.13"
+      "am7":              "x.x.10.9.8.0",
+      "em/g":             "x.x.9.9.8.0",
+      "c.maj7":           "x.x.10.9.12.0",
+      "b7(b9)":           "x.x.7.8.7.8",
+      "f#.maj7/e":        "x.x.11.11.11.13"
     };
     </script>
 
