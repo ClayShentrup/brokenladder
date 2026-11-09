@@ -487,10 +487,28 @@
     ctx.fillRect(-12, -32, 6, 32); ctx.fillRect(5, -32, 6, 32);
     ctx.restore();
   }
+  // colored wash sky: g = [top, mid, bottom]; cl = cloud rgb; li = light-break rgb
+  function washSkyC(t, sd, g, cl, li, hz = 640, dark = 1, lightA = 0.45) {
+    const gr = ctx.createLinearGradient(0, 0, 0, hz); gr.addColorStop(0, g[0]); gr.addColorStop(0.6, g[1]); gr.addColorStop(1, g[2]); ctx.fillStyle = gr; ctx.fillRect(-W, -H, W * 3, H * 3);
+    field((x, y) => { const v = fbm(x * 3.2 + t * 0.012, y * 6.5, sd, 5); return clamp((v - 0.35) * 1.8) * clamp(1.15 - y * 1.25); }, [[0, ...cl, 0], [0.5, ...cl, 0.5 * dark], [1, ...cl.map((c) => c * 0.7), 0.8 * dark]], 'source-over', 1, 0, -40, W, hz + 120);
+    field((x, y) => { const v = fbm(x * 5 - t * 0.02, y * 9 + 3, sd + 9, 4); return clamp((v - 0.55) * 3) * clamp(1 - y * 1.4); }, [[0, ...li, 0], [1, ...li, lightA]], 'source-over', 1, 0, -40, W, hz + 120);
+  }
+  // painted land from horizon down: g = [far, mid, near, front]
+  function washLand(sd, hz, g, streak = 1) {
+    const lg = ctx.createLinearGradient(0, hz, 0, H); lg.addColorStop(0, g[0]); lg.addColorStop(0.25, g[1]); lg.addColorStop(0.7, g[2]); lg.addColorStop(1, g[3]); ctx.fillStyle = lg; ctx.fillRect(-W, hz, W * 3, H * 2);
+    field((x, y) => clamp((fbm(x * 2.2, y * 9, sd, 4) - 0.4) * 2), [[0, 230, 210, 160, 0], [0.5, 220, 196, 140, 0.18 * streak], [1, 40, 32, 22, 0.4 * streak]], 'source-over', 1, -100, hz, W + 200, H - hz + 40);
+    dryBand(sd + 1, hz - 10, hz + 3, 'rgba(110,104,96,0.5)', 50, 0.7 * streak, 4, 10);
+    dryBand(sd + 2, hz + 40, hz + 220, 'rgba(230,214,170,0.9)', 120, 0.4 * streak, 3, 9);
+    dryBand(sd + 3, hz + 200, H, 'rgba(40,30,18,0.9)', 140, 0.45 * streak, 3, 12);
+  }
+  function fenceLine(sd, y, col, hmin = 16, hmax = 26, gap = 50) {
+    const fr = rng(sd); let x = -60; while (x < W + 60) { const h = hmin + fr() * (hmax - hmin); ctx.save(); ctx.translate(x, y); ctx.rotate((fr() - 0.5) * 0.12); rect(-1.5, -h, 2.5 + fr() * 1.5, h, col); ctx.restore(); x += gap + fr() * gap; }
+    rect(-100, y - hmax * 0.6, W + 200, 1.5, col); rect(-100, y - hmax * 0.25, W + 200, 1.2, col);
+  }
   // translucent sweeps of light drifting across the frame
   function veils(t, sd, a = 1) {
-    const r = rng(sd); ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.filter = 'blur(10px)'; ctx.lineCap = 'round';
-    for (let i = 0; i < 5; i++) { const x0 = r() * W, y0 = r() * H, ang = -0.5 - r() * 0.4, len = 900 + r() * 900, drift = t * (6 + r() * 10); ctx.lineWidth = 60 + r() * 220; ctx.strokeStyle = `rgba(244,240,230,${(0.09 + r() * 0.1) * a})`; ctx.beginPath(); const sx = x0 - Math.cos(ang) * len / 2 + drift, sy = y0 - Math.sin(ang) * len / 2; ctx.moveTo(sx, sy); ctx.bezierCurveTo(sx + len * 0.3, sy - 200 + r() * 400, sx + len * 0.6, sy + Math.sin(ang) * len - 200 + r() * 400, sx + Math.cos(ang) * len, sy + Math.sin(ang) * len); ctx.stroke(); }
+    const r = rng(sd); ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.filter = 'blur(14px)'; ctx.lineCap = 'round';
+    for (let i = 0; i < 3; i++) { const x0 = r() * W, y0 = r() * H, ang = -0.35 - r() * 0.3, len = 1600 + r() * 1200, drift = t * (8 + r() * 12); ctx.lineWidth = 18 + r() * 70; ctx.strokeStyle = `rgba(255,246,228,${(0.035 + r() * 0.05) * a})`; ctx.beginPath(); const sx = x0 - Math.cos(ang) * len / 2 + drift, sy = y0 - Math.sin(ang) * len / 2; ctx.moveTo(sx, sy); ctx.bezierCurveTo(sx + len * 0.3, sy - 200 + r() * 400, sx + len * 0.6, sy + Math.sin(ang) * len - 200 + r() * 400, sx + Math.cos(ang) * len, sy + Math.sin(ang) * len); ctx.stroke(); }
     ctx.restore();
   }
   function scratches(t, a = 1) {
@@ -500,8 +518,8 @@
     for (let i = 0; i < 26; i++) { ctx.globalAlpha = 0.35 * a * r(); ctx.fillStyle = r() < 0.5 ? '#f4efe2' : '#1c1a16'; ctx.beginPath(); ctx.arc(r() * W, r() * H, 0.8 + r() * 2.4, 0, Math.PI * 2); ctx.fill(); }
     ctx.restore();
   }
-  function grade(sat = 0.62, tint = 'rgba(205,165,100,0.28)') {
-    ctx.save(); ctx.globalCompositeOperation = 'saturation'; ctx.fillStyle = `rgba(128,128,128,${1 - sat})`; ctx.fillRect(0, 0, W, H); ctx.restore();
+  function grade(sat = 1, tint = 'rgba(205,165,100,0.14)') {
+    if (sat < 0.999) { ctx.save(); ctx.globalCompositeOperation = 'saturation'; ctx.fillStyle = `rgba(128,128,128,${1 - sat})`; ctx.fillRect(0, 0, W, H); ctx.restore(); }
     ctx.save(); ctx.globalCompositeOperation = 'soft-light'; ctx.fillStyle = tint; ctx.fillRect(0, 0, W, H); ctx.restore();
   }
   // "horses never measured what we had": the overcast pasture, a child far off, horses grazing, the wind
@@ -524,9 +542,6 @@
     grazer(1720, 700, 0.8, 'rgba(84,74,62,0.95)', t, 3, true);
     grass(406, t, 740, 1100, 260, 'rgba(40,36,30,0.75)', 1.4, 120);
     ctx.restore();
-    veils(t, 407, 1);
-    grade();
-    scratches(t);
   }
   // ---------------- SCENES ----------------
   function prairieSky(top, mid, bot, sunX, sunY, sunA) {
@@ -535,28 +550,27 @@
   }
   // 0:00 Caney, before dawn: a lone farmstead, a long fence, one window lit (kept from take three)
   function scDawn(lt, u, t) {
-    ctx.save(); cam(lerp(1.0, 1.18, sm(u)), 0, lerp(30, -10, u));
-    prairieSky('#1c2438', '#6a4e56', '#c88a62', 1380, 760, sm(prog(u, 0.1, 1)));
-    starfield(4, 160, 0.6 * (1 - sm(prog(u, 0, 0.7))), t);
-    ground(760, '#1a140e');
-    for (let i = 0; i < 16; i++) { const x = -100 + i * 150, h = 46 + (i % 3) * 4; rect(x, 770 - h, 6, h, '#120d08'); }
-    rect(-200, 738, W + 400, 2, '#120d08'); rect(-200, 752, W + 400, 2, '#120d08');
-    farmhouse(700, 768, 0.34, 0.5 * (1 - sm(prog(u, 0.4, 1))), '#0e0a07', t);
-    grass(3, t, 740, 1100, 520, '#120d08', 1.2, 70);
+    ctx.save(); cam(lerp(1.0, 1.14, sm(u)), 0, lerp(30, -10, u));
+    washSkyC(t, 501, ['#1a2240', '#6a4a5e', '#d88a5e'], [30, 30, 54], [255, 196, 150], 760, 0.9, 0.3 + 0.2 * u);
+    glow(1380, 760, 700, 'rgba(255,190,120,0.35)', sm(prog(u, 0.1, 1)));
+    starfield(4, 120, 0.4 * (1 - sm(prog(u, 0, 0.6))), t);
+    washLand(503, 760, ['#4a4038', '#3a2e22', '#241a12', '#140e0a'], 0.7);
+    fenceLine(507, 772, 'rgba(18,14,10,0.85)', 28, 44, 70);
+    ctx.save(); ctx.filter = 'blur(0.8px)'; farmhouse(700, 768, 0.34, 0.5 * (1 - sm(prog(u, 0.4, 1))), '#141008', t); ctx.restore();
+    grass(3, t, 760, 1100, 300, 'rgba(14,10,6,0.8)', 1.2, 80);
     ctx.restore();
   }
   // "early years i felt so strong and free": sunrise clears the horizon, seeds lift off and rise toward us
   function scMorning(lt, u, t) {
     ctx.save(); cam(lerp(1.0, 1.1, sm(u)), 0, lerp(40, -60, sm(u)));
     const sunY = lerp(800, 610, sm(u));
-    prairieSky('#3a5a8a', '#e8b880', '#f0a060', 1180, sunY, 1);
-    field((x, y) => { const v = fbm(x * 4 + t * 0.02, y * 9, 41, 4); return clamp((v - 0.52) * 2.4) * clamp(1 - y * 1.6); }, [[0, 255, 230, 200, 0], [1, 255, 236, 210, 0.55]], 'screen', 0.8);
-    ground(770, '#3a3018');
-    horizonGlow(772, 'rgba(255,200,130,0.5)', 1);
-    grass(17, t, 760, 1100, 640, '#2a2210', 1.4, 80);
+    washSkyC(t, 511, ['#355a90', '#d8a888', '#f2b070'], [80, 96, 140], [255, 236, 210], 770, 0.6, 0.55);
+    glow(1180, sunY, 800, 'rgba(255,200,130,0.45)', 1); glow(1180, sunY, 130, 'rgba(255,240,215,0.95)', 1);
+    washLand(513, 770, ['#e8c890', '#c89a50', '#7a5a28', '#3a2a12']);
+    horizonGlow(772, 'rgba(255,214,150,0.4)', 1);
+    grass(17, t, 770, 1100, 300, 'rgba(50,38,20,0.75)', 1.4, 100);
     ctx.restore();
     seedDrift(5, t, 34, -200, W + 200, 300, H + 200, 46, sm(prog(u, 0.05, 0.4)), 1.4);
-    glow(1180, sunY, 260, 'rgba(255,240,210,0.5)', 0.5);
   }
   // "pastures held no mirror up to me": a stock tank's surface fills the frame, only sky in it
   function scWater(lt, u, t) {
@@ -592,12 +606,12 @@
   // "copan oklahoma trailer dreams": the trailer under turning stars (kept, without the stickers)
   function scTrailerNight(lt, u, t, o) {
     ctx.save(); cam(lerp(1.0, o.zoom || 1.25, sm(u)), 0, 40);
-    skyGrad('#0a1226', '#1a2240');
-    ctx.save(); ctx.translate(W / 2, 1400); ctx.rotate(t * 0.02); const r = rng(55); for (let i = 0; i < 500; i++) { const d = 300 + r() * 1600, a = r() * Math.PI * 2; ctx.strokeStyle = `rgba(230,236,250,${0.2 + r() * 0.5})`; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(0, 0, d, a, a + 0.02 + u * 0.08); ctx.stroke(); } ctx.restore();
-    moon(1560, 220, 30, 0.9);
-    ground(780, '#06070a');
-    trailer(960, 790, 0.9, o.lit == null ? 1 : o.lit);
-    grass(13, t, 780, 1100, 300, '#030405', 0.7, 50);
+    washSkyC(t, 521, ['#060a1e', '#121a3a', '#2a2a4a'], [8, 10, 24], [100, 110, 170], 780, 0.9, 0.2);
+    ctx.save(); ctx.translate(W / 2, 1400); ctx.rotate(t * 0.02); const r = rng(55); for (let i = 0; i < 420; i++) { const d = 300 + r() * 1600, a = r() * Math.PI * 2; ctx.strokeStyle = `rgba(226,230,240,${0.12 + r() * 0.35})`; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(0, 0, d, a, a + 0.02 + u * 0.08); ctx.stroke(); } ctx.restore();
+    glow(1560, 220, 120, 'rgba(200,210,230,0.35)', 0.8); moon(1560, 220, 26, 0.8);
+    washLand(523, 780, ['#1c1c22', '#141418', '#0c0c0e', '#060607'], 0.5);
+    ctx.save(); ctx.filter = 'blur(0.9px)'; trailer(960, 790, 0.9, o.lit == null ? 1 : o.lit); ctx.restore();
+    grass(13, t, 780, 1100, 220, 'rgba(4,4,6,0.85)', 0.7, 60);
     ctx.restore();
   }
   // "always will be with me / something that you can't unsee": the moon in a black puddle; a drop breaks it; it comes back
@@ -636,7 +650,7 @@
     glow(1000, 520, 700, 'rgba(200,170,255,0.6)', fl * 0.8);
     glow(820, 600, 380, 'rgba(255,240,200,0.6)', fl2 * 0.6);
     ground(800, '#030306');
-    [[640, 150, 7, 0], [700, 138, 8, 0.1], [770, 196, 9, -0.05], [840, 142, 10, 0], [1380, 70, 11, 0]].forEach(([fx, fh, sd, ln]) => scrib(fx, 806, { h: fh, head: fh * 0.2, col: '#020203', t, seed: sd, lean: ln, boil: 6 }));
+    [[640, 120], [700, 110], [770, 150], [840, 112], [1380, 58]].forEach(([fx, fh]) => standing(fx, 806, fh, '#050407'));
     grass(29, t, 790, 1100, 260, '#010102', 0.9, 40);
     ctx.restore();
   }
@@ -827,10 +841,10 @@
   }
   function scAscend(lt, u, t) {
     const up = sm(u);
-    const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, `rgb(${lerp(120, 2, up)},${lerp(150, 4, up)},${lerp(190, 12, up)})`); g.addColorStop(1, `rgb(${lerp(230, 30, up)},${lerp(200, 50, up)},${lerp(180, 100, up)})`); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, `rgb(${lerp(60, 3, up)},${lerp(110, 5, up)},${lerp(200, 22, up)})`); g.addColorStop(1, `rgb(${lerp(250, 40, up)},${lerp(190, 60, up)},${lerp(140, 150, up)})`); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
     starfield(241, 900, sm(prog(u, 0.45, 0.9)), t, 0.002);
     // clouds rushing downward past us, thinning out
-    field((x, y) => { const v = fbm(x * 3, y * 3 + t * 0.45, 243, 5); return clamp((v - 0.4 - up * 0.35) * 3); }, [[0, 255, 255, 255, 0], [0.5, 240, 236, 240, 0.7], [1, 255, 252, 250, 1]], 'source-over', 1 - sm(prog(u, 0.6, 0.85)));
+    field((x, y) => { const v = fbm(x * 3, y * 3 + t * 0.45, 243, 5); return clamp((v - 0.4 - up * 0.35) * 3); }, [[0, 255, 220, 190, 0], [0.4, 230, 190, 180, 0.7], [1, 255, 246, 236, 1]], 'source-over', 1 - sm(prog(u, 0.6, 0.85)));
     // the curve of the earth's glow appears below
     const e = sm(prog(u, 0.55, 1));
     if (e > 0) { ctx.save(); ctx.globalAlpha = e; const eg = ctx.createRadialGradient(960, H + 2600, 2600, 960, H + 2600, 2780); eg.addColorStop(0, 'rgba(120,180,255,0.9)'); eg.addColorStop(0.4, 'rgba(60,120,220,0.35)'); eg.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = eg; ctx.fillRect(0, 0, W, H); ctx.fillStyle = '#02040a'; ctx.beginPath(); ctx.arc(960, H + 2600, 2600, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
@@ -858,9 +872,10 @@
   // "please just one more chance": on the open prairie at dusk, the gold house fills with light for a moment
   function scChance(lt, u, t) {
     ctx.save(); cam(lerp(1.0, 1.1, sm(u)));
-    prairieSky('#2a3050', '#c07050', '#5a3a2a', 960, 820, 0.6);
-    ground(780, '#140e0a');
-    grass(31, t, 780, 1100, 300, '#0a0806', 1, 50);
+    washSkyC(t, 531, ['#1e2448', '#a85a5a', '#f09060'], [50, 36, 60], [255, 200, 160], 780, 0.7, 0.35);
+    washLand(533, 780, ['#8a5a44', '#5a3828', '#2a1a12', '#140c08'], 0.7);
+    fenceLine(537, 792, 'rgba(24,18,12,0.8)', 14, 22, 60);
+    grass(31, t, 780, 1100, 220, 'rgba(12,8,6,0.8)', 1, 60);
     ctx.restore();
     const fill = sm(prog(u, 0.25, 0.5)) * (1 - sm(prog(u, 0.62, 0.95)));
     const s = 1.25, x = 960, y = 760;
@@ -894,9 +909,9 @@
       shp.forEach((pl) => pl.forEach(([px, py]) => glow(x + px * s, yy + py * s, 9, 'rgba(255,240,210,1)', a)));
       ctx.save(); ctx.globalAlpha = 0.35; goldShape(shp, x, yy, s, up, a * 0.6, 1.2); ctx.restore();
     });
-    ground(860, '#040406');
-    farmhouse(960, 868, 0.3, lit, '#040406', t);
-    scrib(1180, 872, { h: 64, head: 14, col: '#040406', t, seed: 31, boil: 4, armL: [-6, 20], armR: [6, 20] });
+    washLand(541, 860, ['#121218', '#0a0a0e', '#060608', '#030304'], 0.4);
+    ctx.save(); ctx.filter = 'blur(0.8px)'; farmhouse(960, 868, 0.3, lit, '#050507', t); ctx.restore();
+    standing(1180, 872, 46, '#050507');
     grass(71, t, 860, 1100, 380, '#020203', 0.8, 50);
     ctx.restore();
     if (t > SEC.dark) { ctx.fillStyle = `rgba(1,2,5,${0.45 * prog(t, SEC.dark, SEC.dark + 1.5)})`; ctx.fillRect(0, 0, W, H); }
@@ -908,7 +923,7 @@
     shot(0, L.early, scDawn);
     shot(L.early, L.pastures, scMorning);
     shot(L.pastures, L.horses, scWater);
-    shot(L.horses, L.copan, scPasture);
+    shot(L.horses, L.copan, scPasture, { sat: 0.62 });
     shot(L.copan, L.always, scTrailerNight, { zoom: 1.3 });
     shot(L.always, L.bruises, scMoonPool);
     shot(L.bruises, L.ch1, scStorm);
@@ -946,12 +961,15 @@
       ctx.save(); ctx.globalAlpha = 1 - sm(lt / 0.45); ctx.translate(W / 2, H / 2); ctx.scale(breath, breath); ctx.translate(-W / 2, -H / 2); prev.fn(plt, pu, t, prev.o); ctx.restore();
     }
     [L.ch1, L.ch2].forEach((s0) => { const d = t - s0; if (d >= 0 && d < 0.6) { ctx.fillStyle = `rgba(255,236,200,${0.5 * (1 - d / 0.6)})`; ctx.fillRect(0, 0, W, H); } });
-    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.4; ctx.drawImage(PAPER, 0, 0); ctx.restore();
+    veils(t, 700 + k * 13, sh.o.veil == null ? 1 : sh.o.veil);
+    grade(sh.o.sat == null ? 1 : sh.o.sat);
+    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.45; ctx.drawImage(PAPER, 0, 0); ctx.restore();
     const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.95); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.55)');
     ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
-    if (inChorus) glow(W * (0.5 + 0.5 * Math.sin(t * 0.4)), H * 0.2, 700, 'rgba(255,140,60,0.22)', 0.6);
+    if (inChorus) glow(W * (0.5 + 0.5 * Math.sin(t * 0.4)), H * 0.2, 700, 'rgba(240,200,140,0.18)', 0.5);
     const gi = Math.floor(t * 24) % GRAIN.length;
-    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.3; ctx.drawImage(GRAIN[gi], 0, 0, W, H); ctx.restore();
+    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.22; ctx.drawImage(GRAIN[gi], 0, 0, W, H); ctx.restore();
+    scratches(t, 0.9);
     const fl = 0.035 * noise1(t * 9, 9); if (fl > 0) { ctx.fillStyle = `rgba(0,0,0,${fl})`; ctx.fillRect(0, 0, W, H); }
     const fi = 1 - prog(t, 0, 2.5), fo = prog(t, A.duration - 2.5, A.duration - 0.3);
     if (fi > 0 || fo > 0) { ctx.fillStyle = `rgba(0,0,0,${Math.max(fi, fo)})`; ctx.fillRect(0, 0, W, H); }
