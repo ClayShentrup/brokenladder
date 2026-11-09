@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-// node tools/render.cjs [--draft] [--from s --to s] [--stills 10,65.6,...] [--out name.mp4]
+// node tools/render.cjs [--draft] [--from s --to s] [--stills 10,65.6,...] [--out name.mp4] [--audio path]
+//   --master   mezzanine for upload: lossless PNG frames -> ProRes 422 HQ (10-bit) + uncompressed 24-bit PCM, in .mov
+//              (several GB; YouTube accepts it, so YouTube's encode is the only lossy step)
 'use strict';
 const http = require('http'), fs = require('fs'), path = require('path'), { spawn } = require('child_process');
 const { chromium } = require('playwright');
@@ -17,17 +19,19 @@ srv.listen(0, '127.0.0.1', async () => {
     for (const s of opt('stills').split(',')) { const url = await page.evaluate((t) => EP.frame(t, 0.9), Number(s)); fs.writeFileSync(path.join(OUT, `still-${s}.jpg`), Buffer.from(url.split(',')[1], 'base64')); }
     console.log('stills done'); await b.close(); srv.close(); return;
   }
-  const draft = flag('draft'), fps = Number(opt('fps', draft ? 24 : 30));
+  const draft = flag('draft'), master = flag('master'), fps = Number(opt('fps', draft ? 24 : 30));
   const from = Number(opt('from', 0)), to = Math.min(info.duration, Number(opt('to', info.duration)));
   if (draft) await page.evaluate(() => EP.setScale(0.5));
-  const outFile = path.join(OUT, opt('out', draft ? 'draft.mp4' : 'the-shape-of-the-almost.mp4'));
-  const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
-    '-ss', String(from), '-t', String(to - from), '-i', path.join(ROOT, 'src', 'song.m4a'),
-    '-c:v', 'libx264', '-preset', draft ? 'veryfast' : 'slow', '-crf', draft ? '24' : '16', '-pix_fmt', 'yuv420p', '-tune', 'film',
-    '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', outFile], { stdio: ['pipe', 'inherit', 'inherit'] });
+  const outFile = path.join(OUT, opt('out', draft ? 'draft.mp4' : master ? 'the-shape-of-the-almost-master.mov' : 'the-shape-of-the-almost.mp4'));
+  const audio = path.resolve(opt('audio', path.join(ROOT, 'src', 'song.m4a')));
+  const vin = ['-f', 'image2pipe', '-framerate', String(fps), '-c:v', master ? 'png' : 'mjpeg', '-i', '-', '-ss', String(from), '-t', String(to - from), '-i', audio];
+  const venc = master
+    ? ['-c:v', 'prores_ks', '-profile:v', '3', '-pix_fmt', 'yuv422p10le', '-vendor', 'apl0', '-c:a', 'pcm_s24le', '-ar', '48000']
+    : ['-c:v', 'libx264', '-preset', draft ? 'veryfast' : 'slow', '-crf', draft ? '24' : '16', '-pix_fmt', 'yuv420p', '-tune', 'film', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-movflags', '+faststart'];
+  const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', ...vin, ...venc, '-shortest', outFile], { stdio: ['pipe', 'inherit', 'inherit'] });
   const n = Math.round((to - from) * fps), t0 = Date.now();
   for (let i = 0; i < n; i++) {
-    const url = await page.evaluate((t) => EP.frame(t, 0.93), from + i / fps);
+    const url = await page.evaluate(([t, m]) => (m ? EP.framePng(t) : EP.frame(t, 0.95)), [from + i / fps, master]);
     if (!ff.stdin.write(Buffer.from(url.split(',')[1], 'base64'))) await new Promise((r) => ff.stdin.once('drain', r));
     if (i % (fps * 10) === 0) process.stdout.write(`\r${i}/${n} ${((Date.now() - t0) / 1000).toFixed(0)}s `);
   }
