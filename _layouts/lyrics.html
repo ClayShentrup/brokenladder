@@ -66,8 +66,13 @@ em { font-style:normal; color:var(--accent); }
 
 <script>
 (function(){
-  const el = document.getElementById('chord-grid');
-  if (!el || !window.songChords) return;
+  const grids = [];
+  const main = document.getElementById('chord-grid');
+  if (main && window.songChords) grids.push([main, window.songChords]);
+  document.querySelectorAll('.chord-grid[data-chords]').forEach(g => {
+    if (window[g.dataset.chords]) grids.push([g, window[g.dataset.chords]]);
+  });
+  if (!grids.length) return;
   const cs = getComputedStyle(document.documentElement);
   const accent      = cs.getPropertyValue('--accent').trim();
   const accentBr    = cs.getPropertyValue('--accent-bright').trim();
@@ -122,12 +127,14 @@ em { font-style:normal; color:var(--accent); }
     return s;
   }
 
-  for (const [name, frets] of Object.entries(window.songChords)) {
-    const styledName = name.replace(/^([a-z#b]+)/, '<em>$1</em>');
-    const div = document.createElement('div');
-    div.className = 'chord-box';
-    div.innerHTML = `<div class="chord-box-name">${styledName}</div>${renderSVG(frets)}`;
-    el.appendChild(div);
+  for (const [el, chords] of grids) {
+    for (const [name, frets] of Object.entries(chords)) {
+      const styledName = name.replace(/^([a-z#b]+)/, '<em>$1</em>');
+      const div = document.createElement('div');
+      div.className = 'chord-box';
+      div.innerHTML = `<div class="chord-box-name">${styledName}</div>${renderSVG(frets)}`;
+      el.appendChild(div);
+    }
   }
 })();
 </script>
