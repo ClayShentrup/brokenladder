@@ -457,7 +457,7 @@
   }
   // grazing horse, painted soft: small, head down, mostly still (a slow tail swish)
   function grazer(x, y, s, col, t, sd, flip = false) {
-    ctx.save(); ctx.translate(x, y); ctx.scale(flip ? -s : s, s); ctx.fillStyle = col; ctx.strokeStyle = col; ctx.filter = 'blur(1.4px)';
+    ctx.save(); ctx.translate(x, y); ctx.scale(flip ? -s : s, s); ctx.fillStyle = col; ctx.strokeStyle = col;
     // far-side legs, slightly lighter
     ctx.save(); ctx.globalAlpha *= 0.75; limb([[52, -62], [56, -30], [52, -6], [54, 0]], [16, 8, 6, 9]); limb([[-70, -64], [-84, -34], [-78, -6], [-77, 0]], [22, 9, 6, 9]); ctx.restore();
     ctx.beginPath();
@@ -481,7 +481,7 @@
   }
   // a cloaked figure standing still, painted soft
   function standing(x, y, h, col) {
-    ctx.save(); ctx.translate(x, y); ctx.scale(h / 200, h / 200); ctx.fillStyle = col; ctx.filter = 'blur(1px)';
+    ctx.save(); ctx.translate(x, y); ctx.scale(h / 200, h / 200); ctx.fillStyle = col;
     ctx.beginPath(); ctx.ellipse(0, -182, 14, 17, 0, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.moveTo(-12, -168); ctx.bezierCurveTo(-26, -150, -30, -90, -34, -30); ctx.lineTo(30, -30); ctx.bezierCurveTo(28, -90, 26, -150, 12, -168); ctx.closePath(); ctx.fill();
     ctx.fillRect(-12, -32, 6, 32); ctx.fillRect(5, -32, 6, 32);
@@ -505,9 +505,20 @@
     const fr = rng(sd); let x = -60; while (x < W + 60) { const h = hmin + fr() * (hmax - hmin); ctx.save(); ctx.translate(x, y); ctx.rotate((fr() - 0.5) * 0.12); rect(-1.5, -h, 2.5 + fr() * 1.5, h, col); ctx.restore(); x += gap + fr() * gap; }
     rect(-100, y - hmax * 0.6, W + 200, 1.5, col); rect(-100, y - hmax * 0.25, W + 200, 1.2, col);
   }
+  // softness without the (very slow) canvas blur filter: draw at reduced resolution, scale back up
+  const SOFTC = {};
+  function soft(fn, k = 0.5, op = 'source-over') {
+    let c = SOFTC[k]; const w = Math.max(1, Math.round(cv.width * k)), h = Math.max(1, Math.round(cv.height * k));
+    if (!c || c.width !== w || c.height !== h) { c = document.createElement('canvas'); c.width = w; c.height = h; c.x = c.getContext('2d'); SOFTC[k] = c; }
+    const m = ctx.getTransform(), a0 = ctx.globalAlpha, x = c.x;
+    x.setTransform(1, 0, 0, 1, 0, 0); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; x.clearRect(0, 0, w, h);
+    x.setTransform(m.a * k, m.b * k, m.c * k, m.d * k, m.e * k, m.f * k);
+    const saved = ctx; ctx = x; try { fn(); } finally { ctx = saved; }
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = a0; ctx.globalCompositeOperation = op; ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high'; ctx.drawImage(c, 0, 0, cv.width, cv.height); ctx.restore();
+  }
   // translucent sweeps of light drifting across the frame
   function veils(t, sd, a = 1) {
-    const r = rng(sd); ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.filter = 'blur(14px)'; ctx.lineCap = 'round';
+    const r = rng(sd); ctx.save(); ctx.lineCap = 'round';
     for (let i = 0; i < 3; i++) { const x0 = r() * W, y0 = r() * H, ang = -0.35 - r() * 0.3, len = 1600 + r() * 1200, drift = t * (8 + r() * 12); ctx.lineWidth = 18 + r() * 70; ctx.strokeStyle = `rgba(255,246,228,${(0.035 + r() * 0.05) * a})`; ctx.beginPath(); const sx = x0 - Math.cos(ang) * len / 2 + drift, sy = y0 - Math.sin(ang) * len / 2; ctx.moveTo(sx, sy); ctx.bezierCurveTo(sx + len * 0.3, sy - 200 + r() * 400, sx + len * 0.6, sy + Math.sin(ang) * len - 200 + r() * 400, sx + Math.cos(ang) * len, sy + Math.sin(ang) * len); ctx.stroke(); }
     ctx.restore();
   }
@@ -535,11 +546,13 @@
     dryBand(403, hz + 50, hz + 200, '#e2cf9c', 160, 0.55, 3, 9);       // pale grass bands
     dryBand(404, hz + 60, hz + 260, '#7a6a48', 110, 0.4, 2, 6);
     dryBand(405, hz + 220, H, '#4a3c28', 160, 0.5, 3, 12);
-    standing(410, 760, 150, 'rgba(40,38,36,0.9)');
-    standing(780, 600, 66, 'rgba(48,46,44,0.85)');
-    grazer(1250, 680, 0.85, 'rgba(78,68,56,0.95)', t, 1);
-    grazer(1520, 640, 0.42, 'rgba(90,84,74,0.85)', t, 2);
-    grazer(1720, 700, 0.8, 'rgba(84,74,62,0.95)', t, 3, true);
+    soft(() => {
+      standing(410, 760, 150, 'rgba(40,38,36,0.9)');
+      standing(780, 600, 66, 'rgba(48,46,44,0.85)');
+      grazer(1250, 680, 0.85, 'rgba(78,68,56,0.95)', t, 1);
+      grazer(1520, 640, 0.42, 'rgba(90,84,74,0.85)', t, 2);
+      grazer(1720, 700, 0.8, 'rgba(84,74,62,0.95)', t, 3, true);
+    }, 0.6);
     grass(406, t, 740, 1100, 260, 'rgba(40,36,30,0.75)', 1.4, 120);
     ctx.restore();
   }
@@ -556,7 +569,7 @@
     starfield(4, 120, 0.4 * (1 - sm(prog(u, 0, 0.6))), t);
     washLand(503, 760, ['#4a4038', '#3a2e22', '#241a12', '#140e0a'], 0.7);
     fenceLine(507, 772, 'rgba(18,14,10,0.85)', 28, 44, 70);
-    ctx.save(); ctx.filter = 'blur(0.8px)'; farmhouse(700, 768, 0.34, 0.5 * (1 - sm(prog(u, 0.4, 1))), '#141008', t); ctx.restore();
+    soft(() => farmhouse(700, 768, 0.34, 0.5 * (1 - sm(prog(u, 0.4, 1))), '#141008', t));
     grass(3, t, 760, 1100, 300, 'rgba(14,10,6,0.8)', 1.2, 80);
     ctx.restore();
   }
@@ -610,7 +623,7 @@
     ctx.save(); ctx.translate(W / 2, 1400); ctx.rotate(t * 0.02); const r = rng(55); for (let i = 0; i < 420; i++) { const d = 300 + r() * 1600, a = r() * Math.PI * 2; ctx.strokeStyle = `rgba(226,230,240,${0.12 + r() * 0.35})`; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(0, 0, d, a, a + 0.02 + u * 0.08); ctx.stroke(); } ctx.restore();
     glow(1560, 220, 120, 'rgba(200,210,230,0.35)', 0.8); moon(1560, 220, 26, 0.8);
     washLand(523, 780, ['#1c1c22', '#141418', '#0c0c0e', '#060607'], 0.5);
-    ctx.save(); ctx.filter = 'blur(0.9px)'; trailer(960, 790, 0.9, o.lit == null ? 1 : o.lit); ctx.restore();
+    soft(() => trailer(960, 790, 0.9, o.lit == null ? 1 : o.lit));
     grass(13, t, 780, 1100, 220, 'rgba(4,4,6,0.85)', 0.7, 60);
     ctx.restore();
   }
@@ -650,7 +663,7 @@
     glow(1000, 520, 700, 'rgba(200,170,255,0.6)', fl * 0.8);
     glow(820, 600, 380, 'rgba(255,240,200,0.6)', fl2 * 0.6);
     ground(800, '#030306');
-    [[640, 120], [700, 110], [770, 150], [840, 112], [1380, 58]].forEach(([fx, fh]) => standing(fx, 806, fh, '#050407'));
+    soft(() => [[640, 120], [700, 110], [770, 150], [840, 112], [1380, 58]].forEach(([fx, fh]) => standing(fx, 806, fh, '#050407')), 0.6);
     grass(29, t, 790, 1100, 260, '#010102', 0.9, 40);
     ctx.restore();
   }
@@ -910,7 +923,7 @@
       ctx.save(); ctx.globalAlpha = 0.35; goldShape(shp, x, yy, s, up, a * 0.6, 1.2); ctx.restore();
     });
     washLand(541, 860, ['#121218', '#0a0a0e', '#060608', '#030304'], 0.4);
-    ctx.save(); ctx.filter = 'blur(0.8px)'; farmhouse(960, 868, 0.3, lit, '#050507', t); ctx.restore();
+    soft(() => farmhouse(960, 868, 0.3, lit, '#050507', t));
     standing(1180, 872, 46, '#050507');
     grass(71, t, 860, 1100, 380, '#020203', 0.8, 50);
     ctx.restore();
@@ -961,7 +974,7 @@
       ctx.save(); ctx.globalAlpha = 1 - sm(lt / 0.45); ctx.translate(W / 2, H / 2); ctx.scale(breath, breath); ctx.translate(-W / 2, -H / 2); prev.fn(plt, pu, t, prev.o); ctx.restore();
     }
     [L.ch1, L.ch2].forEach((s0) => { const d = t - s0; if (d >= 0 && d < 0.6) { ctx.fillStyle = `rgba(255,236,200,${0.5 * (1 - d / 0.6)})`; ctx.fillRect(0, 0, W, H); } });
-    veils(t, 700 + k * 13, sh.o.veil == null ? 1 : sh.o.veil);
+    soft(() => veils(t, 700 + k * 13, sh.o.veil == null ? 1 : sh.o.veil), 0.0625, 'screen');
     grade(sh.o.sat == null ? 1 : sh.o.sat);
     ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.45; ctx.drawImage(PAPER, 0, 0); ctx.restore();
     const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.95); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.55)');
