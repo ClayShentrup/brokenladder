@@ -31,6 +31,15 @@ em { font-style:normal; color:var(--accent); }
 .chord-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
 .chord-box-name { font-family:var(--font-body); font-size:13px; font-weight:300; font-style:italic; color:var(--text); opacity:0.7; text-align:center; white-space:nowrap; }
 .chord-box-name em { font-style:normal; color:var(--accent-bright); font-weight:400; opacity:1; }
+/* ── banner ── */
+.banner { position:relative; z-index:1; width:100%; max-width:1280px; margin:0 auto; opacity:0; animation:fadeUp 1.6s cubic-bezier(0.16,1,0.3,1) 0.05s forwards; }
+.banner img { display:block; width:100%; height:auto; max-height:72vh; object-fit:cover;
+  -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+  mask-composite:intersect; }
+.banner + .page { padding-top:0; margin-top:-48px; }
+@media (max-width: 600px) { .banner + .page { margin-top:-12px; } }
 /* ── stars ── */
 .stars { position:fixed; inset:0; pointer-events:none; z-index:0; }
 .star { position:absolute; background:var(--text); border-radius:50%; animation:twinkle var(--d,4s) ease-in-out infinite var(--delay,0s); opacity:0; }
@@ -50,6 +59,9 @@ em { font-style:normal; color:var(--accent); }
 })();
 </script>
 
+{% if page.banner %}
+<div class="banner"><img src="{{ page.banner | relative_url }}" alt="{{ page.banner_alt }}" width="1024" height="572"></div>
+{% endif %}
 {{ content }}
 
 <script>
