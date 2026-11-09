@@ -443,6 +443,91 @@
     ctx.beginPath(); for (let i = 0; i <= 40; i++) { const a = i / 40 * Math.PI * 2 + j(0.05); ctx.lineTo(hc[0] + Math.cos(a) * hr * (1 + j(0.06)), hc[1] + Math.sin(a) * hr * 1.05 * (1 + j(0.06))); } ctx.stroke();
     ctx.restore();
   }
+  // ---------- painterly wash kit (ochre, bone, charcoal) ----------
+  function washSky(t, sd, dark = 1) {
+    const g = ctx.createLinearGradient(0, 0, 0, 640); g.addColorStop(0, '#3e3e40'); g.addColorStop(0.6, '#77746c'); g.addColorStop(1, '#c4bca8'); ctx.fillStyle = g; ctx.fillRect(-W, -H, W * 3, H * 3);
+    field((x, y) => { const v = fbm(x * 3.2 + t * 0.012, y * 6.5, sd, 5); return clamp((v - 0.35) * 1.8) * clamp(1.15 - y * 1.25); }, [[0, 40, 40, 44, 0], [0.5, 50, 50, 54, 0.55 * dark], [1, 28, 28, 32, 0.85 * dark]], 'source-over', 1, 0, -40, W, 760);
+    field((x, y) => { const v = fbm(x * 5 - t * 0.02, y * 9 + 3, sd + 9, 4); return clamp((v - 0.55) * 3) * clamp(1 - y * 1.4); }, [[0, 230, 224, 210, 0], [1, 236, 230, 214, 0.45]], 'source-over', 1, 0, -40, W, 760);
+  }
+  // horizontal dry-brush band: broken, streaky strokes
+  function dryBand(sd, y0, y1, col, n, a = 1, wmin = 2, wmax = 7) {
+    const r = rng(sd); ctx.save(); ctx.strokeStyle = col; ctx.lineCap = 'round';
+    for (let i = 0; i < n; i++) { const y = lerp(y0, y1, r()), x = r() * (W + 600) - 300, len = 80 + r() * 520; ctx.globalAlpha = a * (0.15 + r() * 0.5); ctx.lineWidth = wmin + r() * (wmax - wmin); ctx.beginPath(); let xx = x; ctx.moveTo(xx, y); while (xx < x + len) { xx += 20 + r() * 40; ctx.lineTo(xx, y + (r() - 0.5) * 3); } ctx.stroke(); }
+    ctx.restore();
+  }
+  // grazing horse, painted soft: small, head down, mostly still (a slow tail swish)
+  function grazer(x, y, s, col, t, sd, flip = false) {
+    ctx.save(); ctx.translate(x, y); ctx.scale(flip ? -s : s, s); ctx.fillStyle = col; ctx.strokeStyle = col; ctx.filter = 'blur(1.4px)';
+    // far-side legs, slightly lighter
+    ctx.save(); ctx.globalAlpha *= 0.75; limb([[52, -62], [56, -30], [52, -6], [54, 0]], [16, 8, 6, 9]); limb([[-70, -64], [-84, -34], [-78, -6], [-77, 0]], [22, 9, 6, 9]); ctx.restore();
+    ctx.beginPath();
+    ctx.moveTo(-96, -82);
+    ctx.bezierCurveTo(-98, -104, -70, -114, -40, -108);          // rump
+    ctx.bezierCurveTo(-10, -104, 20, -106, 46, -112);           // back to withers
+    ctx.bezierCurveTo(70, -116, 96, -92, 112, -60);             // crest of the neck, falling
+    ctx.bezierCurveTo(122, -40, 130, -22, 134, -8);             // down to the poll
+    ctx.bezierCurveTo(138, 0, 146, 4, 150, 2);                  // muzzle in the grass
+    ctx.bezierCurveTo(148, 8, 136, 10, 126, 4);
+    ctx.bezierCurveTo(118, -12, 100, -34, 82, -50);             // throat
+    ctx.bezierCurveTo(74, -56, 66, -60, 58, -60);               // chest
+    ctx.bezierCurveTo(20, -54, -30, -56, -70, -62);             // belly
+    ctx.bezierCurveTo(-90, -64, -98, -72, -96, -82);
+    ctx.fill();
+    limb([[64, -64], [66, -32], [64, -6], [67, 0]], [18, 9, 7, 10]);
+    limb([[-58, -66], [-74, -36], [-66, -6], [-64, 0]], [26, 10, 7, 10]);
+    const sw = Math.sin(t * 0.8 + sd) * 5 + noise1(t * 0.4 + sd, 4) * 5;
+    ctx.beginPath(); ctx.moveTo(-94, -92); ctx.quadraticCurveTo(-116 + sw * 0.3, -70, -110 + sw, -30); ctx.lineTo(-102 + sw, -32); ctx.quadraticCurveTo(-104, -66, -88, -84); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+  // a cloaked figure standing still, painted soft
+  function standing(x, y, h, col) {
+    ctx.save(); ctx.translate(x, y); ctx.scale(h / 200, h / 200); ctx.fillStyle = col; ctx.filter = 'blur(1px)';
+    ctx.beginPath(); ctx.ellipse(0, -182, 14, 17, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-12, -168); ctx.bezierCurveTo(-26, -150, -30, -90, -34, -30); ctx.lineTo(30, -30); ctx.bezierCurveTo(28, -90, 26, -150, 12, -168); ctx.closePath(); ctx.fill();
+    ctx.fillRect(-12, -32, 6, 32); ctx.fillRect(5, -32, 6, 32);
+    ctx.restore();
+  }
+  // translucent sweeps of light drifting across the frame
+  function veils(t, sd, a = 1) {
+    const r = rng(sd); ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.filter = 'blur(10px)'; ctx.lineCap = 'round';
+    for (let i = 0; i < 5; i++) { const x0 = r() * W, y0 = r() * H, ang = -0.5 - r() * 0.4, len = 900 + r() * 900, drift = t * (6 + r() * 10); ctx.lineWidth = 60 + r() * 220; ctx.strokeStyle = `rgba(244,240,230,${(0.09 + r() * 0.1) * a})`; ctx.beginPath(); const sx = x0 - Math.cos(ang) * len / 2 + drift, sy = y0 - Math.sin(ang) * len / 2; ctx.moveTo(sx, sy); ctx.bezierCurveTo(sx + len * 0.3, sy - 200 + r() * 400, sx + len * 0.6, sy + Math.sin(ang) * len - 200 + r() * 400, sx + Math.cos(ang) * len, sy + Math.sin(ang) * len); ctx.stroke(); }
+    ctx.restore();
+  }
+  function scratches(t, a = 1) {
+    const f = Math.floor(t * 12), r = rng(f * 31 + 7); ctx.save();
+    for (let i = 0; i < 3; i++) if (r() < 0.6) { ctx.fillStyle = `rgba(30,28,24,${0.12 * a})`; ctx.fillRect(r() * W, 0, 1 + r(), H); }
+    ctx.fillStyle = `rgba(250,246,236,${0.10 * a})`; for (let i = 0; i < 2; i++) ctx.fillRect(r() * W, 0, 1, H);
+    for (let i = 0; i < 26; i++) { ctx.globalAlpha = 0.35 * a * r(); ctx.fillStyle = r() < 0.5 ? '#f4efe2' : '#1c1a16'; ctx.beginPath(); ctx.arc(r() * W, r() * H, 0.8 + r() * 2.4, 0, Math.PI * 2); ctx.fill(); }
+    ctx.restore();
+  }
+  function grade(sat = 0.62, tint = 'rgba(205,165,100,0.28)') {
+    ctx.save(); ctx.globalCompositeOperation = 'saturation'; ctx.fillStyle = `rgba(128,128,128,${1 - sat})`; ctx.fillRect(0, 0, W, H); ctx.restore();
+    ctx.save(); ctx.globalCompositeOperation = 'soft-light'; ctx.fillStyle = tint; ctx.fillRect(0, 0, W, H); ctx.restore();
+  }
+  // "horses never measured what we had": the overcast pasture, a child far off, horses grazing, the wind
+  function scPasture(lt, u, t) {
+    ctx.save(); cam(lerp(1.0, 1.06, sm(u)), lerp(-30, 30, sm(u)), 0);
+    washSky(t, 401);
+    const hz = 440;
+    const lg = ctx.createLinearGradient(0, hz, 0, H); lg.addColorStop(0, '#cfc2a2'); lg.addColorStop(0.25, '#c8ab72'); lg.addColorStop(0.7, '#9a7e4c'); lg.addColorStop(1, '#5a4a30'); ctx.fillStyle = lg; ctx.fillRect(-W, hz, W * 3, H);
+    field((x, y) => clamp((fbm(x * 2.2, y * 9, 409, 4) - 0.4) * 2), [[0, 230, 210, 160, 0], [0.5, 220, 196, 140, 0.25], [1, 70, 58, 40, 0.45]], 'source-over', 1, -100, hz, W + 200, H - hz);
+    dryBand(408, hz - 14, hz + 2, 'rgba(110,104,96,0.6)', 60, 0.8, 4, 10);
+    dryBand(402, hz - 4, hz + 14, '#8a8478', 120, 0.9, 2, 5);        // far haze line
+    { const fr = rng(411); let x = -60; while (x < W + 60) { const h = 16 + fr() * 10; ctx.save(); ctx.translate(x, hz + 46); ctx.rotate((fr() - 0.5) * 0.12); rect(-1.5, -h, 2.5 + fr() * 1.5, h, `rgba(50,46,40,${0.5 + fr() * 0.3})`); ctx.restore(); x += 50 + fr() * 50; } } rect(-100, hz + 30, W + 200, 1.5, 'rgba(50,46,40,0.6)'); rect(-100, hz + 38, W + 200, 1.2, 'rgba(50,46,40,0.5)');
+    dryBand(403, hz + 50, hz + 200, '#e2cf9c', 160, 0.55, 3, 9);       // pale grass bands
+    dryBand(404, hz + 60, hz + 260, '#7a6a48', 110, 0.4, 2, 6);
+    dryBand(405, hz + 220, H, '#4a3c28', 160, 0.5, 3, 12);
+    standing(410, 760, 150, 'rgba(40,38,36,0.9)');
+    standing(780, 600, 66, 'rgba(48,46,44,0.85)');
+    grazer(1250, 680, 0.85, 'rgba(78,68,56,0.95)', t, 1);
+    grazer(1520, 640, 0.42, 'rgba(90,84,74,0.85)', t, 2);
+    grazer(1720, 700, 0.8, 'rgba(84,74,62,0.95)', t, 3, true);
+    grass(406, t, 740, 1100, 260, 'rgba(40,36,30,0.75)', 1.4, 120);
+    ctx.restore();
+    veils(t, 407, 1);
+    grade();
+    scratches(t);
+  }
   // ---------------- SCENES ----------------
   function prairieSky(top, mid, bot, sunX, sunY, sunA) {
     const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, top); g.addColorStop(0.55, mid); g.addColorStop(1, bot); ctx.fillStyle = g; ctx.fillRect(-W, -H, W * 3, H * 3);
@@ -823,7 +908,7 @@
     shot(0, L.early, scDawn);
     shot(L.early, L.pastures, scMorning);
     shot(L.pastures, L.horses, scWater);
-    shot(L.horses, L.copan, scField);
+    shot(L.horses, L.copan, scPasture);
     shot(L.copan, L.always, scTrailerNight, { zoom: 1.3 });
     shot(L.always, L.bruises, scMoonPool);
     shot(L.bruises, L.ch1, scStorm);
