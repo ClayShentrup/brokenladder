@@ -1,0 +1,69 @@
+{
+  "title": "Proportional Approval Voting",
+  "subtitle": "a fair parliament with the same simple cross",
+  "series": "votewell",
+  "voice": { "elevenlabs": "19STyYD15bswVz51nqLf", "elevenlabs_name": "Samara X", "polly": "Ruth" },
+  "lines": [
+    { "id": "O1", "text": "In 2024, Labour won nearly two thirds of the seats in the House of Commons, with about a third of the vote." },
+    { "id": "O2", "text": "Reform UK won one vote in seven, and five seats. The Greens won one vote in fifteen, and four seats." },
+    { "id": "O3", "text": "That's first past the post. Each seat goes to whoever tops one local count, and every other vote in that seat elects nobody." },
+    { "id": "O4", "text": "This is a proposal that keeps the simple cross on the ballot paper, keeps MPs tied to a place, and gives parties seats in proportion to their votes. It's called proportional approval voting.", "gap": 1.0 },
+
+    { "id": "D1", "text": "Start with the map. Take today's 650 constituencies, and combine them in groups of about five." },
+    { "id": "D2", "text": "That makes roughly 125 to 130 districts, each electing about five MPs. The Commons stays at 650 seats, and no boundaries have to be drawn from scratch.", "gap": 0.8 },
+
+    { "id": "B1", "text": "The ballot looks like this. Candidates are grouped by party, and you put a cross next to every candidate you approve of. As many as you like." },
+    { "id": "B2", "text": "Each party also has a box of its own. A cross there approves all of that party's candidates, so voting a straight party ticket still takes one mark." },
+    { "id": "B3", "text": "And you can't spoil it. Tick a party's box and some of its candidates as well, and the extra crosses simply change nothing. Every pattern of crosses is a valid vote.", "gap": 0.9 },
+
+    { "id": "C1", "text": "The count fills the seats one at a time. Every ballot starts at full strength, and the candidate with the most support wins the first seat." },
+    { "id": "C2", "text": "After that, every ballot that approved the winner counts for a third as much. Once a second candidate it approved has won, a fifth. Then a seventh, and so on." },
+    { "id": "C3", "text": "Here's a five-seat district with a hundred voters. Forty-two back party A, thirty-one party B, seventeen party C, and ten party D." },
+    { "id": "C4", "text": "Round one. A's first candidate wins with forty-two. A's voters now count a third as much: fourteen." },
+    { "id": "C5", "text": "Round two goes to B, with thirty-one, and B's voters drop to just over ten. Round three goes to C, with seventeen." },
+    { "id": "C6", "text": "Round four. A's fourteen is now the highest, so A takes a second seat. Round five. B's ten point three edges out D's ten." },
+    { "id": "C7", "text": "Two seats for A, two for B, one for C. Close to their shares of the vote, and nobody's ballot counted twice." },
+    { "id": "C8", "text": "Those divisors, one, three, five, seven, are the Sainte-Laguë method, which New Zealand and Germany use to share out seats between parties. The difference here is that voters, not parties, decide which candidates fill them.", "say": "Those divisors, one, three, five, seven, are the Sahnt Lah-gew method, which New Zealand and Germany use to share out seats between parties. The difference here is that voters, not parties, decide which candidates fill them.", "gap": 1.0 },
+
+    { "id": "R1", "text": "So what would it do? Take the 2024 results, swing them to YouGov's poll of the eighth and ninth of November 2026, and count them both ways." },
+    { "id": "R2", "text": "Under first past the post, Labour would win 287 seats on 27 percent of the vote. Under proportional approval voting, 189." },
+    { "id": "R3", "text": "The Gallagher index, the standard measure of how far seats stray from votes, falls from 15.2 to 3.8. That's about Ireland's level.", "say": "The Gallagher index, the standard measure of how far seats stray from votes, falls from fifteen point two to three point eight. That's about Ireland's level." },
+    { "id": "R4", "text": "And the choice of divisors matters. With the older weights of a half, a third, a quarter, which give the D'Hondt method, the Greens would win 32 seats. With Sainte-Laguë weights, 59.", "say": "And the choice of divisors matters. With the older weights of a half, a third, a quarter, which give the duh-Hont method, the Greens would win 32 seats. With Sahnt Lah-gew weights, 59.", "gap": 1.0 },
+
+    { "id": "A1", "text": "Why not something simpler? Keep single-member seats, and just use approval voting in each one." },
+    { "id": "A2", "text": "It would elect better local MPs, because broadly acceptable candidates would win more often. But it isn't proportional, and the electoral reform movement judges every proposal by whether seats match votes." },
+    { "id": "A3", "text": "And with Reform UK polling between a fifth and a third of the vote, and many voters firmly opposed to them, approval in single seats would look like a scheme to lock them out.", "gap": 0.9 },
+
+    { "id": "S1", "text": "The main rival is the single transferable vote. Like this proposal, it uses multi-member districts. Ireland uses it, and so do Scotland's councils and Northern Ireland's Assembly." },
+    { "id": "S2", "text": "STV asks voters to rank the candidates. Proportional approval keeps the same cross people make today." },
+    { "id": "S3", "text": "STV can fail monotonicity: a candidate can lose because they gained support. Under approval, more support never hurts a candidate." },
+    { "id": "S4", "text": "STV sometimes pushes voters to rank a more electable candidate above their real favourite. Approval never asks you to put anyone above your favourite." },
+    { "id": "S5", "text": "And the count is dramatically simpler. STV sets a quota, passes winners' surplus votes on at fractional values, eliminates the last-placed candidate, transfers those ballots, and repeats, recalculating round after round. Scotland's councils run it by computer." },
+    { "id": "S5b", "text": "Proportional approval has one rule. Add up each candidate's approvals, with every ballot weighted one, a third, or a fifth, depending on how many of its candidates have already won. You could check it with a calculator." },
+    { "id": "S6", "text": "STV's real advantage is its track record.", "gap": 0.9 },
+
+    { "id": "L1", "text": "Why not closed party lists, like the ones Wales now uses for the Senedd? Under closed lists, the party decides which of its candidates get its seats. Here, the voters decide, and they can cross party lines." },
+    { "id": "L2", "text": "That also answers the strongest argument for the additional member system: that voters should have a personal link to their MP.", "gap": 0.8 },
+
+    { "id": "M1", "text": "And the additional member system itself, used for the Scottish Parliament and Germany's Bundestag, creates two classes of MP: constituency members, and list members who owe their seat to the party." },
+    { "id": "M2", "text": "It also has overhang. When a party wins more constituencies than its vote entitles it to, you either add seats, or refuse to seat some winners." },
+    { "id": "M3", "text": "Germany's Bundestag grew to 736 members in 2021. After the fix, 23 constituency winners were not seated in 2025." },
+    { "id": "M4", "text": "Even with approval voting for the constituency seats, the list tier would cancel it out. Approval helps consensus candidates win locally, and then the top-up seats subtract those wins from each party's total." },
+    { "id": "M5", "text": "And separate tiers invite decoy lists, as parties have used in Albania, Lesotho and Venezuela.", "gap": 1.0 },
+
+    { "id": "U1", "text": "There's one thing proportional approval does that no other system offers. Voters decide how proportional it is." },
+    { "id": "U2", "text": "If you approve only your own party's candidates, you get the proportionality of a list system." },
+    { "id": "U3", "text": "If you also approve a broadly acceptable candidate, you spend some of your side's weight on that seat. That support can push the consensus candidate over the line, ahead of the opposing side's next candidate." },
+    { "id": "U4", "text": "In the simulation, cross-party approval cuts Reform UK from 140 seats to 120." },
+    { "id": "U5", "text": "Under STV, ranking someone lower down costs you nothing. Which also means it changes nothing.", "gap": 1.0 },
+
+    { "id": "K1", "text": "There are real costs, and they should be stated up front." },
+    { "id": "K2", "text": "First, a threshold. In a five-seat district, a party needs roughly ten to fifteen percent of the local vote. Restore Britain, on three percent, would win no seats, and the Greens would miss out in many districts." },
+    { "id": "K3", "text": "Second, free-riding. Voters may skip a candidate they think is already safe. Every proportional system has some version of this." },
+    { "id": "K4", "text": "Third, the count. Results can't be added up polling station by polling station, so each district counts its ballots centrally. Scotland already does this for its council elections." },
+    { "id": "K5", "text": "And it has never elected a national parliament, though Sweden has used methods from this family to allocate seats within parties since 1909.", "gap": 1.0 },
+
+    { "id": "E1", "text": "So the ballot is a cross. The count is one rule. And the Commons ends up looking like the country that elected it." },
+    { "id": "E2", "text": "Proportional approval voting. Approve as many as you like, and every vote counts." }
+  ]
+}
