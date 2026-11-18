@@ -55,13 +55,13 @@ function face(px0, py0, s, who, e, L = {}) {
   const mid = (a, b, u = 0.5) => [lerp(a[0], b[0], u), lerp(a[1], b[1], u)];
   const W2 = (w) => w * s;
   // cranium ellipsoid (mm): centre (0, -62, z 85 behind the face), radii x 75, y 88, z 97
-  const rx = 77 * C.sx, ry = 90, rz = 104, cz = 92, cyc = -58;
+  const rx = 79 * C.sx, ry = 90, rz = 108, cz = 95, cyc = -58;
   const cr = []; for (let i = 0; i < 72; i++) { const a = (i / 72) * Math.PI * 2, ax = Math.sqrt(Math.pow(rx * ct, 2) + Math.pow(rz * st, 2)); cr.push([px0 + (-cz * st + Math.cos(a) * ax) * k, py0 + (cyc + Math.sin(a) * ry - YC) * k]); }
   const onSkull = (x, y, lift2 = 4) => { const v = 1 - Math.pow(x / rx, 2) - Math.pow((y - cyc) / ry, 2); return [x, y, cz - rz * Math.sqrt(Math.max(0, v)) - lift2]; };
   const near = -fs; // x sign of the side of the face nearer the viewer
   ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   // ---------- neck: a vertical cylinder behind the chin ----------
-  const ncx = px0 + (-60 * st) * k, nr = 50 * C.sx * k;
+  const ncx = px0 + (-72 * st) * k, nr = 44 * C.sx * k;
   const neckP = [[ncx - nr, py0 + (20 - YC) * k], [ncx + nr, py0 + (40 - YC) * k], [ncx + nr * 1.05, py0 + (230 - YC) * k], [ncx - nr * 1.05, py0 + (230 - YC) * k]];
   pencilShape(neckP, rgba(K.skin, 0.4), [{ col: GR2, n: 400, len: 18 * s, ang: -1.0, a: 0.45, f: (x, y) => ss(py0 + (110 - YC) * k, py0 + (80 - YC) * k, y) * 0.9 + 0.15 }], { lw: W2(1.8), lineCol: GR });
   // shirt, tie, coat, raised collar
@@ -75,7 +75,7 @@ function face(px0, py0, s, who, e, L = {}) {
   pencilShape([B(90, 210), B(100, 120), B(70, 92), B(40, 128), B(20, 190)], coatTone, [{ col: GR2, n: 160, ang: -1.0, len: 20 * s, a: 0.4 }], { lw: W2(2.2), lineCol: GR });
   // ---------- head silhouette: the cranium and the jaw, filled with paper and a skin wash ----------
   const jawPts = []; for (let i = 0; i <= 16; i++) jawPts.push(Q[i]);
-  const headH = hull(cr.filter((p) => p[1] < py0 + (20 - YC) * k).concat(jawPts).concat([Q[27], Q[30], Q[8]]));
+  const headH = hull(cr.filter((p) => p[1] < py0 + (-40 - YC) * k).concat(jawPts).concat([Q[27], Q[30], Q[8]]));
   const hb = bbox(headH);
   ctx.save(); ctx.clip(P2(headH));
   ctx.fillStyle = PAPERC; ctx.fillRect(hb[0], hb[1], hb[2] - hb[0], hb[3] - hb[1]);
@@ -99,33 +99,49 @@ function face(px0, py0, s, who, e, L = {}) {
   hatch2([mid(eo, j3, 0.5), mid(j3, mc, 0.25), mid(j5, mc, 0.35), mid(j3, j5, 0.6)], GR2, 200 * (0.5 + 0.8 * C.lean), { len: 12 * s, a: 0.35 });
   const under = []; for (let i = 2; i <= 14; i++) under.push(Q[i]); for (let i = 14; i >= 2; i--) under.push([Q[i][0], Q[i][1] + 22 * k]);
   { const pp = smooth(under, true, 3); ctx.save(); ctx.clip(P2(neckP)); ctx.clip(P2(pp)); strokes(bbox(pp), GR, Math.round(300 * s), { ang: fs > 0 ? -0.9 : -2.24, len: 14 * s, w: 1.3 * s, a: 0.5 }); ctx.restore(); }
+  hatch2([PJ(onSkull(-near * 50, C.hairY + 8)), PJ(onSkull(0, C.hairY + 4)), PJ(onSkull(near * 55, C.hairY + 14)), PJ(onSkull(near * 58, C.hairY + 30)), PJ(onSkull(0, C.hairY + 18)), PJ(onSkull(-near * 50, C.hairY + 22))], GR2, 160, { len: 10 * s, a: 0.25 });
   if (who === 'julian') { const stb = [Q[2], Q[4], Q[6], Q[8], Q[10], Q[12], Q[14], mid(Q[54], Q[14], 0.4), Q[55], Q[57], Q[59], mid(Q[48], Q[2], 0.4)]; ctx.save(); clipHead(); ctx.clip(P2(smooth(stb, true, 3))); strokes(bbox(stb), GR2, Math.round(300 * s), { len: 2.5 * s, w: 0.9 * s, a: 0.18, jitAng: 3 }); ctx.restore(); }
-  // ---------- hair: everything on the cranium above and behind the hairline ----------
-  const hl = [];
-  for (let i = 0; i <= 12; i++) { const x = lerp(-near * 62, near * 62, i / 12), ax = Math.abs(x) / 62; hl.push(onSkull(x, C.hairY + C.hairC * ax * ax - C.recede * Math.exp(-Math.pow((ax - 0.62) / 0.18, 2)) * -1 + (who === 'julian' ? 6 * Math.sin(ax * 9) * (1 - ax) : 0), 3)); }
-  hl.push(onSkull(near * 72, -64, 3), onSkull(near * 74, -36, 3), [near * 78, -44, 92], [near * 72, -12, 128], [near * 46, 22, 168], [0, 30, 178]);
-  const hl2 = hl.map(PJ), back = -fs;
-  const topY = Math.min(...cr.map((p) => p[1])) - 400;
-  const hairClip = hl2.concat([[hl2[hl2.length - 1][0] + back * 800, hl2[hl2.length - 1][1]], [hl2[hl2.length - 1][0] + back * 800, topY], [hl2[0][0] - back * 800, topY], [hl2[0][0] - back * 800, hl2[0][1]]]);
-  const ccx = px0 + (-cz * st) * k, ccy = py0 + (cyc - YC) * k;
-  const vol = who === 'julian' ? 1.1 : 1.06, lift3 = (who === 'julian' ? 10 : 5) * k;
-  const crBig = cr.map(([x, y]) => [ccx + (x - ccx) * vol, ccy + (y - ccy) * vol - lift3 * Math.max(0, (ccy - y) / (ry * k))]);
-  ctx.save(); ctx.clip(P2(hairClip)); ctx.clip(P2(crBig));
-  const hbb = bbox(crBig); ctx.fillStyle = PAPERC; ctx.fillRect(hbb[0], hbb[1], hbb[2] - hbb[0], hbb[3] - hbb[1]);
-  ctx.fillStyle = rgba(C.hairMid, who === 'julian' ? 0.6 : 0.4); ctx.fillRect(hbb[0], hbb[1], hbb[2] - hbb[0], hbb[3] - hbb[1]);
-  const hr = rng(who === 'julian' ? 31 : 47);
-  for (let i = 0; i < 1100; i++) {
-    const u = hr(), v = hr(), hi0 = Math.min(hl2.length - 2, Math.floor(u * (hl2.length - 1))), p0a = mid(hl2[hi0], hl2[hi0 + 1], hr());
-    const p0 = hr() < 0.55 ? [lerp(hbb[0], hbb[2], hr()), lerp(hbb[1], hbb[3] * 0.4 + hbb[1] * 0.6, hr())] : p0a;
-    const len = (40 + hr() * 70) * k * (who === 'julian' ? 1.15 : 0.8);
-    const ang = Math.atan2(-0.45 - v * 0.3 + (u > 0.85 ? 0.9 : 0), back * (0.9 + C.part * (1 - u)));
-    const r2 = hr(), lit = fs * (p0[0] - px0) > -30 * k, col = r2 < (lit ? 0.35 : 0.1) ? C.hairHi : r2 < 0.6 ? C.hairMid : C.hairDark;
-    const q0 = [p0[0] - Math.cos(ang) * 6 * k, p0[1] + v * 30 * k], q2 = [q0[0] + Math.cos(ang) * len, q0[1] + Math.sin(ang) * len];
-    ctx.globalAlpha = 0.45 + hr() * 0.45; ctx.strokeStyle = tooth(col, 1); ctx.lineWidth = (1.1 + hr() * 1.7) * s;
-    ctx.beginPath(); ctx.moveTo(q0[0], q0[1]); ctx.quadraticCurveTo(lerp(q0[0], q2[0], 0.5), lerp(q0[1], q2[1], 0.5) - 8 * k, q2[0], q2[1]); ctx.stroke();
+  // ---------- hair: an outline built from anchors on the skull, filled with locks ----------
+  const MM = (p, dx, dy) => [p[0] + fs * dx * k, p[1] + dy * k]; // offset a projected point by mm (dx toward the face)
+  const hy = C.hairY, rec = C.recede;
+  const tFar = PJ(onSkull(-near * 58, hy + C.hairC + 6, 2)), front = PJ(onSkull(0, hy, 2)), tNear = PJ(onSkull(near * 52, hy + C.hairC + rec * 0.8, 2));
+  const sideb = PJ(onSkull(near * 70, -70, 2)), earTopP = PJ([near * 78, -58, 74]), behindEar = PJ([near * 76, -20, 110]), nape = PJ([near * 40, 26, 170]);
+  const crTop = cr.reduce((a2, p) => (p[1] < a2[1] ? p : a2)), crBack = cr.reduce((a2, p) => (fs * p[0] < fs * a2[0] ? p : a2));
+  const J = who === 'julian';
+  const fringe = J ? 20 : 9, crownUp = J ? 14 : 7;
+  // the skull's whole upper arc, front to back, pushed out for the hair's thickness
+  const ccx2 = px0 + (-cz * st) * k, ccy2 = py0 + (cyc - YC) * k;
+  const arc = cr.filter((p) => p[1] < ccy2 + 0.35 * ry * k && (fs * (p[0] - front[0]) < -6 * k || p[1] < front[1] - 6 * k)).sort((a2, b2) => fs * (b2[0] - a2[0]))
+    .map(([x, y]) => { const up = Math.max(0, (ccy2 - y) / (ry * k)); return [ccx2 + (x - ccx2) * 1.07, ccy2 + (y - ccy2) * 1.07 - crownUp * k * up]; });
+  const napeP = PJ([near * 44, 10, 168]);
+  const outline = [MM(tFar, 2, 2), MM(tFar, 6, -fringe * 0.7), MM(front, 6, -fringe), MM(front, -6, -fringe - 6)]
+    .concat(arc)
+    .concat([MM(napeP, -6, -4), MM(napeP, 8, 2), MM(behindEar, 4, -6), MM(earTopP, 2, -2), MM(sideb, 4, 8), MM(tNear, 0, 6), MM(tNear, 6, -2)]);
+  // hairline between the near temple and the far temple: dips and a widow's-peak-free curve with a little irregularity
+  const hairline = []; const hn = rng(J ? 3 : 4);
+  for (let i = 1; i < 10; i++) { const u = i / 10, x = lerp(near * 52, -near * 58, u), ax = Math.abs(x) / 58; hairline.push(MM(PJ(onSkull(x, hy + C.hairC * ax * ax + rec * Math.exp(-Math.pow((ax - 0.75) / 0.2, 2)), 2)), 0, (hn() - 0.5) * 4)); }
+  const hairOut = smooth(outline.concat(hairline), true, 5);
+  const hairP = P2(hairOut), hbb = bbox(hairOut);
+  ctx.save(); ctx.clip(hairP);
+  ctx.fillStyle = PAPERC; ctx.fillRect(hbb[0], hbb[1], hbb[2] - hbb[0], hbb[3] - hbb[1]);
+  ctx.fillStyle = rgba(C.hairMid, J ? 0.7 : 0.5); ctx.fillRect(hbb[0], hbb[1], hbb[2] - hbb[0], hbb[3] - hbb[1]);
+  // locks: long strokes flowing from the front hairline back over the crown and down behind the ear
+  const hr = rng(J ? 31 : 47), partX = lerp(front[0], tNear[0], C.part);
+  for (let i = 0; i < 1300; i++) {
+    const u = hr(), v = hr(), x0 = lerp(hbb[0], hbb[2], u), y0 = lerp(hbb[1], hbb[3], v);
+    const backward = fs * (partX - x0) / ((hbb[2] - hbb[0]) || 1); // >0 behind the part
+    const ang = Math.atan2(0.25 + 0.9 * clamp(v * 1.4 - 0.2), -fs * (0.9 + 0.3 * backward)) + (hr() - 0.5) * 0.35;
+    const len = (24 + hr() * 46) * k * (J ? 1.1 : 0.8), r2 = hr();
+    const lit = fs * (x0 - px0) > -20 * k && v < 0.5, col = r2 < (lit ? 0.4 : 0.12) ? C.hairHi : r2 < 0.62 ? C.hairMid : C.hairDark;
+    ctx.globalAlpha = 0.45 + hr() * 0.45; ctx.strokeStyle = tooth(col, 1); ctx.lineWidth = (1.1 + hr() * 1.8) * s;
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.quadraticCurveTo(x0 + Math.cos(ang) * len * 0.5, y0 + Math.sin(ang) * len * 0.5 - 5 * k, x0 + Math.cos(ang) * len, y0 + Math.sin(ang) * len); ctx.stroke();
   }
+  // a few clumps of shadow give the mass some form
+  strokes(hbb, C.hairDark, Math.round(500 * s), { ang: fs > 0 ? 2.7 : 0.44, len: 30 * s, w: 1.6 * s, a: 0.5, f: (x, y) => ss(hbb[1] + (hbb[3] - hbb[1]) * 0.4, hbb[3], y) * 0.8 + (fs * (x - px0) < -60 * k ? 0.4 : 0) });
   ctx.globalAlpha = 1; ctx.restore();
-  pline(hl2.slice(0, 15), GR, W2(1.6), 0.55, 2, 1);
+  pline(hairOut.filter((_, i) => i % 2 === 0).concat([hairOut[0]]), GR, W2(1.6), 0.55, 2, 1.2);
+  // loose strands breaking the silhouette
+  for (let i = 0; i < 14; i++) { const p = hairOut[Math.floor(hr() * hairOut.length * 0.55)]; pline([p, [p[0] - fs * (6 + hr() * 10) * k, p[1] + (hr() - 0.6) * 8 * k]], C.hairDark, W2(1.2), 0.6); }
   // ---------- ear (near side): in the side plane, behind the jaw, from brow line to nose base ----------
   const ear = []; for (let i = 0; i <= 24; i++) { const a = (i / 24) * Math.PI * 2; ear.push(PJ([near * 79, -28 + 31 * Math.sin(a) + (Math.sin(a) < 0 ? 3 * Math.sin(a) : 0), 82 + 15 * Math.cos(a) * (Math.cos(a) > 0 ? 1.1 : 0.85)])); }
   pencilShape(ear, rgba(K.skin, 0.55), [{ col: GR2, n: 120, len: 7 * s, a: 0.45 }, { col: K.magenta, n: 40, len: 6 * s, a: 0.3 }], { lw: W2(2), lineCol: GR });
@@ -133,12 +149,12 @@ function face(px0, py0, s, who, e, L = {}) {
   pline(smooth(ear.slice(3, 18).map((p) => mid(p, ec, 0.38)), false, 4), GR, W2(1.4), 0.6);
   ctx.fillStyle = 'rgba(52,50,58,0.5)'; ctx.beginPath(); ctx.ellipse(ec[0] + fs * 2 * k, ec[1] + 4 * k, 2.5 * k, 4 * k, 0, 0, Math.PI * 2); ctx.fill();
   // ---------- contours ----------
-  pline(smooth(jawPts.slice(near < 0 ? 0 : 8, near < 0 ? 9 : 17), false, 5), GR, W2(2.8), 0.9, 2, 1);
+  pline(smooth(jawPts.slice(near < 0 ? 2 : 8, near < 0 ? 9 : 15), false, 5), GR, W2(2.8), 0.9, 2, 1);
   const far = near < 0 ? [8, 9, 10, 11, 12, 13] : [8, 7, 6, 5, 4, 3]; pline(smooth(far.map((i) => Q[i]), false, 5), GR, W2(2.4), 0.85, 2, 1);
   const farTemple = PJ(onSkull(-near * 64, -88)), farBrow = Q[nIdx(26, 17)], farEye = Q[nIdx(45, 36)];
   pline(smooth([Q[far[far.length - 1]], mid(farEye, Q[far[far.length - 1]], 0.55), [farBrow[0] + fs * 4 * k, farBrow[1] + 2 * k], farTemple], false, 5), GR, W2(2), 0.75);
   const neckFront = [Q[8][0] - fs * 18 * k, py0 + (90 - YC) * k];
-  pline([[ncx - fs * nr, py0 + (30 - YC) * k], [ncx - fs * nr * 1.05, py0 + (200 - YC) * k]], GR, W2(1.8), 0.7); pline([neckFront, [neckFront[0] - fs * 4 * k, py0 + (150 - YC) * k]], GR, W2(1.8), 0.7);
+  pline([[ncx - fs * nr, py0 + (40 - YC) * k], [ncx - fs * nr * 1.05, py0 + (200 - YC) * k]], GR, W2(1.8), 0.7); pline([neckFront, [neckFront[0] - fs * 4 * k, py0 + (150 - YC) * k]], GR, W2(1.8), 0.7);
   if (C.age > 0.5) { for (let i = 0; i < 3; i++) { const y = -96 - i * 9; pline(smooth([PJ(onSkull(-30, y, 0)), PJ(onSkull(0, y - 2, 0)), PJ(onSkull(30, y, 0))], false, 4), GR2, W2(1.1), 0.25 + 0.2 * e.brow); } }
   if (e.clench > 0.05) pline(smooth([mid(j0, j3, 0.6), mid(j3, mc, 0.25), mid(j5, mc, 0.2)], false, 4), GR, W2(1.6), e.clench * 0.7);
   // ---------- brows: hairs along the landmark curve ----------
