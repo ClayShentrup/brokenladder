@@ -838,14 +838,14 @@
       ['more support never hurts', ['can fail', 0], ['always', 1], c('S3')],
       ['never betray your favourite', ['sometimes must', 0], ['never', 1], c('S4')],
       ['the count', ['quota, transfers, loops', 0], ['one weighted sum', 1], c('S5')],
-      ['track record', ['Ireland, Scotland, NI', 1], ['none yet', 0], c('S6')],
+      ['track record', ['Ireland, Scotland, NI', 1], ['Sweden, 1909–21', 2], c('S6')],
     ];
     rows.slice(0, rowsShown).forEach(([n, a, b, t0], i) => {
       const y = 380 + i * 130, al = fadeIn(t0);
       if (al <= 0) { KC += 20; return; }
       line(200, y + 62, 1740, y + 62, al, { strokeWidth: 1.5, stroke: P.grey });
       txt(n, 220, y, 46, { align: 'left', alpha: al });
-      [[a, cx[0]], [b, cx[1]]].forEach(([[s2, good], x]) => { (good ? tick : nope)(x - 170, y, 1, al); txt(s2, x - 120, y, 40, { align: 'left', font: PRINT, alpha: al }); });
+      [[a, cx[0]], [b, cx[1]]].forEach(([[s2, good], x]) => { if (good === 2) txt('~', x - 170, y - 6, 110, { color: P.gold, alpha: al }); else (good ? tick : nope)(x - 170, y, 1, al); txt(s2, x - 120, y, 40, { align: 'left', font: PRINT, alpha: al }); });
     });
   }
   function sSTV() {

@@ -351,202 +351,209 @@ candidates have already won.
 You could check it with a calculator.
 
 73
-00:05:41,309 --> 00:05:44,653
-STV's real advantage is its track record.
+00:05:41,309 --> 00:05:44,771
+STV's real advantage is a longer track
+record.
 
 74
-00:05:45,553 --> 00:05:51,274
+00:05:44,771 --> 00:05:52,725
+Proportional approval's comes from Sweden,
+which used it to allocate seats within
+parties from 1909 to 1921.
+
+75
+00:05:53,625 --> 00:05:59,346
 Why not closed party lists, like the ones
 Wales now uses for the Senedd?
 
-75
-00:05:51,274 --> 00:05:57,308
+76
+00:05:59,346 --> 00:06:05,380
 Under closed lists, the party decides
 which of its candidates get its seats.
 
-76
-00:05:57,308 --> 00:06:01,697
+77
+00:06:05,380 --> 00:06:09,769
 Here, the voters decide, and they can
 cross party lines.
 
-77
-00:06:02,117 --> 00:06:06,884
+78
+00:06:10,189 --> 00:06:14,956
 That also answers the strongest argument
 for the additional member system:
 
-78
-00:06:06,884 --> 00:06:10,189
+79
+00:06:14,956 --> 00:06:18,261
 that voters should have a personal link to
 their MP.
 
-79
-00:06:10,989 --> 00:06:18,842
+80
+00:06:19,061 --> 00:06:26,914
 And the additional member system itself,
 used for the Scottish Parliament and
 Germany's Bundestag, creates two classes
 of MP:
 
-80
-00:06:18,842 --> 00:06:23,267
+81
+00:06:26,914 --> 00:06:31,339
 constituency members, and list members who
 owe their seat to the party.
 
-81
-00:06:23,687 --> 00:06:25,371
+82
+00:06:31,759 --> 00:06:33,443
 It also has overhang.
 
-82
-00:06:25,371 --> 00:06:34,632
+83
+00:06:33,443 --> 00:06:42,704
 When a party wins more constituencies than
 its vote entitles it to, you either add
 seats, or refuse to seat some winners.
 
-83
-00:06:35,052 --> 00:06:40,137
+84
+00:06:43,124 --> 00:06:48,209
 Germany's Bundestag grew to 736 members in
 2021.
 
-84
-00:06:40,137 --> 00:06:46,676
+85
+00:06:48,209 --> 00:06:54,748
 After the fix, 23 constituency winners
 were not seated in 2025.
 
-85
-00:06:47,096 --> 00:06:53,076
+86
+00:06:55,168 --> 00:07:01,148
 Even with approval voting for the
 constituency seats, the list tier would
 cancel it out.
 
-86
-00:06:53,076 --> 00:07:01,072
+87
+00:07:01,148 --> 00:07:09,144
 Approval helps consensus candidates win
 locally, and then the top-up seats
 subtract those wins from each party's
 total.
 
-87
-00:07:01,492 --> 00:07:08,205
+88
+00:07:09,564 --> 00:07:16,277
 And separate tiers invite decoy lists, as
 parties have used in Albania, Lesotho and
 Venezuela.
 
-88
-00:07:09,205 --> 00:07:14,865
+89
+00:07:17,277 --> 00:07:22,937
 There's one thing proportional approval
 does that no other system offers.
 
-89
-00:07:14,865 --> 00:07:17,695
+90
+00:07:22,937 --> 00:07:25,767
 Voters decide how proportional it is.
 
-90
-00:07:18,115 --> 00:07:23,757
+91
+00:07:26,187 --> 00:07:31,829
 If you approve only your own party's
 candidates, you get the proportionality of
 a list system.
 
-91
-00:07:24,177 --> 00:07:30,360
+92
+00:07:32,249 --> 00:07:38,432
 If you also approve a broadly acceptable
 candidate, you spend some of your side's
 weight on that seat.
 
-92
-00:07:30,360 --> 00:07:36,664
+93
+00:07:38,432 --> 00:07:44,736
 That support can push the consensus
 candidate over the line, ahead of the
 opposing side's next candidate.
 
-93
-00:07:37,084 --> 00:07:44,738
+94
+00:07:45,156 --> 00:07:52,810
 In the simulation, cross-party approval
 cuts Reform UK from 140 seats to 120.
 
-94
-00:07:45,158 --> 00:07:49,497
+95
+00:07:53,230 --> 00:07:57,569
 Under STV, ranking someone lower down
 costs you nothing.
 
-95
-00:07:49,497 --> 00:07:52,237
+96
+00:07:57,569 --> 00:08:00,309
 Which also means it changes nothing.
 
-96
-00:07:53,237 --> 00:07:57,835
+97
+00:08:01,309 --> 00:08:05,907
 There are real costs, and they should be
 stated up front.
 
-97
-00:07:58,255 --> 00:07:59,670
+98
+00:08:06,327 --> 00:08:07,742
 First, a threshold.
 
-98
-00:07:59,670 --> 00:08:05,964
+99
+00:08:07,742 --> 00:08:14,036
 In a five-seat district, a party needs
 roughly ten to fifteen percent of the
 local vote.
 
-99
-00:08:05,964 --> 00:08:13,249
+100
+00:08:14,036 --> 00:08:21,321
 Restore Britain, on three percent, would
 win no seats, and the Greens would miss
 out in many districts.
 
-100
-00:08:13,669 --> 00:08:15,328
+101
+00:08:21,741 --> 00:08:23,400
 Second, free-riding.
 
-101
-00:08:15,328 --> 00:08:19,750
+102
+00:08:23,400 --> 00:08:27,822
 Voters may skip a candidate they think is
 already safe.
 
-102
-00:08:19,750 --> 00:08:23,778
+103
+00:08:27,822 --> 00:08:31,850
 Every proportional system has some version
 of this.
 
-103
-00:08:24,198 --> 00:08:25,465
+104
+00:08:32,270 --> 00:08:33,537
 Third, the count.
 
-104
-00:08:25,465 --> 00:08:33,137
+105
+00:08:33,537 --> 00:08:41,209
 Results can't be added up polling station
 by polling station, so each district
 counts its ballots centrally.
 
-105
-00:08:33,137 --> 00:08:36,867
+106
+00:08:41,209 --> 00:08:44,939
 Scotland already does this for its council
 elections.
 
-106
-00:08:37,287 --> 00:08:46,743
+107
+00:08:45,359 --> 00:08:54,815
 And it has never elected a national
 parliament, though Sweden has used methods
 from this family to allocate seats within
 parties since 1909.
 
-107
-00:08:47,743 --> 00:08:49,501
+108
+00:08:55,815 --> 00:08:57,573
 So the ballot is a cross.
 
-108
-00:08:49,501 --> 00:08:51,055
+109
+00:08:57,573 --> 00:08:59,127
 The count is one rule.
 
-109
-00:08:51,055 --> 00:08:55,449
+110
+00:08:59,127 --> 00:09:03,521
 And the Commons ends up looking like the
 country that elected it.
 
-110
-00:08:55,869 --> 00:08:58,065
+111
+00:09:03,941 --> 00:09:06,137
 Proportional approval voting.
 
-111
-00:08:58,065 --> 00:09:01,799
+112
+00:09:06,137 --> 00:09:09,871
 Approve as many as you like, and every
 vote counts.
 

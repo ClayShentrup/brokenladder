@@ -40,7 +40,7 @@
     { "id": "S4", "text": "STV sometimes pushes voters to rank a more electable candidate above their real favourite. Approval never asks you to put anyone above your favourite." },
     { "id": "S5", "text": "And the count is dramatically simpler. STV sets a quota, passes winners' surplus votes on at fractional values, eliminates the last-placed candidate, transfers those ballots, and repeats, recalculating round after round. Scotland's councils run it by computer." },
     { "id": "S5b", "text": "Proportional approval has one rule. Add up each candidate's approvals, with every ballot weighted one, a third, or a fifth, depending on how many of its candidates have already won. You could check it with a calculator." },
-    { "id": "S6", "text": "STV's real advantage is its track record.", "gap": 0.9 },
+    { "id": "S6", "text": "STV's real advantage is a longer track record. Proportional approval's comes from Sweden, which used it to allocate seats within parties from 1909 to 1921.", "gap": 0.9 },
 
     { "id": "L1", "text": "Why not closed party lists, like the ones Wales now uses for the Senedd? Under closed lists, the party decides which of its candidates get its seats. Here, the voters decide, and they can cross party lines." },
     { "id": "L2", "text": "That also answers the strongest argument for the additional member system: that voters should have a personal link to their MP.", "gap": 0.8 },
