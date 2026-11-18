@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Proportional Approval Voting: thumbnail</title>
+<style>html, body { margin: 0; background: #000; } canvas { display: block; }</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<script src="vendor/rough.js"></script>
+<script>
+// YouTube thumbnail, 1280x720, in the explainer's hand-drawn style.
+(async () => {
+  const W = 1280, H = 720;
+  const P = { paper: '#f8f1e3', ink: '#2a2633', red: '#e4572e', teal: '#1b998b', gold: '#f2a541', blue: '#3f6fd8', plum: '#8d5a9e', green: '#4fa35b', grey: '#8f897d' };
+  const fonts = [new FontFace('Caveat', 'url(fonts/caveat-latin-700-normal.woff2)', { weight: '700' }), new FontFace('Patrick Hand', 'url(fonts/patrick-hand-latin-400-normal.woff2)')];
+  await Promise.all(fonts.map((f) => f.load().then((ff) => document.fonts.add(ff))));
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d'), rc = rough.canvas(cv);
+  let sd = 3; const o = (x) => Object.assign({ roughness: 1.3, bowing: 1.1, stroke: P.ink, strokeWidth: 3.5, seed: sd++ }, x || {});
+  let r = 7; const rnd = () => { r = (r * 16807) % 2147483647; return (r - 1) / 2147483646; };
+  // paper
+  ctx.fillStyle = P.paper; ctx.fillRect(0, 0, W, H);
+  for (let i = 0; i < 5000; i++) { ctx.fillStyle = `rgba(120,100,70,${rnd() * 0.06})`; ctx.fillRect(rnd() * W, rnd() * H, 1 + rnd() * 2, 1 + rnd() * 2); }
+  const v = ctx.createRadialGradient(W / 2, H / 2, H * 0.3, W / 2, H / 2, H); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(80,60,30,0.25)'); ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
+  const text = (s, x, y, size, col, font = 'Caveat', wgt = 700, align = 'left', rot = 0) => { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.font = `${wgt} ${size}px ${font}`; ctx.fillStyle = col; ctx.textAlign = align; ctx.textBaseline = 'middle'; ctx.fillText(s, 0, 0); ctx.restore(); };
+
+  // the ballot, big and tilted, three crosses across three parties
+  ctx.save(); ctx.translate(300, 400); ctx.rotate(-0.07);
+  rc.rectangle(-230, -270, 460, 560, o({ fill: '#ffffff', fillStyle: 'solid', strokeWidth: 4 }));
+  ctx.fillStyle = P.ink; ctx.fillRect(-205, -235, 410, 54);
+  text('vote for as many as you like', 0, -207, 30, '#ffffff', 'Patrick Hand', 400, 'center');
+  [['Ahmed', P.red, 1], ['Hughes', P.blue, 0], ['Evans', P.gold, 1], ['Nwosu', P.green, 1], ['Carter', P.teal, 0]].forEach(([n, col, x], i) => {
+    const y = -120 + i * 88;
+    rc.circle(-170, y, 26, o({ fill: col, fillStyle: 'solid', strokeWidth: 2 }));
+    text(n, -140, y, 50, P.ink);
+    rc.rectangle(105, y - 32, 64, 64, o({ strokeWidth: 3.5 }));
+    if (x) { rc.line(113, y - 24, 161, y + 24, o({ stroke: P.blue, strokeWidth: 9 })); rc.line(161, y - 24, 113, y + 24, o({ stroke: P.blue, strokeWidth: 9 })); }
+  });
+  ctx.restore();
+
+  // headline
+  text('same X.', 600, 130, 160, P.ink, 'Caveat', 700, 'left', -0.03);
+  text('fair seats.', 620, 280, 150, P.teal, 'Caveat', 700, 'left', -0.03);
+  rc.line(620, 352, 1180, 340, o({ stroke: P.red, strokeWidth: 8 }));
+
+  // a proportional parliament: hemicycle of seats in party colours
+  const shares = [[P.red, 0.29], [P.teal, 0.21], [P.blue, 0.17], [P.gold, 0.13], [P.green, 0.09], [P.plum, 0.06], [P.grey, 0.05]];
+  const seats = []; const rows = 6, cx = 905, cy = 700;
+  for (let k = 0; k < rows; k++) { const R = 120 + k * 32, n = Math.round(12 + k * 3.2); for (let j = 0; j < n; j++) { const a = Math.PI + (j + 0.5) / n * Math.PI; seats.push([cx + Math.cos(a) * R, cy + Math.sin(a) * R, a]); } }
+  seats.sort((a, b) => a[2] - b[2]);
+  let idx = 0; const N = seats.length;
+  shares.forEach(([col, s], pi) => { const cnt = pi === shares.length - 1 ? N - idx : Math.round(s * N); for (let q = 0; q < cnt && idx < N; q++, idx++) { const [x, y] = seats[idx]; rc.circle(x, y, 22, o({ fill: col, fillStyle: 'solid', strokeWidth: 1.6, roughness: 0.9 })); } });
+  window.__done = true;
+})();
+</script>
+</body>
+</html>
