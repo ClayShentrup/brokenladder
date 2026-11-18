@@ -1,0 +1,322 @@
+{
+ "title": "common knowledge",
+ "byline": "clay shentrup",
+ "voice": {
+  "elevenlabs": "z7i51AlFqQJ8JzM16o7e"
+ },
+ "lines": [
+  {
+   "id": "S01",
+   "text": "the rain in zurich had the particular, greasy persistence of a november thaw, turning the cobbles along the limmat into dark mirrors that smeared the amber glow of the streetlamps. julian adjusted the collar of his trench coat as he stepped under the stone arcade of the munsterhof, shaking the dampness from his umbrella. he was ten minutes early for the dead drop, giving him time to clear his sightlines before the courier arrived.",
+   "say": "The rain in Zurich had the particular, greasy persistence of a November thaw, turning the cobbles along the Limmat into dark mirrors that smeared the amber glow of the streetlamps. Julian adjusted the collar of his trench coat as he stepped under the stone arcade of the Münsterhof, shaking the dampness from his umbrella. He was ten minutes early for the dead drop, giving him time to clear his sightlines before the courier arrived."
+  },
+  {
+   "id": "S02",
+   "text": "instead, standing near the dry fountain in the center of the square, nursing a paper cup of espresso, was henrik.",
+   "say": "Instead, standing near the dry fountain in the center of the square, nursing a paper cup of espresso, was Henrik."
+  },
+  {
+   "id": "S03",
+   "text": "julian’s stride didn't hitch. years of field work had severed the connection between his gut and his shoulders; surprise stayed behind his ribs, a brief cold flash that never reached his jaw or his knees. he raised a hand in a lazy, half-hearted wave, letting his face settle into the tired, slightly amused mask of a man running into an old acquaintance from the vienna logistics pool.",
+   "say": "Julian’s stride didn't hitch. Years of field work had severed the connection between his gut and his shoulders; surprise stayed behind his ribs, a brief cold flash that never reached his jaw or his knees. He raised a hand in a lazy, half-hearted wave, letting his face settle into the tired, slightly amused mask of a man running into an old acquaintance from the Vienna logistics pool."
+  },
+  {
+   "id": "S04",
+   "text": "\"henrik\", julian said, closing the distance between them. \"tell me they didn't pull you off the danube desk for this.\"",
+   "say": "\"Henrik\", Julian said, closing the distance between them. \"Tell me they didn't pull you off the Danube desk for this.\""
+  },
+  {
+   "id": "S05",
+   "text": "henrik smiled, a warm, crinkling expression that reached his eyes with easy authenticity. he extended his free hand, and julian shook it. henrik’s grip was dry, steady, and unhurried.",
+   "say": "Henrik smiled, a warm, crinkling expression that reached his eyes with easy authenticity. He extended his free hand, and Julian shook it. Henrik’s grip was dry, steady, and unhurried."
+  },
+  {
+   "id": "S06",
+   "text": "\"just passing through\", henrik said, his voice a low, pleasant baritone. \"regional audit. i'm heading up to the wine bar at the top of the lindenhof to meet a contact from geneva. walk with me for a minute—my feet are killing me.\"",
+   "say": "\"Just passing through\", Henrik said, his voice a low, pleasant baritone. \"Regional audit. I'm heading up to the wine bar at the top of the Lindenhof to meet a contact from Geneva. Walk with me for a minute, my feet are killing me.\""
+  },
+  {
+   "id": "S07",
+   "text": "\"tell me about it\", julian said, falling into step beside him as henrik steered them out of the open square and into the narrow stone alley leading toward the hill. \"i’ve been chasing a phantom shipping manifest out of antwerp for three days. my knees are shot.\"",
+   "say": "\"Tell me about it\", Julian said, falling into step beside him as Henrik steered them out of the open square and into the narrow stone alley leading toward the hill. \"I’ve been chasing a phantom shipping manifest out of Antwerp for three days. My knees are shot.\""
+  },
+  {
+   "id": "S08",
+   "text": "\"you ought to switch to those german orthopedic insoles\", henrik said casually, gesturing toward a dark doorway with his coffee cup. \"miracle workers. i picked up a pair in munich last week, right after i cleared the hotel.\"",
+   "say": "\"You ought to switch to those German orthopedic insoles\", Henrik said casually, gesturing toward a dark doorway with his coffee cup. \"Miracle workers. I picked up a pair in Munich last week, right after I cleared the hotel.\""
+  },
+  {
+   "id": "S09",
+   "text": "julian’s eyes stayed fixed on the wet cobblestones ten feet ahead. his breathing held at a steady, deliberate rhythm.",
+   "say": "Julian’s eyes stayed fixed on the wet cobblestones ten feet ahead. His breathing held at a steady, deliberate rhythm."
+  },
+  {
+   "id": "S10",
+   "text": "munich.",
+   "say": "Munich.",
+   "gap": 1.2
+  },
+  {
+   "id": "S11",
+   "text": "kessler—the station chief in munich—had been found forty-eight hours ago in the trunk of a rented audi at the central train station, his throat opened with a surgical precision that left zero blood on the upholstery. the forensic file was restricted to the three-person investigation cell in langley. the cover story fed to the bavarian press was a coronary in his apartment. no one outside the langley cell knew kessler had died at the station, and no one outside the directorate knew the cleanup team had staged out of the bayernhof hotel.",
+   "say": "Kessler, the station chief in Munich, had been found forty-eight hours ago in the trunk of a rented Audi at the central train station, his throat opened with a surgical precision that left zero blood on the upholstery. The forensic file was restricted to the three-person investigation cell in Langley. The cover story fed to the Bavarian press was a coronary in his apartment. No one outside the Langley cell knew Kessler had died at the station, and no one outside the directorate knew the cleanup team had staged out of the Bayernhof hotel."
+  },
+  {
+   "id": "S12",
+   "text": "henrik wasn't cleared for that file. henrik was a mid-level logistics coordinator in vienna. there was no world in which henrik knew a cleanup had happened in munich, let alone that he had been the one to clear the hotel.",
+   "say": "Henrik wasn't cleared for that file. Henrik was a mid-level logistics coordinator in Vienna. There was no world in which Henrik knew a cleanup had happened in Munich, let alone that he had been the one to clear the hotel."
+  },
+  {
+   "id": "S13",
+   "text": "henrik was the mole. henrik had killed kessler.",
+   "say": "Henrik was the mole. Henrik had killed Kessler.",
+   "gap": 1.2
+  },
+  {
+   "id": "S14",
+   "text": "keep walking. don't change your cadence. julian’s mind locked onto the immediate problem. i know what he did. that's the easy part. the only question that keeps me alive for the next five minutes is whether he knows he just gave himself away.",
+   "say": "Keep walking. Don't change your cadence. Julian’s mind locked onto the immediate problem. I know what he did. That's the easy part. The only question that keeps me alive for the next five minutes is whether he knows he just gave himself away."
+  },
+  {
+   "id": "S15",
+   "text": "if henrik hadn't realized what he'd just said—if he was just a tired operative letting two cover stories bleed together without noticing—then julian still had the board to himself. he could play the bored bureaucrat, make an excuse to turn back, return to his hotel, and have a tactical team on henrik before midnight.",
+   "say": "If Henrik hadn't realized what he'd just said, if he was just a tired operative letting two cover stories bleed together without noticing, then Julian still had the board to himself. He could play the bored bureaucrat, make an excuse to turn back, return to his hotel, and have a tactical team on Henrik before midnight."
+  },
+  {
+   "id": "S16",
+   "text": "but if henrik had heard his own slip, then this pleasant walk up the deserted alley toward the hilltop park wasn't a coincidence. it was a funnel.",
+   "say": "But if Henrik had heard his own slip, then this pleasant walk up the deserted alley toward the hilltop park wasn't a coincidence. It was a funnel."
+  },
+  {
+   "id": "S17",
+   "text": "julian checked his own body for tells over the two seconds since henrik had spoken. had his pupils blown? no, it was too dark under the eaves for henrik to catch that without optics. had his voice tightened? not yet.",
+   "say": "Julian checked his own body for tells over the two seconds since Henrik had spoken. Had his pupils blown? No, it was too dark under the eaves for Henrik to catch that without optics. Had his voice tightened? Not yet."
+  },
+  {
+   "id": "S18",
+   "text": "\"munich\", julian said, letting a note of mild, envious complaint enter his voice. \"at least the beer is better than this swill. listen, i’d love to walk up with you, but i just realized i left my hardware token in the rental car back at the garage. if it times out, i have to call virginia for a reset, and i don't have the patience for the helpdesk tonight.\"",
+   "say": "\"Munich\", Julian said, letting a note of mild, envious complaint enter his voice. \"At least the beer is better than this swill. Listen, I’d love to walk up with you, but I just realized I left my hardware token in the rental car back at the garage. If it times out, I have to call Virginia for a reset, and I don't have the patience for the helpdesk tonight.\""
+  },
+  {
+   "id": "S19",
+   "text": "clean, julian thought. boring. bureaucratic. if he didn't hear his own mistake, he waves me off and keeps walking up to his wine bar.",
+   "say": "Clean, Julian thought. Boring. Bureaucratic. If he didn't hear his own mistake, he waves me off and keeps walking up to his wine bar."
+  },
+  {
+   "id": "S20",
+   "text": "\"ah, brutal\", henrik said, stopping near the base of the stone steps leading up to the lindenhof park. the alley here was narrow, flanked by high, windowless medieval masonry. \"which garage? the one by the bahnhof?\"",
+   "say": "\"Ah, brutal\", Henrik said, stopping near the base of the stone steps leading up to the Lindenhof park. The alley here was narrow, flanked by high, windowless medieval masonry. \"Which garage? The one by the Bahnhof?\""
+  },
+  {
+   "id": "S21",
+   "text": "\"talstrasse\", julian lied smoothly, already turning his torso thirty degrees back toward the river. \"five-minute walk. catch you at the debrief tomorrow?\"",
+   "say": "\"Tahl-strasse\", Julian lied smoothly, already turning his torso thirty degrees back toward the river. \"Five-minute walk. Catch you at the debrief tomorrow?\""
+  },
+  {
+   "id": "S22",
+   "text": "\"actually\", henrik said, reaching into his coat pocket, \"let me walk you down first. i have to drop a pouch at the consulate annex on talstrasse anyway—i can do that before i meet my guy.\"",
+   "say": "\"Actually\", Henrik said, reaching into his coat pocket, \"Let me walk you down first. I have to drop a pouch at the consulate annex on Tahl-strasse anyway, I can do that before I meet my guy.\""
+  },
+  {
+   "id": "S23",
+   "text": "a cold needle slid into julian’s sternum.",
+   "say": "A cold needle slid into Julian’s sternum.",
+   "gap": 1.2
+  },
+  {
+   "id": "S24",
+   "text": "there was no consulate annex on talstrasse. the annex was on dufourstrasse, two miles in the opposite direction across the lake.",
+   "say": "There was no consulate annex on Tahl-strasse. The annex was on Doo-foor-strasse, two miles in the opposite direction across the lake."
+  },
+  {
+   "id": "S25",
+   "text": "julian didn't correct him. correcting him would be fatal. instead, he stared at the wet cobbles and traced the logic step by step.",
+   "say": "Julian didn't correct him. Correcting him would be fatal. Instead, he stared at the wet cobbles and traced the logic step by step."
+  },
+  {
+   "id": "S26",
+   "text": "why tell a lie that takes ten seconds to disprove? henrik didn't need an errand on talstrasse two seconds ago—he was on his way up the hill to a wine bar. the only reason he suddenly invents a pouch drop on talstrasse is to stay within arm's reach of me while i walk toward the river.",
+   "say": "Why tell a lie that takes ten seconds to disprove? Henrik didn't need an errand on Tahl-strasse two seconds ago, he was on his way up the hill to a wine bar. The only reason he suddenly invents a pouch drop on Tahl-strasse is to stay within arm's reach of me while I walk toward the river."
+  },
+  {
+   "id": "S27",
+   "text": "and the only reason he needs to keep me within arm's reach right after mentioning munich is because he knows who i actually am.",
+   "say": "And the only reason he needs to keep me within arm's reach right after mentioning Munich is because he knows who I actually am."
+  },
+  {
+   "id": "S28",
+   "text": "henrik knew julian wasn't really in antwerp logistics. henrik knew julian was on the langley cell. the second the word munich had left henrik's mouth, henrik had realized he'd just confessed to a murder in front of the lead investigator.",
+   "say": "Henrik knew Julian wasn't really in Antwerp logistics. Henrik knew Julian was on the Langley cell. The second the word Munich had left Henrik's mouth, Henrik had realized he'd just confessed to a murder in front of the lead investigator."
+  },
+  {
+   "id": "S29",
+   "text": "so he knows i caught him, julian thought, his fingers tightening imperceptibly around the handle of his umbrella. he's only offering to walk me to talstrasse so he can put me in the river before we hit the bridge. i have to take away the river.",
+   "say": "So he knows I caught him, Julian thought, his fingers tightening imperceptibly around the handle of his umbrella. He's only offering to walk me to Tahl-strasse so he can put me in the river before we hit the bridge. I have to take away the river."
+  },
+  {
+   "id": "S30",
+   "text": "\"actually, you know what?\" julian said, stopping and patting his breast pocket with a look of theatrical annoyance. \"i'm an idiot. it’s in my inner pocket. felt the battery pack against my ribs.\"",
+   "say": "\"Actually, you know what?\" Julian said, stopping and patting his breast pocket with a look of theatrical annoyance. \"I'm an idiot. It’s in my inner pocket. Felt the battery pack against my ribs.\""
+  },
+  {
+   "id": "S31",
+   "text": "he watched henrik’s eyes. if by some miracle you really were confused about where the annex is, you say \"great, let's get that drink\" or you realize you got the street wrong. if you're hunting me, you have to herd me right back up these stairs.",
+   "say": "He watched Henrik’s eyes. If by some miracle you really were confused about where the annex is, you say \"Great, let's get that drink\" Or you realize you got the street wrong. If you're hunting me, you have to herd me right back up these stairs."
+  },
+  {
+   "id": "S32",
+   "text": "henrik laughed, a sharp, slightly too-bright sound that echoed off the damp stone. \"well, thank god for small favors. no detour needed, then. come on, let's grab that drink at the top of these steps before my guy gets there.\"",
+   "say": "Henrik laughed, a sharp, slightly too-bright sound that echoed off the damp stone. \"Well, thank God for small favors. No detour needed, then. Come on, let's grab that drink at the top of these steps before my guy gets there.\""
+  },
+  {
+   "id": "S33",
+   "text": "there it is.",
+   "say": "There it is.",
+   "gap": 1.2
+  },
+  {
+   "id": "S34",
+   "text": "henrik hadn't blinked. he had abandoned the talstrasse annex without a flicker of embarrassment—no wait, the annex is on dufourstrasse, what am i thinking?—because the annex had never been real. it had only been a leash to follow julian toward the river. the moment julian cut that leash, henrik smoothly snapped back to the original plan: getting julian up the stone steps into the dark, empty park.",
+   "say": "Henrik hadn't blinked. He had abandoned the Tahl-strasse annex without a flicker of embarrassment, no wait, the annex is on Doo-foor-strasse, what am I thinking?, because the annex had never been real. It had only been a leash to follow Julian toward the river. The moment Julian cut that leash, Henrik smoothly snapped back to the original plan: getting Julian up the stone steps into the dark, empty park."
+  },
+  {
+   "id": "S35",
+   "text": "julian’s throat went dry. okay. i know henrik is the killer. henrik knows i know he's the killer. and now, because of that fake errand on talstrasse, i also know that henrik is actively hunting me.",
+   "say": "Julian’s throat went dry. Okay. I know Henrik is the killer. Henrik knows I know he's the killer. And now, because of that fake errand on Tahl-strasse, I also know that Henrik is actively hunting me."
+  },
+  {
+   "id": "S36",
+   "text": "which brings me to the only question that matters: does henrik know that i saw through his talstrasse lie?",
+   "say": "Which brings me to the only question that matters: does Henrik know that I saw through his Tahl-strasse lie?"
+  },
+  {
+   "id": "S37",
+   "text": "julian stood motionless at the bottom of the steps, letting the rain drum against the canvas of his umbrella while he mapped out both possibilities.",
+   "say": "Julian stood motionless at the bottom of the steps, letting the rain drum against the canvas of his umbrella while he mapped out both possibilities."
+  },
+  {
+   "id": "S38",
+   "text": "henrik had invented the talstrasse errand on the fly because, on paper, julian was a visiting desk officer from antwerp who wouldn't know the street address of the zurich consulate annex. to henrik, saying i have to drop a pouch on talstrasse sounded like a completely plausible, everyday excuse.",
+   "say": "Henrik had invented the Tahl-strasse errand on the fly because, on paper, Julian was a visiting desk officer from Antwerp who wouldn't know the street address of the Zurich consulate annex. To Henrik, saying I have to drop a pouch on Tahl-strasse sounded like a completely plausible, everyday excuse."
+  },
+  {
+   "id": "S39",
+   "text": "suppose henrik thinks i bought it, julian reasoned. from his perspective, i have no idea he just lied to me. he knows i'm terrified because of the munich slip, and he thinks i'm desperately trying to act normal while looking for an excuse to slip away at the top of the stairs. if he thinks i'm still trying to play along, he won't rush it. he'll keep his hands in his pockets, keep his posture loose, and wait until we crest the steps into the dark trees of the lindenhof where nobody can see from the alley. he'll trade speed for stealth so he doesn't spook me before he's in range.",
+   "say": "Suppose Henrik thinks I bought it, Julian reasoned. From his perspective, I have no idea he just lied to me. He knows I'm terrified because of the Munich slip, and he thinks I'm desperately trying to act normal while looking for an excuse to slip away at the top of the stairs. If he thinks I'm still trying to play along, he won't rush it. He'll keep his hands in his pockets, keep his posture loose, and wait until we crest the steps into the dark trees of the Lindenhof where nobody can see from the alley. He'll trade speed for stealth so he doesn't spook me before he's in range."
+  },
+  {
+   "id": "S40",
+   "text": "now suppose the opposite, julian thought, a colder possibility opening beneath his feet. what if henrik knows i've been stationed in zurich before?",
+   "say": "Now suppose the opposite, Julian thought, a colder possibility opening beneath his feet. What if Henrik knows I've been stationed in Zurich before?"
+  },
+  {
+   "id": "S41",
+   "text": "julian's pulse ticked once against his collar. three years ago, before the langley cell, julian had spent four months running a temporary station out of the zurich annex on dufourstrasse. it was buried in a restricted personnel addendum—the exact same kind of file a mole inside the directorate would have pulled before coming here tonight.",
+   "say": "Julian's pulse ticked once against his collar. Three years ago, before the Langley cell, Julian had spent four months running a temporary station out of the Zurich annex on Doo-foor-strasse. It was buried in a restricted personnel addendum, the exact same kind of file a mole inside the directorate would have pulled before coming here tonight."
+  },
+  {
+   "id": "S42",
+   "text": "if henrik pulled my real file, julian traced the thought, he knows i worked on dufourstrasse. which means henrik knew i would spot the talstrasse lie the second he said it.",
+   "say": "If Henrik pulled my real file, Julian traced the thought, he knows I worked on Doo-foor-strasse. Which means Henrik knew I would spot the Tahl-strasse lie the second he said it."
+  },
+  {
+   "id": "S43",
+   "text": "why would a professional operative tell a blatant lie to someone he knows will catch it?",
+   "say": "Why would a professional operative tell a blatant lie to someone he knows will catch it?"
+  },
+  {
+   "id": "S44",
+   "text": "julian stared at the wet stone steps rising into the dark. because he wants me to think i'm one step ahead of him.",
+   "say": "Julian stared at the wet stone steps rising into the dark. Because he wants me to think I'm one step ahead of him."
+  },
+  {
+   "id": "S45",
+   "text": "if julian thinks henrik is a clumsy liar who believes his cover is still intact, julian will try to be clever: he'll pretend to go along with the \"let's get a drink\" charade, climb the stairs ahead of henrik, and wait for a moment to turn the tables or bolt at the top.",
+   "say": "If Julian thinks Henrik is a clumsy liar who believes his cover is still intact, Julian will try to be clever: he'll pretend to go along with the \"Let's get a drink\" Charade, climb the stairs ahead of Henrik, and wait for a moment to turn the tables or bolt at the top."
+  },
+  {
+   "id": "S46",
+   "text": "and that's the trap, julian realized, the coldness in his chest suddenly total. if henrik told that lie on purpose, then he knows i know he's hunting me, and he knows the only reason i would ever agree to climb these stairs is to set up a counter-ambush. so the second i turn my back and put my weight on the first step—trapped between two stone walls with my balance pitched forward—he won't wait for the top of the hill. he'll stab me in the back immediately.",
+   "say": "And that's the trap, Julian realized, the coldness in his chest suddenly total. If Henrik told that lie on purpose, then he knows I know he's hunting me, and he knows the only reason I would ever agree to climb these stairs is to set up a counter-ambush. So the second I turn my back and put my weight on the first step, trapped between two stone walls with my balance pitched forward, he won't wait for the top of the hill. He'll stab me in the back immediately."
+  },
+  {
+   "id": "S47",
+   "text": "julian looked at henrik's coat. henrik's right hand was buried deep in the wool slash pocket, just as it had been since they left the fountain. his left hand held the empty paper espresso cup.",
+   "say": "Julian looked at Henrik's coat. Henrik's right hand was buried deep in the wool slash pocket, just as it had been since they left the fountain. His left hand held the empty paper espresso cup."
+  },
+  {
+   "id": "S48",
+   "text": "julian weighed the two worlds. if henrik was sloppy, walking up the stairs delivered julian straight into henrik's preferred ambush site under the dark trees at the top. if henrik was baiting him, taking even one step up the stairs got julian killed on the second riser.",
+   "say": "Julian weighed the two worlds. If Henrik was sloppy, walking up the stairs delivered Julian straight into Henrik's preferred ambush site under the dark trees at the top. If Henrik was baiting him, taking even one step up the stairs got Julian killed on the second riser."
+  },
+  {
+   "id": "S49",
+   "text": "climbing the stairs was a losing move either way.",
+   "say": "Climbing the stairs was a losing move either way.",
+   "gap": 1.2
+  },
+  {
+   "id": "S50",
+   "text": "julian didn't step onto the first riser. instead, he let his umbrella tilt slightly forward, letting the rainwater run off the ribs onto the cobbles between them, and smiled—not the tired bureaucrat's smile from the square, but a flat, quiet look that dropped the antwerp cover entirely.",
+   "say": "Julian didn't step onto the first riser. Instead, he let his umbrella tilt slightly forward, letting the rainwater run off the ribs onto the cobbles between them, and smiled, not the tired bureaucrat's smile from the square, but a flat, quiet look that dropped the Antwerp cover entirely."
+  },
+  {
+   "id": "S51",
+   "text": "\"you know what's funny about the annex, henrik?\" julian said softly, his weight shifting onto the balls of his feet, his right thumb sliding down the shaft of the umbrella to the steel release catch. \"the espresso machine in the basement on dufourstrasse has been broken since twenty-three. i don't know why you didn't just get your coffee there.\"",
+   "say": "\"You know what's funny about the annex, Henrik?\" Julian said softly, his weight shifting onto the balls of his feet, his right thumb sliding down the shaft of the umbrella to the steel release catch. \"The espresso machine in the basement on Doo-foor-strasse has been broken since twenty-three. I don't know why you didn't just get your coffee there.\""
+  },
+  {
+   "id": "S52",
+   "text": "for a fraction of a second, neither of them moved.",
+   "say": "For a fraction of a second, neither of them moved.",
+   "gap": 1.2
+  },
+  {
+   "id": "S53",
+   "text": "julian watched henrik's face, waiting to see which man was standing in front of him.",
+   "say": "Julian watched Henrik's face, waiting to see which man was standing in front of him."
+  },
+  {
+   "id": "S54",
+   "text": "if henrik had genuinely forgotten julian knew the city, his eyes would widen in shock—the sudden, catastrophic realization that his cover had been blown twice over and julian had been playing him since the alley.",
+   "say": "If Henrik had genuinely forgotten Julian knew the city, his eyes would widen in shock, the sudden, catastrophic realization that his cover had been blown twice over and Julian had been playing him since the alley."
+  },
+  {
+   "id": "S55",
+   "text": "henrik's eyes didn't widen.",
+   "say": "Henrik's eyes didn't widen.",
+   "gap": 1.2
+  },
+  {
+   "id": "S56",
+   "text": "instead, the warm, crinkling smile simply vanished, like a light switched off behind a curtain. henrik didn't look surprised at all. he looked mildly disappointed, the way a chess player looks when an opponent declines a poisoned pawn and forces a grind into the endgame.",
+   "say": "Instead, the warm, crinkling smile simply vanished, like a light switched off behind a curtain. Henrik didn't look surprised at all. He looked mildly disappointed, the way a chess player looks when an opponent declines a poisoned pawn and forces a grind into the endgame."
+  },
+  {
+   "id": "S57",
+   "text": "\"i figured you'd spot that\", henrik said, his pleasant baritone dropping half an octave into something flat and entirely devoid of warmth. his right hand didn't even bother to stay hidden anymore; the wool of his coat pocket pulled taut as his thumb clicked a safety catch beneath the fabric. \"honestly, i was hoping you'd be arrogant enough to take the stairs anyway.\"",
+   "say": "\"I figured you'd spot that\", Henrik said, his pleasant baritone dropping half an octave into something flat and entirely devoid of warmth. His right hand didn't even bother to stay hidden anymore; the wool of his coat pocket pulled taut as his thumb clicked a safety catch beneath the fabric. \"Honestly, I was hoping you'd be arrogant enough to take the stairs anyway.\""
+  },
+  {
+   "id": "S58",
+   "text": "\"i almost did\", julian admitted, keeping his eyes locked on the angle of henrik's right shoulder, measuring the distance to the masonry wall behind him. \"until i realized nobody's that bad at geography.\"",
+   "say": "\"I almost did\", Julian admitted, keeping his eyes locked on the angle of Henrik's right shoulder, measuring the distance to the masonry wall behind him. \"Until I realized nobody's that bad at geography.\""
+  },
+  {
+   "id": "S59",
+   "text": "\"fair enough\", henrik said, shifting his front foot half an inch on the wet stone. \"so. no more pretending.\"",
+   "say": "\"Fair enough\", Henrik said, shifting his front foot half an inch on the wet stone. \"So. No more pretending.\""
+  },
+  {
+   "id": "S60",
+   "text": "\"no more pretending\", julian agreed.",
+   "say": "\"No more pretending\", Julian agreed."
+  },
+  {
+   "id": "S61",
+   "text": "henrik’s left fingers opened, letting the empty paper cup slip from his hand—and julian drove the tip of the umbrella straight toward henrik's throat before it hit the cobbles.",
+   "say": "Henrik’s left fingers opened, letting the empty paper cup slip from his hand, and Julian drove the tip of the umbrella straight toward Henrik's throat before it hit the cobbles.",
+   "gap": 3.0
+  }
+ ]
+}
