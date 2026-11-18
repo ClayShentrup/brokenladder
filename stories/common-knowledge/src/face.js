@@ -61,8 +61,8 @@ function face(px0, py0, s, who, e, L = {}) {
   const near = -fs; // x sign of the side of the face nearer the viewer
   ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   // ---------- neck: a vertical cylinder behind the chin ----------
-  const ncx = px0 + (-72 * st) * k, nr = 44 * C.sx * k;
-  const neckP = [[ncx - nr, py0 + (20 - YC) * k], [ncx + nr, py0 + (40 - YC) * k], [ncx + nr * 1.05, py0 + (230 - YC) * k], [ncx - nr * 1.05, py0 + (230 - YC) * k]];
+  const ncx = px0 + (-92 * st) * k, nr = 50 * C.sx * k;
+  const neckP = [[ncx - nr, py0 + (-10 - YC) * k], [ncx + nr, py0 + (-10 - YC) * k], [ncx + nr * 1.04, py0 + (230 - YC) * k], [ncx - nr * 1.04, py0 + (230 - YC) * k]];
   pencilShape(neckP, rgba(K.skin, 0.4), [{ col: GR2, n: 400, len: 18 * s, ang: -1.0, a: 0.45, f: (x, y) => ss(py0 + (110 - YC) * k, py0 + (80 - YC) * k, y) * 0.9 + 0.15 }], { lw: W2(1.8), lineCol: GR });
   // shirt, tie, coat, raised collar
   const B = (x, y) => [px0 + x * k * fs, py0 + (y - YC) * k];
@@ -75,7 +75,8 @@ function face(px0, py0, s, who, e, L = {}) {
   pencilShape([B(90, 210), B(100, 120), B(70, 92), B(40, 128), B(20, 190)], coatTone, [{ col: GR2, n: 160, ang: -1.0, len: 20 * s, a: 0.4 }], { lw: W2(2.2), lineCol: GR });
   // ---------- head silhouette: the cranium and the jaw, filled with paper and a skin wash ----------
   const jawPts = []; for (let i = 0; i <= 16; i++) jawPts.push(Q[i]);
-  const headH = hull(cr.filter((p) => p[1] < py0 + (-40 - YC) * k).concat(jawPts).concat([Q[27], Q[30], Q[8]]));
+  const earFrontX = PJ([near * 76, -20, 68])[0];
+  const headH = hull(cr.filter((p) => p[1] < py0 + (-40 - YC) * k && fs * (p[0] - PJ([near * 77, -20, 84])[0]) > 0).concat(jawPts).concat([Q[27], Q[30], Q[8], PJ([near * 74, 8, 66]), PJ([near * 74, -52, 64]), PJ([near * 77, 6, 84]), PJ([near * 77, -54, 84])]));
   const hb = bbox(headH);
   ctx.save(); ctx.clip(P2(headH));
   ctx.fillStyle = PAPERC; ctx.fillRect(hb[0], hb[1], hb[2] - hb[0], hb[3] - hb[1]);
@@ -113,10 +114,10 @@ function face(px0, py0, s, who, e, L = {}) {
   const ccx2 = px0 + (-cz * st) * k, ccy2 = py0 + (cyc - YC) * k;
   const arc = cr.filter((p) => p[1] < ccy2 + 0.35 * ry * k && (fs * (p[0] - front[0]) < -6 * k || p[1] < front[1] - 6 * k)).sort((a2, b2) => fs * (b2[0] - a2[0]))
     .map(([x, y]) => { const up = Math.max(0, (ccy2 - y) / (ry * k)); return [ccx2 + (x - ccx2) * 1.07, ccy2 + (y - ccy2) * 1.07 - crownUp * k * up]; });
-  const napeP = PJ([near * 44, 10, 168]);
+  const napeP = PJ([near * 50, 2, 160]);
   const outline = [MM(tFar, 2, 2), MM(tFar, 6, -fringe * 0.7), MM(front, 6, -fringe), MM(front, -6, -fringe - 6)]
     .concat(arc)
-    .concat([MM(napeP, -6, -4), MM(napeP, 8, 2), MM(behindEar, 4, -6), MM(earTopP, 2, -2), MM(sideb, 4, 8), MM(tNear, 0, 6), MM(tNear, 6, -2)]);
+    .concat([MM(napeP, 0, 0), MM(behindEar, 2, -10), MM(earTopP, 2, -2), MM(sideb, 4, 8), MM(tNear, 0, 6), MM(tNear, 6, -2)]);
   // hairline between the near temple and the far temple: dips and a widow's-peak-free curve with a little irregularity
   const hairline = []; const hn = rng(J ? 3 : 4);
   for (let i = 1; i < 10; i++) { const u = i / 10, x = lerp(near * 52, -near * 58, u), ax = Math.abs(x) / 58; hairline.push(MM(PJ(onSkull(x, hy + C.hairC * ax * ax + rec * Math.exp(-Math.pow((ax - 0.75) / 0.2, 2)), 2)), 0, (hn() - 0.5) * 4)); }
@@ -154,7 +155,7 @@ function face(px0, py0, s, who, e, L = {}) {
   const farTemple = PJ(onSkull(-near * 64, -88)), farBrow = Q[nIdx(26, 17)], farEye = Q[nIdx(45, 36)];
   pline(smooth([Q[far[far.length - 1]], mid(farEye, Q[far[far.length - 1]], 0.55), [farBrow[0] + fs * 4 * k, farBrow[1] + 2 * k], farTemple], false, 5), GR, W2(2), 0.75);
   const neckFront = [Q[8][0] - fs * 18 * k, py0 + (90 - YC) * k];
-  pline([[ncx - fs * nr, py0 + (40 - YC) * k], [ncx - fs * nr * 1.05, py0 + (200 - YC) * k]], GR, W2(1.8), 0.7); pline([neckFront, [neckFront[0] - fs * 4 * k, py0 + (150 - YC) * k]], GR, W2(1.8), 0.7);
+  pline([[ncx - fs * nr, py0 + (6 - YC) * k], [ncx - fs * nr * 1.04, py0 + (200 - YC) * k]], GR, W2(1.8), 0.7); pline([neckFront, [neckFront[0] - fs * 4 * k, py0 + (150 - YC) * k]], GR, W2(1.8), 0.7);
   if (C.age > 0.5) { for (let i = 0; i < 3; i++) { const y = -96 - i * 9; pline(smooth([PJ(onSkull(-30, y, 0)), PJ(onSkull(0, y - 2, 0)), PJ(onSkull(30, y, 0))], false, 4), GR2, W2(1.1), 0.25 + 0.2 * e.brow); } }
   if (e.clench > 0.05) pline(smooth([mid(j0, j3, 0.6), mid(j3, mc, 0.25), mid(j5, mc, 0.2)], false, 4), GR, W2(1.6), e.clench * 0.7);
   // ---------- brows: hairs along the landmark curve ----------
