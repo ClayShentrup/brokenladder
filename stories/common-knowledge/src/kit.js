@@ -7,6 +7,9 @@ const K = {
   skin: '#e8a57c', skin2: '#c9785a', khaki: '#b8935a', wool: '#3b3f4f', slate: '#5a6478', stone: '#8a7d70', wet: '#2b3448',
 };
 let ctx, cv, SCALE = 1;
+const SKETCH = true; // light paper, graphite lines, colored-pencil accents
+const PAPERC = '#efe8da', GRAPH = '#34323a';
+const lum = (c) => { if (typeof c !== 'string' || c[0] !== '#' || c.length < 7) return 1; const h = c.slice(1); return (0.3 * parseInt(h.slice(0, 2), 16) + 0.59 * parseInt(h.slice(2, 4), 16) + 0.11 * parseInt(h.slice(4, 6), 16)) / 255; };
 function setCtx(c) { ctx = c; }
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const lerp = (a, b, u) => a + (b - a) * u;
@@ -34,6 +37,7 @@ function tooth(col, a = 1) {
 // a pencil line through points: several slightly jittered passes
 function pline(pts, col, w = 2.2, a = 1, passes = 2, jit = 1.6) {
   const r = rng(SD());
+  if (SKETCH && lum(col) < 0.12) col = GRAPH;
   ctx.save(); ctx.strokeStyle = tooth(col, 1); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   for (let p = 0; p < passes; p++) {
     ctx.globalAlpha = a * (p ? 0.55 : 0.95); ctx.lineWidth = w * (p ? 0.7 : 1);
@@ -70,7 +74,7 @@ function pfill(path, bb, col, op = {}) {
 // a soft lurid glow (light pools, lamps)
 function glow(x, y, r, col, a = 1) {
   if (a <= 0) return; const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, col); g.addColorStop(1, 'rgba(0,0,0,0)');
-  ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = a; ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2); ctx.restore();
+  ctx.save(); ctx.globalCompositeOperation = SKETCH ? 'multiply' : 'lighter'; ctx.globalAlpha = SKETCH ? a * 0.55 : a; ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2); ctx.restore();
 }
 function rgba(hex, a) { const h = hex.replace('#', ''); return `rgba(${parseInt(h.slice(0, 2), 16)},${parseInt(h.slice(2, 4), 16)},${parseInt(h.slice(4, 6), 16)},${a})`; }
 function P2(pts, close = true) { const p = new Path2D(); pts.forEach(([x, y], i) => (i ? p.lineTo(x, y) : p.moveTo(x, y))); if (close) p.closePath(); return p; }
@@ -114,8 +118,17 @@ function strokes(bb, col, n, op = {}) {
 function pencilShape(pts, base, layers, op = {}) {
   const p = P2(pts), bb = bbox(pts);
   ctx.save(); ctx.clip(p);
-  if (base) { ctx.fillStyle = base; ctx.fillRect(bb[0] - 2, bb[1] - 2, bb[2] - bb[0] + 4, bb[3] - bb[1] + 4); }
-  layers.forEach((L) => strokes(bb, L.col, L.n, L));
+  if (base) {
+    const lb = lum(base);
+    if (SKETCH && lb < 0.45) {
+      const dk = clamp((0.45 - lb) / 0.4), area = (bb[2] - bb[0]) * (bb[3] - bb[1]);
+      ctx.fillStyle = PAPERC; ctx.fillRect(bb[0] - 2, bb[1] - 2, bb[2] - bb[0] + 4, bb[3] - bb[1] + 4);
+      ctx.fillStyle = rgba(GRAPH, 0.04 + 0.1 * dk); ctx.fillRect(bb[0] - 2, bb[1] - 2, bb[2] - bb[0] + 4, bb[3] - bb[1] + 4);
+      strokes(bb, GRAPH, Math.min(2600, Math.round(area / 900 * dk)), { ang: -0.95, len: 30, w: 1.3, a: 0.45 });
+      if (dk > 0.6) strokes(bb, GRAPH, Math.min(1600, Math.round(area / 1600 * dk)), { ang: 0.6, len: 30, w: 1.2, a: 0.35 });
+    } else { if (SKETCH && typeof base === 'string' && base.startsWith('rgba')) { ctx.fillStyle = PAPERC; ctx.fillRect(bb[0] - 2, bb[1] - 2, bb[2] - bb[0] + 4, bb[3] - bb[1] + 4); } ctx.fillStyle = base; ctx.fillRect(bb[0] - 2, bb[1] - 2, bb[2] - bb[0] + 4, bb[3] - bb[1] + 4); }
+  }
+  layers.forEach((L) => strokes(bb, SKETCH && lum(L.col) < 0.12 ? GRAPH : L.col, L.n, L));
   ctx.restore();
   if (op.line !== false) pline(pts.concat([pts[0]]), op.lineCol || K.ink, op.lw || 2.2, op.la == null ? 0.85 : op.la);
 }

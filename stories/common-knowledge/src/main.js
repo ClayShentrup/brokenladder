@@ -29,6 +29,15 @@ const HK = {
 // cam: { z: [from, to], x: [from, to], y: [from, to] } in scene coords, eased over the shot
 function shot(start, fn, cam = {}, o = {}) { SHOTS.push({ start, fn, cam, o }); }
 function bokehBG(t, col1, col2, seed = 3) {
+  if (SKETCH) {
+    nightWash('#1c1530', col2, [[seed < 5 ? 420 : 1500, 260, 520, rgba(col1, 0.6), 1]]);
+    const r = rng(seed * 7);
+    // a stone wall in loose graphite: courses of blocks, a lamp bracket, rain
+    for (let j = 0; j < 12; j++) { const y = 60 + j * 90; pline([[-40, y + (r() - 0.5) * 8], [W + 40, y + (r() - 0.5) * 8]], GRAPH, 1.2, 0.18); for (let x = (j % 2) * 120 - 60; x < W + 60; x += 240) pline([[x + (r() - 0.5) * 10, y], [x + (r() - 0.5) * 10, y + 90]], GRAPH, 1.1, 0.14); }
+    strokes([0, 0, W, H], GRAPH, 300, { ang: -1.1, len: 60, w: 1.1, a: 0.12 });
+    const lx = seed < 5 ? 420 : 1500; pline([[lx, 330], [lx, 120]], GRAPH, 4, 0.6); pencilShape([[lx - 26, 70], [lx + 26, 70], [lx + 18, 130], [lx - 18, 130]], rgba(col1, 0.5), [{ col: col1, n: 120, len: 10 }], { lw: 2, lineCol: GRAPH });
+    return;
+  }
   nightWash('#07060c', '#120c16', [[480, 300, 800, rgba(col1, 0.35), 1], [1500, 700, 800, rgba(col2, 0.3), 1]]);
   const r = rng(seed); for (let i = 0; i < 14; i++) { const x = r() * W, y = r() * H * 0.8, rr = 30 + r() * 70, col = r() < 0.5 ? col1 : col2; ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 0.12 + r() * 0.15; ctx.fillStyle = tooth(col, 1); ctx.beginPath(); ctx.arc(x, y, rr, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
 }
@@ -77,9 +86,9 @@ function buildShots() {
   shot(c('S09'), faceShot('julian', [[0, J.fixed]]), EYES);
   // S10 munich. S11 the station, the file
   shot(c('S10') - 0.15, (lt, u, t) => station(t), { z: [1.15, 1.05] }, { hard: true });
-  shot(w('S11', 'forensic file'), (lt, u, t) => folder(960, 560, 1.0, 'kessler, a.', ['station chief, munich', 'found: central station, audi trunk', 'press: coronary at home', 0.6, t > w('S11', 'Bayernhof') ? 'cleanup staged: bayernhof hotel' : 0.4], 'RESTRICTED', prog(t, w('S11', 'restricted'), w('S11', 'restricted', 0.25))), { z: [1.0, 1.15], y: [0, 40] });
+  shot(w('S11', 'forensic file'), (lt, u, t) => (nightWash('#2a1e10', K.amber, [[960, 540, 900, rgba(K.amber, 0.35), 1]]), folder(960, 560, 1.0, 'kessler, a.', ['station chief, munich', 'found: central station, audi trunk', 'press: coronary at home', 0.6, t > w('S11', 'Bayernhof') ? 'cleanup staged: bayernhof hotel' : 0.4], 'RESTRICTED', prog(t, w('S11', 'restricted'), w('S11', 'restricted', 0.25)))), { z: [1.0, 1.15], y: [0, 40] });
   // S12 henrik's clearance
-  shot(c('S12'), (lt, u, t) => folder(960, 560, 1.0, 'henrik', ['logistics coordinator, vienna', 'mid-level', 0.5, 0.7], 'NOT CLEARED', prog(t, w('S12', "wasn't cleared"), w('S12', "wasn't cleared", 0.25)), 0.03), { z: [1.0, 1.1] });
+  shot(c('S12'), (lt, u, t) => (nightWash('#2a1e10', K.amber, [[960, 540, 900, rgba(K.amber, 0.35), 1]]), folder(960, 560, 1.0, 'henrik', ['logistics coordinator, vienna', 'mid-level', 0.5, 0.7], 'NOT CLEARED', prog(t, w('S12', "wasn't cleared"), w('S12', "wasn't cleared", 0.25)), 0.03)), { z: [1.0, 1.1] });
   // S13 the mole
   shot(c('S13') - 0.1, faceShot('henrik', [[0, HK.pleasant]], { tint: () => rgba('#ff6a6a', 1), light: { rim: K.crimson, key: K.crimson } }), { z: [1.5, 1.8], y: [-60, -80] }, { hard: true });
   // S14 julian's mind locks on
@@ -114,7 +123,7 @@ function buildShots() {
   shot(c('S26'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'closed', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); const p = prog(t, w('S26', "arm's reach"), w('S26', "arm's reach", 1)); if (p > 0) { const pts = []; for (let i = 0; i <= Math.round(48 * p); i++) { const a = i / 48 * Math.PI * 2; pts.push([1100 + Math.cos(a) * 330, 860 + Math.sin(a) * 120]); } pline(pts, K.crimson, 4, 0.9); } }, { z: [1.15, 1.3], y: [80, 80] }, { rain: 0.5 });
   shot(c('S27'), faceShot('henrik', [[0, HK.watch]], { light: { rim: K.crimson } }), CLOSE);
   // S28 henrik knew who julian was
-  shot(c('S28'), (lt, u, t) => folder(960, 560, 1.0, 'julian', ['cover: desk officer, antwerp', 'actual: langley investigation cell', 'lead investigator, kessler', 0.6], 'KNOWN', prog(t, w('S28', 'lead investigator'), w('S28', 'lead investigator', 0.3)), -0.03), { z: [1.0, 1.12] });
+  shot(c('S28'), (lt, u, t) => (nightWash('#2a1e10', K.amber, [[960, 540, 900, rgba(K.amber, 0.35), 1]]), folder(960, 560, 1.0, 'julian', ['cover: desk officer, antwerp', 'actual: langley investigation cell', 'lead investigator, kessler', 0.6], 'KNOWN', prog(t, w('S28', 'lead investigator'), w('S28', 'lead investigator', 0.3)), -0.03)), { z: [1.0, 1.12] });
   // S29 take away the river
   shot(c('S29'), faceShot('julian', [[0, J.cold]]), { z: [1.15, 1.3] });
   shot(w('S29', 'in the river'), (lt, u, t) => limmat(t), { z: [1.2, 1.5], y: [100, 140] }, { rain: 0.8 });
@@ -141,7 +150,7 @@ function buildShots() {
   // S40 a colder possibility
   shot(c('S40'), faceShot('julian', [[0, J.think], [w('S40', 'colder'), J.alarm]], { light: (t) => ({ dark: 0.6 + 0.4 * prog(t, w('S40', 'colder'), w('S40', 'colder', 2)), rim: K.blue }) }), { z: [1.15, 1.4] });
   // S41 the personnel addendum
-  shot(c('S41'), (lt, u, t) => folder(960, 560, 1.0, 'personnel addendum', ['julian', 'zurich annex, dufourstrasse', 'temporary station, four months', 0.5], 'RESTRICTED', prog(t, w('S41', 'restricted'), w('S41', 'restricted', 0.25)), 0.02), { z: [1.0, 1.12] });
+  shot(c('S41'), (lt, u, t) => (nightWash('#2a1e10', K.amber, [[960, 540, 900, rgba(K.amber, 0.35), 1]]), folder(960, 560, 1.0, 'personnel addendum', ['julian', 'zurich annex, dufourstrasse', 'temporary station, four months', 0.5], 'RESTRICTED', prog(t, w('S41', 'restricted'), w('S41', 'restricted', 0.25)), 0.02)), { z: [1.0, 1.12] });
   // S42 he knew i would spot it
   shot(c('S42'), (lt, u, t) => mirrors(t, 3, 'henrik', { julian: J.alarm, henrik: HK.watch }), { z: [1.0, 1.2], x: [0, 140], y: [0, -80] });
   // S43 why tell a blatant lie
@@ -244,7 +253,7 @@ function drawShot(k, t, alpha) {
 }
 function rainOverlay(t, a) {
   if (a <= 0) return; const r = rng(Math.floor(t * 30) * 13 + 7);
-  ctx.save(); ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0); ctx.strokeStyle = 'rgba(200,220,255,0.35)'; ctx.lineWidth = 1.3; ctx.globalAlpha = a;
+  ctx.save(); ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0); ctx.strokeStyle = SKETCH ? 'rgba(70,74,90,0.32)' : 'rgba(200,220,255,0.35)'; ctx.lineWidth = 1.2; ctx.globalAlpha = a;
   ctx.beginPath(); for (let i = 0; i < 220; i++) { const x = r() * (W + 200) - 100, y = r() * H, l = 30 + r() * 40; ctx.moveTo(x, y); ctx.lineTo(x - l * 0.18, y + l); } ctx.stroke(); ctx.restore();
 }
 function makePaperTex() {
@@ -263,10 +272,10 @@ function render(t) {
   const rainA = (sh.o.rain || 0) * (k > 0 && dt < XF && !sh.o.hard ? sm(dt / XF) : 1) + (k > 0 && dt < XF && !sh.o.hard ? (SHOTS[k - 1].o.rain || 0) * (1 - sm(dt / XF)) : 0);
   rainOverlay(t, rainA);
   ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0);
-  ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.5; ctx.drawImage(PAPERTEX, 0, 0, W, H); ctx.restore();
-  const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.3, W / 2, H / 2, H * 0.95); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.7)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+  ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = SKETCH ? 0.35 : 0.5; ctx.drawImage(PAPERTEX, 0, 0, W, H); ctx.restore();
+  const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.3, W / 2, H / 2, H * 0.95); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, SKETCH ? 'rgba(90,70,40,0.28)' : 'rgba(0,0,0,0.7)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
   // letterbox
-  ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, 104); ctx.fillRect(0, H - 104, W, 104);
+  if (!SKETCH) { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, 104); ctx.fillRect(0, H - 104, W, 104); }
   const fi = 1 - prog(t, 0, 1.0), fo = prog(t, TL.total - 1.5, TL.total); if (fi > 0 || fo > 0) { ctx.fillStyle = `rgba(0,0,0,${Math.max(fi, fo)})`; ctx.fillRect(0, 0, W, H); }
 }
 async function init() {

@@ -2,6 +2,14 @@
 'use strict';
 // ---------- backgrounds ----------
 function nightWash(top, bot, glows = []) {
+  if (SKETCH) {
+    ctx.fillStyle = PAPERC; ctx.fillRect(-W, -H, W * 3, H * 3);
+    // a faint wash of the scene's colour, as if laid in with the side of a pencil
+    const tint = lum(top) < 0.2 ? bot : top; ctx.fillStyle = rgba(tint, 0.10); ctx.fillRect(-W, -H, W * 3, H * 3);
+    strokes([-200, -200, W + 200, H + 200], GRAPH, 260, { ang: -1.1, len: 60, w: 1.2, a: 0.12 });
+    glows.forEach(([x, y, r, c, a]) => glow(x, y, r, c, a));
+    return;
+  }
   const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, top); g.addColorStop(1, bot); ctx.fillStyle = g; ctx.fillRect(-W, -H, W * 3, H * 3);
   strokes([-200, -200, W + 200, H + 200], K.indigo, 900, { ang: -1.1, len: 70, w: 2.4, a: 0.35 });
   glows.forEach(([x, y, r, c, a]) => glow(x, y, r, c, a));
@@ -67,30 +75,46 @@ function square(t) {
   pencilShape(smooth([[880, 560], [960, 530], [1040, 560], [960, 586]]), '#14141c', [{ col: K.stone, n: 140, len: 20 }], { lw: 2 });
   lamp(420, 420, 0.6, K.lamp); lamp(1560, 420, 0.6, K.magenta);
 }
-// a standing figure, mostly silhouette with rim light. op: { umb: 'open'|'closed'|null, cup, face: 1|-1, rim, who }
+// a standing figure in a long coat, sketched at about 7.5 heads. op: { umb: 'open'|'closed'|null, cup, face: 1|-1, rim, who }
 function figure(x, y, s, op = {}) {
-  const rim = op.rim || K.teal, who = op.who || 'julian';
+  const f = op.face || 1, who = op.who || 'julian', rim = op.rim || K.teal, J = who === 'julian';
+  const Hh = 400; // figure height in local units; feet at 0, crown at -Hh
+  const P = (px, py) => [px * f, py];
+  const coatC = rgba(J ? '#c8b89a' : '#8a8c96', 0.85);
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  const coat = who === 'julian'
-    ? smooth([[-70, -300], [-95, -200], [-110, 0], [-80, 0], [-60, 60], [60, 60], [80, 0], [110, 0], [95, -200], [70, -300], [0, -330]])
-    : smooth([[-80, -296], [-110, -190], [-118, 10], [-70, 40], [70, 40], [118, 10], [110, -190], [80, -296], [0, -322]]);
-  pencilShape(coat, '#0b0a10', [{ col: who === 'julian' ? K.khaki : K.slate, n: 500, f: (px) => ss(-60, 110, px * (op.face || 1)) * 0.8, ang: -1.3, len: 30 }, { col: rim, n: 240, f: (px) => ss(40, 110, -px * (op.face || 1)), len: 20, ang: 1.5 }], { lw: 2.2 });
-  pline([[-30, 60], [-34, 180]], K.ink, 14, 0.95); pline([[30, 60], [34, 180]], K.ink, 14, 0.95);
-  const hp = smooth([[-34, -330], [-36, -380], [0, -406], [36, -380], [34, -330], [0, -312]]);
-  pencilShape(hp, '#0b0a10', [{ col: K.skin2, n: 220, f: (px) => ss(-20, 30, px * (op.face || 1)), len: 12 }, { col: rim, n: 80, f: (px) => ss(10, 34, -px * (op.face || 1)), len: 10 }], { lw: 1.8 });
-  if (who === 'julian') pencilShape(smooth([[-36, -372], [-30, -404], [10, -414], [38, -394], [36, -372], [0, -392]]), '#060509', [{ col: K.violet, n: 60, len: 14 }], { lw: 1.4 });
-  else { pline([[-24, -372], [24, -372]], K.amber2, 1.6, 0.8); }
-  if (op.umb === 'open') {
-    const ux = 40 * (op.face || 1);
-    pline([[ux, -150], [ux, -470]], K.ink, 4, 0.95);
-    const can = smooth([[ux - 230, -420], [ux - 120, -520], [ux, -548], [ux + 120, -520], [ux + 230, -420], [ux + 110, -440], [ux, -436], [ux - 110, -440]]);
-    pencilShape(can, '#08070b', [{ col: K.indigo, n: 300, len: 30 }, { col: rim, n: 120, f: (px, py) => ss(-520, -470, -py) * 0.8, len: 20 }], { lw: 2.4 });
-  } else if (op.umb === 'closed') {
-    const ux = 70 * (op.face || 1); pline([[ux, -150], [ux + 6, 170]], K.ink, 7, 0.95); pline(qpts([ux, -150], [ux - 10, -176], [ux + 12, -184]), K.ink, 4, 0.9);
+  // legs and shoes
+  [[-14, -2], [16, 2]].forEach(([lx, sk]) => { pencilShape([P(lx - 11, -150), P(lx + 11, -150), P(lx + 10 + sk, -6), P(lx - 9 + sk, -6)], rgba('#3a3a44', 0.9), [{ col: GRAPH, n: 120, len: 14, a: 0.5 }], { lw: 1.8 }); pencilShape([P(lx - 11 + sk, -8), P(lx + 22 + sk, -8), P(lx + 24 + sk, 2), P(lx - 12 + sk, 2)], rgba('#22222a', 0.95), [], { lw: 1.6 }); });
+  // the coat: shoulders, flare to the knee
+  const coat = smooth([P(-34, -318), P(-58, -300), P(-62, -250), P(-56, -170), P(-62, -128), P(0, -122), P(64, -130), P(58, -176), P(62, -250), P(56, -300), P(30, -318), P(0, -306)]);
+  pencilShape(coat, coatC, [{ col: GRAPH, n: 520, len: 26, ang: -1.25, a: 0.45, f: (px) => (px * f < -10 ? 0.9 : 0.25) }, { col: rim, n: 120, len: 16, f: (px) => (px * f < -40 ? 0.6 : 0) }], { lw: 2.2, lineCol: GRAPH });
+  pline([P(-4, -306), P(-8, -128)], GRAPH, 1.6, 0.7); // front edge
+  pline([P(-30, -316), P(-12, -268), P(-6, -250)], GRAPH, 1.6, 0.7); pline([P(28, -316), P(6, -270)], GRAPH, 1.6, 0.7); // lapels
+  if (J) pline([P(-56, -214), P(58, -218)], GRAPH, 2.4, 0.6); // trench belt
+  [-232, -196, -160].forEach((by) => { ctx.fillStyle = 'rgba(52,50,58,0.8)'; ctx.beginPath(); const q = P(4, by); ctx.arc(q[0], q[1], 2.6, 0, Math.PI * 2); ctx.fill(); });
+  // arms hanging, hands
+  const armB = J ? [[-58, -292], [-70, -230], [-66, -170]] : [[-58, -292], [-68, -232], [-48, -186]];
+  pline(armB.map(([a2, b2]) => P(a2, b2)), GRAPH, 2, 0.75); pline(armB.map(([a2, b2]) => P(a2 + 16, b2 + 4)), GRAPH, 1.6, 0.55);
+  pline([P(58, -292), P(68, -230), P(58, -176)], GRAPH, 2, 0.75);
+  if (!J) pencilShape([P(42, -196), P(62, -190), P(60, -168), P(44, -172)], rgba('#8a8c96', 0.9), [], { lw: 1.6 }); // henrik's hand in his pocket
+  const hand = (hx, hy) => pencilShape(smooth([P(hx - 7, hy - 10), P(hx + 7, hy - 10), P(hx + 9, hy + 6), P(hx, hy + 14), P(hx - 8, hy + 6)]), rgba(K.skin, 0.9), [{ col: K.skin2, n: 30, len: 6 }], { lw: 1.4, lineCol: GRAPH });
+  if (J) { hand(-64, -162); hand(62, -170); } else hand(-46, -178);
+  // neck, head and hair
+  pencilShape([P(-9, -328), P(9, -328), P(9, -308), P(-9, -308)], rgba(K.skin, 0.9), [], { lw: 1.2, lineCol: GRAPH });
+  const head = smooth([P(-20, -350), P(-18, -376), P(0, -392), P(20, -382), P(24, -360), P(26, -348), P(18, -330), P(4, -324), P(-14, -332)]);
+  pencilShape(head, rgba(K.skin, 0.9), [{ col: K.skin2, n: 60, len: 8, f: (px) => (px * f < 0 ? 0.8 : 0.2) }, { col: GRAPH, n: 50, len: 8, a: 0.4, f: (px) => (px * f < -6 ? 1 : 0) }], { lw: 1.6, lineCol: GRAPH });
+  const hair = J ? smooth([P(-22, -350), P(-24, -378), P(-6, -398), P(18, -396), P(28, -378), P(14, -380), P(-4, -374), P(-12, -358)]) : smooth([P(-22, -346), P(-22, -374), P(-4, -390), P(16, -388), P(10, -380), P(-6, -376), P(-14, -354)]);
+  pencilShape(hair, rgba(J ? '#2a2020' : '#8a8478', 0.85), [{ col: J ? '#1c1618' : '#5a5650', n: 60, len: 10, ang: -2.6 }], { lw: 1.4, lineCol: GRAPH });
+  pline([P(22, -362), P(27, -356), P(22, -352)], GRAPH, 1.2, 0.7); // nose
+  // umbrella
+  if (op.umb === 'closed') { pline([P(-66, -150), P(-40, 10)], GRAPH, 4, 0.9); pline(qpts(P(-66, -150), P(-78, -176), P(-58, -180)), GRAPH, 3, 0.85); pencilShape([P(-64, -140), P(-56, -142), P(-42, -10), P(-46, -8)], rgba('#2a2a34', 0.9), [], { lw: 1.4 }); }
+  else if (op.umb === 'open') {
+    pline([P(30, -150), P(30, -470)], GRAPH, 3, 0.9);
+    pencilShape(smooth([P(-200, -420), P(-110, -520), P(30, -548), P(170, -520), P(260, -420), P(140, -440), P(30, -436), P(-80, -440)]), rgba('#2a2a34', 0.85), [{ col: GRAPH, n: 260, len: 24, a: 0.5 }, { col: rim, n: 80, len: 14, f: (px, py) => (py > -460 ? 0.6 : 0) }], { lw: 2.2 });
   }
-  if (op.cup) { pencilShape([[-90 * (op.face || 1) - 14, -150], [-90 * (op.face || 1) + 14, -150], [-90 * (op.face || 1) + 10, -112], [-90 * (op.face || 1) - 10, -112]], '#d8cfbd', [{ col: K.cream, n: 40, len: 8 }], { lw: 1.4 }); }
+  if (op.cup) cupSmall(P(-50, -176), f);
   ctx.restore();
 }
+function cupSmall([cx, cy], f) { pencilShape([[cx - 8, cy - 12], [cx + 8, cy - 12], [cx + 6, cy + 10], [cx - 6, cy + 10]], 'rgba(244,236,222,0.95)', [{ col: K.amber, n: 10, len: 6 }], { lw: 1.4, lineCol: GRAPH }); void f; }
 function alley(t, depth = 0) {
   nightWash('#0a0912', '#140f18', [[960, 380, 500, rgba(K.amber, 0.25), 1]]);
   // high windowless walls in perspective
@@ -251,7 +275,7 @@ function mirrors(t, depth, who0 = 'julian', exs = {}) {
   let s = 1, x = 960, y = 560, who = who0;
   for (let d = 0; d < Math.min(depth, 5); d++) {
     const e = exs[who] || ex({});
-    if (d > 0) { ctx.save(); ctx.globalAlpha = 0.95; ctx.strokeStyle = tooth(d % 2 ? K.amber : K.teal, 1); ctx.lineWidth = 10 * s; ctx.strokeRect(x - 340 * s, y - 380 * s, 680 * s, 760 * s); ctx.restore(); ctx.save(); ctx.beginPath(); ctx.rect(x - 335 * s, y - 375 * s, 670 * s, 750 * s); ctx.clip(); ctx.fillStyle = '#0b0910'; ctx.fillRect(x - 340 * s, y - 380 * s, 680 * s, 760 * s); }
+    if (d > 0) { ctx.save(); ctx.globalAlpha = 0.95; ctx.strokeStyle = tooth(d % 2 ? K.amber : K.teal, 1); ctx.lineWidth = 10 * s; ctx.strokeRect(x - 340 * s, y - 380 * s, 680 * s, 760 * s); ctx.restore(); ctx.save(); ctx.beginPath(); ctx.rect(x - 335 * s, y - 375 * s, 670 * s, 750 * s); ctx.clip(); ctx.fillStyle = SKETCH ? '#e9e1d0' : '#0b0910'; ctx.fillRect(x - 340 * s, y - 380 * s, 680 * s, 760 * s); }
     face(x, y + 20 * s, 0.95 * s, who, e, { side: who === 'julian' ? 1 : -1, key: K.amber, rim: who === 'julian' ? K.teal : K.magenta, glint: 1 });
     if (d > 0) ctx.restore();
     // next frame sits in the "thought" space at the upper right
@@ -267,9 +291,10 @@ function forkPaths(t, uA, uB, pick = 0) {
   if (pick > 0) glow(1500, 400, 300, rgba(K.crimson, 0.5), pick);
 }
 function title(t, a = 1, a2 = 1) {
-  ctx.fillStyle = '#060509'; ctx.fillRect(-W, -H, W * 3, H * 3);
-  strokes([0, 0, W, H], K.indigo, 900, { ang: -1.1, len: 70, w: 2.4, a: 0.25 });
-  glow(960, 520, 700, rgba(K.amber, 0.22), a);
-  hand('common knowledge', 960, 500, 180, K.amber2, { a });
-  hand('clay shentrup', 960, 680, 64, K.cream, { a: a2 });
+  ctx.fillStyle = PAPERC; ctx.fillRect(-W, -H, W * 3, H * 3);
+  strokes([0, 0, W, H], GRAPH, 300, { ang: -1.1, len: 60, w: 1.2, a: 0.1 });
+  glow(960, 520, 700, rgba(K.amber, 0.3), a);
+  hand('common knowledge', 960, 500, 180, GRAPH, { a });
+  pline([[620, 600], [1300, 590]], K.crimson, 5, a2 * 0.8, 2, 2);
+  hand('clay shentrup', 960, 680, 64, '#5a5862', { a: a2 });
 }
