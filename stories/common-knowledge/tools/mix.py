@@ -18,6 +18,7 @@ MUSIC = [
     ('m3', start['S23'] - 1.0, 1.0, start['S33'] - 0.2, 3.0),
     ('m4', start['S33'] - 1.0, 2.0, start['S49'] - 3.0, 6.0),
     ('m5', start['S49'] - 10.0, 6.0, cues['events'][-1]['t'] - 0.2, 0.4),
+    ('m1', start['E00'] - 1.0, 3.0, total - 0.5, 5.0),  # explainer bed (looped)
 ]
 filt = []
 files = []
@@ -43,7 +44,7 @@ filt.append('[vo]asplit=2[vomix][vokey]')
 # music bus
 mu = []
 for name, t0, fi, t1, fo in MUSIC:
-    mp = os.path.join(ROOT, 'music', name + '.mp3'); i = inp(mp)
+    mp = os.path.join(ROOT, 'music', name + '.mp3'); i = inp(mp, ['-stream_loop', '-1'] if t0 > start['S61'] else None)
     vol = VO_REF - MUSIC_UNDER - lufs(mp)
     dur = max(1.0, t1 - t0)
     ms = int(round(t0 * 1000))
@@ -53,7 +54,7 @@ filt.append(f'{"".join(mu)}amix=inputs={len(mu)}:normalize=0,apad=whole_dur={tot
 filt.append('[mus][vokey]sidechaincompress=threshold=0.03:ratio=6:attack=40:release=600:makeup=1[musd]')
 # rain bed, looped
 rp = os.path.join(ROOT, 'sfx', 'rain.mp3'); i = inp(rp, ['-stream_loop', '-1']); rv = VO_REF - RAIN_UNDER - lufs(rp)
-filt.append(f'[{i}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total:.3f},volume={rv:.1f}dB,afade=t=in:d=3,afade=t=out:st={total - 6:.3f}:d=5[rain]')
+filt.append(f'[{i}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total:.3f},volume={rv:.1f}dB,afade=t=in:d=3,afade=t=out:st={start['E00'] - 5:.3f}:d=4[rain]')
 # effects
 fx = []
 for e in cues['events']:

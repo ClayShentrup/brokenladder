@@ -205,6 +205,9 @@ function buildShots() {
   shot(w('S61', 'drove'), (lt, u, t) => { nightWash('#0a0910', '#140e16', [[960, 540, 900, rgba(K.crimson, 0.4), 1]]); const p = prog(t, w('S61', 'drove'), w('S61', 'throat')); pline([[-200, 900], [lerp(200, 1500, eIO(p)), lerp(800, 420, eIO(p))]], K.ink, 18, 1, 2, 2); pline([[lerp(200, 1500, eIO(p)) - 40, lerp(800, 420, eIO(p)) + 12], [lerp(200, 1500, eIO(p)) + 40, lerp(800, 420, eIO(p)) - 12]], K.cream, 6, 0.9); }, { z: [1.0, 1.2] }, { hard: true });
   shot(w('S61', 'before it'), (lt, u, t) => { ctx.fillStyle = '#000'; ctx.fillRect(-W, -H, W * 3, H * 3); }, {}, { hard: true });
   shot(ce('S61', 1.0), (lt, u, t) => title(t, prog(t, ce('S61', 1.0), ce('S61', 2.5)), prog(t, ce('S61', 2.2), ce('S61', 3.2))), { z: [1, 1.04] });
+  // explainer coda
+  shot(c('E00') - 0.8, (lt, u, t) => card(t, "stay tuned for an explainer", "of what you've just watched", prog(t, c('E00') - 0.6, c('E00') + 0.4)), { z: [1, 1.03] });
+  EXPLAIN.forEach(([id, f, label]) => shot(c(id) - (id === 'E01' ? 0.3 : 0), (lt, u, t) => exShot(f, label, prog(t, c(id), c(id) + 0.8)), { z: [1.0, 1.06], x: [-15, 15] }));
   SHOTS.forEach((s, i) => { s.end = i + 1 < SHOTS.length ? SHOTS[i + 1].start : TL.total + 1; });
   // sound effect cues
   const E = (name, t, gain = 1) => EVENTS.push({ name, t, gain });
@@ -281,8 +284,30 @@ function render(t) {
   if (!SKETCH) { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, 104); ctx.fillRect(0, H - 104, W, 104); }
   const fi = 1 - prog(t, 0, 1.0), fo = prog(t, TL.total - 1.5, TL.total); if (fi > 0 || fo > 0) { ctx.fillStyle = `rgba(0,0,0,${Math.max(fi, fo)})`; ctx.fillRect(0, 0, W, H); }
 }
+// ---------- explainer: a story still with a handwritten caption band ----------
+const EXPLAIN = [
+  ['E01', '68_0.jpg', 'common knowledge'], ['E02', '18_0.jpg', 'level 1 · julian knows'], ['E03', '25_0.jpg', 'level 2 · henrik knows julian knows'],
+  ['E04', '44_0.jpg', 'level 3 · julian knows henrik knows julian knows'], ['E05', '52_0.jpg', 'level 4 · does henrik know julian caught the lie?'],
+  ['E06', '50_0.jpg', 'world one · henrik was sloppy'], ['E07', '57_0.jpg', 'world two · henrik baited him'], ['E08', '61_0.jpg', 'climbing loses in both worlds'],
+  ['E09', '67_0.jpg', 'the test'], ['E10', '72_1.jpg', 'level 4 was true'], ['E11', '80_0.jpg', 'common knowledge'],
+];
+const EXIM = {};
+function card(t, l1, l2, a) {
+  ctx.fillStyle = PAPERC; ctx.fillRect(-W, -H, W * 3, H * 3);
+  strokes([0, 0, W, H], GRAPH, 300, { ang: -1.1, len: 60, w: 1.2, a: 0.1 });
+  hand(l1, 960, 470, 110, GRAPH, { a }); hand(l2, 960, 600, 80, '#5a5862', { a });
+  pline([[660, 690], [1260, 682]], K.crimson, 5, a * 0.8, 2, 2);
+}
+function exShot(f, label, a) {
+  const im = EXIM[f], ov = 1.04;
+  if (im) ctx.drawImage(im, (W - W * ov) / 2, (H - H * ov) / 2, W * ov, H * ov); else { ctx.fillStyle = PAPERC; ctx.fillRect(-W, -H, W * 3, H * 3); }
+  const g = ctx.createLinearGradient(0, H - 260, 0, H); g.addColorStop(0, 'rgba(239,232,218,0)'); g.addColorStop(0.45, 'rgba(239,232,218,0.9)'); g.addColorStop(1, 'rgba(239,232,218,0.96)');
+  ctx.fillStyle = g; ctx.fillRect(-W, H - 260, W * 3, 400);
+  hand(label, 960, H - 95, label.length > 36 ? 62 : 76, GRAPH, { a });
+}
 // ---------- gemini stills: replace a shot's drawing with generated images (gemini/manifest.json), crossfading on cues ----------
 async function loadImages() {
+  await Promise.all(EXPLAIN.map(async ([, f]) => { const im = new Image(); im.src = '../gemini/shots/' + f; try { await im.decode(); EXIM[f] = im; } catch (e) {} }));
   let man; try { man = await (await fetch('../gemini/manifest.json', { cache: 'no-store' })).json(); } catch (e) { return; }
   const cue = (q) => (!q ? -1e9 : q[0] === 'w' ? w(q[1], q[2]) : c(q[1]));
   await Promise.all(Object.entries(man).map(async ([k, keys]) => {

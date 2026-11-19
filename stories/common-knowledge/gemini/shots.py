@@ -1,7 +1,7 @@
 # Shot prompts for the Gemini pass. Index = position in SHOTS (src/main.js buildShots). Shots not listed keep their code drawing
 # (0 title, 82 black, 83 end title). keys: [[cue or None, prompt], ...]; a later key is generated as an edit of the shot's first image.
 # who: which character sheets to attach. ref: other shot indices whose first image is attached as a location reference.
-SQ = "Zurich's Münsterhof square at night in steady November rain: wet cobbles mirroring amber streetlamps, old stone guild houses, a DRY stone fountain in the centre with no water running."
+SQ = "Zurich's Münsterhof square at night in steady November rain: wet cobbles mirroring amber streetlamps, old stone guild houses, a stone fountain in the centre that is switched off for winter: its basin empty and dry, no water flowing from any spout."
 AL = "A narrow medieval stone alley in Zurich's old town climbing toward the Lindenhof hill at night in rain: high windowless masonry walls, wet cobbles, one amber wall lamp."
 ST = "The foot of a steep flight of worn stone steps rising between two high stone walls into darkness, bare trees of the Lindenhof park faintly visible at the top, rain, wet cobbles, one amber lamp."
 J = "JULIAN (lean, late 30s, dark hair, tan trench coat; first reference sheet)"
@@ -72,7 +72,7 @@ S = {
  54: dict(who='j', keys=[[None, XE + J + ", narrowed in thought, cold blue light."]]),
  55: dict(ref=[27], keys=[[None, "Point of view looking straight up worn wet stone steps rising steeply into darkness between two stone walls, no people. Cold blue tones."]]),
  56: dict(who='jh', ref=[27], keys=[[None, f"Low angle from the foot of the steps: {JU}, climbs a few steps ahead, glancing back over his shoulder at {H}, following below. Cold blue tones."]]),
- 57: dict(who='jh', ref=[27], keys=[[None, f"Low angle behind {H}: ahead of him {JU}, has turned his back and is stepping onto the first stone step; Henrik's right hand draws a short knife low at his side. Cold blue, desaturated, like a premonition. No blood."]]),
+ 57: dict(who='jh', ref=[27], keys=[[None, f"Low angle behind {H}: ahead of him {JU}, has turned his back and is stepping onto the first stone step; Henrik's right hand draws a compact pistol from his coat pocket, held low. Cold blue, desaturated, like a premonition. No blood."]]),
  58: dict(keys=[[None, "Close-up of a man's black shoe pressing onto the first wet stone riser of a steep stairway, the hem of a tan trench coat, rain."]]),
  59: dict(who='h', keys=[[None, "Close-up of the charcoal wool overcoat of " + H + ": his right hand buried deep in the slash pocket, the wool stretched over his knuckles."]]),
  60: dict(who='h', keys=[[None, "Close-up of the left hand of " + H + " loosely holding an empty small paper espresso cup, rain on his knuckles."]]),

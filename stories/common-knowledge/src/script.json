@@ -63,13 +63,13 @@
   },
   {
    "id": "S11",
-   "text": "kessler—the station chief in munich—had been found forty-eight hours ago in the trunk of a rented audi at the central train station, his throat opened with a surgical precision that left zero blood on the upholstery. the forensic file was restricted to the three-person investigation cell in langley. the cover story fed to the bavarian press was a coronary in his apartment. no one outside the langley cell knew kessler had died at the station, and no one outside the directorate knew the cleanup team had staged out of the bayernhof hotel.",
-   "say": "Kessler, the station chief in Munich, had been found forty-eight hours ago in the trunk of a rented Audi at the central train station, his throat opened with a surgical precision that left zero blood on the upholstery. The forensic file was restricted to the three-person investigation cell in Langley. The cover story fed to the Bavarian press was a coronary in his apartment. No one outside the Langley cell knew Kessler had died at the station, and no one outside the directorate knew the cleanup team had staged out of the Bayernhof hotel."
+   "text": "kessler—the station chief in munich—had been found forty-eight hours ago in the trunk of a rented audi at the central train station, his throat opened with a surgical precision that left zero blood on the upholstery. the forensic file was restricted to the three-person investigation cell in langley. the cover story fed to the bavarian press was a coronary in his apartment. no one outside the langley cell knew kessler had died at the station, and no one outside the cell knew his killers had staged out of the bayernhof hotel and wiped their room clean on the way out.",
+   "say": "Kessler, the station chief in Munich, had been found forty-eight hours ago in the trunk of a rented audi at the central train station, his throat opened with a surgical precision that left zero blood on the upholstery. The forensic file was restricted to the three-person investigation cell in Langley. The cover story fed to the bavarian press was a coronary in his apartment. No one outside the Langley cell knew Kessler had died at the station, and no one outside the cell knew his killers had staged out of the Bayernhof hotel and wiped their room clean on the way out."
   },
   {
    "id": "S12",
-   "text": "henrik wasn't cleared for that file. henrik was a mid-level logistics coordinator in vienna. there was no world in which henrik knew a cleanup had happened in munich, let alone that he had been the one to clear the hotel.",
-   "say": "Henrik wasn't cleared for that file. Henrik was a mid-level logistics coordinator in Vienna. There was no world in which Henrik knew a cleanup had happened in Munich, let alone that he had been the one to clear the hotel."
+   "text": "henrik wasn't cleared for that file. henrik was a mid-level logistics coordinator in vienna. there was no world in which henrik knew about the bayernhof, unless he had been the one who cleared it.",
+   "say": "Henrik wasn't cleared for that file. Henrik was a mid-level logistics coordinator in Vienna. There was no world in which Henrik knew about the Bayernhof, unless he had been the one who cleared it."
   },
   {
    "id": "S13",
@@ -165,8 +165,8 @@
   },
   {
    "id": "S31",
-   "text": "he watched henrik’s eyes. if by some miracle you really were confused about where the annex is, you say \"great, let's get that drink\" or you realize you got the street wrong. if you're hunting me, you have to herd me right back up these stairs.",
-   "say": "He watched Henrik’s eyes. If by some miracle you really were confused about where the annex is, you say \"Great, let's get that drink\" Or you realize you got the street wrong. If you're hunting me, you have to herd me right back up these stairs."
+   "text": "he watched henrik’s eyes. if the pouch is real, you still have to drop it, so you say \"fine, i'll run it down myself and meet you at the top.\" if it was only ever an excuse to stay at my side, you forget it exists and herd me right back up these stairs.",
+   "say": "He watched Henrik’s eyes. If the pouch is real, you still have to drop it, so you say \"fine, I'll run it down myself and meet you at the top.\" If it was only ever an excuse to stay at my side, you forget it exists and herd me right back up these stairs."
   },
   {
    "id": "S32",
@@ -236,23 +236,23 @@
   },
   {
    "id": "S45",
-   "text": "if julian thinks henrik is a clumsy liar who believes his cover is still intact, julian will try to be clever: he'll pretend to go along with the \"let's get a drink\" charade, climb the stairs ahead of henrik, and wait for a moment to turn the tables or bolt at the top.",
-   "say": "If Julian thinks Henrik is a clumsy liar who believes his cover is still intact, Julian will try to be clever: he'll pretend to go along with the \"Let's get a drink\" Charade, climb the stairs ahead of Henrik, and wait for a moment to turn the tables or bolt at the top."
+   "text": "if julian thinks henrik is a clumsy liar who believes his cover is still intact, julian will try to be clever: he'll pretend to go along with the \"let's get a drink\" charade, climb the stairs ahead of henrik, and use that head start to reach the open ground of the park first, where he can turn and fight on level footing or bolt into the dark.",
+   "say": "If Julian thinks Henrik is a clumsy liar who believes his cover is still intact, Julian will try to be clever: he'll pretend to go along with the \"let's get a drink\" charade, climb the stairs ahead of Henrik, and use that head start to reach the open ground of the park first, where he can turn and fight on level footing or bolt into the dark."
   },
   {
    "id": "S46",
-   "text": "and that's the trap, julian realized, the coldness in his chest suddenly total. if henrik told that lie on purpose, then he knows i know he's hunting me, and he knows the only reason i would ever agree to climb these stairs is to set up a counter-ambush. so the second i turn my back and put my weight on the first step—trapped between two stone walls with my balance pitched forward—he won't wait for the top of the hill. he'll stab me in the back immediately.",
-   "say": "And that's the trap, Julian realized, the coldness in his chest suddenly total. If Henrik told that lie on purpose, then he knows I know he's hunting me, and he knows the only reason I would ever agree to climb these stairs is to set up a counter-ambush. So the second I turn my back and put my weight on the first step, trapped between two stone walls with my balance pitched forward, he won't wait for the top of the hill. He'll stab me in the back immediately."
+   "text": "and that's the trap, julian realized, the coldness in his chest suddenly total. if henrik told that lie on purpose, then he knows i know he's hunting me, and he knows the only reason i would ever agree to climb these stairs is to set up a counter-ambush. so the second i turn my back and put my weight on the first step—trapped between two stone walls with my balance pitched forward—he won't wait for the top of the hill. he'll put a bullet in my back immediately.",
+   "say": "And that's the trap, Julian realized, the coldness in his chest suddenly total. If Henrik told that lie on purpose, then he knows I know he's hunting me, and he knows the only reason I would ever agree to climb these stairs is to set up a counter-ambush. So the second I turn my back and put my weight on the first step, trapped between two stone walls with my balance pitched forward, he won't wait for the top of the hill. He'll put a bullet in my back immediately."
   },
   {
    "id": "S47",
-   "text": "julian looked at henrik's coat. henrik's right hand was buried deep in the wool slash pocket, just as it had been since they left the fountain. his left hand held the empty paper espresso cup.",
-   "say": "Julian looked at Henrik's coat. Henrik's right hand was buried deep in the wool slash pocket, just as it had been since they left the fountain. His left hand held the empty paper espresso cup."
+   "text": "julian looked at henrik's coat. henrik's right hand was buried deep in the wool slash pocket, just as it had been since he'd offered to walk julian down. his left hand held the empty paper espresso cup.",
+   "say": "Julian looked at Henrik's coat. Henrik's right hand was buried deep in the wool slash pocket, just as it had been since he'd offered to walk Julian down. His left hand held the empty paper espresso cup."
   },
   {
    "id": "S48",
-   "text": "julian weighed the two worlds. if henrik was sloppy, walking up the stairs delivered julian straight into henrik's preferred ambush site under the dark trees at the top. if henrik was baiting him, taking even one step up the stairs got julian killed on the second riser.",
-   "say": "Julian weighed the two worlds. If Henrik was sloppy, walking up the stairs delivered Julian straight into Henrik's preferred ambush site under the dark trees at the top. If Henrik was baiting him, taking even one step up the stairs got Julian killed on the second riser."
+   "text": "julian weighed the two worlds. if henrik was sloppy, walking up the stairs delivered julian straight into henrik's preferred ambush site under the dark trees at the top. if henrik was baiting him, taking even one step up the stairs got julian killed on the second riser. and turning to walk back down the alley meant giving henrik his back just the same.",
+   "say": "Julian weighed the two worlds. If Henrik was sloppy, walking up the stairs delivered Julian straight into Henrik's preferred ambush site under the dark trees at the top. If Henrik was baiting him, taking even one step up the stairs got Julian killed on the second riser. And turning to walk back down the alley meant giving Henrik his back just the same."
   },
   {
    "id": "S49",
@@ -321,6 +321,78 @@
    "id": "S61",
    "text": "henrik’s left fingers opened, letting the empty paper cup slip from his hand—and julian drove the tip of the umbrella straight toward henrik's throat before it hit the cobbles.",
    "say": "Henrik’s left fingers opened, letting the empty paper cup slip from his hand, and Julian drove the tip of the umbrella straight toward Henrik's throat before it hit the cobbles.",
+   "gap": 6.5
+  },
+  {
+   "id": "E00",
+   "text": "stay tuned for an explainer of what you've just watched.",
+   "say": "Stay tuned for an explainer of what you've just watched.",
+   "gap": 1.6
+  },
+  {
+   "id": "E01",
+   "text": "in game theory, something is common knowledge when everyone knows it, everyone knows that everyone knows it, and so on, forever. the story you just watched climbs that ladder one rung at a time. as long as any rung is uncertain, both men can keep pretending. once every rung is filled in, the pretending is over.",
+   "say": "In game theory, something is common knowledge when everyone knows it, everyone knows that everyone knows it, and so on, forever. The story you just watched climbs that ladder one rung at a time. As long as any rung is uncertain, both men can keep pretending. Once every rung is filled in, the pretending is over.",
+   "gap": 0.9
+  },
+  {
+   "id": "E02",
+   "text": "level one: julian knows henrik is the killer. henrik mentions clearing the hotel in munich, a detail only the killer or the three-person langley cell could know, and henrik is a logistics coordinator in vienna, not on the cell.",
+   "say": "Level one: Julian knows Henrik is the killer. Henrik mentions clearing the hotel in Munich, a detail only the killer or the three-person Langley cell could know, and Henrik is a logistics coordinator in Vienna, not on the cell.",
+   "gap": 0.9
+  },
+  {
+   "id": "E03",
+   "text": "level two: henrik knows that julian knows. right after the slip, julian suddenly remembers a token in his car on talstrasse and peels away, and henrik reads that for what it is.",
+   "say": "Level two: Henrik knows that Julian knows. Right after the slip, Julian suddenly remembers a token in his car on Tahl-strasse and peels away, and Henrik reads that for what it is.",
+   "gap": 0.9
+  },
+  {
+   "id": "E04",
+   "text": "level three: julian knows that henrik knows that julian knows. henrik invents a pouch drop at the annex on talstrasse to stay at julian's side. when julian cancels the trip, a man with a real pouch would still have to deliver it. henrik forgets it ever existed and steers straight back to the stairs. the errand was a leash. from here on, neither man is fooled about anything basic: the drink at the top is a pretext to get somewhere dark and settle it.",
+   "say": "Level three: Julian knows that Henrik knows that Julian knows. Henrik invents a pouch drop at the annex on Tahl-strasse to stay at Julian's side. When Julian cancels the trip, a man with a real pouch would still have to deliver it. Henrik forgets it ever existed and steers straight back to the stairs. The errand was a leash. From here on, neither man is fooled about anything basic: the drink at the top is a pretext to get somewhere dark and settle it.",
+   "gap": 0.9
+  },
+  {
+   "id": "E05",
+   "text": "level four is what's at stake at the bottom of the stairs. does henrik know that julian saw through the talstrasse lie? the real annex is on dufourstrasse, and julian once worked there. whether henrik knows that depends on whether he pulled julian's real file.",
+   "say": "Level four is what's at stake at the bottom of the stairs. Does Henrik know that Julian saw through the Tahl-strasse lie? The real annex is on Doo-foor-strasse, and Julian once worked there. Whether Henrik knows that depends on whether he pulled Julian's real file.",
+   "gap": 0.9
+  },
+  {
+   "id": "E06",
+   "text": "if he didn't, henrik thinks julian took the errand at face value, the nervous move of a rattled colleague. so he expects julian to climb, hoping to use his head start and the open ground at the top to turn the tables. henrik's move: play along all the way up, and strike in the dark under the trees.",
+   "say": "If he didn't, Henrik thinks Julian took the errand at face value, the nervous move of a rattled colleague. So he expects Julian to climb, hoping to use his head start and the open ground at the top to turn the tables. Henrik's move: play along all the way up, and strike in the dark under the trees.",
+   "gap": 0.9
+  },
+  {
+   "id": "E07",
+   "text": "if he did, henrik told the lie knowing julian would catch it. then henrik knows julian sees him as composed and dangerous, and the only reason julian would ever start up those stairs is to fake compliance and spring a counter-ambush. henrik's move: don't wait for the top. shoot julian in the back the instant he turns to take the first step.",
+   "say": "If he did, Henrik told the lie knowing Julian would catch it. Then Henrik knows Julian sees him as composed and dangerous, and the only reason Julian would ever start up those stairs is to fake compliance and spring a counter-ambush. Henrik's move: don't wait for the top. Shoot Julian in the back the instant he turns to take the first step.",
+   "gap": 0.9
+  },
+  {
+   "id": "E08",
+   "text": "julian can't tell which world he's in, but he doesn't need to. climbing loses in both, and so does turning his back to walk away. so he stays where he is, facing henrik.",
+   "say": "Julian can't tell which world he's in, but he doesn't need to. Climbing loses in both, and so does turning his back to walk away. So he stays where he is, facing Henrik.",
+   "gap": 0.9
+  },
+  {
+   "id": "E09",
+   "text": "the espresso line is a test. telling henrik that the machine in the dufourstrasse basement has been broken since twenty-three proves julian worked at the real annex and knew the lie was garbage the whole time. the two worlds predict opposite reactions. in world one, it's news, and henrik's eyes should widen in shock. in world two, it isn't news, and all he's lost is the bait.",
+   "say": "The espresso line is a test. Telling Henrik that the machine in the Doo-foor-strasse basement has been broken since twenty-three proves Julian worked at the real annex and knew the lie was garbage the whole time. The two worlds predict opposite reactions. In world one, it's news, and Henrik's eyes should widen in shock. In world two, it isn't news, and all he's lost is the bait.",
+   "gap": 0.9
+  },
+  {
+   "id": "E10",
+   "text": "henrik's eyes don't widen. the smile switches off, and he looks mildly disappointed. \"i figured you'd spot that.\" level four was true.",
+   "say": "Henrik's eyes don't widen. The smile switches off, and he looks mildly disappointed. \"I figured you'd spot that.\" Level four was true.",
+   "gap": 0.9
+  },
+  {
+   "id": "E11",
+   "text": "now every level is filled in, and both men know it. there's nothing left to bluff about, so the cover stories have no more use. no more pretending. the cup drops.",
+   "say": "Now every level is filled in, and both men know it. There's nothing left to bluff about, so the cover stories have no more use. No more pretending. The cup drops.",
    "gap": 3.0
   }
  ]
