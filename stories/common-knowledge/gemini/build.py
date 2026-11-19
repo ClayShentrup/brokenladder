@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, 'sho
 SHEETS = {'j': ('JULIAN', 'julian-sheet.jpg'), 'h': ('HENRIK', 'henrik-sheet3.jpg')}
 STYLE = ("Style: hand-drawn colored pencil and graphite on warm cream paper, visible pencil hatching and paper tooth, noir mood with selective "
          "color accents, realistic adult human proportions and anatomy, restrained and cinematic, like a skilled illustrator's finished storyboard frame. "
-         "The drawing is a full-bleed 16:9 film frame: the scene and its background extend all the way to all four edges of the image, with no cream paper showing around it, no vignette panel, no page borders, no sketchbook edges, no margins. No text, no lettering, no captions, no signatures, no watermarks.")
+         "The drawing is a full-bleed 16:9 film frame: the scene and its background extend all the way to all four edges of the image, with no cream paper showing around it, no vignette panel, no page borders, no sketchbook edges, no margins. No blank paper background. No text, no lettering, no captions, no signatures, no watermarks.")
 MODEL = 'gemini-3-pro-image-preview'
 def palette(i): return [p for s, p in shots.PALETTE if s <= i][-1]
 def fname(i, k): return os.path.join(OUT, f'{i:02d}_{k}.jpg')
