@@ -17,7 +17,7 @@ for f in sorted(glob.glob('shots/*.jpg')):
     nw, nh = (int(bh * 16 / 9), bh) if bw / bh > 16 / 9 else (bw, int(bw * 9 / 16))
     cx, cy = (x0 + x1) // 2, (y0 + y1) // 2; c = (cx - nw // 2, cy - nh // 2, cx - nw // 2 + nw, cy - nh // 2 + nh)
     print(f, 'margin', flat, 'keep', round(nw / W, 2))
-    if fix and nw / W > 0.7:
+    if fix and nw / W > 0.6:
         os.makedirs('orig', exist_ok=True); o = 'orig/' + os.path.basename(f)
         if not os.path.exists(o): shutil.copy(f, o)
         im.crop(c).resize((W, H), Image.LANCZOS).save(f, quality=93)

@@ -98,7 +98,7 @@ S = {
  77: dict(who='j', keys=[[None, CU + J + ", a flat calm expression, his eyes measuring someone's right shoulder off frame, crimson light."]]),
  78: dict(who='h', keys=[[None, CU + H + ", cold, shifting his weight, ready, crimson light."]]),
  79: dict(who='j', keys=[[None, "Extreme close-up of the face of " + J + ", no more pretending, absolutely still and lethal, crimson light."]]),
- 80: dict(keys=[[None, "Close-up: a small empty paper espresso cup falling through the rain in mid-air toward wet cobbles, the open fingers of a man's hand above it, amber and crimson light."]]),
+ 80: dict(keys=[[None, "Low close-up at night in a dark stone alley: a small empty paper espresso cup tumbling in mid-air through the rain toward wet black cobbles, a man's open hand in a charcoal coat sleeve just above it, the dark alley walls and a red-lit lamp filling the whole background. Amber and crimson light, deep shadows, no blank paper."]]),
  81: dict(who='jh', keys=[[None, f"Dynamic low-angle action frame: {J} lunges forward, driving the steel tip of his closed black umbrella like a spear toward the throat of {H}; motion lines, rain flying. No blood."]]),
 }
 # section palettes keyed by the shot index where each begins
