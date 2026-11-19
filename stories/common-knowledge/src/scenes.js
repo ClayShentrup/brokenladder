@@ -108,8 +108,12 @@ function figure(x, y, s, op = {}) {
   // umbrella
   if (op.umb === 'closed') { pline([P(-66, -150), P(-40, 10)], GRAPH, 4, 0.9); pline(qpts(P(-66, -150), P(-78, -176), P(-58, -180)), GRAPH, 3, 0.85); pencilShape([P(-64, -140), P(-56, -142), P(-42, -10), P(-46, -8)], rgba('#2a2a34', 0.9), [], { lw: 1.4 }); }
   else if (op.umb === 'open') {
-    pline([P(30, -150), P(30, -470)], GRAPH, 3, 0.9);
-    pencilShape(smooth([P(-200, -420), P(-110, -520), P(30, -548), P(170, -520), P(260, -420), P(140, -440), P(30, -436), P(-80, -440)]), rgba('#2a2a34', 0.85), [{ col: GRAPH, n: 260, len: 24, a: 0.5 }, { col: rim, n: 80, len: 14, f: (px, py) => (py > -460 ? 0.6 : 0) }], { lw: 2.2 });
+    // about a metre across against a 1.8 m figure: rim just above the crown, held in the near hand
+    pline([P(16, -170), P(16, -476)], GRAPH, 3, 0.9);
+    const cv = smooth([P(-104, -414), P(-60, -462), P(16, -480), P(92, -462), P(136, -414), P(80, -426), P(16, -422), P(-48, -426)]);
+    pencilShape(cv, rgba('#2a2a34', 0.85), [{ col: GRAPH, n: 160, len: 18, a: 0.5 }, { col: rim, n: 50, len: 12, f: (px, py) => (py > -440 ? 0.6 : 0) }], { lw: 2 });
+    [-104, -48, 16, 80, 136].forEach((rx) => pline([P(16, -480), P(rx, rx === -104 || rx === 136 ? -414 : -424)], GRAPH, 1, 0.45));
+    pline([P(16, -480), P(16, -494)], GRAPH, 2.4, 0.9);
   }
   if (op.cup) cupSmall(P(-50, -176), f);
   ctx.restore();

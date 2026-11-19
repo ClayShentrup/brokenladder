@@ -72,17 +72,17 @@ function buildShots() {
   // S03 julian's face: a cold flash, then the tired mask
   shot(c('S03'), faceShot('julian', [[0, J.open], [w('S03', 'cold flash'), J.flash], [w('S03', 'never reached'), J.open], [w('S03', 'raised a hand'), J.mask]]), CF);
   // S04 the two of them in the square
-  shot(c('S04'), (lt, u, t) => { square(t); figure(lerp(560, 760, sm(u)), 920, 1.0, { umb: 'closed', face: 1 }); figure(1120, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.05, 1.15] }, { rain: 0.8 });
+  shot(c('S04'), (lt, u, t) => { square(t); figure(lerp(560, 760, sm(u)), 920, 1.0, { umb: 'open', face: 1 }); figure(1120, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.05, 1.15] }, { rain: 0.8 });
   // S05 henrik's warm smile, the handshake
   shot(c('S05'), faceShot('henrik', [[0, HK.blank], [w('S05', 'smiled'), HK.warm]]), CLOSE);
-  shot(w('S05', 'extended'), (lt, u, t) => { square(t); figure(860, 900, 1.15, { umb: 'closed', face: 1 }); figure(1060, 900, 1.15, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); glow(960, 640, 160, rgba(K.amber, 0.6), 1); }, { z: [1.25, 1.4], y: [-40, -60] }, { rain: 0.6 });
+  shot(w('S05', 'extended'), (lt, u, t) => { square(t); figure(860, 900, 1.15, { umb: 'open', face: 1 }); figure(1060, 900, 1.15, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); glow(960, 640, 160, rgba(K.amber, 0.6), 1); }, { z: [1.25, 1.4], y: [-40, -60] }, { rain: 0.6 });
   // S06 pleasant baritone
   shot(c('S06'), faceShot('henrik', [[0, HK.pleasant], [w('S06', 'wine bar'), HK.casual]]), { z: [1.1, 1.25] });
   // S06b steering him off the square: julian's eyes slide back to the alley mouth
   shot(c('S06b'), faceShot('julian', [[0, J.mask], [w('S06b', 'if i pull'), ex({ open: 0.8, gx: -0.8, gy: 0.1, smile: 0.1, asym: 0.4, tired: 1 })]]), { z: [1.15, 1.3], x: [0, -40] });
-  shot(w('S06b', 'keep my eye'), (lt, u, t) => { square(t); figure(860, 900, 1.0, { umb: 'closed', face: -1 }); figure(1040, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.1, 1.2], x: [-60, -120] }, { rain: 0.7 });
+  shot(w('S06b', 'keep my eye'), (lt, u, t) => { square(t); figure(860, 900, 1.0, { umb: 'open', face: -1 }); figure(1040, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.1, 1.2], x: [-60, -120] }, { rain: 0.7 });
   // S07 into the alley
-  shot(c('S07'), (lt, u, t) => { alley(t); figure(860, 980, 0.8, { umb: 'closed', face: 1 }); figure(1060, 980, 0.8, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.0, 1.25], y: [60, 0] }, { rain: 0.6 });
+  shot(c('S07'), (lt, u, t) => { alley(t); figure(860, 980, 0.8, { umb: 'open', face: 1 }); figure(1060, 980, 0.8, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.0, 1.25], y: [60, 0] }, { rain: 0.6 });
   // S08 the slip
   shot(c('S08'), faceShot('henrik', [[0, HK.casual], [w('S08', 'Munich'), HK.casual]], { over: (t) => glow(960, 540, 1100, rgba(K.crimson, 0.4), Math.exp(-Math.max(0, t - w('S08', 'Munich')) / 1.2) * (t > w('S08', 'Munich') ? 1 : 0)) }), { z: [1.15, 1.35] });
   // S09 julian's eyes stay on the cobbles
@@ -109,7 +109,7 @@ function buildShots() {
   // S19 clean. boring.
   shot(c('S19'), faceShot('julian', [[0, J.mask]]), { z: [1.25, 1.35] });
   // S20 the base of the steps
-  shot(c('S20'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'closed', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.15, 1.3], y: [80, 60] }, { rain: 0.5 });
+  shot(c('S20'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'open', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.15, 1.3], y: [80, 60] }, { rain: 0.5 });
   // S21 talstrasse (the lie)
   shot(c('S21'), faceShot('julian', [[0, J.talk], [w('S21', 'turning'), Object.assign({}, J.mask, { gx: -0.7 })]]), { z: [1.15, 1.3] });
   // S22 henrik's hand into his pocket
@@ -123,7 +123,7 @@ function buildShots() {
   // S25 traces the logic
   shot(c('S25'), faceShot('julian', [[0, J.cold], [w('S25', 'stared'), J.think]]), CLOSE);
   // S26-S27 arm's reach
-  shot(c('S26'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'closed', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); const p = prog(t, w('S26', "arm's reach"), w('S26', "arm's reach", 1)); if (p > 0) { const pts = []; for (let i = 0; i <= Math.round(48 * p); i++) { const a = i / 48 * Math.PI * 2; pts.push([1100 + Math.cos(a) * 330, 860 + Math.sin(a) * 120]); } pline(pts, K.crimson, 4, 0.9); } }, { z: [1.15, 1.3], y: [80, 80] }, { rain: 0.5 });
+  shot(c('S26'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'open', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); const p = prog(t, w('S26', "arm's reach"), w('S26', "arm's reach", 1)); if (p > 0) { const pts = []; for (let i = 0; i <= Math.round(48 * p); i++) { const a = i / 48 * Math.PI * 2; pts.push([1100 + Math.cos(a) * 330, 860 + Math.sin(a) * 120]); } pline(pts, K.crimson, 4, 0.9); } }, { z: [1.15, 1.3], y: [80, 80] }, { rain: 0.5 });
   shot(c('S27'), faceShot('henrik', [[0, HK.watch]], { light: { rim: K.crimson } }), CLOSE);
   // S28 henrik knew who julian was
   shot(c('S28'), (lt, u, t) => (nightWash('#2a1e10', K.amber, [[960, 540, 900, rgba(K.amber, 0.35), 1]]), folder(960, 560, 1.0, 'julian', ['cover: desk officer, antwerp', 'actual: langley investigation cell', 'lead investigator, kessler', 0.6], 'KNOWN', prog(t, w('S28', 'lead investigator'), w('S28', 'lead investigator', 0.3)), -0.03)), { z: [1.0, 1.12] });
@@ -139,7 +139,7 @@ function buildShots() {
   // S33 there it is.
   shot(c('S33') - 0.1, faceShot('julian', [[0, J.cold]]), { z: [1.8, 1.9], y: [-100, -100] }, { hard: true });
   // S34 the leash
-  shot(c('S34'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'closed', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); const a = prog(t, w('S34', 'leash'), w('S34', 'leash', 0.8)); if (a > 0) pline(qpts([1060, 820], [940, 900 + 40 * Math.sin(t * 3)], [840, 800]), K.crimson, 4, a * (t > w('S34', 'cut that') ? fadeOutT(t, w('S34', 'cut that'), 0.4) : 1)); const b = prog(t, w('S34', 'snapped'), w('S34', 'snapped', 0.8)); if (b > 0) pline(qpts([1060, 820], [1000, 700], [960, 560]).slice(0, Math.max(2, Math.round(13 * b))), K.crimson, 4, 0.9); }, { z: [1.1, 1.25], y: [60, 0] }, { rain: 0.5 });
+  shot(c('S34'), (lt, u, t) => { alley(t); figure(820, 1000, 0.95, { umb: 'open', face: 1 }); figure(1100, 1000, 0.95, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); const a = prog(t, w('S34', 'leash'), w('S34', 'leash', 0.8)); if (a > 0) pline(qpts([1060, 820], [940, 900 + 40 * Math.sin(t * 3)], [840, 800]), K.crimson, 4, a * (t > w('S34', 'cut that') ? fadeOutT(t, w('S34', 'cut that'), 0.4) : 1)); const b = prog(t, w('S34', 'snapped'), w('S34', 'snapped', 0.8)); if (b > 0) pline(qpts([1060, 820], [1000, 700], [960, 560]).slice(0, Math.max(2, Math.round(13 * b))), K.crimson, 4, 0.9); }, { z: [1.1, 1.25], y: [60, 0] }, { rain: 0.5 });
   // S35 the throat goes dry; S36 the only question
   shot(c('S35'), faceShot('julian', [[0, J.dry], [w('S35', 'actively hunting'), J.cold]]), CLOSE);
   shot(c('S36'), (lt, u, t) => mirrors(t, 2, 'julian', { julian: J.think, henrik: HK.watch }), { z: [1.0, 1.08] });
