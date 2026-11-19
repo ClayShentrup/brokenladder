@@ -78,6 +78,9 @@ function buildShots() {
   shot(w('S05', 'extended'), (lt, u, t) => { square(t); figure(860, 900, 1.15, { umb: 'closed', face: 1 }); figure(1060, 900, 1.15, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); glow(960, 640, 160, rgba(K.amber, 0.6), 1); }, { z: [1.25, 1.4], y: [-40, -60] }, { rain: 0.6 });
   // S06 pleasant baritone
   shot(c('S06'), faceShot('henrik', [[0, HK.pleasant], [w('S06', 'wine bar'), HK.casual]]), { z: [1.1, 1.25] });
+  // S06b steering him off the square: julian's eyes slide back to the alley mouth
+  shot(c('S06b'), faceShot('julian', [[0, J.mask], [w('S06b', 'if i pull'), ex({ open: 0.8, gx: -0.8, gy: 0.1, smile: 0.1, asym: 0.4, tired: 1 })]]), { z: [1.15, 1.3], x: [0, -40] });
+  shot(w('S06b', 'keep my eye'), (lt, u, t) => { square(t); figure(860, 900, 1.0, { umb: 'closed', face: -1 }); figure(1040, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.1, 1.2], x: [-60, -120] }, { rain: 0.7 });
   // S07 into the alley
   shot(c('S07'), (lt, u, t) => { alley(t); figure(860, 980, 0.8, { umb: 'closed', face: 1 }); figure(1060, 980, 0.8, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.0, 1.25], y: [60, 0] }, { rain: 0.6 });
   // S08 the slip
@@ -205,7 +208,7 @@ function buildShots() {
   SHOTS.forEach((s, i) => { s.end = i + 1 < SHOTS.length ? SHOTS[i + 1].start : TL.total + 1; });
   // sound effect cues
   const E = (name, t, gain = 1) => EVENTS.push({ name, t, gain });
-  E('umbrella', w('S01', 'shaking'), 0.8); E('steps', w('S07', 'falling into step'), 0.7); E('steps', w('S04', 'closing'), 0.6);
+  E('umbrella', w('S01', 'stepped under'), 0.8); E('steps', w('S07', 'falling into step'), 0.7); E('steps', w('S04', 'closing'), 0.6);
   E('sting', c('S10') - 0.1, 0.8); E('sting', c('S13') - 0.1, 0.6); E('sting', c('S23') - 0.1, 0.5); E('sting', c('S33') - 0.1, 0.45);
   E('drum', c('S37'), 0.8); E('drum', w('S37', 'drum'), 0.8);
   E('click', w('S57', 'clicked'), 1.0); E('cup', w('S61', 'slip', 0.9), 0.9); E('strike', w('S61', 'drove'), 1.0); E('sting', w('S61', 'before it'), 0.9);

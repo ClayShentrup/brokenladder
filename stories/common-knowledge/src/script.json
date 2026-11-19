@@ -7,8 +7,8 @@
  "lines": [
   {
    "id": "S01",
-   "text": "the rain in zurich had the particular, greasy persistence of a november thaw, turning the cobbles along the limmat into dark mirrors that smeared the amber glow of the streetlamps. julian adjusted the collar of his trench coat as he stepped under the stone arcade of the munsterhof, shaking the dampness from his umbrella. he was ten minutes early for the dead drop, giving him time to clear his sightlines before the courier arrived.",
-   "say": "The rain in Zurich had the particular, greasy persistence of a November thaw, turning the cobbles along the Limmat into dark mirrors that smeared the amber glow of the streetlamps. Julian adjusted the collar of his trench coat as he stepped under the stone arcade of the Münsterhof, shaking the dampness from his umbrella. He was ten minutes early for the dead drop, giving him time to clear his sightlines before the courier arrived."
+   "text": "the rain in zurich had the particular, greasy persistence of a november thaw, turning the cobbles along the limmat into dark mirrors that smeared the amber glow of the streetlamps. julian adjusted the collar of his trench coat as he stepped under the stone arcade of the munsterhof, keeping his eyes on the square's approaches. the courier was ten minutes late, and julian was there to clear his sightlines before the handoff.",
+   "say": "The rain in Zurich had the particular, greasy persistence of a November thaw, turning the cobbles along the Limmat into dark mirrors that smeared the amber glow of the streetlamps. Julian adjusted the collar of his trench coat as he stepped under the stone arcade of the Münsterhof, keeping his eyes on the square's approaches. The courier was ten minutes late, and Julian was there to clear his sightlines before the handoff."
   },
   {
    "id": "S02",
@@ -17,8 +17,8 @@
   },
   {
    "id": "S03",
-   "text": "julian’s stride didn't hitch. years of field work had severed the connection between his gut and his shoulders; surprise stayed behind his ribs, a brief cold flash that never reached his jaw or his knees. he raised a hand in a lazy, half-hearted wave, letting his face settle into the tired, slightly amused mask of a man running into an old acquaintance from the vienna logistics pool.",
-   "say": "Julian’s stride didn't hitch. Years of field work had severed the connection between his gut and his shoulders; surprise stayed behind his ribs, a brief cold flash that never reached his jaw or his knees. He raised a hand in a lazy, half-hearted wave, letting his face settle into the tired, slightly amused mask of a man running into an old acquaintance from the Vienna logistics pool."
+   "text": "julian’s stride didn't hitch. years of field work had severed the connection between his gut and his shoulders; surprise stayed behind his ribs, a brief cold flash that never reached his jaw or his knees. he couldn't afford to blow the drop or let henrik spot the courier when they arrived, so he raised a hand in a lazy, half-hearted wave, letting his face settle into the tired, slightly amused mask of a man running into an old acquaintance from the vienna logistics pool.",
+   "say": "Julian’s stride didn't hitch. Years of field work had severed the connection between his gut and his shoulders; surprise stayed behind his ribs, a brief cold flash that never reached his jaw or his knees. He couldn't afford to blow the drop or let Henrik spot the courier when they arrived, so he raised a hand in a lazy, half-hearted wave, letting his face settle into the tired, slightly amused mask of a man running into an old acquaintance from the Vienna logistics pool."
   },
   {
    "id": "S04",
@@ -36,9 +36,14 @@
    "say": "\"Just passing through\", Henrik said, his voice a low, pleasant baritone. \"Regional audit. I'm heading up to the wine bar at the top of the Lindenhof to meet a contact from Geneva. Walk with me for a minute, my feet are killing me.\""
   },
   {
+   "id": "S06b",
+   "text": "good, julian thought, letting henrik steer him out of the square's direct sightlines and into the narrow stone alley leading toward the hill. if i pull him slightly off the square, he won't see the courier approach, and i can keep my eye on the alley mouth.",
+   "say": "Good, Julian thought, letting Henrik steer him out of the square's direct sightlines and into the narrow stone alley leading toward the hill. If I pull him slightly off the square, he won't see the courier approach, and I can keep my eye on the alley mouth."
+  },
+  {
    "id": "S07",
-   "text": "\"tell me about it\", julian said, falling into step beside him as henrik steered them out of the open square and into the narrow stone alley leading toward the hill. \"i’ve been chasing a phantom shipping manifest out of antwerp for three days. my knees are shot.\"",
-   "say": "\"Tell me about it\", Julian said, falling into step beside him as Henrik steered them out of the open square and into the narrow stone alley leading toward the hill. \"I’ve been chasing a phantom shipping manifest out of Antwerp for three days. My knees are shot.\""
+   "text": "\"tell me about it\", julian said, falling into step beside him. \"i’ve been chasing a phantom shipping manifest out of antwerp for three days. my knees are shot.\"",
+   "say": "\"Tell me about it\", Julian said, falling into step beside him. \"I’ve been chasing a phantom shipping manifest out of Antwerp for three days. My knees are shot.\""
   },
   {
    "id": "S08",
