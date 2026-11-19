@@ -281,12 +281,33 @@ function render(t) {
   if (!SKETCH) { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, 104); ctx.fillRect(0, H - 104, W, 104); }
   const fi = 1 - prog(t, 0, 1.0), fo = prog(t, TL.total - 1.5, TL.total); if (fi > 0 || fo > 0) { ctx.fillStyle = `rgba(0,0,0,${Math.max(fi, fo)})`; ctx.fillRect(0, 0, W, H); }
 }
+// ---------- gemini stills: replace a shot's drawing with generated images (gemini/manifest.json), crossfading on cues ----------
+async function loadImages() {
+  let man; try { man = await (await fetch('../gemini/manifest.json', { cache: 'no-store' })).json(); } catch (e) { return; }
+  const cue = (q) => (!q ? -1e9 : q[0] === 'w' ? w(q[1], q[2]) : c(q[1]));
+  await Promise.all(Object.entries(man).map(async ([k, keys]) => {
+    const sh = SHOTS[+k]; if (!sh) return;
+    sh.imgs = await Promise.all(keys.map(async ([q, f]) => { const im = new Image(); im.src = '../gemini/shots/' + f; await im.decode(); return { t: cue(q), im }; }));
+    const dir = +k % 2 ? 1 : -1;
+    sh.cam = { z: [1.0, 1.07], x: [-20 * dir, 20 * dir] };
+    sh.fn = (lt, u, t) => drawImgs(sh.imgs, t);
+    if (sh.o.rain) sh.o = Object.assign({}, sh.o, { rain: sh.o.rain * 0.4 });
+  }));
+}
+function drawImgs(imgs, t) {
+  const XF = 0.4, ov = 1.04, dw = W * ov, dh = H * ov, x0 = (W - dw) / 2, y0 = (H - dh) / 2;
+  let k = 0; imgs.forEach((e, i) => { if (e.t <= t) k = i; });
+  const a = k > 0 ? sm(clamp((t - imgs[k].t) / XF)) : 1;
+  if (a < 1) ctx.drawImage(imgs[k - 1].im, x0, y0, dw, dh);
+  ctx.save(); ctx.globalAlpha = a; ctx.drawImage(imgs[k].im, x0, y0, dw, dh); ctx.restore();
+}
 async function init() {
   cv = document.getElementById('c'); setCtx(cv.getContext('2d'));
   await new FontFace('Caveat', 'url(fonts/caveat-latin-700-normal.woff2)', { weight: '700' }).load().then((f) => document.fonts.add(f));
   SCRIPT = await (await fetch('script.json', { cache: 'no-store' })).json();
   const man = await (await fetch('../narration/manifest.json', { cache: 'no-store' })).json();
   TL = buildTimeline(SCRIPT, man); buildShots(); PAPERTEX = makePaperTex();
+  if (new URLSearchParams(location.search).get('img') !== '0') await loadImages();
   return { duration: TL.total };
 }
 window.EP = {
