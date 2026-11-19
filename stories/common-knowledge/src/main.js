@@ -80,7 +80,7 @@ function buildShots() {
   shot(c('S06'), faceShot('henrik', [[0, HK.pleasant], [w('S06', 'wine bar'), HK.casual]]), { z: [1.1, 1.25] });
   // S06b steering him off the square: julian's eyes slide back to the alley mouth
   shot(c('S06b'), faceShot('julian', [[0, J.mask], [w('S06b', 'if i pull'), ex({ open: 0.8, gx: -0.8, gy: 0.1, smile: 0.1, asym: 0.4, tired: 1 })]]), { z: [1.15, 1.3], x: [0, -40] });
-  shot(w('S06b', 'keep my eye'), (lt, u, t) => { square(t); figure(860, 900, 1.0, { umb: 'open', face: -1 }); figure(1040, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.1, 1.2], x: [-60, -120] }, { rain: 0.7 });
+  shot(w('S06b', 'still watch'), (lt, u, t) => { square(t); figure(860, 900, 1.0, { umb: 'open', face: -1 }); figure(1040, 900, 1.0, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.1, 1.2], x: [-60, -120] }, { rain: 0.7 });
   // S07 into the alley
   shot(c('S07'), (lt, u, t) => { alley(t); figure(860, 980, 0.8, { umb: 'open', face: 1 }); figure(1060, 980, 0.8, { who: 'henrik', cup: true, face: -1, rim: K.magenta }); }, { z: [1.0, 1.25], y: [60, 0] }, { rain: 0.6 });
   // S08 the slip
