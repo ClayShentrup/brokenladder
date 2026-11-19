@@ -15,9 +15,9 @@ const MMPX = 540 / 227, YC = -36.5; // px per mm at scale 1; vertical centre of 
 
 const PEOPLE = {
   // julian: lean, a touch narrower, longer lower face, deeper-set eyes, dark hair swept to the side
-  julian: { sx: 0.95, jaw: 0.97, lower: 1.05, nose: 0.98, lip: 1.0, deep: 1.25, age: 0.2, lean: 1, iris: '#4a6a82', brow: '#1c1618', hairDark: '#1c1618', hairMid: '#3a2c26', hairHi: '#76583f', hairY: -118, hairC: 10, recede: 0, part: 0.35 },
+  julian: { sx: 0.91, jaw: 0.94, lower: 1.1, nose: 0.92, noseLen: 5, tip: 3, lip: 0.85, lowLip: 1.0, deep: 1.5, age: 0.2, lean: 1, browDrop: 3, browT: 0.85, lid: 1.0, eyeS: 0.95, mouthW: 0.96, chin: 6, chinDrop: 3, jowl: 0, skin: '#e7b28e', iris: '#4a6a82', brow: '#1c1618', hairDark: '#1c1618', hairMid: '#3a2c26', hairHi: '#76583f', hairY: -118, hairC: 10, recede: 0, part: 0.35 },
   // henrik: broader, heavier jaw, wider nose, thinner lips, older, grey hair combed straight back
-  henrik: { sx: 1.05, jaw: 1.09, lower: 1.03, nose: 1.14, lip: 0.8, deep: 1.0, age: 1, lean: 0, iris: '#6a6a4a', brow: '#4a4440', hairDark: '#5a5650', hairMid: '#8a8478', hairHi: '#b4ac9e', hairY: -114, hairC: 8, recede: 16, part: 0 },
+  henrik: { sx: 1.1, jaw: 1.17, lower: 0.98, nose: 1.3, noseLen: -2, tip: 6, lip: 0.6, lowLip: 0.8, deep: 0.8, age: 1, lean: 0, browDrop: 0, browT: 1.45, lid: 0.82, eyeS: 0.9, mouthW: 1.1, chin: -2, chinDrop: 0, jowl: 0.08, skin: '#e8a08a', iris: '#6a6a4a', brow: '#4a4440', hairDark: '#5a5650', hairMid: '#8a8478', hairHi: '#b4ac9e', hairY: -114, hairC: 8, recede: 16, part: 0 },
 };
 function landmarks(C, e) {
   const P = LM68.map((p) => p.slice());
@@ -27,12 +27,21 @@ function landmarks(C, e) {
     if (p[1] > 6.6) p[1] = 6.6 + (p[1] - 6.6) * C.lower;
     if (i >= 31 && i <= 35) p[0] *= C.nose;
     if (i >= 36 && i <= 47) p[2] += 10 * (C.deep - 1);
+    if (i >= 29 && i <= 35) p[1] += C.noseLen * (i === 29 ? 0.5 : 1);           // nose length
+    if (i === 30 || i === 33) p[2] -= C.tip * (i === 30 ? 1 : 0.6);               // tip projection / bulb
+    if (i >= 17 && i <= 26) p[1] += C.browDrop;                                    // brows sitting low over the eyes
+    if (i >= 6 && i <= 10) { const w = 1 - Math.abs(i - 8) / 3; p[2] -= C.chin * w; p[1] += C.chinDrop * w; }  // chin projection
+    if ((i >= 3 && i <= 6) || (i >= 10 && i <= 13)) { p[0] *= 1 + C.jowl; p[1] += C.jowl * 40; }             // jowls
   });
+  // eye size about each eye's centre
+  [[36, 41], [42, 47]].forEach(([a, b]) => { let cx = 0, cy = 0; for (let i = a; i <= b; i++) { cx += P[i][0] / 6; cy += P[i][1] / 6; } for (let i = a; i <= b; i++) { P[i][0] = cx + (P[i][0] - cx) * C.eyeS; P[i][1] = cy + (P[i][1] - cy) * C.eyeS; } });
+  // mouth width about the mouth's centre
+  { const mx = (P[48][0] + P[54][0]) / 2; for (let i = 48; i <= 67; i++) P[i][0] = mx + (P[i][0] - mx) * C.mouthW; }
   const sm2 = Math.max(0, e.smile);
   for (let i = 17; i <= 26; i++) { const inner = i <= 21 ? (i - 17) / 4 : (26 - i) / 4; P[i][1] -= e.brow * (6 + 3 * inner) - e.furrow * 6 * inner * inner; P[i][0] *= 1 - 0.06 * e.furrow * inner; }
   [[36, 41], [42, 47]].forEach(([a]) => {
     const cy = (P[a][1] + P[a + 3][1]) / 2;
-    [a + 1, a + 2].forEach((i) => { P[i][1] = cy + (P[i][1] - cy) * e.open; });
+    [a + 1, a + 2].forEach((i) => { P[i][1] = cy + (P[i][1] - cy) * e.open * C.lid; });
     [a + 4, a + 5].forEach((i) => { P[i][1] = cy + (P[i][1] - cy) * (1 - 0.35 * sm2 - 0.2 * e.crinkle); });
   });
   const lift = (i, dy, dx = 0) => { P[i][1] -= dy; P[i][0] += dx; };
@@ -42,7 +51,7 @@ function landmarks(C, e) {
   [[55, 0.6], [56, 0.9], [57, 1], [58, 0.9], [59, 0.6], [65, 0.6], [66, 1], [67, 0.6]].forEach(([i, kk]) => { P[i][1] += op * kk; });
   for (let i = 4; i <= 12; i++) P[i][1] += e.mouth * 9 * Math.exp(-Math.pow((i - 8) / 3, 2));
   [50, 51, 52].forEach((i) => { P[i][1] = P[62][1] + (P[i][1] - P[62][1]) * C.lip; });
-  [56, 57, 58].forEach((i) => { P[i][1] = P[66][1] + (P[i][1] - P[66][1]) * C.lip; });
+  [56, 57, 58].forEach((i) => { P[i][1] = P[66][1] + (P[i][1] - P[66][1]) * C.lowLip; });
   return P;
 }
 function hull(pts) { const p = pts.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]); const cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]); const lo = [], up = []; for (const q of p) { while (lo.length >= 2 && cr(lo[lo.length - 2], lo[lo.length - 1], q) <= 0) lo.pop(); lo.push(q); } for (let i = p.length - 1; i >= 0; i--) { const q = p[i]; while (up.length >= 2 && cr(up[up.length - 2], up[up.length - 1], q) <= 0) up.pop(); up.push(q); } up.pop(); lo.pop(); return lo.concat(up); }
@@ -80,7 +89,7 @@ function face(px0, py0, s, who, e, L = {}) {
   const hb = bbox(headH);
   ctx.save(); ctx.clip(P2(headH));
   ctx.fillStyle = PAPERC; ctx.fillRect(hb[0], hb[1], hb[2] - hb[0], hb[3] - hb[1]);
-  ctx.fillStyle = rgba(K.skin, 0.34); ctx.fillRect(hb[0], hb[1], hb[2] - hb[0], hb[3] - hb[1]);
+  ctx.fillStyle = rgba(C.skin, 0.38); ctx.fillRect(hb[0], hb[1], hb[2] - hb[0], hb[3] - hb[1]);
   strokes(hb, K.skin, Math.round(900 * s), { ang: -0.95, len: 22 * s, w: 1.4 * s, a: 0.35 });
   const nose0 = Q[30][0];
   strokes(hb, key, Math.round(700 * s), { ang: -0.95, len: 18 * s, w: 1.4 * s, a: 0.4, f: (x) => ss(nose0 - fs * 30 * k, nose0 + fs * 20 * k, x) });
@@ -156,12 +165,20 @@ function face(px0, py0, s, who, e, L = {}) {
   pline(smooth([Q[far[far.length - 1]], mid(farEye, Q[far[far.length - 1]], 0.55), [farBrow[0] + fs * 4 * k, farBrow[1] + 2 * k], farTemple], false, 5), GR, W2(2), 0.75);
   const neckFront = [Q[8][0] - fs * 18 * k, py0 + (90 - YC) * k];
   pline([[ncx - fs * nr, py0 + (6 - YC) * k], [ncx - fs * nr * 1.04, py0 + (200 - YC) * k]], GR, W2(1.8), 0.7); pline([neckFront, [neckFront[0] - fs * 4 * k, py0 + (150 - YC) * k]], GR, W2(1.8), 0.7);
+  if (C.jowl > 0) { // henrik: a soft second chin and the jowl fold
+    pline(smooth([mid(Q[6], Q[7], 0.3).map((v, q) => v + (q ? 16 * k : 0)), [Q[8][0] - fs * 4 * k, Q[8][1] + 20 * k], mid(Q[9], Q[10], 0.5).map((v, q) => v + (q ? 15 * k : 0))], false, 5), GR, W2(1.6), 0.55);
+    pline(smooth([mid(Q[nIdx(48, 54)], Q[nIdx(4, 12)], 0.35), mid(Q[nIdx(48, 54)], Q[nIdx(5, 11)], 0.7), Q[nIdx(6, 10)]], false, 4), GR2, W2(1.4), 0.45);
+  }
+  if (C.lean) { // julian: a hard shadow under the cheekbone and a defined chin edge
+    hatch2([mid(eo, j3, 0.55), mid(Q[nIdx(31, 35)], j3, 0.45), mid(mc, j3, 0.45), mid(j5, j3, 0.4)], GR, 260, { len: 10 * s, a: 0.45 });
+    pline(smooth([mid(Q[7], Q[57], 0.55), mid(Q[8], Q[57], 0.6), mid(Q[9], Q[57], 0.55)], false, 4), GR2, W2(1.2), 0.4);
+  }
   if (C.age > 0.5) { for (let i = 0; i < 3; i++) { const y = -96 - i * 9; pline(smooth([PJ(onSkull(-30, y, 0)), PJ(onSkull(0, y - 2, 0)), PJ(onSkull(30, y, 0))], false, 4), GR2, W2(1.1), 0.25 + 0.2 * e.brow); } }
   if (e.clench > 0.05) pline(smooth([mid(j0, j3, 0.6), mid(j3, mc, 0.25), mid(j5, mc, 0.2)], false, 4), GR, W2(1.6), e.clench * 0.7);
   // ---------- brows: hairs along the landmark curve ----------
   [[17, 21], [22, 26]].forEach(([a, b]) => {
     const curve = smooth(Array.from({ length: b - a + 1 }, (_, i) => Q[a + i]), false, 6), isNear = (a === 17) === (near < 0), n = curve.length;
-    const thick = (u) => (isNear ? 4.2 : 3.4) * k * (a === 17 ? 0.45 + 0.75 * Math.sin(Math.min(1, u * 1.15) * Math.PI * 0.62) : 0.45 + 0.75 * Math.sin(Math.min(1, (1 - u) * 1.15) * Math.PI * 0.62));
+    const thick = (u) => (isNear ? 4.2 : 3.4) * C.browT * k * (a === 17 ? 0.45 + 0.75 * Math.sin(Math.min(1, u * 1.15) * Math.PI * 0.62) : 0.45 + 0.75 * Math.sin(Math.min(1, (1 - u) * 1.15) * Math.PI * 0.62));
     const top = curve.map((p, i) => [p[0], p[1] - thick(i / (n - 1)) * 0.9]), bot = curve.map((p, i) => [p[0], p[1] + thick(i / (n - 1)) * 0.5]);
     const poly = top.concat(bot.slice().reverse());
     pencilShape(poly, rgba(C.brow, 0.55), [{ col: C.brow, n: 90, len: 5 * s, w: 1.3 * s, a: 0.8, ang: a === 17 ? -0.5 * fs - 0.2 : 0.5 * fs + 0.2 }], { line: false });
