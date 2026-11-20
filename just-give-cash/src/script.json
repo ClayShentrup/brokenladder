@@ -1,0 +1,187 @@
+{
+ "title": "The Free-Market Case for Just Giving People Cash",
+ "subtitle": "how to share more and shrink the pie less",
+ "series": "economic physics",
+ "voice": {
+  "elevenlabs": "iP95p4xoKVk53GoZ742B",
+  "elevenlabs_name": "Chris"
+ },
+ "lines": [
+  {
+   "id": "H1",
+   "text": "Your city decides rents are too high. So it passes a law: this apartment, worth three thousand dollars a month, can only rent for two thousand."
+  },
+  {
+   "id": "H2",
+   "text": "The tenant saves a thousand dollars a month. So where did that thousand dollars come from?"
+  },
+  {
+   "id": "H3",
+   "text": "Not from the city. Not from taxpayers. It came out of one person's pocket: whoever happened to own this building."
+  },
+  {
+   "id": "H4",
+   "text": "That's a thousand-dollar housing voucher, paid for by a thousand-dollar tax on one landlord, picked more or less at random. Put that way, it would be a very hard sell."
+  },
+  {
+   "id": "H5",
+   "text": "A lot of how we help people works like this. Money leaks out on the way, and the bill lands in odd places. There's a better way to help, and it's one that free-market economists have been pushing for sixty years.",
+   "gap": 3.4
+  },
+  {
+   "id": "U1",
+   "text": "First, why help anyone at all? Because a dollar means more to someone who has fewer of them."
+  },
+  {
+   "id": "U2",
+   "text": "A hundred dollars is a week of groceries for a struggling family. For a billionaire, it's a rounding error."
+  },
+  {
+   "id": "U3",
+   "text": "The mathematician Daniel Bernoulli put a number on this back in 1738. Every time your income doubles, you gain about the same amount of well-being, whether that's twenty thousand to forty thousand, or one million to two million.",
+   "say": "The mathematician Daniel Bernoulli put a number on this back in seventeen thirty-eight. Every time your income doubles, you gain about the same amount of well-being, whether that's twenty thousand to forty thousand, or one million to two million."
+  },
+  {
+   "id": "U4",
+   "text": "So take Alice and Bob, with five thousand dollars each. Now give Bob one thousand and Alice nineteen thousand. That's twice the money, and less total well-being."
+  },
+  {
+   "id": "U5",
+   "text": "Score a whole society this way, by averaging the logarithm of everyone's income, and the score goes up when the pie grows, and it goes up when the pie is shared more evenly."
+  },
+  {
+   "id": "D1",
+   "text": "Now, the cost of helping. Start with a gift."
+  },
+  {
+   "id": "D2",
+   "text": "Say I buy you a sweater for ten dollars. But to you, it's only worth seven."
+  },
+  {
+   "id": "D3",
+   "text": "I'm down ten dollars. You're up seven dollars' worth of sweater. Three dollars just vanished, and nobody got it."
+  },
+  {
+   "id": "D4",
+   "text": "This isn't hypothetical. When the economist Joel Waldfogel surveyed people about their holiday gifts, he found that somewhere between a tenth and a third of what givers spent simply disappeared."
+  },
+  {
+   "id": "D5",
+   "text": "If I'd handed you a ten-dollar bill, nothing would have been lost. That missing value has a name: deadweight loss. Value that could have existed, and doesn't."
+  },
+  {
+   "id": "T1",
+   "text": "Here's where it gets bigger. When two people trade freely, both expect to come out ahead, or they'd walk away."
+  },
+  {
+   "id": "T2",
+   "text": "Say Dana would fix your roof for twenty dollars an hour, and you'd gladly pay twenty-five. The job happens, and five dollars of value is created between you."
+  },
+  {
+   "id": "T3",
+   "text": "Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worth her while, and you'll only pay twenty-five. The job never happens."
+  },
+  {
+   "id": "T4",
+   "text": "The government collects nothing. Dana loses the work, your roof still leaks, and five dollars of value never comes into existence. A tax on trading works like a speeding ticket for doing each other favors."
+  },
+  {
+   "id": "T5",
+   "text": "So when we help people, we want to avoid two kinds of leaks: benefits worth less than they cost, and taxes that kill trades that would have happened."
+  },
+  {
+   "id": "G1",
+   "text": "Now look at how we usually help."
+  },
+  {
+   "id": "G2",
+   "text": "A housing voucher can only be spent on rent, in an approved unit. Free street parking is a gift card for drivers, paid for by everyone, including people who don't own a car."
+  },
+  {
+   "id": "G3",
+   "text": "Rent control is the sweater, only worse. The discount only works in this one apartment, so tenants stay put even when a new job or a smaller place would suit them better."
+  },
+  {
+   "id": "G4",
+   "text": "And landlords respond. When economists studied rent control in San Francisco, they found landlords cut the supply of rental housing by fifteen percent, mostly by converting buildings to condos or redeveloping them."
+  },
+  {
+   "id": "G5",
+   "text": "To be fair, some benefits are already close to cash. Most families on food stamps spend more on groceries than the benefit is worth, so for them it works almost like money. The waste comes when a benefit steers people toward something they'd rather trade away."
+  },
+  {
+   "id": "G6",
+   "text": "The usual worry about cash is that people will waste it. That's been tested. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down."
+  },
+  {
+   "id": "G7",
+   "text": "There are real exceptions. Things nobody can be fenced out of, like national defense or clean air, have to be paid for directly. And sometimes the person holding the cash isn't the person we're trying to help, like a child. Those cases are real. They're also narrow."
+  },
+  {
+   "id": "W1",
+   "text": "Economics has a theorem about this, called the second welfare theorem."
+  },
+  {
+   "id": "W2",
+   "text": "In its ideal form, it says you can pick any amount of sharing you like, and get there without shrinking the pie at all, as long as the money moves in ways that don't depend on what anyone does."
+  },
+  {
+   "id": "W3",
+   "text": "Real life never gets that perfect. But we can get a lot closer than we do now. And it splits one fight into two. How much to share is a question of values. How to share is a question of engineering, and engineering has better and worse answers."
+  },
+  {
+   "id": "X1",
+   "text": "So where does the money come from? Start with taxes that don't block useful trades."
+  },
+  {
+   "id": "X2",
+   "text": "Pollution first. When a factory dumps smoke on its neighbors for free, it makes too much, because someone else is paying part of the bill. A pollution tax hands that bill back to the polluter. It actually grows the pie."
+  },
+  {
+   "id": "X3",
+   "text": "Next, land. Picture an empty lot. A train station opens nearby. Then shops, then a hospital, then thousands of neighbors. The lot is suddenly worth far more, and the owner didn't lift a finger."
+  },
+  {
+   "id": "X4",
+   "text": "Nobody can make more land, so taxing it doesn't make less of it. And the bill is the same whether the owner builds, sells, works, or does nothing at all. No trade gets blocked, so there's no deadweight loss."
+  },
+  {
+   "id": "X5",
+   "text": "Those two can raise a lot of money, but probably not everything a country spends. Beyond that, you're back to taxing trades, and the pie does shrink a little. The goal is to keep that as small as possible."
+  },
+  {
+   "id": "X6",
+   "text": "So tax spending before income, so saving isn't taxed twice. And keep it simple: one rate, with as few loopholes as possible. Economists still argue about the exact shape of the rates. The bigger win is what you do with the money."
+  },
+  {
+   "id": "V1",
+   "text": "Split it equally. Every citizen gets the same check."
+  },
+  {
+   "id": "V2",
+   "text": "Try a forty percent flat tax with a ten-thousand-dollar dividend. Earn twelve thousand, and you take home seventeen thousand two hundred. Earn a million, and you pay thirty-nine percent. It's as progressive as most bracket systems, with no brackets at all."
+  },
+  {
+   "id": "V3",
+   "text": "Milton Friedman pitched a version of this in 1962. He called it a negative income tax.",
+   "say": "Milton Friedman pitched a version of this in nineteen sixty-two. He called it a negative income tax."
+  },
+  {
+   "id": "V4",
+   "text": "And because the check never shrinks when you earn more, there's no welfare cliff. Today, a family that earns a raise can lose benefits faster than their paycheck grows. Here, every extra hour of work leaves you better off."
+  },
+  {
+   "id": "C1",
+   "text": "So stop treating how much to share and how to share as the same argument. However much you choose to share, cash gets it there cheaper."
+  },
+  {
+   "id": "C2",
+   "text": "The poor end up with more. Taxpayers pay less. And whoever happened to own that one apartment building is off the hook."
+  },
+  {
+   "id": "C3",
+   "text": "The free-market case for the welfare state. Just give people money.",
+   "gap": 2.0
+  }
+ ]
+}
