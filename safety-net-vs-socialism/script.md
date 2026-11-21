@@ -14,7 +14,7 @@ O3 Sit with that for a second. If charging the market price is greed, then charg
 
 O4 Nobody calls every pensioner with Amazon shares greedy for failing to write checks to strangers. But demanding that a company quietly swallow a cost is exactly that: a demand that its owners donate.
 
-O5 And if we're going to demand charity, why this charity? A delivery discount goes to everyone in New York who orders online. Investment bankers. Tech workers. Some of the richest people in the richest city in the richest country on earth. If the goal is helping people who need it, there are a few billion better candidates, many of them in places where five dollars is a day's wages.
+O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. Why them, and not everyone? Hold that question. We'll see the exact same move in a minute, with a landlord.
 
 O6 This is the mayor of the largest city in America. And this is how he thinks about prices.
 
@@ -140,7 +140,7 @@ P2 Food stamps. To be fair, for most families they work almost like cash, becaus
 
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 
-P4 Price gouging laws. After a hurricane, the state caps the price of generators and bottled water. Sounds compassionate. But a price below what the market would bear doesn't make more generators appear. It just decides who gets them by who shows up first. The help goes to whoever's quickest, not whoever needs it most. A gift card handed out by queue.
+P4 Price gouging laws. We'll come back to these, because they deserve their own section.
 
 P5 Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.
 
@@ -151,6 +151,28 @@ P7 And the right does this too, by the way. A tariff is a gift card for one dome
 P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. That's a hidden sales tax, paid in the dark. And when the bill shows up, the mayor calls it greed.
 
 P9 Policy after policy, take it apart and you find the same machine inside. Help delivered in kind instead of cash. Paid for by a tax on some trade that would otherwise have happened.
+
+---
+
+## 8b. happy hour in reverse
+
+H1 Every time there's a storm, a strike, or a wave of cancelled flights, the same outrage cycle kicks off. Uber triples its prices. Gouging! Greed! Somebody pass a law.
+
+H2 So think about the night the flights get grounded. Thousands of stranded travelers open the app at once. There are only so many cars.
+
+H3 Who should get one? The traveler stuck at the airport at midnight with a sick kid, or the guy running an errand he could just as easily do tomorrow?
+
+H4 You can't tell them apart by looking. Neither can Uber. But the price can. At triple the fare, the errand waits until tomorrow, and the car goes to the person who needs it most.
+
+H5 And the price does something else. It tells the driver who was planning to stay home tonight that tonight is the night to work. A surge doesn't just ration the cars. It summons more of them.
+
+H6 Cap the price, and both effects vanish. The cars go to whoever taps first. The extra drivers stay home. The stranded family waits.
+
+H7 Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up.
+
+H8 And if what bothers you is that a poor family can't afford the surge, fine. That's a real concern about equity. Which is a case for giving that family more money, every day of the year. It is not a case for breaking the one signal that gets cars to the people who need them.
+
+H9 A price cap is a discount for whoever's quickest, paid for by everyone left stranded. Gift card fallacy. Again.
 
 ---
 
@@ -248,7 +270,15 @@ E10 Today, a family that earns a raise can lose benefits faster than their paych
 
 E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour leaves you better off.
 
-E12 Milton Friedman, not exactly a socialist, proposed a version of this in nineteen sixty-two. He called it a negative income tax.
+E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
+
+E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. In our example, anyone earning more than twenty-five thousand dollars pays in more than they get back. The millionaire gets ten thousand and pays four hundred thousand. Across the whole system, people above the middle pay in more than they receive, and people below it receive more than they pay. Net, it's a transfer from richer to poorer. The check to the millionaire is just bookkeeping.
+
+E14 And giving it to everyone is the point. No means test, no paperwork, no cliff, nobody punished for earning more.
+
+E15 By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every "don't you dare raise prices." A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.
+
+E16 Milton Friedman, not exactly a socialist, proposed a version of this in nineteen sixty-two. He called it a negative income tax.
 
 ---
 
