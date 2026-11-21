@@ -1,4 +1,4 @@
-# socialism fails even if you share its goals
+# the economic illiteracy of socialism
 
 full script, final. about 4,000 words, roughly 27 minutes at a measured pace. line ids are for production.
 
@@ -24,7 +24,7 @@ O7 Here's the claim this video is going to defend. Nearly every policy on the so
 
 O8 But first, a warning, because you're going to think you know where this is going. You probably don't.
 
-[title card: socialism fails even if you share its goals]
+[title card: the economic illiteracy of socialism]
 
 ---
 
@@ -328,7 +328,7 @@ Z8 Whatever you think people deserve, give it to them in cash.
 
 ## production notes
 
-- title options to a/b test: "socialism fails even if you share its goals" (working title); "the deadweight loss of socialism"; "the economic illiteracy of socialism". "every socialist policy is a gift card" works as a spoken line or thumbnail text
+- title: "the economic illiteracy of socialism" (title card and main title). a/b alternates: "socialism fails even if you share its goals"; "the deadweight loss of socialism". "every socialist policy is a gift card" works as a spoken line or thumbnail text
 
 - voice: british female, expressive model, measured and dry, deadpan on the dunk lines (O6, P8, Z3); understatement lands, synthetic sneering doesn't
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
