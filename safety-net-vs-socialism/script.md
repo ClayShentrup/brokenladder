@@ -1,4 +1,4 @@
-# every socialist policy is a gift card
+# socialism fails even if you share its goals
 
 full script, final. about 4,000 words, roughly 27 minutes at a measured pace. line ids are for production.
 
@@ -24,7 +24,7 @@ O7 Here's the claim this video is going to defend. Nearly every policy on the so
 
 O8 But first, a warning, because you're going to think you know where this is going. You probably don't.
 
-[title card: every socialist policy is a gift card]
+[title card: socialism fails even if you share its goals]
 
 ---
 
@@ -327,6 +327,8 @@ Z8 Whatever you think people deserve, give it to them in cash.
 ---
 
 ## production notes
+
+- title options to a/b test: "socialism fails even if you share its goals" (working title); "the deadweight loss of socialism"; "the economic illiteracy of socialism". "every socialist policy is a gift card" stays as the spoken thesis (O7, P9)
 
 - voice: british female, expressive model, measured and dry, deadpan on the dunk lines (O6, P8, Z3); understatement lands, synthetic sneering doesn't
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
