@@ -272,7 +272,7 @@ E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour
 
 E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
 
-E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. In our example, anyone earning more than twenty-five thousand dollars pays in more than they get back. The millionaire gets ten thousand and pays four hundred thousand. Across the whole system, people above the middle pay in more than they receive, and people below it receive more than they pay. Net, it's a transfer from richer to poorer. The check to the millionaire is just bookkeeping.
+E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. In our example, anyone earning more than twenty-five thousand dollars pays in more than they get back. The millionaire gets ten thousand and pays four hundred thousand. Across the whole system, people above roughly average income pay in more than they receive, and people below it receive more than they pay. Net, it's a transfer from richer to poorer. The check to the millionaire is just bookkeeping.
 
 E14 And giving it to everyone is the point. No means test, no paperwork, no cliff, nobody punished for earning more.
 
