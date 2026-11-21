@@ -1,6 +1,6 @@
 {
- "title": "The Free-Market Case for Just Giving People Cash",
- "subtitle": "how to share more and shrink the pie less",
+ "title": "If You're Going to Redistribute, Just Give People Cash",
+ "subtitle": "whatever amount you share, share it efficiently",
  "series": "economic physics",
  "voice": {
   "elevenlabs": "iP95p4xoKVk53GoZ742B",
@@ -26,11 +26,11 @@
   {
    "id": "H5",
    "text": "A lot of how we help people works like this. Money leaks out on the way, and the bill lands in odd places. There's a better way to help, and it's one that free-market economists have been pushing for sixty years.",
-   "gap": 3.4
+   "gap": 4.6
   },
   {
    "id": "U1",
-   "text": "First, why help anyone at all? Because a dollar means more to someone who has fewer of them."
+   "text": "First, why would anyone want to redistribute at all? The usual answer: a dollar means more to someone who has fewer of them."
   },
   {
    "id": "U2",
@@ -95,7 +95,7 @@
   },
   {
    "id": "G2",
-   "text": "A housing voucher can only be spent on rent, in an approved unit. Free street parking is a gift card for drivers, paid for by everyone, including people who don't own a car."
+   "text": "A housing voucher can only be spent on rent, in an approved unit. Win a public housing lottery, and you get one particular apartment, almost certainly not the address, size, or neighborhood you'd have picked if you'd been handed the money. Free street parking is a gift card for drivers, paid for by everyone, including people who don't own a car."
   },
   {
    "id": "G3",
@@ -107,7 +107,7 @@
   },
   {
    "id": "G5",
-   "text": "To be fair, some benefits are already close to cash. Most families on food stamps spend more on groceries than the benefit is worth, so for them it works almost like money. The waste comes when a benefit steers people toward something they'd rather trade away."
+   "text": "To be fair, some benefits are already close to cash. Most families on food stamps spend more on groceries than the benefit is worth, so for them it works almost like money. The waste comes from the rules, like no hot meals and no prepared food, and only when they change what a family actually buys."
   },
   {
    "id": "G6",
@@ -180,8 +180,8 @@
   },
   {
    "id": "C3",
-   "text": "The free-market case for the welfare state. Just give people money.",
-   "gap": 2.0
+   "text": "Whether to redistribute is up to you. If you do, do it efficiently. Just give people money.",
+   "gap": 6.5
   }
  ]
 }

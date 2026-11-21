@@ -1,4 +1,4 @@
-// "The free-market case for just giving people cash": Gemini-painted plates with hand-drawn rough.js overlays.
+// "If you're going to redistribute, just give people cash": Gemini-painted plates with hand-drawn rough.js overlays.
 // Everything is a pure function of time t, so the same code drives live preview and frame export.
 'use strict';
 (function () {
@@ -620,8 +620,8 @@
   function sTitle() {
     const t0 = ce('H5') + 0.2;
     stamp('economic physics', 960, 230, 52, t0, { color: P.teal, rot: -0.04 });
-    wt('the free-market case for', 960, 380, 96, t0 + 0.2, t0 + 0.9, { color: P.plum });
-    wt('just giving people cash', 960, 520, 150, t0 + 0.7, t0 + 1.7);
+    wt("if you're going to redistribute,", 960, 380, 96, t0 + 0.2, t0 + 0.9, { color: P.plum });
+    wt('just give people cash', 960, 520, 150, t0 + 0.7, t0 + 1.7);
     line(520, 620, 1400, 620, eOut(prog(T, t0 + 1.6, t0 + 1.9)), { stroke: P.red, strokeWidth: 7 });
     wt(SCRIPT.subtitle, 960, 700, 60, t0 + 1.8, t0 + 2.6, { font: PRINT, color: P.teal });
     grp(360, 860, popS(t0 + 2.0), Math.sin(T * 1.3) * 0.04, () => cash(0, 0, 0.75, 1));
@@ -801,6 +801,7 @@
       if (T > w('G2', 'housing voucher')) grp(470, 560, popS(w('G2', 'housing voucher')), -0.08, () => giftCard(0, 0, 0.75, {}), fadeOut(out, 0.3)); else KC += 40;
       lab('rent only', 470, 760, 64, w('G2', 'only be spent'), { color: P.red, out });
       lab('approved units only', 470, 840, 58, w('G2', 'approved'), { color: P.red, out });
+    lab('housing lottery: one unit, not your pick', 640, 940, 58, w('G2', 'lottery'), { color: P.plum, out });
     } else KC += 100;
     if (T > out) {
       note(1440, 170, 760, 170, w('G2', 'gift card for drivers'), () => txt('a gift card for drivers', 0, 0, 70, { color: P.red }));
@@ -844,8 +845,9 @@
       txt('the benefit', 145, 225, 36, { font: PRINT });
       txt('≈ cash', 0, -210, 72, { color: P.green, alpha: fadeIn(w('G5', 'almost like money'), 0.2) });
     }, { out: w('G5', 'The waste') });
-    lab('the waste: when a benefit steers you', 620, 120, 58, w('G5', 'The waste'), { color: P.red });
-    lab('toward what you\'d trade away', 620, 200, 58, w('G5', 'trade away'), { color: P.red });
+    lab('the waste comes from the rules', 620, 120, 58, w('G5', 'The waste'), { color: P.red });
+    lab('no hot meals, no prepared food', 620, 200, 58, w('G5', 'hot meals'), { color: P.red });
+    lab('(only if it changes what you buy)', 620, 275, 48, w('G5', 'only when'), { color: P.plum });
   }
 
   // G6: cash isn't wasted
@@ -1073,7 +1075,8 @@
   // C3: end card (paper)
   function sFinal() {
     const t0 = c('C3');
-    wt('the free-market case for the welfare state', 960, 340, 72, t0, w('C3', 'Just'), { color: P.plum });
+    wt('whether to redistribute: your call', 960, 300, 66, t0, w('C3', 'If you do'), { color: P.plum });
+    wt('if you do, do it efficiently', 960, 380, 66, w('C3', 'If you do'), w('C3', 'efficiently'), { color: P.teal });
     wt('just give people money.', 960, 500, 140, w('C3', 'Just'), ce('C3'));
     line(560, 600, 1360, 600, eOut(prog(T, ce('C3'), ce('C3', 0.4))), { stroke: P.red, strokeWidth: 7 });
     grp(960, 780, popS(ce('C3', 0.2)), Math.sin(T * 1.2) * 0.04, () => cash(0, 0, 0.8, 1));
@@ -1107,7 +1110,7 @@
     at('H4', 'voucher', 'pop'); at('H4', 'tax on one', 'pop2'); at('H4', 'random', 'boing'); at('H4', 'hard sell', 'stamp');
     at('H5', 'leaks', 'poof'); at('H5', 'free-market', 'pop');
     const tt = ce('H5') + 0.2; ev('stamp', tt); ev('scribble', tt + 0.2, 0.8); ev('scribble', tt + 0.7, 1.0); ev('sparkle', tt + 1.7); ev('pop', tt + 2.0); ev('pop2', tt + 2.2); ev('stamp', tt + 2.6);
-    // why help
+    // why redistribute
     at('U2', 'groceries', 'pop'); at('U2', 'rounding', 'pop2');
     at('U3', 'Bernoulli', 'pop'); at('U3', 'number', 'scribble'); at('U3', 'twenty thousand', 'pop2'); at('U3', 'forty', 'ding', 0.3); at('U3', 'one million', 'pop2'); at('U3', 'two million', 'ding', 0.3);
     at('U4', 'Alice', 'pop2'); at('U4', 'Bob', 'pop2'); at('U4', 'five thousand'); at('U4', 'one thousand', 'slide'); at('U4', 'nineteen', 'sad'); at('U4', 'twice', 'stamp');
