@@ -620,7 +620,7 @@
   function sTitle() {
     const t0 = ce('H5') + 0.2;
     stamp('economic physics', 960, 230, 52, t0, { color: P.teal, rot: -0.04 });
-    wt("if you're going to redistribute,", 960, 380, 96, t0 + 0.2, t0 + 0.9, { color: P.plum });
+    wt('how to redistribute without waste:', 960, 380, 96, t0 + 0.2, t0 + 0.9, { color: P.plum });
     wt('just give people cash', 960, 520, 150, t0 + 0.7, t0 + 1.7);
     line(520, 620, 1400, 620, eOut(prog(T, t0 + 1.6, t0 + 1.9)), { stroke: P.red, strokeWidth: 7 });
     wt(SCRIPT.subtitle, 960, 700, 60, t0 + 1.8, t0 + 2.6, { font: PRINT, color: P.teal });

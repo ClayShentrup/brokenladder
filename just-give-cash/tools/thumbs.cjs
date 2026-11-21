@@ -5,7 +5,7 @@ const T = [
   ['', 'street', 'center 40%', 'linear-gradient(to right, rgba(20,14,8,.88) 0%, rgba(20,14,8,.55) 42%, rgba(0,0,0,0) 62%)',
    `<div class="t" style="left:46px;top:70px;width:640px"><div class="s">rent control:</div><div class="big">a tax on one random landlord</div><div class="tag" style="margin-top:28px"><s>$3,000</s> → $2,000</div></div>`],
   ['-b', 'pipe', 'center 60%', 'linear-gradient(to bottom, rgba(20,14,8,.85) 0%, rgba(20,14,8,.45) 34%, rgba(0,0,0,0) 55%)',
-   `<div class="t" style="left:0;right:0;top:24px;text-align:center"><div class="s" style="color:#f2c14e">if you're going to redistribute,</div><div class="big" style="font-size:118px">just give people cash</div></div>`],
+   `<div class="t" style="left:0;right:0;top:24px;text-align:center"><div class="s" style="color:#f2c14e">how to redistribute without waste:</div><div class="big" style="font-size:118px">just give people cash</div></div>`],
   ['-c', 'gift', 'center 30%', 'linear-gradient(to top, rgba(20,14,8,.88) 0%, rgba(20,14,8,.5) 32%, rgba(0,0,0,0) 52%)',
    `<div class="t" style="left:0;right:0;bottom:30px;text-align:center"><div class="big" style="font-size:112px">paid $10. worth $7.</div><div class="s">where did the $3 go?</div></div>`],
 ];
