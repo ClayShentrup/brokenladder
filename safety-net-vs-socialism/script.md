@@ -14,6 +14,8 @@ O2b Notice the move. New rules about how deliveries must be run cost money to fo
 
 O3 Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.
 
+O3b And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.
+
 O4 And if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it, openly, and let voters see the bill. That's a different policy from this one.
 
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. Why them, and not everyone? Hold that question. We'll see the exact same move again, with a landlord.
@@ -60,7 +62,7 @@ M5 Underneath every item is the same move: replace a price the market would set 
 
 D1 The concept is called deadweight loss. The clearest way to see it is a gift.
 
-D2 Say I buy you a sweater for ten dollars. You'd never have bought it yourself. To you, it's worth about seven.
+D2 Say I buy you a sweater for ten dollars. To you, it's worth about seven. And we don't have to guess at that. You had ten dollars all along, and you never chose to spend it on this sweater. Economists call that revealed preference: your own choices tell us what things are worth to you.
 
 D3 I'm down ten. You're up seven dollars' worth of sweater. Three dollars just disappeared. I didn't get it. You didn't get it. Nobody got it.
 
@@ -117,6 +119,8 @@ G1 Rent control is one example of a pattern so common it deserves a name. Call i
 G2 The gift card fallacy is the belief that you help people more by giving them something specific than by giving them money. A food card instead of cash. A housing unit instead of cash. A discount on one thing instead of cash.
 
 G3 Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes.
+
+G3a This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse.
 
 G3b Here's a test that makes it concrete. Say you land a rent-stabilized apartment, and you'd rather live somewhere cheaper and keep the difference. So you sublet it at the market rate, move, and spend the extra on food, or childcare, or whatever your family needs most.
 
@@ -320,6 +324,21 @@ Z5 So here's our challenge, to anyone who defends rent control because people de
 
 Z6 Pick any amount of redistribution you like. Zero, a little, a lot. Whatever it is, cash delivers it cheaper, and the people you meant to help end up with more.
 
+---
+
+## 14b. an old name, worth reclaiming
+
+L1 There's an old name for this way of thinking, and it's been badly abused. Neoliberalism.
+
+L2 Today the word mostly gets thrown around as an insult, shorthand for austerity and deregulation. But it was coined in Paris in nineteen thirty-eight, at the Walter Lippmann Colloquium, by liberals who had watched laissez-faire collapse into the Depression, and watched communism and fascism rise in its place.
+
+L3 Their answer was a third road. Keep the market economy, because nothing else prices things so well or respects free choice. But give government real jobs: write the rules, correct the market's failures, and make sure nobody falls through. Even Friedrich Hayek, who founded the Mont Pelerin Society after the war, wrote that a basic minimum of food, shelter and clothing could be assured to everybody.
+
+L4 That's the tradition this video belongs to. A market economy and an open society. The freedom to love and marry whoever you choose. Cities covered in murals. Solar fields, wind turbines and nuclear plants powering all of it. And a safety net that treats people like adults: delivered in cash, without the waste.
+
+---
+
+
 Z7 Caring about the poor is the easy part. Doing the math is harder.
 
 Z8 Whatever you think people deserve, give it to them in cash.
@@ -336,6 +355,7 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus, and a shipping-container port for tariffs
 - credit max ghenis (pronounced GEN-iss, hard g) in the description, and as small on-screen text beside the PolicyEngine figures in E10, for the subletting test and the universality and timing arguments. the narration names PolicyEngine, not max: his name means little to a cold audience, and the institution carries the numbers. if he's ever named aloud, respell it for TTS as "Max GEN-iss"
 - E10 source: max ghenis, "means testing and universalism," BIG conference, 2023-06-09 (sources/ghenis-2023-means-testing-and-universalism.pdf, slide 4): california single parent, children 10 and 5, pays rent and childcare; earnings $25,000 -> $50,000; net income $43,206 -> $48,800; government took 78% of the additional earnings. on screen: "PolicyEngine (Ghenis, 2023)". robustness check with policyengine-us 2.152.15, tax year 2026, no rent or childcare inputs: 56% cash only, 111% counting health coverage at cost (tools/policyengine_cliff.py). a california billionaire's top combined rate is roughly 54%
-- on-screen sources: cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
+- 14b switches visual style: from the red-and-black poster look to full-color daylight (statue of liberty, a pride march under murals, solar, wind and nuclear), then back to the end card
+- on-screen sources: hayek, the road to serfdom (1944); lippmann colloquium, paris (1938); mont pelerin society (1947); cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
 - show the actual post on screen for O2 (@NYCMayor, 12:25 pm, nov 19, 2026, quoting @emmagf's screenshot of amazon's "could add up to $5 per order" alert). quote it word for word; the narration reads it exactly
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518 and is dated on purpose; everything else avoids dollar figures that age, or uses them only as round illustrations
