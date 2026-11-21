@@ -41,8 +41,8 @@ A1 Economics has a theorem for this: the second welfare theorem. In its ideal fo
 A2 Real life never gets that perfect. But you can get far closer than the socialist toolkit does.
 A3 First, tax pollution. A factory that dumps smoke on its neighbors makes too much, because someone else is paying part of the bill. Charging that bill back actually grows the economy.
 A4 Second, tax land. Nobody can make more of it, so taxing it doesn't make less of it. The bill is the same whether the owner builds, sells, or does nothing. No trade gets blocked.
-A5 Those two won't cover everything. For the rest, use one simple tax on spending or income, with as few loopholes as possible. That part does shrink the pie a little. Keep it small.
-A6 Then hand the money back as cash. The same check for every citizen. A forty percent flat tax with a ten-thousand-dollar dividend is about as progressive as most bracket systems, with no welfare cliffs and no bureaucrat deciding what you're allowed to buy.
+A5 How far do those two go? Further than most people think. Henry George argued a land tax alone could fund the government, and scrapping every other tax would push land values higher still, because all that freed-up income ends up bidding for the same fixed supply of land. To the extent it still falls short, add a flat tax on consumption, with as few loopholes as possible.
+A6 Then hand the money back as cash. The same check for every citizen. Even with a flat tax in the mix, say forty percent with a ten-thousand-dollar dividend, the system ends up about as progressive as most bracket systems, with no welfare cliffs and no bureaucrat deciding what you're allowed to buy.
 A7 Milton Friedman, not exactly a socialist, called this a negative income tax.
 
 ## close
