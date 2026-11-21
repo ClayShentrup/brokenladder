@@ -615,7 +615,7 @@
     banner('a positive externality, captured by the deed', 960, 860, 46, ['X5', 'positive externality'], { bg: K.red, out: c('X6') });
     card(560, 260, 900, 300, c('X6'), () => {
       D('nobody can make more land', 0, -70, 54);
-      ['build', 'sell', 'work', 'do nothing'].forEach((wd, i) => { const q = [['X6', 'build,'], ['X6', 'sell,'], ['X6', 'work,'], ['X6', 'lawn chair']][i]; D(wd, -300 + i * 190, 25, 40, { alpha: fadeIn(at(q), 0.2), color: K.grey }); });
+      ['build', 'sell', 'work', 'do nothing'].forEach((wd, i) => { const q = [['X6', 'build,'], ['X6', 'sell,'], ['X6', 'work,'], ['X6', 'lawn chair']][i]; D(wd, -330 + i * 205, 25, 38, { alpha: fadeIn(at(q), 0.2), color: K.grey }); });
       D('same bill either way', 0, 100, 48, { color: K.red, alpha: fadeIn(w('X6', 'Nothing they do'), 0.2) });
     }, { out: c('X7') });
     stampX('no deadweight loss', 960, 900, 90, ['X6', 'No deadweight'], { out: c('X7') });
@@ -775,7 +775,7 @@
       D('a third road', 0, -200, 64, { color: B });
       rows([['keep the market economy', ['L3', 'Keep the market']], ['write the rules', ['L3', 'write the rules']], ['correct market failures', ['L3', 'correct']], ['nobody falls through', ['L3', 'nobody falls']]], -360, -100, 50, 76);
       Dm('Hayek, The Road to Serfdom (1944) · Mont Pelerin Society (1947)', 0, 215, 26, { color: K.grey, alpha: fadeIn(w('L3', 'Hayek'), 0.2) });
-    }, { out: ['L3', 'Hayek', 4] });
+    }, { out: c('L4') });
     banner('a market economy and an open society', 960, 180, 62, c('L4'), { bg: B, shadowCol: G, out: ['L4', 'freedom to love'] });
     banner('in cash, without the waste', 960, 880, 72, ['L4', 'in cash'], { bg: G, fg: K.black, shadowCol: B });
   }
