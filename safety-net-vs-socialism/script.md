@@ -274,11 +274,11 @@ E8 One marginal rate. Effective rates that climb from deeply negative to nearly 
 
 E9 And the marginal rate is the one that matters for behavior, because it's what you face when you decide whether to take the extra shift. Which brings us to the ugliest number in the welfare state.
 
-E10 Here's what that looks like today. PolicyEngine, a nonprofit that models tax and benefit rules, ran the numbers for a low-income single parent in California with two kids. Double their earnings, and after lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra pay. That's an effective marginal tax rate of nearly eighty percent. The top federal rate on the richest Americans is under forty.
+E10 Here's what that looks like today. We ran the numbers in PolicyEngine, an open-source model of the American tax and benefit system, for a single parent in California with two young kids, working a low-wage job. Double their pay. Counting cash alone, after lost benefits, lost tax credits and higher taxes, they keep only about half of the extra. Now count the health coverage they lose too, and the family ends up worse off than before they doubled their pay.
 
-E10b Read that again. A low-income single parent can face a higher marginal tax rate than a billionaire. And some families, at some incomes, face rates over one hundred percent. Work an extra hour, end up poorer. That's the welfare cliff.
+E10b Read that again. Double your pay, and fall behind. A single parent near the poverty line can face a higher marginal tax rate than a billionaire. That's the welfare cliff.
 
-E10c Remember the minimum wage fight? Under an eighty percent marginal rate, a worker keeps a fifth of every extra dollar. A fifteen-dollar minimum wage becomes a three-dollar one. People spend years fighting over the first number and never mention the second.
+E10c Remember the minimum wage fight? At a fifty percent marginal rate, a fifteen-dollar minimum wage is really seven-fifty. Near a benefit cliff, it can be close to nothing. People spend years fighting over the first number and never mention the second.
 
 E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour leaves you better off.
 
@@ -330,6 +330,6 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
 - visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus, and a shipping-container port for tariffs
 - credit max ghenis (pronounced GEN-iss, hard g) in the description, and as small on-screen text beside the PolicyEngine figures in E10, for the subletting test and the universality and timing arguments. the narration names PolicyEngine, not max: his name means little to a cold audience, and the institution carries the numbers. if he's ever named aloud, respell it for TTS as "Max GEN-iss"
-- verify against max's talk before locking: E10 says the california single parent keeps about a fifth of doubled earnings, a marginal rate near 80% (gemini's summary: $25k to $50k, about $5,600 kept, 78%)
+- E10 figures computed with policyengine-us 2.152.15 (open-source model), tax year 2026: california, single parent age 30, children 4 and 8, employment income $25,000 -> $50,000. cash net income $44,535 -> $55,596 (kept $11,062 of $25,000, effective marginal rate 56%); including health benefits valued at cost $77,146 -> $74,318 (rate 111%). tax year 2025 gives 50% and 105%. a california billionaire's top combined marginal rate is roughly 54%. gemini's summary of max's talk cited 78% for this household; that figure didn't reproduce, likely different assumptions, so the script uses our own run
 - on-screen sources: cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518 and is dated on purpose; everything else avoids dollar figures that age, or uses them only as round illustrations
