@@ -102,7 +102,7 @@ R6 And it gets worse, because people respond.
 
 R7 The tenant's discount only works in this one apartment. So they stay put long after it suits them. The job across town, the bigger place for the new baby, the smaller place after the kids leave. All of it now costs a thousand dollars a month in lost discount.
 
-R8 Landlords respond too. When economists studied rent control in San Francisco, they found landlords cut the supply of rental housing by fifteen percent, mostly by converting buildings to condos. Which pushed up rents for everyone who didn't already have a controlled unit.
+R8 Landlords respond too. When economists studied rent control in San Francisco, they found landlords cut the supply of rental housing by fifteen percent, by converting buildings to condos and redeveloping them. Which pushed up rents for everyone who didn't already have a controlled unit.
 
 R9 When leading economists were surveyed on whether rent control had made housing more affordable in the cities that tried it, almost none agreed. This is about as close to consensus as economics gets.
 
@@ -120,7 +120,7 @@ G3 Every gift card is the sweater. The family receives something worth less to t
 
 G3b Here's a test that makes it concrete. Say you land a rent-stabilized apartment, and you'd rather live somewhere cheaper and keep the difference. So you sublet it at the market rate, move, and spend the extra on food, or childcare, or whatever your family needs most.
 
-G3c That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent can get you evicted and ordered to pay back the difference. Try it with a public housing unit, and you can lose the unit.
+G3c That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent, plus a small surcharge if it's furnished, can get you evicted and leave you owing your subtenant up to three times the overcharge. Try it with a public housing unit, and you can lose the unit.
 
 G3d Think about what that means. Refusing to give people cash comes with an enforcement arm. When someone converts their gift card into cash on their own, you punish them for it. The policy only works if you stop people from spending their own benefit the way they think best.
 
@@ -146,7 +146,7 @@ P0 Now watch how far the pattern goes.
 
 P1 A public housing lottery. Win it, and you get one particular apartment, in one particular building, in one particular neighborhood. Almost certainly not the one you'd have picked if you'd been handed the money. Gift card.
 
-P2 Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like no hot meals and no prepared food, and only when those rules change what a family actually buys. A partial gift card. Partial credit.
+P2 Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit.
 
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 
@@ -286,7 +286,7 @@ E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour
 
 E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
 
-E11b2 And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. People respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.
+E11b2 And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. By its central estimates, people respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.
 
 E11c Graduated brackets have a quieter problem. They punish uneven income. Take a simple system: ten percent on your first fifty thousand dollars, thirty percent on anything above that.
 
