@@ -1,6 +1,6 @@
 # every socialist policy is a gift card
 
-full script, v3. about 3,000 words, roughly 20 minutes at a measured pace. line ids are for production.
+full script, v5. about 3,300 words, roughly 22 minutes at a measured pace. line ids are for production.
 
 ---
 
@@ -10,9 +10,9 @@ O1 This week, Amazon warned New York shoppers that a proposed city law, the Deli
 
 O2 The mayor, Zohran Mamdani, had a one-word answer. "It's greed."
 
-O3 Sit with that for a second. If charging the market price is greed, then charging less than the market price is generosity. Selling something for less than you could get is giving money away. There's a word for giving money away. It's called charity.
+O3 Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.
 
-O4 Nobody calls every pensioner with Amazon shares greedy for failing to write checks to strangers. But demanding that a company quietly swallow a cost is exactly that: a demand that its owners donate.
+O4 And if your answer is that Amazon makes monopoly profits, fine. Then tax them, openly, and let voters see the bill. That's a different policy from this one.
 
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. Why them, and not everyone? Hold that question. We'll see the exact same move in a minute, with a landlord.
 
@@ -28,7 +28,7 @@ O8 But first, a warning, because you're going to think you know where this is go
 
 ## 2. this is not the argument you think it is
 
-N1 When someone attacks socialism, you know the script. Taxes are theft. Handouts make people lazy. Cut the safety net and let the market sort it out.
+N1 When someone attacks socialism, you know the script. Taxes are theft. Handouts make people lazy. Cut the safety net.
 
 N2 That's not the argument we're making.
 
@@ -36,9 +36,7 @@ N3 This video takes no position on how much we should help the poor. More than n
 
 N4 Our question is narrower, and a lot harder to wriggle out of. Whatever amount of help you've decided on, what's the least wasteful way to deliver it?
 
-N5 Because it turns out that question has an answer. And the socialist answer is, almost every time, the most wasteful one available.
-
-N6 So if halfway through you catch yourself thinking, ah, here comes the case for cutting welfare, stop. That's not the argument we're making. We'll remind you. Repeatedly.
+N6 If at any point you think you hear the case for cutting welfare, you don't. That's not the argument we're making, and we'll keep saying so.
 
 ---
 
@@ -48,13 +46,11 @@ M1 First, a word on terms, because someone in the comments is already typing.
 
 M2 What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, often interchangeably. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.
 
-M3 Today, people use the word to mean everything from Soviet five-year plans to Scandinavian welfare states. Fine. There's room to argue about the label.
+M3 Today, people use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.
 
-M4 But look at the actual menu. Price controls. Rent control. Minimum wages set by politicians. Nationalized industries. Free this and free that, handed out in kind. Steep, punishing tax brackets.
+M4 Add the rest of the usual menu. Price controls. Minimum wages set by politicians. Nationalized industries. Benefits handed out in kind instead of in cash.
 
 M5 Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.
-
-M6 And every one of these interventions has a cost that its supporters almost never mention, because most of them have never heard of it. Let's fix that.
 
 ---
 
@@ -68,9 +64,7 @@ D3 I'm down ten. You're up seven dollars' worth of sweater. Three dollars just d
 
 D4 This isn't a thought experiment. The economist Joel Waldfogel surveyed people about their holiday gifts and found that somewhere between a tenth and a third of what givers spent simply evaporated.
 
-D5 If I'd handed you a ten-dollar bill, nothing would have been lost. You'd have bought exactly what you wanted.
-
-D6 That missing value is deadweight loss. Value that could have existed, and doesn't.
+D6 Hand me a ten-dollar bill instead, and nothing is lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.
 
 ---
 
@@ -84,9 +78,7 @@ T3 Every voluntary trade is a little Pareto improvement. Say Dana would fix your
 
 T4 Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worthwhile. You'll only pay twenty-five. The job never happens.
 
-T5 Look at the scoreboard. The government collects nothing, because there's no transaction to tax. Dana loses the work. Your roof still leaks. And five dollars of value never comes into existence.
-
-T6 A tax on trading is a speeding ticket for doing each other favors.
+T5 The government collects nothing. Dana loses the work. Your roof still leaks. And five dollars of value never comes into existence.
 
 T7 Hold onto those two ideas. Benefits that are worth less than they cost. Taxes that kill trades that would have happened. Those are the two leaks. And the socialist toolkit is built out of them.
 
@@ -124,8 +116,6 @@ G2 The gift card fallacy is the belief that you help people more by giving them 
 
 G3 Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes.
 
-G4 The usual defense is that officials know better what people need. But an official can't see inside your life, and answers to politics, not to you. The people who know what a struggling family needs most are that family.
-
 G5 The usual objection to cash is that the poor will waste it. That's been tested, a lot. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down.
 
 G6 Now watch how far this goes.
@@ -147,6 +137,8 @@ P5 Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax.
 P6 Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
 
 P7 And the right does this too, by the way. A tariff is a gift card for one domestic industry, paid for by every consumer who buys its products. Studies of the 2018 tariffs found that nearly the whole cost landed on American buyers. Same mistake, different team.
+
+P7b The gift card fallacy isn't unique to socialists. But socialism is the political program built almost entirely out of it.
 
 P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. That's a hidden sales tax, paid in the dark. And when the bill shows up, the mayor calls it greed.
 
@@ -222,8 +214,6 @@ W3 Real life never gets that perfect. But we can get much closer than we do now.
 
 W4 And this splits one fight into two. How much to share is a question of values. How to share is a question of engineering. And engineering has better and worse answers.
 
-W5 So, engineering. Where does the money come from?
-
 ---
 
 ## 12. taxes that don't leak
@@ -256,7 +246,7 @@ E3 Your marginal tax rate is what you pay on the next dollar you earn. Your effe
 
 E4 Most people assume you need progressive marginal rates, higher brackets for higher incomes, to get progressive effective rates. You don't.
 
-E5 Watch. Take a flat forty percent tax, and give every citizen a ten-thousand-dollar dividend.
+E5 Watch. Take a flat forty percent tax. On income or on spending, the arithmetic works the same for anyone who spends what they earn, so let's use income to keep it simple. And give every citizen a ten-thousand-dollar dividend.
 
 E6 Earn twelve thousand dollars. You pay four thousand eight hundred in tax, get ten thousand back, and take home seventeen thousand two hundred. Your effective tax rate is negative forty-three percent.
 
@@ -272,9 +262,7 @@ E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour
 
 E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
 
-E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. In our example, anyone earning more than twenty-five thousand dollars pays in more than they get back. The millionaire gets ten thousand and pays four hundred thousand. Across the whole system, people above roughly average income pay in more than they receive, and people below it receive more than they pay. Net, it's a transfer from richer to poorer. The check to the millionaire is just bookkeeping.
-
-E14 And giving it to everyone is the point. No means test, no paperwork, no cliff, nobody punished for earning more.
+E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.
 
 E15 By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every "don't you dare raise prices." A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.
 
@@ -304,8 +292,8 @@ Z8 Whatever you think people deserve, give it to them in cash.
 
 ## production notes
 
-- voice: british female, expressive model, measured and dry, with room for contempt on the dunk lines (O6, P8, Z3)
+- voice: british female, expressive model, measured and dry, deadpan on the dunk lines (O6, P8, Z3); understatement lands, synthetic sneering doesn't
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
-- visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, the hurricane generator queue, the city grocery store, a bus, and a shipping-container port for tariffs
+- visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus, and a shipping-container port for tariffs
 - on-screen sources: waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518; ship fast or swap the hook
