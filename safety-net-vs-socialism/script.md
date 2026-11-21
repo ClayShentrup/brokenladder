@@ -118,7 +118,7 @@ G3 Every gift card is the sweater. The family receives something worth less to t
 
 G3b Here's a test that makes it concrete. Say you win a rent-controlled apartment, and you'd rather live somewhere cheaper and keep the difference. So you sublet it at the market rate, move, and spend the extra thousand a month on food, or childcare, or whatever your family needs most.
 
-G3c In most cities with these programs, that's against the rules. You can lose the apartment. In some cases, you can be prosecuted.
+G3c That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent can get you evicted and ordered to pay back the difference. Do the same with a public housing unit, and it can be treated as fraud.
 
 G3d Think about what that means. Refusing to give people cash isn't a neutral choice. It means that when someone converts their gift card into cash on their own, you'll punish them for it. The policy only works if you stop poor people from spending their own benefit the way they think best.
 
