@@ -122,6 +122,18 @@ G6 Now watch how far this goes.
 
 ---
 
+## 7b. the short answer
+
+Q1 So before we go further, here's the alternative, in four sentences.
+
+Q2 Whatever amount of help you want to give, give it as cash. The same check to every citizen.
+
+Q3 Pay for it with taxes that don't block useful trades: taxes on pollution, and on the value of land. If that's not enough, one flat tax on spending.
+
+Q4 That's it. Same help, far less waste. The rest of this video is about why that works, and why almost every policy you hear called socialist does the opposite.
+
+---
+
 ## 8. the parade
 
 P1 A public housing lottery. Win it, and you get one particular apartment, in one particular building, in one particular neighborhood. Almost certainly not the one you'd have picked if you'd been handed the money. Gift card.
