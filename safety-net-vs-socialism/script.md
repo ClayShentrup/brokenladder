@@ -328,7 +328,7 @@ Z8 Whatever you think people deserve, give it to them in cash.
 
 ## production notes
 
-- title options to a/b test: "socialism fails even if you share its goals" (working title); "the deadweight loss of socialism"; "the economic illiteracy of socialism". "every socialist policy is a gift card" stays as the spoken thesis (O7, P9)
+- title options to a/b test: "socialism fails even if you share its goals" (working title); "the deadweight loss of socialism"; "the economic illiteracy of socialism". "every socialist policy is a gift card" works as a spoken line or thumbnail text
 
 - voice: british female, expressive model, measured and dry, deadpan on the dunk lines (O6, P8, Z3); understatement lands, synthetic sneering doesn't
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
