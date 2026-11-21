@@ -274,11 +274,17 @@ E8 One marginal rate. Effective rates that climb from deeply negative to nearly 
 
 E9 And the marginal rate is the one that matters for behavior, because it's what you face when you decide whether to take the extra shift. Which brings us to the ugliest number in the welfare state.
 
-E10 Today, a family that earns a raise can lose benefits faster than their paycheck grows. Add up the lost food aid, the lost housing help, the lost health coverage, and some families face effective marginal rates over one hundred percent. Work an extra hour, end up poorer. That's the welfare cliff.
+E10 Here's what that looks like today. PolicyEngine, a nonprofit that models tax and benefit rules, ran the numbers for a single parent in California with two kids, earning twenty-five thousand dollars a year. Double the hours, double the pay to fifty thousand, and after lost benefits, lost tax credits and higher taxes, the family takes home only about fifty-six hundred dollars more. That's an effective marginal tax rate of seventy-eight percent. The top federal rate on the richest Americans is thirty-seven.
+
+E10b Read that again. A low-income single parent can face a higher marginal tax rate than a billionaire. And some families, at some incomes, face rates over one hundred percent. Work an extra hour, end up poorer. That's the welfare cliff.
+
+E10c Remember the minimum wage fight? A fifteen-dollar minimum wage, under an eighty percent marginal rate, is a three-dollar minimum wage. People spend years fighting over the first number and never mention the second.
 
 E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour leaves you better off.
 
-E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run.
+E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
+
+E11b2 And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. People respond about five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.
 
 E11c Graduated brackets have a quieter problem. They punish uneven income. Take a simple system: ten percent on your first fifty thousand dollars, thirty percent on anything above that.
 
@@ -294,7 +300,7 @@ E13 Because you can't look at the check by itself. You have to look at the taxes
 
 E15 By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every "don't you dare raise prices." A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.
 
-E16 Milton Friedman, not exactly a socialist, proposed a version of this in nineteen sixty-two. He called it a negative income tax.
+E16 Milton Friedman, not exactly a socialist, proposed something close to this in nineteen sixty-two. He called it a negative income tax: a payment that shrinks as you earn more. Set the rate it shrinks at equal to the flat tax rate, and it's mathematically the same as a dividend plus a flat tax. Make it shrink much faster than that, and you've rebuilt the cliff.
 
 ---
 
@@ -324,5 +330,6 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
 - visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus, and a shipping-container port for tariffs
 - credit max ghenis on screen for the subletting test and the universality and timing arguments, if he's happy to be named
-- on-screen sources: waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
+- verify against max's talk before locking: the california single-parent figures ($25k to $50k, about $5,600 kept, 78%) are attributed to policyengine
+- on-screen sources: cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518; ship fast or swap the hook
