@@ -116,6 +116,12 @@ G2 The gift card fallacy is the belief that you help people more by giving them 
 
 G3 Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes.
 
+G3b Here's a test that makes it concrete. Say you win a rent-controlled apartment, and you'd rather live somewhere cheaper and keep the difference. So you sublet it at the market rate, move, and spend the extra thousand a month on food, or childcare, or whatever your family needs most.
+
+G3c In most cities with these programs, that's against the rules. You can lose the apartment. In some cases, you can be prosecuted.
+
+G3d Think about what that means. Refusing to give people cash isn't a neutral choice. It means that when someone converts their gift card into cash on their own, you'll punish them for it. The policy only works if you stop poor people from spending their own benefit the way they think best.
+
 G5 The usual objection to cash is that the poor will waste it. That's been tested, a lot. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down.
 
 G6 Now watch how far this goes.
@@ -272,6 +278,16 @@ E10 Today, a family that earns a raise can lose benefits faster than their paych
 
 E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour leaves you better off.
 
+E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run.
+
+E11c Graduated brackets have a quieter problem. They punish uneven income. Take a simple system: ten percent on your first fifty thousand dollars, thirty percent on anything above that.
+
+E11d Earn fifty thousand this year and fifty thousand next year, and you pay ten thousand dollars in total. Earn a hundred thousand this year and nothing next year, the same money, and you pay twenty thousand. Twice the tax for the same two years of income.
+
+E11e Who earns like that? Freelancers. Farmers. Construction workers. Artists. Anyone who works double shifts one year and cares for a newborn the next. The bracket system charges them extra for the timing of their paychecks, which has nothing to do with how rich they are.
+
+E11f A flat rate with a dividend doesn't care. Earn it all in one year or spread it across two, and over the two years you pay exactly the same.
+
 E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
 
 E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.
@@ -307,5 +323,6 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - voice: british female, expressive model, measured and dry, deadpan on the dunk lines (O6, P8, Z3); understatement lands, synthetic sneering doesn't
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
 - visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus, and a shipping-container port for tariffs
+- credit max ghenis on screen for the subletting test and the universality and timing arguments, if he's happy to be named
 - on-screen sources: waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518; ship fast or swap the hook
