@@ -8,11 +8,13 @@ full script, final. about 4,000 words, roughly 27 minutes at a measured pace. li
 
 O1 In November twenty twenty-six, Amazon warned New York shoppers that a proposed city law, the Delivery Protection Act, could add up to five dollars to every order.
 
-O2 The mayor, Zohran Mamdani, had a one-word answer. "It's greed."
+O2 The mayor, Zohran Mamdani, answered on X. "Amazon is a multi-trillion dollar company. If Jeff Bezos adds five dollars to your order, it's not because of City Council's efforts to protect workers' rights and keep our streets safe. It's greed."
+
+O2b Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.
 
 O3 Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.
 
-O4 And if your answer is that Amazon makes monopoly profits, fine. Then tax them, openly, and let voters see the bill. That's a different policy from this one.
+O4 And if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it, openly, and let voters see the bill. That's a different policy from this one.
 
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. Why them, and not everyone? Hold that question. We'll see the exact same move again, with a landlord.
 
@@ -332,4 +334,5 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - credit max ghenis (pronounced GEN-iss, hard g) in the description, and as small on-screen text beside the PolicyEngine figures in E10, for the subletting test and the universality and timing arguments. the narration names PolicyEngine, not max: his name means little to a cold audience, and the institution carries the numbers. if he's ever named aloud, respell it for TTS as "Max GEN-iss"
 - E10 source: max ghenis, "means testing and universalism," BIG conference, 2023-06-09 (sources/ghenis-2023-means-testing-and-universalism.pdf, slide 4): california single parent, children 10 and 5, pays rent and childcare; earnings $25,000 -> $50,000; net income $43,206 -> $48,800; government took 78% of the additional earnings. on screen: "PolicyEngine (Ghenis, 2023)". robustness check with policyengine-us 2.152.15, tax year 2026, no rent or childcare inputs: 56% cash only, 111% counting health coverage at cost (tools/policyengine_cliff.py). a california billionaire's top combined rate is roughly 54%
 - on-screen sources: cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
+- show the actual post on screen for O2 (@NYCMayor, 12:25 pm, nov 19, 2026, quoting @emmagf's screenshot of amazon's "could add up to $5 per order" alert). quote it word for word; the narration reads it exactly
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518 and is dated on purpose; everything else avoids dollar figures that age, or uses them only as round illustrations
