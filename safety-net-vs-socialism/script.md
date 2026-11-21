@@ -100,6 +100,8 @@ R4 Not from the city. Not from taxpayers. It comes out of one person's pocket: w
 
 R5 So rent control is a thousand-dollar housing voucher, funded by a thousand-dollar tax on one landlord, chosen more or less at random. Say that out loud at a city council meeting and see how far it gets.
 
+R5b And notice what rent control can't live without. If the landlord could simply decline to renew the lease, the discount would vanish at the end of the year. So rent control always comes with eviction control. In New York, a rent-stabilized tenant has a legal right to renew, and the landlord can't end the lease just because the rent is below market. The thousand-dollar tax never expires.
+
 R6 And it gets worse, because people respond.
 
 R7 The tenant's discount only works in this one apartment. So they stay put long after it suits them. The job across town, the bigger place for the new baby, the smaller place after the kids leave. All of it now costs a thousand dollars a month in lost discount.
@@ -252,9 +254,9 @@ X4 Next, land. Picture an empty lot. A train station opens nearby. Then shops, t
 
 X5 The owner didn't do any of that. The value soaked into the lot from everything around it. It's a positive externality, created by everyone else, captured by whoever holds the deed.
 
-X6 Now tax the value of that land. Nobody can make more land, so taxing it doesn't make less of it. And the owner's bill is the same whether they build, sell, work, or sit in a lawn chair. Nothing they do changes it. No trade gets blocked. No deadweight loss.
+X6 Now tax that land value. Look at who pays: the owner. Now look at who created the value: the train station, the shops, the hospital, the neighbors. The person paying the tax isn't the one whose work leaked into the land. And the bill is the same whether they build, sell, work, or sit in a lawn chair. Nothing they do changes it. No trade gets blocked. No deadweight loss.
 
-X7 How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push the rental value of land higher still, because all that freed-up income ends up bidding for the same fixed supply of land.
+X7 How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push land values higher still, because much of what those taxes take today would show up instead as higher land rents.
 
 X8 To the extent that still falls short, add one flat tax on consumption, with as few loopholes as possible. That part does block some trades. It shrinks the pie a little. So keep it as small as you can.
 

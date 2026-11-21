@@ -273,7 +273,14 @@
       D('a $1,000 housing voucher', 0, -100, 72, { color: K.green });
       D('funded by a $1,000 tax on one landlord', 0, 10, 58, { color: K.red, alpha: fadeIn(w('R5', 'funded'), 0.2) });
       D('chosen more or less at random', 0, 110, 46, { alpha: fadeIn(w('R5', 'random'), 0.2) });
+    }, { out: c('R5b') });
+    card(1380, 420, 860, 520, c('R5b'), () => {
+      D('rent control', 0, -190, 56, { color: K.grey });
+      D('= eviction control', 0, -110, 70, { color: K.red, alpha: fadeIn(w('R5b', 'eviction control'), 0.2) });
+      rows([['legal right to renew', ['R5b', 'right to renew']], ["can't end the lease over price", ['R5b', "can't end"]]], -360, 0, 46, 80);
+      D('the tax never expires', 0, 190, 52, { alpha: fadeIn(w('R5b', 'never expires'), 0.2) });
     }, { out: c('R6') });
+    cite('NY Rent Stabilization Code, 9 NYCRR § 2523.5 (renewal leases)', c('R5b'), c('R6'));
     banner('and people respond', 960, 200, 80, c('R6'), { bg: K.red, out: c('R7') });
     banner('the discount only works here', 640, 180, 62, ['R7', 'only works'], { out: c('R8') });
     if (T > w('R7', 'job across') && T < c('R8') + 0.4) box(90, 270, 680, 280, 'rgba(21,19,17,0.82)', vis(w('R7', 'job across'), c('R8'))); else KC++;
@@ -453,7 +460,7 @@
     banner("the owner didn't do any of that", 960, 960, 60, c('X5'), { out: c('X6') });
     banner('a positive externality, captured by the deed', 960, 860, 46, ['X5', 'positive externality'], { bg: K.red, out: c('X6') });
     card(560, 260, 900, 300, c('X6'), () => {
-      D('nobody can make more land', 0, -70, 54);
+      D("the payer isn't the creator", 0, -70, 54);
       ['build', 'sell', 'work', 'do nothing'].forEach((wd, i) => { const q = [['X6', 'build,'], ['X6', 'sell,'], ['X6', 'work,'], ['X6', 'lawn chair']][i]; D(wd, -330 + i * 205, 25, 38, { alpha: fadeIn(at(q), 0.2), color: K.grey }); });
       D('same bill either way', 0, 100, 48, { color: K.red, alpha: fadeIn(w('X6', 'Nothing they do'), 0.2) });
     }, { out: c('X7') });
