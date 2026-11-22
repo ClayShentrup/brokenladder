@@ -422,7 +422,6 @@
     });
   };
   const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']]);
-  const sP4 = () => { plate('airport', c('P4') - 0.6, ce('P4') + 0.6, { z: [1.15, 1.2] }); banner('price gouging laws: hold that thought', 960, 540, 64, c('P4'), {}); };
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
   const sP6 = parade('bus', 'P6', 'fare-free buses', ['half-decent excuse', ['P6', 'half-decent'], K.black], { extra: () => { banner('fewer cars: a real case', 960, 290, 46, ['P6', 'real case'], { bg: K.green }); banner('better: charge drivers for congestion', 960, 390, 46, ['P6', 'cleaner fix'], { bg: K.red }); } });
   const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['a hidden sales tax', ['P8', 'hidden sales tax']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner("doesn't hand workers money", 960, 290, 48, ['P8', "doesn't hand"], { bg: K.red }); banner('costs on every order, including poorer buyers', 960, 390, 44, ['P8', 'every online'], {}); } });
@@ -755,7 +754,7 @@
       { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O2b', sRules), S('O3', sCharity), S('O6', sMayor), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
       S('N1', sNot), S('M1', sMeaning), S('D1', sSweater), S('T1', sRoof), S('R1', sRent), S('G1', sGift), S('Q1', sShort),
-      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9),
+      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9),
       S('H1', sSurge), S('H9b', sRoads), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
