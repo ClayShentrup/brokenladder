@@ -560,8 +560,8 @@
         stampX('no', 0, 170, 70, ['E4', "You don't"]);
       });
     } else {
-      D('40% flat tax + $10,000 per citizen', 960, 220, 60, { color: K.red, alpha: fadeIn(c('E5'), 0.3) });
-      M('(income or spending: same arithmetic if you spend what you earn)', 960, 280, 24, { color: K.grey, alpha: fadeIn(w('E5', 'On income'), 0.3) });
+      D('40% flat income tax + $10,000 per citizen', 960, 220, 60, { color: K.red, alpha: fadeIn(c('E5'), 0.3) });
+      M('(an income tax, just as the simplest example)', 960, 280, 24, { color: K.grey, alpha: fadeIn(w('E5', 'simplest'), 0.3) });
       const cols = [['earn', 330], ['tax', 720], ['dividend', 1060], ['take home', 1380], ['effective', 1680]];
       cols.forEach(([s, x]) => Dm(s, x, 370, 40, { color: K.grey, alpha: fadeIn(c('E6'), 0.3) }));
       box(160, 405, 1640, 5, K.black, fadeIn(c('E6'), 0.3));

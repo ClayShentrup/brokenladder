@@ -282,7 +282,7 @@ E3 Your marginal tax rate is what you pay on the next dollar you earn. Your effe
 
 E4 Most people assume you need progressive marginal rates, higher brackets for higher incomes, to get progressive effective rates. You don't.
 
-E5 Watch. Take a flat forty percent tax. On income or on spending, the arithmetic works the same for anyone who spends what they earn, so let's use income to keep it simple. And give every citizen a ten-thousand-dollar dividend.
+E5 Watch. Say there's a flat forty percent income tax. We're not proposing an income tax; it's just the simplest example. And every citizen gets a ten-thousand-dollar dividend.
 
 E6 Earn twelve thousand dollars. You pay four thousand eight hundred in tax, get ten thousand back, and take home seventeen thousand two hundred. Your effective tax rate is negative forty-three percent.
 
