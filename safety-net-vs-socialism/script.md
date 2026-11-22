@@ -160,6 +160,8 @@ P2 Food stamps. To be fair, for most families they work almost like cash, becaus
 
 P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.
 
+P2c That's the comparison that matters. A gift card looks generous when you compare it to nothing. But nothing was never the alternative. The alternative is the same help, with no strings attached. So here's the question for progressives: if you trust poor people to vote, why don't you trust them to spend their own benefits the way they think best?
+
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 
 P4 Price gouging laws. We'll come back to these, because they deserve their own section.
@@ -167,10 +169,6 @@ P4 Price gouging laws. We'll come back to these, because they deserve their own 
 P5 Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.
 
 P6 Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
-
-P7 And the right does this too, by the way. A tariff is a gift card for one domestic industry, paid for by every consumer who buys its products. Studies of the 2018 tariffs found that nearly the whole cost landed on American buyers. Same mistake, different team.
-
-P7b The gift card fallacy isn't unique to socialists. But socialism is the political program built almost entirely out of it.
 
 P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.
 
@@ -360,10 +358,10 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - voice: dorothy (british, ThT5KcBeYPX3keUQqHPh) on eleven_v3 with tone tags ([deadpan], [dryly], [measured]); fallback lily. measured and dry, deadpan on the dunk lines (O6, P8, Z3); understatement lands, synthetic sneering doesn't
 - visual style: soviet constructivist photomontage (style-tests/a-constructivist.jpg): halftone photo cut-outs on flat red, black and cream geometry, worn paper texture. charts and the tax table in the same palette, clean and flat. hammer-and-sickle motif on the title card and section breaks, used sparingly. no generated likeness of mamdani or any real person; he appears only via his real post
 - music: silence under most narration. a low drone under the cold open, one sting on the title card, a sparse minor-key piano motif at each section break, and nothing looping
-- visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus, and a shipping-container port for tariffs
+- visuals: reuse the existing plates (apartment, landlord, sweater, roof, lot sequence, factory, grocery, housing lottery, parking, checks); new plates for the amazon/delivery opening, a crowded airport curb with ride-share surge (8b), the city grocery store, a bus
 - credit max ghenis (pronounced GEN-iss, hard g) in the description, and as small on-screen text beside the PolicyEngine figures in E10, for the subletting test and the universality and timing arguments. the narration names PolicyEngine, not max: his name means little to a cold audience, and the institution carries the numbers. if he's ever named aloud, respell it for TTS as "Max GEN-iss"
 - E10 source: max ghenis, "means testing and universalism," BIG conference, 2023-06-09 (sources/ghenis-2023-means-testing-and-universalism.pdf, slide 4): california single parent, children 10 and 5, pays rent and childcare; earnings $25,000 -> $50,000; net income $43,206 -> $48,800; government took 78% of the additional earnings. on screen: "PolicyEngine (Ghenis, 2023)". robustness check with policyengine-us 2.152.15, tax year 2026, no rent or childcare inputs: 56% cash only, 111% counting health coverage at cost (tools/policyengine_cliff.py). a california billionaire's top combined rate is roughly 54%
 - 14b switches visual style: from the red-and-black poster look to full-color daylight (statue of liberty, a pride march under murals, solar, wind and nuclear), then back to the end card
-- on-screen sources: hayek, the road to serfdom (1944); lippmann colloquium, paris (1938); mont pelerin society (1947); cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; amiti, redding & weinstein 2019 (tariff pass-through); friedman 1962; george 1879; pigou 1920
+- on-screen sources: hayek, the road to serfdom (1944); lippmann colloquium, paris (1938); mont pelerin society (1947); cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; friedman 1962; george 1879; pigou 1920
 - show the actual post on screen for O2 (@NYCMayor, 12:25 pm, nov 19, 2026, quoting @emmagf's screenshot of amazon's "could add up to $5 per order" alert). quote it word for word; the narration reads it exactly
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518 and is dated on purpose; everything else avoids dollar figures that age, or uses them only as round illustrations

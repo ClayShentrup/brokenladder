@@ -375,6 +375,17 @@
     });
     cite('USDA SNAP food restriction waivers, 2025–2026', ['P2b', 'soda and candy']);
   };
+  const sP2c = () => {
+    plate('dividend', c('P2c') - 0.6, ce('P2c') + 0.6, { z: [1.0, 1.1] });
+    card(960, 470, 1400, 520, c('P2c'), () => {
+      D('the real comparison', 0, -190, 50, { color: K.grey });
+      Dm('gift card vs. nothing', -330, -90, 50, { color: K.grey, alpha: fadeIn(w('P2c', 'compare it to nothing'), 0.2) });
+      if (T > w('P2c', 'never the alternative')) strikeBar(-560, -90, -100, w('P2c', 'never the alternative')); else KC++;
+      D('gift card vs. the same help, no strings', 0, 10, 56, { color: K.red, alpha: fadeIn(w('P2c', 'same help'), 0.2) });
+      D('trust them to vote?', -300, 140, 50, { alpha: fadeIn(w('P2c', 'trust poor people'), 0.2) });
+      D('then trust them to spend.', 300, 140, 50, { color: K.green, alpha: fadeIn(w('P2c', "why don't you trust"), 0.2) });
+    });
+  };
   const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']]);
   const sP4 = () => { plate('airport', c('P4') - 0.6, ce('P4') + 0.6, { z: [1.15, 1.2] }); banner('price gouging laws: hold that thought', 960, 540, 64, c('P4'), {}); };
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
@@ -658,7 +669,7 @@
       { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O2b', sRules), S('O3', sCharity), S('O6', sMayor), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
       S('N1', sNot), S('M1', sMeaning), S('D1', sSweater), S('T1', sRoof), S('R1', sRent), S('G1', sGift), S('Q1', sShort),
-      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P7', sP7), S('P7b', sP7b, true), S('P8', sP8), S('P9', sP9),
+      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9),
       S('H1', sSurge), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E11c', sTiming, true), S('E12', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
