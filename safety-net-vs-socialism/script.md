@@ -142,6 +142,8 @@ G3d Think about what that means. Refusing to give people cash comes with an enfo
 
 G5 The usual objection to cash is that the poor will waste it. That's been tested, a lot. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down.
 
+G6 To be fair, there are real exceptions. Some things nobody can be fenced out of, like national defense, or a lighthouse guiding every ship that passes. You can't sell those one customer at a time, so government has to provide them directly. And sometimes the person holding the cash isn't the person we're trying to help, like a child. Those cases are real. They're also narrow.
+
 ---
 
 ## 7b. the short answer
@@ -150,7 +152,7 @@ Q1 So before we go further, here's the alternative, in four sentences.
 
 Q2 Whatever amount of help you want to give, give it as cash. The same check to every citizen.
 
-Q3 Pay for it with taxes that don't block useful trades: taxes on pollution, and on the value of land. If that's not enough, one flat tax on spending.
+Q3 Pay for it with taxes that do the least damage: taxes on pollution, and on the value of land. If that's not enough, one flat tax on spending.
 
 Q4 That's it. Same help, far less waste. The rest of this video is about why that works, and why almost every policy you hear called socialist does the opposite.
 
@@ -176,9 +178,9 @@ P5 City-owned grocery stores, which wouldn't pay rent or property tax. Those wai
 
 P6 Fare-free buses. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
 
-P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.
+P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It hands them rules about how their jobs must be run: help they can only take in one form, whether or not it's the form they'd have chosen.
 
-P9 Policy after policy, take it apart and you find the same machine inside. Help delivered in kind instead of cash. Paid for by a tax on some trade that would otherwise have happened.
+P9 Policy after policy, take it apart and you find the same machine inside: help delivered in kind instead of cash. Help with strings attached.
 
 ---
 
@@ -237,6 +239,8 @@ K5 We're turning a different knob entirely.
 K6 Hold the amount of redistribution fixed. Exactly the same amount of help, going to exactly the same people. Now ask: can we deliver it with less waste?
 
 K7 Almost always, yes. And nobody loses their help.
+
+K7b Picture redistribution as a pipe, carrying money from people who have more to people who have less. Every restriction and every hidden cost is a hole in that pipe, and money leaks out on the way. The trickle-down crowd looks at the leaks and says: shrink the pipe, or shut it off. We're saying: fix the leaks, whatever size you want the pipe to be.
 
 K8 We'll say it once more, for the people already drafting an angry comment. Same redistribution. Less waste. If you hear that as an argument for cutting welfare, you've just made the exact mistake this video is about.
 

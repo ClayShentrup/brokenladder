@@ -65,3 +65,7 @@ P.update({
  'lamp': dict(prompt="An ornate antique brass table lamp with a fringed shade, standing alone on a pedestal like a museum piece, with a giant blank price tag hanging from it on a string; a small crowd of halftone figures looks on, unimpressed; bold red rays and black wedges."),
  'house': dict(prompt="A modest single-family house with a porch, a family visible through the window; in front of it a halftone hand extends a huge stack of banknotes toward the front door, which stays closed; red sunburst and black geometry."),
 })
+P.update({
+ 'pipe': dict(prompt="A long industrial pipe running diagonally across the frame from a cluster of tall buildings on the left to a row of small houses on the right; coins travel through it and spill out of several cracks and holes along the way, falling and scattering below; a halftone worker with a wrench reaches toward one of the leaks; bold red rays and black wedges."),
+ 'lighthouse': dict(prompt="A lighthouse on a rocky headland sweeping a strong beam across a dark sea, several small fishing boats of different sizes all guided by the same light; bold red rays and black geometric sky."),
+})

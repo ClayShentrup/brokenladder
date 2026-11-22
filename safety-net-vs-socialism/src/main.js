@@ -384,6 +384,25 @@
       D('a rule never adds options. it only removes them.', 0, 175, 44, { alpha: fadeIn(w('G2b', 'never give'), 0.2) });
     });
   }
+  function sPipe() {
+    plate('pipe', c('K7b') - 0.6, ce('K7b') + 0.6, { z: [1.0, 1.1], x: [-0.2, 0.2] });
+    banner('redistribution = a pipe', 960, 160, 70, c('K7b'), { out: ['K7b', 'trickle-down'] });
+    banner('every restriction, every hidden cost = a leak', 960, 280, 50, ['K7b', 'hole'], { bg: K.red, out: ['K7b', 'trickle-down'] });
+    banner('trickle-down: shrink the pipe', 960, 160, 66, ['K7b', 'trickle-down'], {});
+    banner('us: fix the leaks', 960, 290, 80, ['K7b', 'fix the leaks'], { bg: K.green, shadowCol: K.black });
+    stampX('any size pipe you like', 960, 900, 70, ['K7b', 'whatever size']);
+  }
+  function sExcept() {
+    plate('lighthouse', c('G6') - 0.6, ce('G6') + 0.6, { z: [1.0, 1.08] });
+    card(560, 330, 880, 380, c('G6'), () => {
+      D('real exceptions', 0, -130, 56, { color: K.red });
+      D("what nobody can be fenced out of", 0, -50, 46, { alpha: fadeIn(w('G6', 'fenced out'), 0.2) });
+      Dm('defense · a lighthouse → provide it directly', 0, 15, 36, { alpha: fadeIn(w('G6', 'directly'), 0.2) });
+      D('when the cash goes to someone else', 0, 85, 42, { alpha: fadeIn(w('G6', 'holding the cash'), 0.2) });
+      Dm('like a child', 0, 140, 36, { alpha: fadeIn(w('G6', 'child'), 0.2) });
+    });
+    stampX('real, but narrow', 1300, 900, 80, ['G6', 'narrow']);
+  }
   function sMenu() {
     plate('menu', c('O7') - 0.6, ce('O8') + 0.6, { z: [1.0, 1.1] });
     banner('the same mistake, over and over', 960, 220, 76, ['O7', 'same mistake']);
@@ -654,8 +673,8 @@
   const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']], { extra: () => { banner('Japan: no car without an off-street space', 960, 290, 46, ['P3', 'Japan'], { bg: K.red, out: ['P3', 'Here,'] }); banner('overnight street parking: mostly banned', 960, 390, 44, ['P3', 'overnight'], { out: ['P3', 'Here,'] }); } });
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
   const sP6 = parade('bus', 'P6', 'fare-free buses', ['half-decent excuse', ['P6', 'half-decent'], K.black], { extra: () => { banner('fewer cars: a real case', 960, 290, 46, ['P6', 'real case'], { bg: K.green }); banner('better: charge drivers for congestion', 960, 390, 46, ['P6', 'cleaner fix'], { bg: K.red }); } });
-  const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['a hidden sales tax', ['P8', 'hidden sales tax']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner("doesn't hand workers money", 960, 290, 48, ['P8', "doesn't hand"], { bg: K.red }); banner('costs on every order, including poorer buyers', 960, 390, 44, ['P8', 'every online'], {}); } });
-  const sP9 = () => { plate('giftcard', c('P9') - 0.6, ce('P9') + 0.6, { z: [1.18, 1.0] }); card(960, 520, 1300, 360, c('P9'), () => { D('help in kind instead of cash', 0, -80, 64); D('paid for by a tax on some trade', 0, 30, 56, { color: K.red, alpha: fadeIn(w('P9', 'Paid'), 0.2) }); D('gift cards all the way down', 0, 120, 46, { alpha: fadeIn(ce('P9', -1.2), 0.3) }); }); };
+  const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['help in one form only', ['P8', 'chosen']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner("doesn't hand workers money", 960, 290, 48, ['P8', "doesn't hand"], { bg: K.red }); banner('rules about how the job must be run', 960, 390, 44, ['P8', 'rules about'], {}); } });
+  const sP9 = () => { plate('giftcard', c('P9') - 0.6, ce('P9') + 0.6, { z: [1.18, 1.0] }); card(960, 520, 1300, 360, c('P9'), () => { D('help in kind instead of cash', 0, -80, 64); D('help with strings attached', 0, 30, 56, { color: K.red, alpha: fadeIn(w('P9', 'strings'), 0.2) }); D('gift cards all the way down', 0, 120, 46, { alpha: fadeIn(ce('P9', -1.2), 0.3) }); }); };
   // 8b. surge pricing
   function sSurge() {
     plates([['airport', c('H1') - 0.6, { z: [1.0, 1.1] }], ['happyhour', c('H7') - 0.2, { z: [1.0, 1.08] }], ['airport', c('H8') - 0.2, { z: [1.1, 1.0] }]], ce('H9') + 0.6);
@@ -983,8 +1002,8 @@
     SCN = [
       { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O5', sWho), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
-      S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('M1', sMeaning),
-      S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('G2b', sRestrict), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G3', sGift), S('G3e', sIdentity, true), S('G5', sGift),
+      S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('K7b', sPipe), S('K8', sTrickle), S('M1', sMeaning),
+      S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('G2b', sRestrict), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G3', sGift), S('G3e', sIdentity, true), S('G5', sGift), S('G6', sExcept),
       S('P0', sP0), S('P1', sP1), S('P1b', sP1b), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9), S('Q1', sShort),
       S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent),
       S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
