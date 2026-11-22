@@ -267,7 +267,7 @@
   function sRate() {
     if (T < c('E13d') - 0.3) {
       paperBg();
-      D('a simpler lever: raise the rate', 960, 150, 72, { alpha: fadeIn(c('E13c'), 0.3) });
+      D('want the rich to pay more? raise the rate', 960, 150, 64, { alpha: fadeIn(c('E13c'), 0.3) });
       card(960, 520, 1300, 520, c('E13c'), () => {
         Dm('the millionaire, earning $1,000,000', 0, -200, 38, { color: K.grey });
         rows([['40% rate:  pays $400,000', ['E13c', 'forty percent to']], ['50% rate:  pays $500,000', ['E13c', 'fifty']]], -330, -110, 54, 84);
@@ -761,14 +761,14 @@
       D('what the check doesn\'t need', 0, -190, 54, { color: K.red });
       rows([['no means test', ['E11b', 'No means']], ['no caseworkers', ['E11b', 'caseworkers']], ['no penalty for a good month', ['E11b', 'good month']]], -560, -90, 52, 86);
       D('replace the patchwork. don\'t stack on it.', 0, 190, 50, { alpha: fadeIn(w('E11b', 'replaces'), 0.2) });
-    }, { out: c('E11b1') });
+    }, { out: c('E11b2') });
     card(960, 520, 1400, 460, c('E11b1'), () => {
       D('"means testing is a poor substitute', 0, -150, 58, { color: K.red });
       D('for taxation."', 0, -80, 58, { color: K.red });
       Dm('Max Ghenis, PolicyEngine', 0, -15, 34, { color: K.grey });
       D('a phase-out = a tax on the poorest workers', 0, 75, 46, { alpha: fadeIn(w('E11b1', 'Phasing out'), 0.2) });
-      Dm('want the rich to pay more? tax them openly.', 0, 150, 38, { alpha: fadeIn(w('E11b1', 'tax system'), 0.2) });
-    }, { out: c('E11b2') });
+      
+    }, { out: c('E13c') });
     card(960, 520, 1400, 460, c('E11b2'), () => {
       Dm('"handouts make people lazy"?', 0, -170, 46, { color: K.grey });
       D('substitution effect ≈ 5 × income effect', 0, -60, 62, { color: K.red, alpha: fadeIn(w('E11b2', 'five times'), 0.2) });
@@ -897,7 +897,7 @@
       S('TX1', sBill, true), S('TX2', sBill), S('M1', sMeaning), S('R1', sRent), S('T1', sRoof), S('R5b', sRent), S('R11', sDeliveryCost),
       S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
       S('W1', sTheorem), S('X1', sTaxes),
-      S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E13c', sRate, true), S('E13d', sRate), S('E13e', sRate), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
+      S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b1', sUniversal), S('E13c', sRate, true), S('E13d', sRate), S('E13e', sRate), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
     ];
     const E = [];

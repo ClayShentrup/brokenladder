@@ -319,15 +319,15 @@ E13 On net, they don't. You can't look at the check by itself. You have to look 
 
 E13b And even if you decided the rich shouldn't get the check, how would you stop it? Pick an income cutoff, and everyone just above it falls off a cliff. Phase it out gradually instead, and you've built a higher marginal rate into the middle of the income ladder. Either way, you're back to means testing.
 
-E13c And there's a simpler lever. If you think the rich should pay more, raise the rate. Go from forty percent to fifty, and the millionaire pays a hundred thousand dollars more. That's ten times what taking away their check would recover. Seen this way, the check is really just a flat tax credit that's refundable: below a certain income, it pays you instead of charging you.
+E11b1 Max Ghenis of PolicyEngine has a phrase for this: means testing is a poor substitute for taxation. Phasing out a benefit as you earn more is a tax, aimed squarely at the poorest workers.
+
+E13c If the goal is for the rich to pay more, use the tax itself. Raise the rate. Go from forty percent to fifty, and the millionaire pays a hundred thousand dollars more. That's ten times what taking away their check would recover. Seen this way, the check is really just a flat tax credit that's refundable: below a certain income, it pays you instead of charging you.
 
 E13d And remember, that income tax was only an example. In a system built on pollution and land taxes, the rich still pay more, because they consume more. Nearly everything they buy, from steak to golf to a second home, uses land and causes pollution somewhere along the way, and the prices they pay carry those costs.
 
 E13e Which exposes a confusion at the heart of most talk about wealth taxes. Wealth lumps together two different things. A mansion, a yacht, a private jet: that's consumption. Factories, farms, grocery stores: that's capital, making things for everyone else. Capital is the goose that lays the golden eggs. Someone rich on paper who lives modestly isn't consuming much at all, and when they cash out and spend, they pay. If progressive taxes are meant to narrow the gap in how people live, the target is consumption, not the goose.
 
 E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
-
-E11b1 Max Ghenis of PolicyEngine has a phrase for this: means testing is a poor substitute for taxation. Phasing out a benefit as you earn more is a tax, aimed squarely at the poorest workers. If the goal is for richer people to pay more, the tax system can do that openly, without docking the first extra dollar a struggling family earns.
 
 E11b2 And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. By its central estimates, people respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.
 
