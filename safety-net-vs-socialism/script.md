@@ -290,7 +290,7 @@ E7 Earn fifty thousand: an effective rate of twenty percent. A hundred thousand:
 
 E8 One marginal rate. Effective rates that climb from deeply negative to nearly forty percent. About as progressive as most bracket systems, with no brackets at all.
 
-E9 And the marginal rate is the one that matters for behavior, because it's what you face when you decide whether to take the extra shift. Which brings us to the ugliest number in the welfare state.
+E9 And the marginal rate is the one that shapes incentives. It's what you weigh when you decide whether to take the extra shift, or whether to work for someone else at all, versus spending that time caring for your kids or an aging parent. Which brings us to the ugliest number in the welfare state.
 
 E10 Here's what that looks like in practice. PolicyEngine, which builds an open-source model of the American tax and benefit system, ran the numbers for a single parent in California with two kids, paying rent and childcare on a low wage. Double their pay. After lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra. An effective marginal tax rate of nearly eighty percent.
 

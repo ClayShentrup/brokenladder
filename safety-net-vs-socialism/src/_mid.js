@@ -576,6 +576,10 @@
   }
   function sCliff() {
     plates([['cliff', c('E9') - 0.6, { z: [1.0, 1.1] }], ['paycheck', c('E10c') - 0.2, { z: [1.0, 1.1] }]], ce('E10c') + 0.6);
+    card(1340, 380, 900, 360, c('E9'), () => {
+      D('the marginal rate shapes incentives', 0, -110, 46, { color: K.red });
+      rows([['take the extra shift?', ['E9', 'extra shift']], ['work for someone else at all?', ['E9', 'work for someone']], ['or care for kids or a parent?', ['E9', 'caring']]], -380, -20, 44, 72);
+    }, { out: ['E9', 'ugliest'] });
     banner('the ugliest number in the welfare state', 960, 170, 60, ['E9', 'ugliest'], { bg: K.red, out: c('E10') });
     card(1380, 420, 820, 560, c('E10'), () => {
       Dm('single parent, California, two kids', 0, -230, 34, { color: K.grey });
