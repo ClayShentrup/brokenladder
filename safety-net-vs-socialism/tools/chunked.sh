@@ -14,7 +14,4 @@ rm -f out/parts/list.txt; for ((i=0;i<N;i++)); do echo "file 'p$i.mp4'" >> out/p
 GAIN=$(ffmpeg -hide_banner -i out/mix.wav -af ebur128 -f null - 2>&1 | grep -A1 "Integrated loudness" | grep -o '\-\?[0-9.]* LUFS' | head -1 | cut -d' ' -f1)
 GDB=$(python3 -c "print(round(-14-($GAIN),2))")
 ffmpeg -v error -y -f concat -safe 0 -i out/parts/list.txt -i out/mix.wav -map 0:v -map 1:a -c:v copy -af "volume=${GDB}dB,alimiter=limit=0.79:attack=5:release=60:level=disabled" -ar 48000 -c:a aac -b:a 192k -shortest -movflags +faststart out/economic-illiteracy.mp4
-cd out
-ffmpeg -v error -y -i economic-illiteracy.mp4 -c:v libx264 -preset slow -b:v 1650k -pass 1 -an -f null /dev/null
-ffmpeg -v error -y -i economic-illiteracy.mp4 -c:v libx264 -preset slow -b:v 1650k -pass 2 -c:a aac -b:a 160k -movflags +faststart economic-illiteracy-send.mp4
-ls -la economic-illiteracy*.mp4
+ls -la out/economic-illiteracy.mp4

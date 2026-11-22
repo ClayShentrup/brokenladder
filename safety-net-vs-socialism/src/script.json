@@ -9,30 +9,36 @@
  "lines": [
   {
    "id": "O1",
-   "text": "In November twenty twenty-six, Amazon warned New York shoppers that a proposed city law, the Delivery Protection Act, could add up to five dollars to every order."
+   "text": "In November twenty twenty-six, Amazon warned New York shoppers that a proposed city law, the Delivery Protection Act, could add up to five dollars to every order.",
+   "gap": 1.3
   },
   {
    "id": "O2",
-   "text": "The mayor, Zohran Mamdani, answered on X. \"Amazon is a multi-trillion dollar company. If Jeff Bezos adds five dollars to your order, it's not because of City Council's efforts to protect workers' rights and keep our streets safe. It's greed.\""
+   "text": "The mayor, Zohran Mamdani, answered on X. \"Amazon is a multi-trillion dollar company. If Jeff Bezos adds five dollars to your order, it's not because of City Council's efforts to protect workers' rights and keep our streets safe. It's greed.\"",
+   "gap": 1.3
   },
   {
    "id": "O2b",
    "text": "Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.",
-   "say": "[deadpan] Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed."
+   "say": "[deadpan] Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.",
+   "gap": 1.3
   },
   {
    "id": "O3",
    "text": "Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.",
-   "say": "[dryly] Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall."
+   "say": "[dryly] Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.",
+   "gap": 1.3
   },
   {
    "id": "O3b",
    "text": "And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.",
-   "say": "[measured] And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation."
+   "say": "[measured] And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.",
+   "gap": 2.2
   },
   {
    "id": "O4",
-   "text": "And if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it, openly, and let voters see the bill. That's a different policy from this one."
+   "text": "And if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it, openly, and let voters see the bill. That's a different policy from this one.",
+   "gap": 1.3
   },
   {
    "id": "O5",
@@ -54,7 +60,8 @@
   },
   {
    "id": "N1",
-   "text": "When someone attacks socialism, you know the script. Taxes are theft. Handouts make people lazy. Cut the safety net."
+   "text": "When someone attacks socialism, you know the script. Taxes are theft. Handouts make people lazy. Cut the safety net.",
+   "gap": 1.3
   },
   {
    "id": "N2",
@@ -79,20 +86,23 @@
   },
   {
    "id": "M2",
-   "text": "What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin."
+   "text": "What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.",
+   "gap": 2.2
   },
   {
    "id": "M3",
-   "text": "Today, people use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law."
+   "text": "Today, people use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.",
+   "gap": 1.3
   },
   {
    "id": "M4",
-   "text": "Add the rest of the usual menu. Price controls. Minimum wages set by politicians. Nationalized industries. Benefits handed out in kind instead of in cash."
+   "text": "Add the rest of the usual menu. Price controls. Minimum wages set by politicians. Nationalized industries. Benefits handed out in kind instead of in cash.",
+   "gap": 1.3
   },
   {
    "id": "M5",
    "text": "Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.",
-   "gap": 1.2
+   "gap": 1.3
   },
   {
    "id": "D1",
@@ -100,11 +110,13 @@
   },
   {
    "id": "D2",
-   "text": "Say I buy you a sweater for ten dollars. To you, it's worth about seven. And we don't have to guess at that. You had ten dollars all along, and you never chose to spend it on this sweater. Economists call that revealed preference: your own choices tell us what things are worth to you."
+   "text": "Say I buy you a sweater for ten dollars. To you, it's worth about seven. And we don't have to guess at that. You had ten dollars all along, and you never chose to spend it on this sweater. Economists call that revealed preference: your own choices tell us what things are worth to you.",
+   "gap": 1.3
   },
   {
    "id": "D3",
-   "text": "I'm down ten. You're up seven dollars' worth of sweater. Three dollars just disappeared. I didn't get it. You didn't get it. Nobody got it."
+   "text": "I'm down ten. You're up seven dollars' worth of sweater. Three dollars just disappeared. I didn't get it. You didn't get it. Nobody got it.",
+   "gap": 1.3
   },
   {
    "id": "D4",
@@ -129,7 +141,8 @@
   },
   {
    "id": "T4",
-   "text": "Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worthwhile. You'll only pay twenty-five. The job never happens."
+   "text": "Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worthwhile. You'll only pay twenty-five. The job never happens.",
+   "gap": 1.3
   },
   {
    "id": "T5",
@@ -146,7 +159,8 @@
   },
   {
    "id": "R2",
-   "text": "So take one. Market rent, three thousand dollars a month. Controlled rent, two thousand."
+   "text": "So take one. Market rent, three thousand dollars a month. Controlled rent, two thousand.",
+   "gap": 1.3
   },
   {
    "id": "R3",
@@ -163,7 +177,8 @@
   },
   {
    "id": "R5b",
-   "text": "And notice what rent control can't live without. If the landlord could simply decline to renew the lease, the discount would vanish at the end of the year. So rent control always comes with eviction control. In New York, a rent-stabilized tenant has a legal right to renew, and the landlord can't end the lease just because the rent is below market. The thousand-dollar tax never expires."
+   "text": "And notice what rent control can't live without. If the landlord could simply decline to renew the lease, the discount would vanish at the end of the year. So rent control always comes with eviction control. In New York, a rent-stabilized tenant has a legal right to renew, and the landlord can't end the lease just because the rent is below market. The thousand-dollar tax never expires.",
+   "gap": 2.2
   },
   {
    "id": "R6",
@@ -184,15 +199,17 @@
   {
    "id": "R10",
    "text": "So rent control fails both tests. It's a benefit worth less than it costs, and it's a tax that kills trades. A double leak.",
-   "gap": 1.2
+   "gap": 1.3
   },
   {
    "id": "G1",
-   "text": "Rent control is one example of a pattern so common it deserves a name. Call it the gift card fallacy."
+   "text": "Rent control is one example of a pattern so common it deserves a name. Call it the gift card fallacy.",
+   "gap": 1.3
   },
   {
    "id": "G2",
-   "text": "The gift card fallacy is the belief that you help people more by giving them something specific than by giving them money. A food card instead of cash. A housing unit instead of cash. A discount on one thing instead of cash."
+   "text": "The gift card fallacy is the belief that you help people more by giving them something specific than by giving them money. A food card instead of cash. A housing unit instead of cash. A discount on one thing instead of cash.",
+   "gap": 1.3
   },
   {
    "id": "G3",
@@ -200,7 +217,8 @@
   },
   {
    "id": "G3a",
-   "text": "This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse."
+   "text": "This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse.",
+   "gap": 2.2
   },
   {
    "id": "G3b",
@@ -208,7 +226,8 @@
   },
   {
    "id": "G3c",
-   "text": "That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent, plus a small surcharge if it's furnished, can get you evicted and leave you owing your subtenant up to three times the overcharge. Try it with a public housing unit, and you can lose the unit."
+   "text": "That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent, plus a small surcharge if it's furnished, can get you evicted and leave you owing your subtenant up to three times the overcharge. Try it with a public housing unit, and you can lose the unit.",
+   "gap": 1.3
   },
   {
    "id": "G3d",
@@ -218,7 +237,7 @@
   {
    "id": "G5",
    "text": "The usual objection to cash is that the poor will waste it. That's been tested, a lot. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down.",
-   "gap": 1.2
+   "gap": 1.3
   },
   {
    "id": "Q1",
@@ -243,15 +262,18 @@
   },
   {
    "id": "P1",
-   "text": "A public housing lottery. Win it, and you get one particular apartment, in one particular building, in one particular neighborhood. Almost certainly not the one you'd have picked if you'd been handed the money. Gift card."
+   "text": "A public housing lottery. Win it, and you get one particular apartment, in one particular building, in one particular neighborhood. Almost certainly not the one you'd have picked if you'd been handed the money. Gift card.",
+   "gap": 1.3
   },
   {
    "id": "P2",
-   "text": "Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit."
+   "text": "Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit.",
+   "gap": 1.3
   },
   {
    "id": "P3",
-   "text": "Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers."
+   "text": "Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.",
+   "gap": 1.3
   },
   {
    "id": "P4",
@@ -259,15 +281,18 @@
   },
   {
    "id": "P5",
-   "text": "Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached."
+   "text": "Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.",
+   "gap": 1.3
   },
   {
    "id": "P6",
-   "text": "Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse."
+   "text": "Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.",
+   "gap": 1.3
   },
   {
    "id": "P7",
-   "text": "And the right does this too, by the way. A tariff is a gift card for one domestic industry, paid for by every consumer who buys its products. Studies of the 2018 tariffs found that nearly the whole cost landed on American buyers. Same mistake, different team."
+   "text": "And the right does this too, by the way. A tariff is a gift card for one domestic industry, paid for by every consumer who buys its products. Studies of the 2018 tariffs found that nearly the whole cost landed on American buyers. Same mistake, different team.",
+   "gap": 1.3
   },
   {
    "id": "P7b",
@@ -276,7 +301,8 @@
   {
    "id": "P8",
    "text": "Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.",
-   "say": "[dryly] Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark."
+   "say": "[dryly] Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.",
+   "gap": 1.3
   },
   {
    "id": "P9",
@@ -310,7 +336,8 @@
   {
    "id": "H7",
    "text": "Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up.",
-   "say": "[dryly] Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up."
+   "say": "[dryly] Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up.",
+   "gap": 1.3
   },
   {
    "id": "H8",
@@ -319,11 +346,12 @@
   {
    "id": "H9",
    "text": "A price cap is a discount for whoever's quickest, paid for by everyone left stranded. Gift card fallacy. Again.",
-   "gap": 1.2
+   "gap": 1.3
   },
   {
    "id": "C1",
-   "text": "Now, here's the part where conservatives and libertarians usually take a victory lap. See? Rent control is a disaster. Scrap it. Scrap the minimum wage. Scrap the food stamps."
+   "text": "Now, here's the part where conservatives and libertarians usually take a victory lap. See? Rent control is a disaster. Scrap it. Scrap the minimum wage. Scrap the food stamps.",
+   "gap": 1.3
   },
   {
    "id": "C2",
@@ -332,7 +360,8 @@
   },
   {
    "id": "C3",
-   "text": "That's why their argument never lands. To a voter who wants to help people, \"replace it with nothing\" sounds exactly like \"I don't want to help people.\" And the socialist on social media gets to say: you think kids shouldn't eat?"
+   "text": "That's why their argument never lands. To a voter who wants to help people, \"replace it with nothing\" sounds exactly like \"I don't want to help people.\" And the socialist on social media gets to say: you think kids shouldn't eat?",
+   "gap": 1.3
   },
   {
    "id": "C4",
@@ -383,7 +412,8 @@
   },
   {
    "id": "W1",
-   "text": "Economics has a result for this, and it's been sitting in the textbooks for decades. The second welfare theorem."
+   "text": "Economics has a result for this, and it's been sitting in the textbooks for decades. The second welfare theorem.",
+   "gap": 1.3
   },
   {
    "id": "W2",
@@ -396,7 +426,7 @@
   {
    "id": "W4",
    "text": "And this splits one fight into two. How much to share is a question of values. How to share is a question of engineering. And engineering has better and worse answers.",
-   "gap": 1.2
+   "gap": 1.3
   },
   {
    "id": "X1",
@@ -404,11 +434,13 @@
   },
   {
    "id": "X2",
-   "text": "Pollution first. When a factory dumps smoke on its neighbors for free, it produces too much, because someone else is paying part of the bill. Economists call that a negative externality."
+   "text": "Pollution first. When a factory dumps smoke on its neighbors for free, it produces too much, because someone else is paying part of the bill. Economists call that a negative externality.",
+   "gap": 1.3
   },
   {
    "id": "X3",
-   "text": "A pollution tax hands the bill back to the polluter. And here's the remarkable part: this tax removes deadweight loss. The economy was producing too much smoke, and the tax pulls it back toward the right amount. The economist Arthur Pigou worked this out over a century ago, which is why these are called Pigouvian taxes. A tax that makes the pie bigger."
+   "text": "A pollution tax hands the bill back to the polluter. And here's the remarkable part: this tax removes deadweight loss. The economy was producing too much smoke, and the tax pulls it back toward the right amount. The economist Arthur Pigou worked this out over a century ago, which is why these are called Pigouvian taxes. A tax that makes the pie bigger.",
+   "gap": 1.3
   },
   {
    "id": "X4",
@@ -420,11 +452,13 @@
   },
   {
    "id": "X6",
-   "text": "Now tax that land value. Look at who pays: the owner. Now look at who created the value: the train station, the shops, the hospital, the neighbors. The person paying the tax isn't the one whose work leaked into the land. And the bill is the same whether they build, sell, work, or sit in a lawn chair. Nothing they do changes it. No trade gets blocked. No deadweight loss."
+   "text": "Now tax that land value. Look at who pays: the owner. Now look at who created the value: the train station, the shops, the hospital, the neighbors. The person paying the tax isn't the one whose work leaked into the land. And the bill is the same whether they build, sell, work, or sit in a lawn chair. Nothing they do changes it. No trade gets blocked. No deadweight loss.",
+   "gap": 1.3
   },
   {
    "id": "X7",
-   "text": "How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push land values higher still, because much of what those taxes take today would show up instead as higher land rents."
+   "text": "How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push land values higher still, because much of what those taxes take today would show up instead as higher land rents.",
+   "gap": 2.2
   },
   {
    "id": "X8",
@@ -445,7 +479,8 @@
   },
   {
    "id": "E4",
-   "text": "Most people assume you need progressive marginal rates, higher brackets for higher incomes, to get progressive effective rates. You don't."
+   "text": "Most people assume you need progressive marginal rates, higher brackets for higher incomes, to get progressive effective rates. You don't.",
+   "gap": 1.3
   },
   {
    "id": "E5",
@@ -457,7 +492,8 @@
   },
   {
    "id": "E7",
-   "text": "Earn fifty thousand: an effective rate of twenty percent. A hundred thousand: thirty percent. A million: thirty-nine percent."
+   "text": "Earn fifty thousand: an effective rate of twenty percent. A hundred thousand: thirty percent. A million: thirty-nine percent.",
+   "gap": 1.3
   },
   {
    "id": "E8",
@@ -465,11 +501,13 @@
   },
   {
    "id": "E9",
-   "text": "And the marginal rate is the one that matters for behavior, because it's what you face when you decide whether to take the extra shift. Which brings us to the ugliest number in the welfare state."
+   "text": "And the marginal rate is the one that matters for behavior, because it's what you face when you decide whether to take the extra shift. Which brings us to the ugliest number in the welfare state.",
+   "gap": 1.3
   },
   {
    "id": "E10",
-   "text": "Here's what that looks like today. PolicyEngine, which builds an open-source model of the American tax and benefit system, ran the numbers for a single parent in California with two kids, paying rent and childcare on a low wage. Double their pay. After lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra. An effective marginal tax rate of nearly eighty percent."
+   "text": "Here's what that looks like today. PolicyEngine, which builds an open-source model of the American tax and benefit system, ran the numbers for a single parent in California with two kids, paying rent and childcare on a low wage. Double their pay. After lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra. An effective marginal tax rate of nearly eighty percent.",
+   "gap": 2.2
   },
   {
    "id": "E10b",
@@ -478,7 +516,8 @@
   },
   {
    "id": "E10c",
-   "text": "Remember the minimum wage fight? Under an eighty percent marginal rate, a worker keeps a fifth of every extra dollar. A fifteen-dollar minimum wage becomes a three-dollar one. People spend years fighting over the first number and never mention the second."
+   "text": "Remember the minimum wage fight? Under an eighty percent marginal rate, a worker keeps a fifth of every extra dollar. A fifteen-dollar minimum wage becomes a three-dollar one. People spend years fighting over the first number and never mention the second.",
+   "gap": 1.3
   },
   {
    "id": "E11",
@@ -490,7 +529,8 @@
   },
   {
    "id": "E11b2",
-   "text": "And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. By its central estimates, people respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself."
+   "text": "And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. By its central estimates, people respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.",
+   "gap": 2.2
   },
   {
    "id": "E11c",
@@ -498,7 +538,8 @@
   },
   {
    "id": "E11d",
-   "text": "Earn fifty thousand this year and fifty thousand next year, and you pay ten thousand dollars in total. Earn a hundred thousand this year and nothing next year, the same money, and you pay twenty thousand. Twice the tax for the same two years of income."
+   "text": "Earn fifty thousand this year and fifty thousand next year, and you pay ten thousand dollars in total. Earn a hundred thousand this year and nothing next year, the same money, and you pay twenty thousand. Twice the tax for the same two years of income.",
+   "gap": 1.3
   },
   {
    "id": "E11e",
@@ -514,17 +555,19 @@
   },
   {
    "id": "E13",
-   "text": "Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping."
+   "text": "Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.",
+   "gap": 2.2
   },
   {
    "id": "E15",
    "text": "By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.",
-   "say": "[dryly] By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender."
+   "say": "[dryly] By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.",
+   "gap": 2.2
   },
   {
    "id": "E16",
    "text": "Milton Friedman, not exactly a socialist, proposed something close to this in nineteen sixty-two. He called it a negative income tax: a payment that shrinks as you earn more. Set the rate it shrinks at equal to the flat tax rate, and it's mathematically the same as a dividend plus a flat tax. Make it shrink much faster than that, and you've rebuilt the cliff.",
-   "gap": 1.4
+   "gap": 2.2
   },
   {
    "id": "Z1",
@@ -537,11 +580,13 @@
   {
    "id": "Z3",
    "text": "Instead it hides the bill inside every online order in the city. And when the bill arrives, the mayor calls it greed.",
-   "say": "[deadpan] Instead it hides the bill inside every online order in the city. And when the bill arrives, the mayor calls it greed."
+   "say": "[deadpan] Instead it hides the bill inside every online order in the city. And when the bill arrives, the mayor calls it greed.",
+   "gap": 1.3
   },
   {
    "id": "Z4",
-   "text": "That's the socialist toolkit in one move. Good intentions, delivered by gift card, paid for by a tax nobody can see, and blamed on someone else."
+   "text": "That's the socialist toolkit in one move. Good intentions, delivered by gift card, paid for by a tax nobody can see, and blamed on someone else.",
+   "gap": 1.3
   },
   {
    "id": "Z5",
@@ -554,15 +599,18 @@
   },
   {
    "id": "L1",
-   "text": "There's an old name for this way of thinking, and it's been badly abused. Neoliberalism."
+   "text": "There's an old name for this way of thinking, and it's been badly abused. Neoliberalism.",
+   "gap": 1.3
   },
   {
    "id": "L2",
-   "text": "Today the word mostly gets thrown around as an insult, shorthand for austerity and deregulation. But it was coined in Paris in nineteen thirty-eight, at the Walter Lippmann Colloquium, by liberals who had watched laissez-faire collapse into the Depression, and watched communism and fascism rise in its place."
+   "text": "Today the word mostly gets thrown around as an insult, shorthand for austerity and deregulation. But it was coined in Paris in nineteen thirty-eight, at the Walter Lippmann Colloquium, by liberals who had watched laissez-faire collapse into the Depression, and watched communism and fascism rise in its place.",
+   "gap": 2.2
   },
   {
    "id": "L3",
-   "text": "Their answer was a third road. Keep the market economy, because nothing else prices things so well or respects free choice. But give government real jobs: write the rules, correct the market's failures, and make sure nobody falls through. Even Friedrich Hayek, who founded the Mont Pelerin Society after the war, wrote that a basic minimum of food, shelter and clothing could be assured to everybody."
+   "text": "Their answer was a third road. Keep the market economy, because nothing else prices things so well or respects free choice. But give government real jobs: write the rules, correct the market's failures, and make sure nobody falls through. Even Friedrich Hayek, who founded the Mont Pelerin Society after the war, wrote that a basic minimum of food, shelter and clothing could be assured to everybody.",
+   "gap": 2.2
   },
   {
    "id": "L4",
