@@ -130,8 +130,6 @@ G1 Rent control is one example of a pattern so common it deserves a name: helpin
 
 G2 And it usually isn't a belief anyone states out loud. It's a reflex. People need housing, so give them housing. People need food, so give them food. The alternative, the same help with no strings attached, never even comes to mind. So the gift card gets measured against the wrong baseline: not against cash, but against nothing. Call it the false baseline.
 
-G2b Put another way, a benefit in kind is just cash, with a restriction on how you can spend it. Handing you a ten-dollar sweater is the same as handing you ten dollars, plus one rule: you may only spend it on this sweater. And a rule can never give you more options. It can only take them away.
-
 G3 Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes.
 
 G3a This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse.
@@ -168,7 +166,9 @@ P2 Food stamps. To be fair, for most families they work almost like cash, becaus
 
 P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.
 
-P2c Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?
+G2b Here's the economic physics. Any benefit in kind is just cash, with a restriction on how you can spend it. A hundred dollars in food stamps is a hundred dollars, plus one rule: groceries only. The dessert ban just adds another rule. And a rule can never give you more options. It can only take them away.
+
+P2c So when you object to the dessert ban, you're not objecting to the help. You're objecting to the restriction. Drop it, and the family keeps every dollar, with more choices. That's all we're saying. Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?
 
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 

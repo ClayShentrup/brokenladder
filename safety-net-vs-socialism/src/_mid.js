@@ -163,7 +163,7 @@
     D('economic physics', 960, 170, 96, { color: K.red, alpha: fadeIn(w('G3e', 'economic physics'), 0.3) });
     const a1 = fadeIn(w('G3e', 'two arrangements'), 0.3), a2 = fadeIn(w('G3e', 'exactly the same'), 0.3);
     card(560, 520, 680, 360, c('G3e'), () => {
-      D('the sweater', 0, -110, 50, { color: K.grey }); D('= $10 + a rule', 0, -20, 60); D('the sublet', 0, 70, 50, { color: K.grey, alpha: a1 }); D('= the cash value', 0, 140, 52, { alpha: a1 });
+      D('food stamps', 0, -110, 50, { color: K.grey }); D('= cash + a rule', 0, -20, 60); D('the sublet', 0, 70, 50, { color: K.grey, alpha: a1 }); D('= the cash value', 0, 140, 52, { alpha: a1 });
     });
     card(1360, 520, 680, 360, ['G3e', 'exactly the same'], () => {
       D('same money,', 0, -60, 70, { alpha: a2 }); D('same direction', 0, 30, 70, { alpha: a2 });
@@ -212,6 +212,16 @@
     banner('$3,000,000 for your house?', 960, 170, 64, ['O3d', 'three million'], { out: c('H1') });
     banner('keeping it = holding out for more', 960, 290, 54, ['O3d', 'holding out'], { bg: K.red, out: c('H1') });
     stampX('so everyone who owns anything is greedy?', 960, 900, 58, ['O3d', 'everyone who owns'], { out: c('H1') });
+  }
+  function sRestrict() {
+    plate('snap', c('G2b') - 0.6, ce('G2b') + 0.6, { z: [1.18, 1.1], x: [0.2, -0.2] });
+    card(960, 520, 1400, 500, c('G2b'), () => {
+      D('a benefit in kind =', 0, -170, 56, { color: K.grey });
+      D('cash + a restriction', 0, -80, 92, { color: K.red });
+      D('$100 food stamps  =  $100  +  "groceries only"', 0, 30, 46, { alpha: fadeIn(w('G2b', 'hundred dollars in food'), 0.2) });
+      Dm('dessert ban = one more rule', 0, 100, 40, { alpha: fadeIn(w('G2b', 'dessert ban'), 0.2) });
+      D('a rule never adds options. it only removes them.', 0, 175, 44, { alpha: fadeIn(w('G2b', 'never give'), 0.2) });
+    });
   }
   function sMenu() {
     plate('menu', c('O7') - 0.6, ce('O8') + 0.6, { z: [1.0, 1.1] });
@@ -407,13 +417,7 @@
       if (T > w('G2', 'false baseline')) strikeBar(60, 50, 250, w('G2', 'false baseline')); else KC++;
       D('should be: the same help, no strings', 0, 140, 50, { color: K.green, alpha: fadeIn(w('G2', 'false baseline'), 0.2) });
       stampX('the false baseline', 0, 215, 46, ['G2', 'false baseline']);
-    }, { out: c('G2b') });
-    card(960, 560, 1400, 480, c('G2b'), () => {
-      D('a benefit in kind =', 0, -160, 56, { color: K.grey });
-      D('cash + a restriction', 0, -70, 92, { color: K.red });
-      D('$10 sweater  =  $10  +  "only spend it on this sweater"', 0, 50, 42, { alpha: fadeIn(w('G2b', 'Handing you'), 0.2), raw: false });
-      D('a rule never adds options. it only removes them.', 0, 150, 44, { alpha: fadeIn(w('G2b', 'never give'), 0.2) });
-    }, { out: c('G3') });
+    }, { out: c('D1') });
     stampX('every gift card is the sweater', 960, 860, 76, c('G3'), { out: c('G3a') });
     card(960, 470, 1460, 560, c('G3a'), () => {
       D('ask the family: what would you do with the cash?', 0, -210, 46, { color: K.red });
@@ -474,9 +478,13 @@
   const sP2c = () => {
     plate('dividend', c('P2c') - 0.6, ce('P2c') + 0.6, { z: [1.0, 1.1] });
     card(960, 470, 1400, 540, c('P2c'), () => {
-      D('objecting to the ban ≠ abolishing food stamps', 0, -200, 44, { color: K.grey, alpha: 1 - fadeIn(w('P2c', 'use that baseline'), 0.2) });
+      D('object to the restriction, not the help', 0, -200, 44, { color: K.grey, alpha: 1 - fadeIn(w('P2c', 'use that baseline'), 0.2) });
       D('use that baseline everywhere', 0, -200, 50, { color: K.grey, alpha: fadeIn(w('P2c', 'use that baseline'), 0.2) });
-      rows([['rent control', ['P2c', 'rent control']], ['city grocery stores', ['P2c', 'grocery']], ['free-but-only-for-this', ['P2c', 'free-but']]], -560, -110, 44, 62);
+      const pre = 1 - fadeIn(w('P2c', 'use that baseline'), 0.2);
+      D('drop the restriction', 0, -60, 70, { color: K.red, alpha: pre * fadeIn(w('P2c', 'Drop it'), 0.2) });
+      D('same dollars, more choices', 0, 40, 62, { color: K.green, alpha: pre * fadeIn(w('P2c', 'every dollar'), 0.2) });
+      D("that's all we're saying", 0, 150, 54, { alpha: pre * fadeIn(w('P2c', "That's all"), 0.2) });
+      if (T > w('P2c', 'use that baseline')) rows([['rent control', ['P2c', 'rent control']], ['city grocery stores', ['P2c', 'grocery']], ['free-but-only-for-this', ['P2c', 'free-but']]], -560, -110, 44, 62);
       D('vs. the same help, no strings', 220, -60, 52, { color: K.green, alpha: fadeIn(w('P2c', 'same help'), 0.2) });
       Dm("Republicans: \"we don't trust them with groceries\"", 0, 90, 38, { alpha: fadeIn(w('P2c', "didn't trust"), 0.2) });
       D('so why trust them less with an apartment?', 0, 175, 54, { color: K.red, alpha: fadeIn(w('P2c', 'why trust'), 0.2) });
@@ -815,7 +823,7 @@
       { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O5', sWho), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
       S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('M1', sMeaning),
-      S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G2b', sGift), S('G3e', sIdentity, true), S('G5', sGift),
+      S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('G2b', sRestrict), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G3', sGift), S('G3e', sIdentity, true), S('G5', sGift),
       S('P0', sP0), S('P1', sP1), S('P1b', sP1b), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9), S('Q1', sShort),
       S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent),
       S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
