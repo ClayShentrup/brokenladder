@@ -442,6 +442,7 @@
       D('the tax never expires', 0, 190, 52, { alpha: fadeIn(w('R5b', 'never expires'), 0.2) });
     }, { out: c('R6') });
     cite('NY Rent Stabilization Code, 9 NYCRR § 2523.5 (renewal leases)', c('R5b'), c('R6'));
+    stampX('same policy, friendlier name', 960, 860, 70, ['R5', 'friendlier'], { out: c('R5b') });
     banner('and people respond', 960, 200, 80, c('R6'), { bg: K.red, out: c('R7') });
     banner('the discount only works here', 640, 180, 62, ['R7', 'only works'], { out: c('R8') });
     if (T > w('R7', 'job across') && T < c('R8') + 0.4) box(90, 270, 680, 280, 'rgba(21,19,17,0.82)', vis(w('R7', 'job across'), c('R8'))); else KC++;

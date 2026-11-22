@@ -98,7 +98,7 @@ R3 The tenant saves a thousand dollars a month. Where does that thousand come fr
 
 R4 Not from the city. Not from taxpayers. It comes out of one person's pocket: whoever happened to own that particular building.
 
-R5 So rent control is a thousand-dollar housing voucher, funded by a thousand-dollar tax on one landlord, chosen more or less at random. Say that out loud at a city council meeting and see how far it gets.
+R5 So rent control is a thousand-dollar housing voucher, funded by a thousand-dollar tax on one landlord, chosen more or less at random. Propose that policy in those words, and almost nobody would vote for it. Rent control is the same policy, under a friendlier name.
 
 R5b And notice what rent control can't live without. If the landlord could simply decline to renew the lease, the discount would vanish at the end of the year. So rent control always comes with eviction control. In New York, a rent-stabilized tenant has a legal right to renew, and the landlord can't end the lease just because the rent is below market. The thousand-dollar tax never expires.
 
