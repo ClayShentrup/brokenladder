@@ -216,8 +216,8 @@
   },
   {
    "id": "G2",
-   "text": "The gift card fallacy is the belief that you help people more by giving them something specific than by giving them money. A food card instead of cash. A housing unit instead of cash. A discount on one thing instead of cash.",
-   "gap": 1.3
+   "text": "And it usually isn't a belief anyone states out loud. It's a reflex. People need housing, so give them housing. People need food, so give them food. The alternative, the same help with no strings attached, never even comes to mind. So the gift card gets measured against the wrong baseline: not against cash, but against nothing. Call it the false baseline.",
+   "gap": 1.6
   },
   {
    "id": "G2b",
@@ -284,13 +284,13 @@
   },
   {
    "id": "P2b",
-   "text": "And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.",
-   "say": "[dryly] And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.",
-   "gap": 1.3
+   "text": "And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.",
+   "gap": 1.6,
+   "say": "[dryly] And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious."
   },
   {
    "id": "P2c",
-   "text": "That's the comparison that matters. A gift card looks generous when you compare it to nothing. But nothing was never the alternative. The alternative is the same help, with no strings attached. So here's the question for progressives: if you trust poor people to vote, why don't you trust them to spend their own benefits the way they think best?",
+   "text": "Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?",
    "gap": 1.6
   },
   {

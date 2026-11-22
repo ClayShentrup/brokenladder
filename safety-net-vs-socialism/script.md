@@ -122,7 +122,7 @@ R10 So rent control fails both tests. It's a benefit worth less than it costs, a
 
 G1 Rent control is one example of a pattern so common it deserves a name. Call it the gift card fallacy.
 
-G2 The gift card fallacy is the belief that you help people more by giving them something specific than by giving them money. A food card instead of cash. A housing unit instead of cash. A discount on one thing instead of cash.
+G2 And it usually isn't a belief anyone states out loud. It's a reflex. People need housing, so give them housing. People need food, so give them food. The alternative, the same help with no strings attached, never even comes to mind. So the gift card gets measured against the wrong baseline: not against cash, but against nothing. Call it the false baseline.
 
 G2b Put another way, a benefit in kind is just cash, with a restriction on how you can spend it. Handing you a ten-dollar sweater is the same as handing you ten dollars, plus one rule: you may only spend it on this sweater. And a rule can never give you more options. It can only take them away.
 
@@ -160,9 +160,9 @@ P1 A public housing lottery. Win it, and you get one particular apartment, in on
 
 P2 Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit.
 
-P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.
+P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.
 
-P2c That's the comparison that matters. A gift card looks generous when you compare it to nothing. But nothing was never the alternative. The alternative is the same help, with no strings attached. So here's the question for progressives: if you trust poor people to vote, why don't you trust them to spend their own benefits the way they think best?
+P2c Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?
 
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 

@@ -492,9 +492,16 @@
   // 7. gift card fallacy
   function sGift() {
     plates([['giftcard', c('G1') - 0.6, { z: [1.0, 1.1] }], ['sublet', c('G3b') - 0.2, { z: [1.0, 1.08] }], ['cashmarket', c('G5') - 0.2, { z: [1.0, 1.08] }]], ce('G5') + 0.6);
-    banner('the gift card fallacy', 960, 200, 92, ['G1', 'gift card fallacy'], { bg: K.red, out: c('G3') });
-    if (T > w('G2', 'food card') && T < c('G3') + 0.4) box(380, 320, 1160, 300, 'rgba(21,19,17,0.82)', vis(w('G2', 'food card'), c('G3'))); else KC++;
-    rows([['food card instead of cash', ['G2', 'food card']], ['housing unit instead of cash', ['G2', 'housing unit']], ['a discount instead of cash', ['G2', 'A discount']]], 960, 380, 58, 90, { align: 'center', out: c('G3'), style: { color: K.cream, halo: 0 } });
+    banner('the gift card fallacy', 960, 200, 92, ['G1', 'gift card fallacy'], { bg: K.red, out: c('G2') });
+    card(960, 520, 1300, 520, c('G2'), () => {
+      Dm('usually not a belief. a reflex.', 0, -200, 40, { color: K.grey, alpha: fadeIn(w('G2', 'reflex'), 0.2) });
+      rows([['need housing  →  give housing', ['G2', 'need housing']], ['need food  →  give food', ['G2', 'need food']]], -380, -120, 50, 76);
+      Dm('compared against:', -150, 50, 38, { color: K.grey, alpha: fadeIn(w('G2', 'wrong baseline'), 0.2) });
+      D('nothing', 150, 50, 56, { color: K.grey, alpha: fadeIn(w('G2', 'against nothing'), 0.2) });
+      if (T > w('G2', 'false baseline')) strikeBar(60, 50, 250, w('G2', 'false baseline')); else KC++;
+      D('should be: the same help, no strings', 0, 140, 50, { color: K.green, alpha: fadeIn(w('G2', 'false baseline'), 0.2) });
+      stampX('the false baseline', 0, 215, 46, ['G2', 'false baseline']);
+    }, { out: c('G2b') });
     card(960, 560, 1400, 480, c('G2b'), () => {
       D('a benefit in kind =', 0, -160, 56, { color: K.grey });
       D('cash + a restriction', 0, -70, 92, { color: K.red });
@@ -546,23 +553,25 @@
     plate('snap', c('P2b') - 0.6, ce('P2b') + 0.6, { z: [1.1, 1.18], x: [-0.2, 0.2] });
     banner('food stamp rules, Republican edition', 960, 170, 60, c('P2b'), { bg: K.black });
     banner('no soda · no candy', 960, 290, 72, ['P2b', 'soda and candy'], { bg: K.red });
-    card(1340, 620, 960, 420, ['P2b', 'paternalism'], () => {
-      Dm('progressives: "paternalism!"', 0, -130, 44, { color: K.grey });
-      D('right. strings make a benefit worth less.', 0, -40, 48, { alpha: fadeIn(w('P2b', 'they were right'), 0.2) });
-      D('rent control. city grocery stores.', 0, 60, 48, { color: K.red, alpha: fadeIn(w('P2b', 'But rent control'), 0.2) });
-      D('the same move.', 0, 140, 60, { color: K.red, alpha: fadeIn(w('P2b', 'same move'), 0.2) });
+    card(1340, 620, 960, 440, ['P2b', 'paternalism'], () => {
+      Dm('progressives: "paternalism!"', 0, -150, 44, { color: K.grey });
+      D('and they were right', 0, -80, 50, { alpha: fadeIn(w('P2b', 'they were right'), 0.2) });
+      Dm('compared to:', -200, 20, 38, { color: K.grey, alpha: fadeIn(w('P2b', 'Nobody compared'), 0.2) });
+      D('no food stamps', 130, 20, 48, { color: K.grey, alpha: fadeIn(w('P2b', 'Nobody compared'), 0.2) });
+      if (T > w('P2b', 'They compared')) strikeBar(-60, 20, 320, w('P2b', 'They compared')); else KC++;
+      D('the same food stamps, no ban', 0, 110, 54, { color: K.green, alpha: fadeIn(w('P2b', 'without the ban'), 0.2) });
+      Dm('the right baseline, seen instantly', 0, 180, 34, { alpha: fadeIn(w('P2b', 'obvious'), 0.2) });
     });
     cite('USDA SNAP food restriction waivers, 2025–2026', ['P2b', 'soda and candy']);
   };
   const sP2c = () => {
     plate('dividend', c('P2c') - 0.6, ce('P2c') + 0.6, { z: [1.0, 1.1] });
-    card(960, 470, 1400, 520, c('P2c'), () => {
-      D('the real comparison', 0, -190, 50, { color: K.grey });
-      Dm('gift card vs. nothing', -330, -90, 50, { color: K.grey, alpha: fadeIn(w('P2c', 'compare it to nothing'), 0.2) });
-      if (T > w('P2c', 'never the alternative')) strikeBar(-560, -90, -100, w('P2c', 'never the alternative')); else KC++;
-      D('gift card vs. the same help, no strings', 0, 10, 56, { color: K.red, alpha: fadeIn(w('P2c', 'same help'), 0.2) });
-      D('trust them to vote?', -300, 140, 50, { alpha: fadeIn(w('P2c', 'trust poor people'), 0.2) });
-      D('then trust them to spend.', 300, 140, 50, { color: K.green, alpha: fadeIn(w('P2c', "why don't you trust"), 0.2) });
+    card(960, 470, 1400, 540, c('P2c'), () => {
+      D('use that baseline everywhere', 0, -200, 50, { color: K.grey });
+      rows([['rent control', ['P2c', 'rent control']], ['city grocery stores', ['P2c', 'grocery']], ['free-but-only-for-this', ['P2c', 'free-but']]], -560, -110, 44, 62);
+      D('vs. the same help, no strings', 220, -60, 52, { color: K.green, alpha: fadeIn(w('P2c', 'same help'), 0.2) });
+      Dm("Republicans: \"we don't trust them with groceries\"", 0, 90, 38, { alpha: fadeIn(w('P2c', "didn't trust"), 0.2) });
+      D('so why trust them less with an apartment?', 0, 175, 54, { color: K.red, alpha: fadeIn(w('P2c', 'why trust'), 0.2) });
     });
   };
   const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']]);
