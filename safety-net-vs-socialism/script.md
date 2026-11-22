@@ -62,11 +62,11 @@ M5 Underneath every item is the same move: replace a price the market would set 
 
 D1 The concept is called deadweight loss. The clearest way to see it is a gift.
 
-D2 Say I buy you a sweater for ten dollars. To you, it's worth about seven. And we don't have to guess at that. You had ten dollars all along, and you never chose to spend it on this sweater. Economists call that revealed preference: your own choices tell us what things are worth to you.
+D2 Say I buy you a sweater for ten dollars. How much is it worth to you? We don't have to guess. Offer you a choice: keep the sweater, or take cash instead. The smallest amount of cash you'd accept in its place is what it's worth to you. Say it's seven dollars. Economists call that revealed preference: your own choice tells us the value.
 
-D3 I'm down ten. You're up seven dollars' worth of sweater. Three dollars just disappeared. I didn't get it. You didn't get it. Nobody got it.
+D3 So I've spent ten dollars, and you've gained something worth seven. The other three dollars just disappeared. I didn't get them. You didn't get them. Nobody did.
 
-D4 This isn't a thought experiment. The economist Joel Waldfogel surveyed people about their holiday gifts and found that somewhere between a tenth and a third of what givers spent simply evaporated.
+D4 This isn't a thought experiment. The economist Joel Waldfogel asked people what cash they'd have accepted in place of each holiday gift they received, and found that somewhere between a tenth and a third of what givers spent simply evaporated.
 
 D6 Hand me a ten-dollar bill instead, and nothing is lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.
 

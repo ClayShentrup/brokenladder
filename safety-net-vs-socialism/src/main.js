@@ -366,14 +366,14 @@
     plate('sweater', c('D1') - 0.6, ce('D6') + 0.6, { z: [1.0, 1.1], x: [0.2, -0.2] });
     banner('deadweight loss', 960, 160, 90, ['D1', 'deadweight'], { bg: K.red, out: c('D2') });
     card(1440, 470, 760, 560, c('D2'), () => {
-      rows([['paid', ['D2', 'ten dollars']], ['worth to you', ['D2', 'worth about']], ['vanished', ['D3', 'disappeared']]], -320, -170, 54, 120);
+      rows([['paid', ['D2', 'ten dollars']], ['worth to you', ['D2', 'worth to you?']], ['vanished', ['D3', 'disappeared']]], -320, -170, 54, 120);
       D('$10', 300, -170, 72, { align: 'right', alpha: fadeIn(w('D2', 'ten dollars'), 0.2) });
-      D('~$7', 300, -50, 72, { align: 'right', alpha: fadeIn(w('D2', 'worth about'), 0.2) });
+      D('$7', 300, -50, 72, { align: 'right', alpha: fadeIn(w('D2', 'seven dollars'), 0.2) });
       D('$3', 300, 70, 72, { align: 'right', color: K.red, alpha: fadeIn(w('D3', 'disappeared'), 0.2) });
-      M('you had $10 and never bought it', 0, 200, 26, { color: K.grey, alpha: fadeIn(w('D2', 'never chose'), 0.3) });
+      M('= the cash you\'d take in its place', -310, 0, 22, { align: 'left', color: K.grey, alpha: fadeIn(w('D2', 'smallest amount'), 0.3) });
     }, { out: c('D4') });
-    banner('revealed preference', 520, 860, 64, ['D2', 'revealed preference'], { out: c('D4') });
-    banner('nobody got it', 520, 860, 64, ['D3', 'Nobody got'], { bg: K.red, out: c('D4') });
+    banner('revealed preference', 520, 860, 64, ['D2', 'revealed preference'], { out: c('D3') });
+    banner('nobody got it', 520, 860, 64, ['D3', 'Nobody did'], { bg: K.red, out: c('D4') });
     card(1300, 420, 960, 400, c('D4'), () => {
       D('holiday gifts', 0, -130, 50, { color: K.grey });
       D('1/10 to 1/3', 0, -20, 120, { color: K.red });
