@@ -402,7 +402,7 @@
       D('a $1,000 housing voucher', 0, -100, 72, { color: K.green });
       D('funded by a $1,000 tax on one landlord', 0, 10, 58, { color: K.red, alpha: fadeIn(w('R5', 'funded'), 0.2) });
       D('chosen more or less at random', 0, 110, 46, { alpha: fadeIn(w('R5', 'random'), 0.2) });
-    }, { out: c('R5b') });
+    }, { out: c('T1') });
     card(1380, 420, 860, 520, c('R5b'), () => {
       D('rent control', 0, -190, 56, { color: K.grey });
       D('= eviction control', 0, -110, 70, { color: K.red, alpha: fadeIn(w('R5b', 'eviction control'), 0.2) });
@@ -410,7 +410,7 @@
       D('the tax never expires', 0, 190, 52, { alpha: fadeIn(w('R5b', 'never expires'), 0.2) });
     }, { out: c('R6') });
     cite('NY Rent Stabilization Code, 9 NYCRR § 2523.5 (renewal leases)', c('R5b'), c('R6'));
-    stampX('same policy, friendlier name', 960, 860, 70, ['R5', 'friendlier'], { out: c('R5b') });
+    stampX('same policy, friendlier name', 960, 860, 70, ['R5', 'friendlier'], { out: c('T1') });
     banner('and people respond', 960, 200, 80, c('R6'), { bg: K.red, out: c('R7') });
     banner('the discount only works here', 640, 180, 62, ['R7', 'only works'], { out: c('R8') });
     if (T > w('R7', 'job across') && T < c('R8') + 0.4) box(90, 270, 680, 280, 'rgba(21,19,17,0.82)', vis(w('R7', 'job across'), c('R8'))); else KC++;
@@ -435,7 +435,7 @@
   }
   // 7. gift card fallacy
   function sGift() {
-    plates([['giftcard', c('G1') - 0.6, { z: [1.0, 1.1] }], ['sublet', c('G3b') - 0.2, { z: [1.0, 1.08] }], ['cashmarket', c('G5') - 0.2, { z: [1.0, 1.08] }]], ce('G5') + 0.6);
+    plates([['giftcard', c('G1') - 0.6, { z: [1.0, 1.1] }], ['sublet', c('G3b') - 0.2, { z: [1.0, 1.08] }], ['cashmarket', c('G5') - 1.4, { z: [1.0, 1.08] }]], ce('G5') + 0.6);
     banner('the gift card fallacy', 960, 200, 92, ['G1', 'gift card fallacy'], { bg: K.red, out: c('G2') });
     card(960, 520, 1300, 520, c('G2'), () => {
       Dm('usually not a belief. a reflex.', 0, -200, 40, { color: K.grey, alpha: fadeIn(w('G2', 'reflex'), 0.2) });
@@ -458,7 +458,7 @@
       rows([['eviction', ['G3c', 'evicted']], ['up to 3× the overcharge', ['G3c', 'three times']], ['public housing: lose the unit', ['G3c', 'public housing']]], -330, -50, 50, 90);
     }, { out: c('G3d') });
     cite('NY Rent Stabilization Code, 9 NYCRR § 2525.6', c('G3c'), c('G3d'));
-    stampX('a policy with an enforcement arm', 960, 860, 72, ['G3d', 'enforcement'], { out: c('G5') });
+    stampX('a policy with an enforcement arm', 960, 860, 72, ['G3d', 'enforcement'], { out: c('G3e') });
     card(1380, 380, 820, 420, c('G5'), () => {
       Dm('"they\'ll waste it"', 0, -140, 50, { color: K.grey });
       D('19 studies', 0, -50, 80, { color: K.red });
@@ -768,7 +768,7 @@
       D('a cutoff  →  a cliff', 0, -70, 64, { color: K.red, alpha: fadeIn(w('E13b', 'cutoff'), 0.2) });
       D('a phase-out  →  a hidden marginal tax', 0, 30, 54, { color: K.red, alpha: fadeIn(w('E13b', 'Phase it out'), 0.2) });
       D('back to means testing', 0, 150, 56, { alpha: fadeIn(w('E13b', 'back to means'), 0.2) });
-    });
+    }, { out: c('E11b') });
     card(1300, 480, 1000, 420, c('E15'), () => {
       Dm('object to rich people getting a check?', 0, -130, 40, { color: K.grey });
       D('hold Amazon\'s prices down?', 0, -30, 54);
