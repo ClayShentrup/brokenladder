@@ -502,7 +502,6 @@
       Dm('holiday gifts also carry', 0, -150, 44, { color: K.grey });
       D('the thought · the ritual · the people', 0, -70, 60, { color: K.green });
       D('a housing voucher carries none of that', 0, 40, 54, { color: K.red, alpha: fadeIn(w('D4b', 'none of that'), 0.2) });
-      D("no eggnog with uncle sam", 0, 140, 50, { alpha: fadeIn(w('D4b', 'eggnog'), 0.2) });
     }, { out: c('D6') });
     stampX('hand over $10 cash: nothing lost', 960, 860, 64, ['D6', 'ten-dollar bill']);
   }
