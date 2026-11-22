@@ -179,6 +179,20 @@
     card(960, 300, 1300, 260, c('N4'), () => {
       Dm('our question:', 0, -70, 44, { color: K.grey });
       D('what\'s the least wasteful way to deliver it?', 0, 20, 58);
+    }, { out: c('N4b') });
+    card(960, 520, 1300, 560, c('N4b'), () => {
+      const g = 1 + 0.18 * eOut(prog(T, w('N4b', 'Growing'), w('N4b', 'Growing', 0.6)));
+      const sl = T > w('N4b', 'Sharing') ? Math.round(lerp(1, 8, eOut(prog(T, w('N4b', 'Sharing'), w('N4b', 'Sharing', 0.8))))) : 1;
+      ctx.save(); ctx.translate(-360, 0); ctx.scale(g, g);
+      ctx.fillStyle = K.gold; ctx.beginPath(); ctx.arc(0, 0, 150, 0, 7); ctx.fill();
+      ctx.strokeStyle = K.black; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(0, 0, 150, 0, 7); ctx.stroke();
+      ctx.lineWidth = 5; for (let i = 0; i < sl && sl > 1; i++) { const a = (i / sl) * Math.PI * 2 - Math.PI / 2; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a) * 150, Math.sin(a) * 150); ctx.stroke(); }
+      ctx.restore(); KC += 4;
+      D('grow the pie', 260, -170, 56, { color: K.green, alpha: fadeIn(w('N4b', 'Growing'), 0.2) });
+      D('share the pie', 260, -80, 56, { color: K.red, alpha: fadeIn(w('N4b', 'Sharing'), 0.2) });
+      Dm('the usual fight: pick one', 260, 10, 36, { color: K.grey, alpha: fadeIn(w('N4b', 'trade one'), 0.2) });
+      D('share it without shrinking it', 260, 120, 50, { alpha: fadeIn(w('N4b', 'without shrinking'), 0.2) });
+      D('any more than you have to', 260, 185, 40, { color: K.grey, alpha: fadeIn(w('N4b', 'any more'), 0.2) });
     }, { out: c('N6') });
     stampX("that's not the argument we're making", 960, 880, 66, ['N6', "That's not"]);
   }
@@ -390,8 +404,6 @@
   const sP4 = () => { plate('airport', c('P4') - 0.6, ce('P4') + 0.6, { z: [1.15, 1.2] }); banner('price gouging laws: hold that thought', 960, 540, 64, c('P4'), {}); };
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
   const sP6 = parade('bus', 'P6', 'fare-free buses', ['half-decent excuse', ['P6', 'half-decent'], K.black], { extra: () => { banner('fewer cars: a real case', 960, 290, 46, ['P6', 'real case'], { bg: K.green }); banner('better: charge drivers for congestion', 960, 390, 46, ['P6', 'cleaner fix'], { bg: K.red }); } });
-  const sP7 = parade('port', 'P7', 'tariffs', ['same mistake, different team', ['P7', 'different team']], { extra: () => { banner('cost landed on American buyers', 960, 290, 50, ['P7', 'landed'], { bg: K.red }); cite('Amiti, Redding & Weinstein, Journal of Economic Perspectives (2019)', ['P7', 'Studies']); } });
-  const sP7b = () => { paperBg(); D('not unique to socialists.', 960, 400, 90, { alpha: fadeIn(c('P7b'), 0.3) }); D('but socialism is built from it.', 960, 560, 90, { color: K.red, alpha: fadeIn(w('P7b', 'But'), 0.3) }); txt('\u262D', 1660, 860, 260, { font: "'DejaVu Sans'", weight: 400, color: K.red, alpha: fadeIn(w('P7b', 'But'), 0.4), rot: 0 }); };
   const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['a hidden sales tax', ['P8', 'hidden sales tax']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner("doesn't hand workers money", 960, 290, 48, ['P8', "doesn't hand"], { bg: K.red }); banner('costs on every order, including poorer buyers', 960, 390, 44, ['P8', 'every online'], {}); } });
   const sP9 = () => { plate('giftcard', c('P9') - 0.6, ce('P9') + 0.6, { z: [1.18, 1.0] }); card(960, 520, 1300, 360, c('P9'), () => { D('help in kind instead of cash', 0, -80, 64); D('paid for by a tax on some trade', 0, 30, 56, { color: K.red, alpha: fadeIn(w('P9', 'Paid'), 0.2) }); D('gift cards all the way down', 0, 120, 46, { alpha: fadeIn(ce('P9', -1.2), 0.3) }); }); };
   // 8b. surge pricing
@@ -668,24 +680,27 @@
     M('economic physics', 960, 760, 28, { color: K.cream, alpha: fadeIn(ce('Z8', 0.5), 0.4) });
   }
 
-  // 14b. neoliberalism, reclaimed: a turn to full-color daylight
+  // 14b. a name for it: a turn to full-color daylight
   function sNeo() {
-    plates([['colloquium', c('L1') - 0.6, { z: [1.0, 1.08] }], ['liberty', c('L4') - 0.2, { z: [1.0, 1.1] }], ['pride', ['L4', 'freedom to love', -0.2], { z: [1.0, 1.08] }], ['energy', ['L4', 'Solar', -0.2], { z: [1.0, 1.08] }], ['liberty', ['L4', 'safety net', -0.2], { z: [1.1, 1.16] }]], ce('L4') + 0.6);
+    plates([['liberty', c('L1') - 0.6, { z: [1.0, 1.08] }], ['energy', c('L3') - 0.2, { z: [1.0, 1.08] }]], ce('L3') + 0.6);
     const B = '#1f4e8c', G = '#d9a21b';
-    banner('neoliberalism', 960, 200, 110, ['L1', 'Neoliberalism'], { bg: B, shadowCol: G, out: c('L2') });
-    card(1340, 380, 900, 420, c('L2'), () => {
-      Dm('coined at', 0, -140, 40, { color: K.grey });
-      D('the Walter Lippmann Colloquium', 0, -60, 54, { color: B });
-      D('Paris, 1938', 0, 20, 70);
-      Dm('after laissez-faire collapsed, as communism and fascism rose', 0, 120, 30, { alpha: fadeIn(w('L2', 'collapse'), 0.2) });
+    banner('so what do you call this?', 960, 200, 90, c('L1'), { bg: B, shadowCol: G, out: c('L2') });
+    card(1300, 470, 1100, 560, c('L2'), () => {
+      D('neoliberalism', -480, -210, 50, { color: K.grey, align: 'left' });
+      Dm('an insult that barely means anything', -480, -160, 32, { align: 'left', alpha: fadeIn(w('L2', 'insult'), 0.2) });
+      D('market socialism', -480, -90, 50, { color: K.grey, align: 'left', alpha: fadeIn(w('L2', 'Market socialism'), 0.2) });
+      Dm('"socialism" in the name, and it means worker-owned firms', -480, -40, 32, { align: 'left', alpha: fadeIn(w('L2', 'worker-owned'), 0.2) });
+      if (T > w('L2', 'clearest')) { strikeBar(-490, -210, -150, w('L2', 'clearest')); strikeBar(-490, -90, -80, w('L2', 'clearest', 0.2)); } else KC += 2;
+      D('the free-market welfare state', 0, 80, 72, { color: B, alpha: fadeIn(w('L2', 'free-market welfare'), 0.2) });
+      Dm('Niskanen Center', 0, 160, 32, { color: K.grey, alpha: fadeIn(w('L2', 'free-market welfare'), 0.2) });
     }, { out: c('L3') });
-    card(1340, 420, 900, 520, c('L3'), () => {
-      D('a third road', 0, -200, 64, { color: B });
-      rows([['keep the market economy', ['L3', 'Keep the market']], ['write the rules', ['L3', 'write the rules']], ['correct market failures', ['L3', 'correct']], ['nobody falls through', ['L3', 'nobody falls']]], -360, -100, 50, 76);
-      Dm('Hayek, The Road to Serfdom (1944) · Mont Pelerin Society (1947)', 0, 215, 26, { color: K.grey, alpha: fadeIn(w('L3', 'Hayek'), 0.2) });
-    }, { out: c('L4') });
-    banner('a market economy and an open society', 960, 180, 62, c('L4'), { bg: B, shadowCol: G, out: ['L4', 'freedom to love'] });
-    banner('in cash, without the waste', 960, 880, 72, ['L4', 'in cash'], { bg: G, fg: K.black, shadowCol: B });
+    card(1300, 470, 1100, 520, c('L3'), () => {
+      D('the naming problem is the whole problem', 0, -180, 44, { color: K.grey });
+      D('team "help people"', 0, -100, 50, { color: K.red, alpha: fadeIn(w('L3', 'two teams'), 0.2) });
+      D('team "make markets work"', 0, -30, 50, { color: K.black, alpha: fadeIn(w('L3', 'wants markets'), 0.2) });
+      D('the third option, rarely named', 0, 90, 64, { color: B, alpha: fadeIn(w('L3', 'third option'), 0.2) });
+      Dm('share the pie without shrinking it', 0, 170, 36, { alpha: fadeIn(w('L3', 'third option'), 0.2) });
+    });
   }
 
   // ---------- assembly ----------

@@ -40,6 +40,8 @@ N3 This video takes no position on how much we should help the poor. More than n
 
 N4 Our question is narrower, and a lot harder to wriggle out of. Whatever amount of help you've decided on, what's the least wasteful way to deliver it?
 
+N4b Picture the economy as a pie. Growing the pie is one goal. Sharing it is another. Most political fights assume you have to trade one for the other. This video is about sharing the pie, however much you want to share, without shrinking it any more than you have to.
+
 N6 If at any point you think you hear the case for cutting welfare, you don't. That's not the argument we're making, and we'll keep saying so.
 
 ---
@@ -336,15 +338,13 @@ Z6 Pick any amount of redistribution you like. Zero, a little, a lot. Whatever i
 
 ---
 
-## 14b. an old name, worth reclaiming
+## 14b. a name for it
 
-L1 There's an old name for this way of thinking, and it's been badly abused. Neoliberalism.
+L1 So what do you call this? That's harder than it sounds.
 
-L2 The word mostly gets thrown around as an insult, shorthand for austerity and deregulation. But it was coined in Paris in nineteen thirty-eight, at the Walter Lippmann Colloquium, by liberals who had watched laissez-faire collapse into the Depression, and watched communism and fascism rise in its place.
+L2 Neoliberalism has been thrown around as an insult for so long that it barely means anything. Market socialism sounds close, but it still has socialism in the name, and it means something else entirely: worker-owned firms competing in markets. The clearest name might be the one from that Niskanen paper. The free-market welfare state.
 
-L3 Their answer was a third road. Keep the market economy, because nothing else prices things so well or respects free choice. But give government real jobs: write the rules, correct the market's failures, and make sure nobody falls through. Even Friedrich Hayek, who founded the Mont Pelerin Society after the war, wrote that a basic minimum of food, shelter and clothing could be assured to everybody.
-
-L4 That's the tradition this video belongs to. A market economy and an open society. The freedom to love and marry whoever you choose. Cities covered in murals. Solar fields, wind turbines and nuclear plants powering all of it. And a safety net that treats people like adults: delivered in cash, without the waste.
+L3 And that naming problem is the whole problem in miniature. Without a word for sharing the pie without shrinking it, people assume there are only two teams: the one that wants to help people, and the one that wants markets to work. Most voters never hear the third option named, let alone explained.
 
 ---
 
@@ -366,6 +366,6 @@ Z8 Whatever you think people deserve, give it to them in cash.
 - credit max ghenis (pronounced GEN-iss, hard g) in the description, and as small on-screen text beside the PolicyEngine figures in E10, for the subletting test and the universality and timing arguments. the narration names PolicyEngine, not max: his name means little to a cold audience, and the institution carries the numbers. if he's ever named aloud, respell it for TTS as "Max GEN-iss"
 - E10 source: max ghenis, "means testing and universalism," BIG conference, 2023-06-09 (sources/ghenis-2023-means-testing-and-universalism.pdf, slide 4): california single parent, children 10 and 5, pays rent and childcare; earnings $25,000 -> $50,000; net income $43,206 -> $48,800; government took 78% of the additional earnings. on screen: "PolicyEngine (Ghenis, 2023)". robustness check with policyengine-us 2.152.15, tax year 2026, no rent or childcare inputs: 56% cash only, 111% counting health coverage at cost (tools/policyengine_cliff.py). a california billionaire's top combined rate is roughly 54%
 - 14b switches visual style: from the red-and-black poster look to full-color daylight (statue of liberty, a pride march under murals, solar, wind and nuclear), then back to the end card
-- on-screen sources: hayek, the road to serfdom (1944); lippmann colloquium, paris (1938); mont pelerin society (1947); cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; friedman 1962; george 1879; pigou 1920
+- on-screen sources: cbo, how the supply of labor responds to changes in fiscal policy (2012); waldfogel 1993; diamond, mcquade & qian 2019; evans & popova 2017; friedman 1962; george 1879; pigou 1920
 - show the actual post on screen for O2 (@NYCMayor, 12:25 pm, nov 19, 2026, quoting @emmagf's screenshot of amazon's "could add up to $5 per order" alert). quote it word for word; the narration reads it exactly
 - the cold open is pegged to the 2026-11-19 mamdani post about intro 518 and is dated on purpose; everything else avoids dollar figures that age, or uses them only as round illustrations
