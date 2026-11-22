@@ -226,7 +226,7 @@ K2 Let's be precise about what it means, because almost nobody is. The trickle-d
 
 K3 Sometimes that's true. For rent control, it may well be true. Scrap it, more housing gets built, rents fall, and many tenants end up better off.
 
-K4 But it isn't true everywhere, automatically. And that's where the usual left-right fight gets stuck. One side says the efficiency gain is worth it. The other side says the equity loss is worth avoiding. They argue about where to set one knob: more redistribution and more waste, or less of both.
+K4 But it isn't true everywhere, automatically. And that's where the usual left-right fight gets stuck. One side says grow the pie, even if it's shared less evenly. The other says share the pie, even if it shrinks. They argue about where to set one knob: more sharing and a smaller pie, or a bigger pie and less sharing.
 
 K5 We're turning a different knob entirely.
 

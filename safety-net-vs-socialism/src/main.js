@@ -653,7 +653,7 @@
       const left = clamp(0.5 + 0.35 * Math.sin((T - c('K4')) * 1.3), 0, 1);
       const k9 = T > w('K9', 'Turn the') ? eIO(prog(T, w('K9', 'Turn the'), w('K9', 'as you like'))) : 0;
       knob(520, 470, 150, T < c('K5') ? left : lerp(0.5, 0.95, k9), 'how much', K.red);
-      D('the fight everyone has', 520, 180, 46, { color: K.grey, alpha: fadeIn(c('K4'), 0.3) });
+      D('grow the pie vs. share the pie', 520, 180, 46, { color: K.grey, alpha: fadeIn(c('K4'), 0.3) });
       const right = T > c('K6') ? eIO(prog(T, c('K6'), ce('K6'))) : 0.1;
       if (T > c('K5')) { knob(1400, 470, 150, 0.1 + 0.85 * right, 'how', K.green); D('a different knob', 1400, 180, 54, { color: K.green, alpha: fadeIn(c('K5'), 0.3) }); } else KC += 30;
       banner('hold the redistribution fixed. cut the waste.', 960, 900, 56, c('K6'), { bg: K.black, out: c('K8') });
