@@ -56,7 +56,7 @@ M1 First, a word on terms, because someone in the comments is already typing.
 
 M2 What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.
 
-M3 People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.
+M3 People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually campaign on: rent freezes, city-run grocery stores, fare-free buses, and mandates like that delivery law.
 
 M4 Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.
 
@@ -100,7 +100,7 @@ T7 Hold onto those two ideas. Benefits that are worth less than they cost. Taxes
 
 ## 6. exhibit a: rent control
 
-R1 Rent control. The flagship. Mamdani campaigned on freezing the rent on a million stabilized apartments.
+R1 Rent control. The flagship policy, on the platform of self-described socialists almost everywhere.
 
 R2 So take one. Market rent, three thousand dollars a month. Controlled rent, two thousand.
 
@@ -172,9 +172,9 @@ P2c Now use that baseline everywhere. Compare rent control, city grocery stores 
 
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 
-P5 Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.
+P5 City-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.
 
-P6 Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
+P6 Fare-free buses. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
 
 P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.
 

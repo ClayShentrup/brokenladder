@@ -272,7 +272,7 @@
     }, { out: c('M3') });
     card(560, 520, 860, 600, c('M3'), () => {
       D('what self-described socialists run on', 0, -240, 40, { color: K.red });
-      rows([['a rent freeze', ['M3', 'rent freeze']], ['city-run grocery stores', ['M3', 'grocery']], ['fare-free buses', ['M3', 'fare-free']], ['delivery mandates', ['M3', 'delivery law']]], -360, -140, 56, 86);
+      rows([['rent freezes', ['M3', 'rent freeze']], ['city-run grocery stores', ['M3', 'grocery']], ['fare-free buses', ['M3', 'fare-free']], ['delivery mandates', ['M3', 'delivery law']]], -360, -140, 56, 86);
     }, { out: c('M5') });
     if (T > c('M4') && T < c('M5') + 0.4) box(1040, 230, 760, 400, 'rgba(21,19,17,0.82)', vis(c('M4'), c('M5'))); else KC++;
     if (T > c('M4')) { rows([['+ price controls', ['M4', 'Price controls']], ['      e.g. rent control, the minimum wage', ['M4', 'rent control'], { color: '#e3a3a0', weight: 500, size: 34 }], ['+ nationalized industries', ['M4', 'Nationalized']], ['+ benefits in kind', ['M4', 'in kind']]], 1080, 300, 50, 86, { out: c('M5'), style: { color: K.cream, halo: 0 } }); } else KC += 8;
@@ -351,7 +351,7 @@
     plates([['rentlock', c('R1') - 0.6, { z: [1.0, 1.1] }], ['landlord', ['R4', 'one person', -0.2], { z: [1.0, 1.1] }], ['rentlock', c('R5'), { z: [1.1, 1.18] }],
       ['stuck', c('R7') - 0.2, { z: [1.0, 1.1] }], ['condos', c('R8') - 0.2, { z: [1.0, 1.1] }], ['economists', c('R9') - 0.2, { z: [1.0, 1.08] }], ['rentlock', c('R10') - 0.2, { z: [1.18, 1.0] }]], ce('R10') + 0.6);
     banner('the flagship', 1400, 200, 80, c('R1'), { bg: K.red, out: c('R2') });
-    banner('rent freeze · ~1 million stabilized apartments', 1300, 320, 44, ['R1', 'freezing'], { out: c('R2') });
+    banner('on socialist platforms almost everywhere', 1300, 320, 44, ['R1', 'almost everywhere'], { out: c('R2') });
     card(1430, 420, 760, 480, c('R2'), () => {
       Dm('market rent', -300, -160, 44, { align: 'left', color: K.grey }); D('$3,000', 300, -160, 64, { align: 'right' });
       Dm('controlled rent', -300, -60, 44, { align: 'left', color: K.grey }); D('$2,000', 300, -60, 64, { align: 'right', color: K.red, alpha: fadeIn(w('R2', 'two thousand'), 0.2) });
