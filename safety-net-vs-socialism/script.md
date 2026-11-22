@@ -120,6 +120,8 @@ G1 Rent control is one example of a pattern so common it deserves a name. Call i
 
 G2 The gift card fallacy is the belief that you help people more by giving them something specific than by giving them money. A food card instead of cash. A housing unit instead of cash. A discount on one thing instead of cash.
 
+G2b Put another way, a benefit in kind is just cash, with a restriction on how you can spend it. Handing you a ten-dollar sweater is the same as handing you ten dollars, plus one rule: you may only spend it on this sweater. And a rule can never give you more options. It can only take them away.
+
 G3 Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes.
 
 G3a This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse.

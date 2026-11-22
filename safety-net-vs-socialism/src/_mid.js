@@ -310,6 +310,12 @@
     banner('the gift card fallacy', 960, 200, 92, ['G1', 'gift card fallacy'], { bg: K.red, out: c('G3') });
     if (T > w('G2', 'food card') && T < c('G3') + 0.4) box(380, 320, 1160, 300, 'rgba(21,19,17,0.82)', vis(w('G2', 'food card'), c('G3'))); else KC++;
     rows([['food card instead of cash', ['G2', 'food card']], ['housing unit instead of cash', ['G2', 'housing unit']], ['a discount instead of cash', ['G2', 'A discount']]], 960, 380, 58, 90, { align: 'center', out: c('G3'), style: { color: K.cream, halo: 0 } });
+    card(960, 560, 1400, 480, c('G2b'), () => {
+      D('a benefit in kind =', 0, -160, 56, { color: K.grey });
+      D('cash + a restriction', 0, -70, 92, { color: K.red });
+      D('$10 sweater  =  $10  +  "only spend it on this sweater"', 0, 50, 42, { alpha: fadeIn(w('G2b', 'Handing you'), 0.2), raw: false });
+      D('a rule never adds options. it only removes them.', 0, 150, 44, { alpha: fadeIn(w('G2b', 'never give'), 0.2) });
+    }, { out: c('G3') });
     stampX('every gift card is the sweater', 960, 860, 76, c('G3'), { out: c('G3a') });
     card(960, 470, 1460, 560, c('G3a'), () => {
       D('ask the family: what would you do with the cash?', 0, -210, 46, { color: K.red });
