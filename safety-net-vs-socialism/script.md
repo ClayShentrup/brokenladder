@@ -264,7 +264,7 @@ X5 The owner didn't do any of that. The value soaked into the lot from everythin
 
 X6 Now tax that land value. Look at who pays: the owner. Now look at who created the value: the train station, the shops, the hospital, the neighbors. The person paying the tax isn't the one whose work leaked into the land. And the bill is the same whether they build, sell, work, or sit in a lawn chair. Nothing they do changes it. No trade gets blocked. No deadweight loss.
 
-X7 How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push land values higher still, because much of what those taxes take would show up instead as higher land rents.
+X7 How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. Here's why that's plausible. Scrap the taxes on wages and sales, and people have more money to spend. Much of it ends up competing for the same places to live and work, and that competition pushes up the rental value of land. So the land tax brings in more, and it still doesn't block a single trade.
 
 X8 To the extent that still falls short, add one flat tax on consumption, with as few loopholes as possible. That part does block some trades. It shrinks the pie a little. So keep it as small as you can.
 

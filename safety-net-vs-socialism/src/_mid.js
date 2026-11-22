@@ -527,11 +527,11 @@
       D('same bill either way', 0, 100, 48, { color: K.red, alpha: fadeIn(w('X6', 'Nothing they do'), 0.2) });
     }, { out: c('X7') });
     stampX('no deadweight loss', 960, 900, 90, ['X6', 'No deadweight'], { out: c('X7') });
-    card(1300, 330, 1000, 380, c('X7'), () => {
-      D('Henry George, 1879', 0, -120, 54, { color: K.red });
-      Dm('a land tax alone could fund the government', 0, -30, 40);
-      Dm('drop other taxes → the rental value of land rises', 0, 50, 36, { alpha: fadeIn(w('X7', 'scrapping'), 0.2) });
-      Dm('Progress and Poverty', 0, 130, 28, { color: K.grey });
+    card(1300, 400, 1040, 560, c('X7'), () => {
+      D('Henry George, 1879', 0, -220, 54, { color: K.red });
+      Dm('a land tax alone could fund the government', 0, -150, 38);
+      rows([['scrap wage & sales taxes  →  more money to spend', ['X7', 'Scrap the taxes']], ['competing for the same places  →  land rents rise', ['X7', 'competing']], ['the land tax brings in more', ['X7', 'brings in more']]], -460, -60, 40, 80);
+      D('and still blocks no trade', 0, 200, 52, { color: K.green, alpha: fadeIn(w('X7', "doesn't block"), 0.2) });
     }, { out: c('X8') });
     banner('any shortfall: one flat tax on consumption', 960, 200, 58, c('X8'), { bg: K.red });
     banner('that part shrinks the pie a little. keep it small.', 960, 320, 46, ['X8', 'shrinks'], {});
