@@ -50,7 +50,7 @@ M1 First, a word on terms, because someone in the comments is already typing.
 
 M2 What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.
 
-M3 Today, people use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.
+M3 People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.
 
 M4 Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.
 
@@ -156,7 +156,7 @@ P1 A public housing lottery. Win it, and you get one particular apartment, in on
 
 P2 Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit.
 
-P2b And notice who's been adding rules lately. The Trump administration has approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.
+P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.
 
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 
@@ -240,7 +240,7 @@ W1 Economics has a result for this, and it's been sitting in the textbooks for d
 
 W2 In its ideal form, it says you can reach any distribution of resources you like, a little sharing or a lot, without shrinking the economy at all, as long as the money moves in ways that don't depend on what anyone does.
 
-W3 Real life never gets that perfect. But we can get much closer than we do now.
+W3 Real life never gets that perfect. But we can get much closer than any gift card ever will.
 
 W4 And this splits one fight into two. How much to share is a question of values. How to share is a question of engineering. And engineering has better and worse answers.
 
@@ -260,7 +260,7 @@ X5 The owner didn't do any of that. The value soaked into the lot from everythin
 
 X6 Now tax that land value. Look at who pays: the owner. Now look at who created the value: the train station, the shops, the hospital, the neighbors. The person paying the tax isn't the one whose work leaked into the land. And the bill is the same whether they build, sell, work, or sit in a lawn chair. Nothing they do changes it. No trade gets blocked. No deadweight loss.
 
-X7 How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push land values higher still, because much of what those taxes take today would show up instead as higher land rents.
+X7 How far can these two go? Further than most people think. Henry George argued in eighteen seventy-nine that a land tax alone could fund the government. And there's a good case that scrapping every other tax would push land values higher still, because much of what those taxes take would show up instead as higher land rents.
 
 X8 To the extent that still falls short, add one flat tax on consumption, with as few loopholes as possible. That part does block some trades. It shrinks the pie a little. So keep it as small as you can.
 
@@ -286,7 +286,7 @@ E8 One marginal rate. Effective rates that climb from deeply negative to nearly 
 
 E9 And the marginal rate is the one that matters for behavior, because it's what you face when you decide whether to take the extra shift. Which brings us to the ugliest number in the welfare state.
 
-E10 Here's what that looks like today. PolicyEngine, which builds an open-source model of the American tax and benefit system, ran the numbers for a single parent in California with two kids, paying rent and childcare on a low wage. Double their pay. After lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra. An effective marginal tax rate of nearly eighty percent.
+E10 Here's what that looks like in practice. PolicyEngine, which builds an open-source model of the American tax and benefit system, ran the numbers for a single parent in California with two kids, paying rent and childcare on a low wage. Double their pay. After lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra. An effective marginal tax rate of nearly eighty percent.
 
 E10b Read that again. A single parent near the poverty line can face a higher marginal tax rate than a billionaire. And at some incomes, losing a benefit all at once means earning more leaves you with less. That's the welfare cliff.
 
@@ -336,7 +336,7 @@ Z6 Pick any amount of redistribution you like. Zero, a little, a lot. Whatever i
 
 L1 There's an old name for this way of thinking, and it's been badly abused. Neoliberalism.
 
-L2 Today the word mostly gets thrown around as an insult, shorthand for austerity and deregulation. But it was coined in Paris in nineteen thirty-eight, at the Walter Lippmann Colloquium, by liberals who had watched laissez-faire collapse into the Depression, and watched communism and fascism rise in its place.
+L2 The word mostly gets thrown around as an insult, shorthand for austerity and deregulation. But it was coined in Paris in nineteen thirty-eight, at the Walter Lippmann Colloquium, by liberals who had watched laissez-faire collapse into the Depression, and watched communism and fascism rise in its place.
 
 L3 Their answer was a third road. Keep the market economy, because nothing else prices things so well or respects free choice. But give government real jobs: write the rules, correct the market's failures, and make sure nobody falls through. Even Friedrich Hayek, who founded the Mont Pelerin Society after the war, wrote that a basic minimum of food, shelter and clothing could be assured to everybody.
 

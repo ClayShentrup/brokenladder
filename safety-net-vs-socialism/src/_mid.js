@@ -456,7 +456,7 @@
       D('the second welfare theorem', 0, -50, 76, { color: K.red });
       Dm('any distribution, no shrinkage, if transfers don\'t depend on what anyone does', 0, 50, 32, { alpha: fadeIn(c('W2'), 0.3) });
     }, { out: c('W4') });
-    banner('real life: never perfect. much closer than now.', 960, 820, 54, c('W3'), { out: c('W4') });
+    banner('never perfect. far closer than any gift card.', 960, 820, 54, c('W3'), { out: c('W4') });
     card(960, 520, 1300, 380, c('W4'), () => {
       D('how much to share?', -300, -100, 54); D('values', 300, -100, 60, { color: K.grey });
       D('how to share?', -300, 30, 54, { alpha: fadeIn(w('W4', 'How to share'), 0.2) }); D('engineering', 300, 30, 60, { color: K.red, alpha: fadeIn(w('W4', 'engineering'), 0.2) });
