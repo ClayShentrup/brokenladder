@@ -83,7 +83,7 @@
   const strikeBar = (x1, y, x2, q) => { const u = eOut(prog(T, at(q), at(q) + 0.25)); if (u > 0) box(x1, y - 5, (x2 - x1) * u, 11, K.red); };
   // a list of lines that reveal on cues; rows: [text, cue, op]
   function rows(list, x, y, size, gap, op = {}) {
-    list.forEach(([s, q, o], i) => { const a = vis(at(q), op.out != null ? at(op.out) : null); if (a > 0) (o && o.mono ? M : D)(s, x, y + i * gap, size, Object.assign({ align: op.align || 'left', alpha: a, color: K.black }, op.style || {}, o || {})); else KC++; });
+    list.forEach(([s, q, o], i) => { const a = vis(at(q), op.out != null ? at(op.out) : null); if (a > 0) (o && o.mono ? M : D)(s, x, y + i * gap, (o && o.size) || size, Object.assign({ align: op.align || 'left', alpha: a, color: K.black }, op.style || {}, o || {})); else KC++; });
   }
   // the clean red/black paper background for chart scenes
   function paperBg() {
@@ -196,7 +196,7 @@
       rows([['a rent freeze', ['M3', 'rent freeze']], ['city-run grocery stores', ['M3', 'grocery']], ['fare-free buses', ['M3', 'fare-free']], ['delivery mandates', ['M3', 'delivery law']]], -360, -140, 56, 86);
     }, { out: c('M5') });
     if (T > c('M4') && T < c('M5') + 0.4) box(1040, 230, 760, 400, 'rgba(21,19,17,0.82)', vis(c('M4'), c('M5'))); else KC++;
-    if (T > c('M4')) { rows([['+ price controls', ['M4', 'Price controls']], ['+ politicians\' minimum wages', ['M4', 'Minimum']], ['+ nationalized industries', ['M4', 'Nationalized']], ['+ benefits in kind', ['M4', 'in kind']]], 1080, 300, 54, 90, { out: c('M5'), style: { color: K.cream, halo: 0 } }); } else KC += 8;
+    if (T > c('M4')) { rows([['+ price controls', ['M4', 'Price controls']], ['      e.g. rent control, the minimum wage', ['M4', 'rent control'], { color: '#e3a3a0', weight: 500, size: 34 }], ['+ nationalized industries', ['M4', 'Nationalized']], ['+ benefits in kind', ['M4', 'in kind']]], 1080, 300, 50, 86, { out: c('M5'), style: { color: K.cream, halo: 0 } }); } else KC += 8;
     banner('a price set by politics', 960, 200, 76, ['M5', 'decision made'], {});
     banner('central planning, one building at a time', 960, 330, 56, ['M5', 'central planning'], { bg: K.red });
   }

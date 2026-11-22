@@ -52,7 +52,7 @@ M2 What is socialism, exactly? Even its founders weren't tidy about it. Marx and
 
 M3 Today, people use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.
 
-M4 Add the rest of the usual menu. Price controls. Minimum wages set by politicians. Nationalized industries. Benefits handed out in kind instead of in cash.
+M4 Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.
 
 M5 Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.
 
