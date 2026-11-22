@@ -584,7 +584,7 @@
     card(1380, 380, 820, 420, c('C4'), () => {
       D('minimum wage evidence', 0, -140, 50, { color: K.grey });
       D('mixed', 0, -40, 110, { color: K.red });
-      Dm('a modest one may help more than it costs', 0, 80, 36, { alpha: fadeIn(w('C4', 'plausible'), 0.2) });
+      Dm('a modest one may help low earners more than it hurts the economy', 0, 80, 30, { alpha: fadeIn(w('C4', 'plausible'), 0.2) });
     }, { out: c('C6') });
     stampX("those aren't your only choices", 960, 860, 80, c('C6'));
   }

@@ -219,7 +219,7 @@ C2 And replace them with nothing.
 
 C3 That's why their argument never lands. To a voter who wants to help people, "replace it with nothing" sounds exactly like "I don't want to help people." And the socialist on social media gets to say: you think kids shouldn't eat?
 
-C4 Take the minimum wage. The evidence on moderate increases is mixed. Some studies find meaningful job losses. Others find almost none. It's at least plausible that a modest minimum wage helps low earners more than it costs, up to a point.
+C4 Take the minimum wage. The evidence on moderate increases is mixed. Some studies find meaningful job losses. Others find almost none. It's at least plausible that, up to a point, what a modest minimum wage does for low earners outweighs the harm it does to the wider economy.
 
 C5 We're not going to pretend otherwise. If your only choices were a modest minimum wage or nothing, the minimum wage might win.
 
