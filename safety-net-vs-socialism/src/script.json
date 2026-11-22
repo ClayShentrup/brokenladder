@@ -294,8 +294,8 @@
   },
   {
    "id": "P8",
-   "text": "Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It hands them rules about how their jobs must be run: help they can only take in one form, whether or not it's the form they'd have chosen.",
-   "gap": 1.3
+   "text": "Which brings us back to Amazon. Some of the delivery law, like training and safety standards, might address real problems. You can't easily check how well a driver was trained, and reckless driving puts everyone on the street at risk. Fair enough. But the core of the bill is forcing companies to hire drivers as employees instead of contractors. That doesn't hand drivers money. It hands them a fixed package of job terms, help they can only take in one form, whether or not it's the form they'd have chosen.",
+   "gap": 1.6
   },
   {
    "id": "P9",
@@ -402,6 +402,11 @@
    "id": "R10",
    "text": "So rent control fails both tests. It's a benefit worth less than it costs, and it's a tax that kills trades. A double leak.",
    "gap": 1.3
+  },
+  {
+   "id": "R11",
+   "text": "The same goes for that delivery law. Making every driver a direct employee piles fixed costs onto every hire. For many drivers, the job still works. But at the margin, some hires stop penciling out, and deliveries that both sides wanted never happen. That's the roof, all over again.",
+   "gap": 1.6
   },
   {
    "id": "O2b",

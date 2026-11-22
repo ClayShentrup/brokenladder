@@ -124,6 +124,8 @@ R9 When leading economists were surveyed on whether rent control had made housin
 
 R10 So rent control fails both tests. It's a benefit worth less than it costs, and it's a tax that kills trades. A double leak.
 
+R11 The same goes for that delivery law. Making every driver a direct employee piles fixed costs onto every hire. For many drivers, the job still works. But at the margin, some hires stop penciling out, and deliveries that both sides wanted never happen. That's the roof, all over again.
+
 ---
 
 ## 7. the gift card fallacy
@@ -178,7 +180,7 @@ P5 City-owned grocery stores, which wouldn't pay rent or property tax. Those wai
 
 P6 Fare-free buses. This one gets partial credit. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion and pollution they cause. A gift card with a half-decent excuse.
 
-P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It hands them rules about how their jobs must be run: help they can only take in one form, whether or not it's the form they'd have chosen.
+P8 Which brings us back to Amazon. Some of the delivery law, like training and safety standards, might address real problems. You can't easily check how well a driver was trained, and reckless driving puts everyone on the street at risk. Fair enough. But the core of the bill is forcing companies to hire drivers as employees instead of contractors. That doesn't hand drivers money. It hands them a fixed package of job terms, help they can only take in one form, whether or not it's the form they'd have chosen.
 
 P9 Policy after policy, take it apart and you find the same machine inside: help delivered in kind instead of cash. Help with strings attached.
 

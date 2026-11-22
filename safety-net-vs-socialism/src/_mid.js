@@ -246,6 +246,12 @@
     });
     stampX('real, but narrow', 1300, 900, 80, ['G6', 'narrow']);
   }
+  function sDeliveryCost() {
+    plates([['delivery', c('R11') - 0.6, { z: [1.12, 1.2] }], ['roofer', ['R11', 'the roof'], { z: [1.0, 1.05] }]], ce('R11') + 0.6);
+    banner('every driver an employee = fixed costs on every hire', 960, 170, 52, c('R11'), {});
+    banner('at the margin: hires stop penciling out', 960, 290, 56, ['R11', 'at the margin'], { bg: K.red });
+    stampX('wanted deliveries that never happen', 960, 880, 64, ['R11', 'never happen']);
+  }
   function sMenu() {
     plate('menu', c('O7') - 0.6, ce('O8') + 0.6, { z: [1.0, 1.1] });
     banner('the same mistake, over and over', 960, 220, 76, ['O7', 'same mistake']);
@@ -518,7 +524,7 @@
   const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']], { extra: () => { banner('Japan: no car without an off-street space', 960, 290, 46, ['P3', 'Japan'], { bg: K.red, out: ['P3', 'Here,'] }); banner('overnight street parking: mostly banned', 960, 390, 44, ['P3', 'overnight'], { out: ['P3', 'Here,'] }); } });
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
   const sP6 = parade('bus', 'P6', 'fare-free buses', ['half-decent excuse', ['P6', 'half-decent'], K.black], { extra: () => { banner('fewer cars: a real case', 960, 290, 46, ['P6', 'real case'], { bg: K.green }); banner('better: charge drivers for congestion and pollution', 960, 390, 46, ['P6', 'cleaner fix'], { bg: K.red }); } });
-  const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['help in one form only', ['P8', 'chosen']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner("doesn't hand workers money", 960, 290, 48, ['P8', "doesn't hand"], { bg: K.red }); banner('rules about how the job must be run', 960, 390, 44, ['P8', 'rules about'], {}); } });
+  const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['help in one form only', ['P8', 'chosen']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner('training & safety: maybe fair', 960, 290, 48, ['P8', 'training and safety'], { bg: K.green, out: ['P8', 'But the core'] }); banner('the core: drivers must be employees', 960, 290, 48, ['P8', 'But the core'], { bg: K.red }); banner("doesn't hand drivers money", 960, 390, 44, ['P8', "doesn't hand"], {}); } });
   const sP9 = () => { plate('giftcard', c('P9') - 0.6, ce('P9') + 0.6, { z: [1.18, 1.0] }); card(960, 520, 1300, 360, c('P9'), () => { D('help in kind instead of cash', 0, -80, 64); D('help with strings attached', 0, 30, 56, { color: K.red, alpha: fadeIn(w('P9', 'strings'), 0.2) }); D('gift cards all the way down', 0, 120, 46, { alpha: fadeIn(ce('P9', -1.2), 0.3) }); }); };
   // 8b. surge pricing
   function sSurge() {
@@ -850,7 +856,7 @@
       S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('K7b', sPipe), S('K8', sTrickle), S('M1', sMeaning),
       S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('G2b', sRestrict), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G3', sGift), S('G3e', sIdentity, true), S('G5', sGift), S('G6', sExcept),
       S('P0', sP0), S('P1', sP1), S('P1b', sP1b), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9), S('Q1', sShort),
-      S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent),
+      S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent), S('R11', sDeliveryCost),
       S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
       S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
