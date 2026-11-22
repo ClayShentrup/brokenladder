@@ -176,7 +176,7 @@ P3 Free street parking. Curb space in a city is some of the most valuable land o
 
 P5 City-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.
 
-P6 Fare-free buses. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
+P6 Fare-free buses. This one gets partial credit. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.
 
 P8 Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It hands them rules about how their jobs must be run: help they can only take in one form, whether or not it's the form they'd have chosen.
 
