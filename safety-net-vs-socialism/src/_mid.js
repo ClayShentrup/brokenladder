@@ -106,10 +106,14 @@
   // ---------- scenes ----------
   // 1. cold open
   function sDelivery() {
-    plate('delivery', 0, ce('O1') + 0.6, { z: [1.12, 1.0], x: [0.4, -0.2] });
-    banner('up to +$5 per order', 1400, 230, 82, ['O1', 'five dollars'], { bg: K.red });
-    banner('Intro 518 · the Delivery Protection Act', 1400, 340, 40, ['O1', 'Delivery Protection'], { raw: true });
-    cite('Amazon in-app alert to New York shoppers, Nov 2026', ['O1', 'warned']);
+    plate('delivery', 0, ce('O1b') + 0.6, { z: [1.12, 1.0], x: [0.4, -0.2] });
+    banner('up to +$5 per order', 1400, 230, 82, ['O1', 'five dollars'], { bg: K.red, out: c('O1b') });
+    banner('Intro 518 · the Delivery Protection Act', 1400, 340, 40, ['O1', 'Delivery Protection'], { raw: true, out: c('O1b') });
+    card(1380, 420, 860, 420, c('O1b'), () => {
+      D('what the bill does', 0, -150, 48, { color: K.red });
+      rows([['a city license for big delivery hubs', ['O1b', 'city license']], ['drivers hired directly, not contracted', ['O1b', 'hire their drivers']], ['new rules: firing, training, safety', ['O1b', 'new rules']]], -370, -60, 42, 72);
+    });
+    cite('Amazon in-app alert to New York shoppers, Nov 2026 · NYC Council Intro 518', ['O1', 'warned']);
   }
   function sPost() {
     paperBg();

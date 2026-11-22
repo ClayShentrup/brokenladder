@@ -8,6 +8,8 @@ full script, final. about 4,000 words, roughly 27 minutes at a measured pace. li
 
 O1 In November twenty twenty-six, Amazon warned New York shoppers that a proposed city law, the Delivery Protection Act, could add up to five dollars to every order.
 
+O1b The bill would make large delivery companies get a city license and hire their drivers directly, instead of contracting with local delivery firms, along with new rules on firing, training and safety.
+
 O2 The mayor, Zohran Mamdani, answered on X. "Amazon is a multi-trillion dollar company. If Jeff Bezos adds five dollars to your order, it's not because of City Council's efforts to protect workers' rights and keep our streets safe. It's greed."
 
 O2b Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.
