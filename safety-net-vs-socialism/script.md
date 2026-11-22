@@ -234,6 +234,8 @@ K7 Almost always, yes. And nobody loses their help.
 
 K8 We'll say it once more, for the people already drafting an angry comment. Same redistribution. Less waste. If you hear that as an argument for cutting welfare, you've just made the exact mistake this video is about.
 
+K9 In twenty eighteen, the Niskanen Center published a paper by Samuel Hammond with a title that sounds like an oxymoron: The Free-Market Welfare State. Look at the two knobs, and it isn't one. Turn the how-much knob as high as you like. Keep the how knob on open markets and cash.
+
 ---
 
 ## 11. the theorem

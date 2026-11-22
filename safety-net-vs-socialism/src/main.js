@@ -639,12 +639,18 @@
     } else KC += 100;
     if (T > c('K4') - 0.6) {
       const left = clamp(0.5 + 0.35 * Math.sin((T - c('K4')) * 1.3), 0, 1);
-      knob(520, 470, 150, T < c('K5') ? left : 0.5, 'how much', K.red);
+      const k9 = T > w('K9', 'Turn the') ? eIO(prog(T, w('K9', 'Turn the'), w('K9', 'as you like'))) : 0;
+      knob(520, 470, 150, T < c('K5') ? left : lerp(0.5, 0.95, k9), 'how much', K.red);
       D('the fight everyone has', 520, 180, 46, { color: K.grey, alpha: fadeIn(c('K4'), 0.3) });
       const right = T > c('K6') ? eIO(prog(T, c('K6'), ce('K6'))) : 0.1;
       if (T > c('K5')) { knob(1400, 470, 150, 0.1 + 0.85 * right, 'how', K.green); D('a different knob', 1400, 180, 54, { color: K.green, alpha: fadeIn(c('K5'), 0.3) }); } else KC += 30;
       banner('hold the redistribution fixed. cut the waste.', 960, 900, 56, c('K6'), { bg: K.black, out: c('K8') });
-      stampX('same redistribution. less waste.', 960, 900, 80, c('K8'));
+      stampX('same redistribution. less waste.', 960, 900, 80, c('K8'), { out: c('K9') });
+      card(960, 880, 1300, 300, c('K9'), () => {
+        D('"the free-market welfare state"', 0, -70, 62, { color: K.red });
+        Dm('Samuel Hammond, Niskanen Center (2018)', 0, 5, 34, { color: K.grey });
+        D('how much: as high as you like · how: markets and cash', 0, 80, 40, { alpha: fadeIn(w('K9', 'Turn the'), 0.2) });
+      });
     } else KC += 60;
   }
   // 11. theorem
