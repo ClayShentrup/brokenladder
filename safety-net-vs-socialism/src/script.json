@@ -20,7 +20,6 @@
   {
    "id": "O2b",
    "text": "Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.",
-   "say": "[deadpan] Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.",
    "gap": 1.3
   },
   {
@@ -46,8 +45,7 @@
   },
   {
    "id": "O6",
-   "text": "This is the mayor of the largest city in America. And this is how he thinks about prices.",
-   "say": "[deadpan] This is the mayor of the largest city in America. And this is how he thinks about prices."
+   "text": "This is the mayor of the largest city in America. And this is how he thinks about prices."
   },
   {
    "id": "O7",
@@ -247,8 +245,7 @@
   },
   {
    "id": "G3d",
-   "text": "Think about what that means. Refusing to give people cash comes with an enforcement arm. When someone converts their gift card into cash on their own, you punish them for it. The policy only works if you stop people from spending their own benefit the way they think best.",
-   "say": "[deadpan] Think about what that means. Refusing to give people cash comes with an enforcement arm. When someone converts their gift card into cash on their own, you punish them for it. The policy only works if you stop people from spending their own benefit the way they think best."
+   "text": "Think about what that means. Refusing to give people cash comes with an enforcement arm. When someone converts their gift card into cash on their own, you punish them for it. The policy only works if you stop people from spending their own benefit the way they think best."
   },
   {
    "id": "G5",
@@ -378,8 +375,7 @@
   },
   {
    "id": "C2",
-   "text": "And replace them with nothing.",
-   "say": "[deadpan] And replace them with nothing."
+   "text": "And replace them with nothing."
   },
   {
    "id": "C3",
@@ -430,7 +426,6 @@
   {
    "id": "K8",
    "text": "We'll say it once more, for the people already drafting an angry comment. Same redistribution. Less waste. If you hear that as an argument for cutting welfare, you've just made the exact mistake this video is about.",
-   "say": "[deadpan] We'll say it once more, for the people already drafting an angry comment. Same redistribution. Less waste. If you hear that as an argument for cutting welfare, you've just made the exact mistake this video is about.",
    "gap": 1.2
   },
   {
@@ -539,8 +534,7 @@
   },
   {
    "id": "E10b",
-   "text": "Read that again. A single parent near the poverty line can face a higher marginal tax rate than a billionaire. And at some incomes, losing a benefit all at once means earning more leaves you with less. That's the welfare cliff.",
-   "say": "[deadpan] Read that again. A single parent near the poverty line can face a higher marginal tax rate than a billionaire. And at some incomes, losing a benefit all at once means earning more leaves you with less. That's the welfare cliff."
+   "text": "In other words, a single parent near the poverty line can face a higher marginal tax rate than a billionaire. And at some incomes, losing a benefit all at once means earning more leaves you with less. That's the welfare cliff."
   },
   {
    "id": "E10c",
@@ -608,7 +602,6 @@
   {
    "id": "Z3",
    "text": "Instead it hides the bill inside every online order in the city. And when the bill arrives, the mayor calls it greed.",
-   "say": "[deadpan] Instead it hides the bill inside every online order in the city. And when the bill arrives, the mayor calls it greed.",
    "gap": 1.3
   },
   {

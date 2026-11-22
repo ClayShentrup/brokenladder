@@ -294,7 +294,7 @@ E9 And the marginal rate is the one that shapes incentives. It's what you weigh 
 
 E10 Here's what that looks like in practice. PolicyEngine, which builds an open-source model of the American tax and benefit system, ran the numbers for a single parent in California with two kids, paying rent and childcare on a low wage. Double their pay. After lost benefits, lost tax credits and higher taxes, the family keeps only about a fifth of the extra. An effective marginal tax rate of nearly eighty percent.
 
-E10b Read that again. A single parent near the poverty line can face a higher marginal tax rate than a billionaire. And at some incomes, losing a benefit all at once means earning more leaves you with less. That's the welfare cliff.
+E10b In other words, a single parent near the poverty line can face a higher marginal tax rate than a billionaire. And at some incomes, losing a benefit all at once means earning more leaves you with less. That's the welfare cliff.
 
 E10c Remember the minimum wage fight? Under an eighty percent marginal rate, a worker keeps a fifth of every extra dollar. A fifteen-dollar minimum wage becomes a three-dollar one. People spend years fighting over the first number and never mention the second.
 
