@@ -170,7 +170,7 @@
       card(620, 470, 900, 470, c('N1'), () => {
         Dm('you know the script:', -390, -170, 40, { align: 'left', color: K.grey });
         rows([['taxes are theft', ['N1', 'theft']], ['handouts make people lazy', ['N1', 'lazy']], ['cut the safety net', ['N1', 'Cut']]], -390, -80, 60, 100);
-        if (T > c('N2')) { [0, 1, 2].forEach((i) => strikeBar(-400, -80 + i * 100, 400, [c('N2') + i * 0.15])); } else KC += 3;
+        if (T > c('N2')) { [0, 1, 2].forEach((i) => strikeBar(-400, -80 + i * 100, 400, c('N2') + i * 0.15)); } else KC += 3;
       }, { out });
       stampX("that's not the argument we're making", 960, 900, 66, c('N2'), { out });
     } else KC += 100;
