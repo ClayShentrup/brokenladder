@@ -156,6 +156,8 @@ P1 A public housing lottery. Win it, and you get one particular apartment, in on
 
 P2 Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit.
 
+P2b And notice who's been adding rules lately. The Trump administration has approved state after state's request to ban soda and candy from food stamps. Plenty of progressives called that paternalism, and they were right: a benefit with strings attached is worth less to the person getting it. But rent control, city grocery stores and free-but-only-for-this programs are the same move. Help, but only in the form a politician approves.
+
 P3 Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.
 
 P4 Price gouging laws. We'll come back to these, because they deserve their own section.

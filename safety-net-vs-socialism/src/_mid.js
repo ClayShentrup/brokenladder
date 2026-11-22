@@ -357,6 +357,18 @@
   const sP0 = () => { plate('giftcard', c('P0') - 0.6, ce('P0') + 0.6, { z: [1.1, 1.18] }); banner('now watch how far it goes', 960, 540, 84, c('P0'), { bg: K.red }); };
   const sP1 = parade('lottery', 'P1', 'public housing lottery', ['gift card', ['P1', 'Gift card']]);
   const sP2 = parade('snap', 'P2', 'food stamps', ['partial credit', ['P2', 'Partial credit'], K.black], { extra: () => { banner('most families: works almost like cash', 960, 290, 46, ['P2', 'almost like cash'], { bg: K.red }); banner('the loss: rules like the hot-meal ban', 960, 390, 46, ['P2', 'ban on hot'], {}); } });
+  const sP2b = () => {
+    plate('snap', c('P2b') - 0.6, ce('P2b') + 0.6, { z: [1.1, 1.18], x: [-0.2, 0.2] });
+    banner('food stamp rules, Republican edition', 960, 170, 60, c('P2b'), { bg: K.black });
+    banner('no soda · no candy', 960, 290, 72, ['P2b', 'soda and candy'], { bg: K.red });
+    card(1340, 620, 960, 420, ['P2b', 'paternalism'], () => {
+      Dm('progressives: "paternalism!"', 0, -130, 44, { color: K.grey });
+      D('right. strings make a benefit worth less.', 0, -40, 48, { alpha: fadeIn(w('P2b', 'they were right'), 0.2) });
+      D('rent control. city grocery stores.', 0, 60, 48, { color: K.red, alpha: fadeIn(w('P2b', 'But rent control'), 0.2) });
+      D('the same move.', 0, 140, 60, { color: K.red, alpha: fadeIn(w('P2b', 'same move'), 0.2) });
+    });
+    cite('USDA SNAP food restriction waivers, 2025–2026', ['P2b', 'soda and candy']);
+  };
   const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']]);
   const sP4 = () => { plate('airport', c('P4') - 0.6, ce('P4') + 0.6, { z: [1.15, 1.2] }); banner('price gouging laws: hold that thought', 960, 540, 64, c('P4'), {}); };
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
@@ -640,7 +652,7 @@
       { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O2b', sRules), S('O3', sCharity), S('O6', sMayor), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
       S('N1', sNot), S('M1', sMeaning), S('D1', sSweater), S('T1', sRoof), S('R1', sRent), S('G1', sGift), S('Q1', sShort),
-      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P7', sP7), S('P7b', sP7b, true), S('P8', sP8), S('P9', sP9),
+      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P7', sP7), S('P7b', sP7b, true), S('P8', sP8), S('P9', sP9),
       S('H1', sSurge), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E11c', sTiming, true), S('E12', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
