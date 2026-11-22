@@ -16,9 +16,9 @@ O3 Sit with that for a second. If passing on a cost is greed, then not passing i
 
 O3b And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.
 
-O4 And if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it, openly, and let voters see the bill. That's a different policy from this one.
+O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. That's a tax, just an invisible one, on one group of owners. Hold that thought. We'll see the exact same move again, with a landlord.
 
-O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. Why them, and not everyone? Hold that question. We'll see the exact same move again, with a landlord.
+O4 So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax so it doesn't block useful trades. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
 
 O6 This is the mayor of the largest city in America. And this is how he thinks about prices.
 

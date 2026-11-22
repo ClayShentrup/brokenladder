@@ -128,7 +128,7 @@
     stampX('= greed', 960, 820, 110, ['O2b', "that's greed"]);
   }
   function sCharity() {
-    plate('charity', c('O3') - 0.6, ce('O5') + 0.6, { z: [1.0, 1.12], x: [-0.3, 0.3] });
+    plate('charity', c('O3') - 0.6, ce('O4') + 0.6, { z: [1.0, 1.12], x: [-0.3, 0.3] });
     banner('passing on a cost = greed?', 520, 150, 60, ['O3', 'passing on'], { out: c('O3b') });
     banner('absorbing it = giving money away', 560, 260, 60, ['O3', 'Absorbing'], { bg: K.red, out: c('O3b') });
     stampX('charity, demanded by city hall', 900, 900, 70, ['O3', 'charity'], { out: c('O3b') });
@@ -138,11 +138,12 @@
       rows([['company  −$5', ['O3b', 'books']], ['customer  +$5', ['O3b', 'books', 0.4]]], -560, -60, 64, 110);
       rows([['company  −$5', ['O3b', 'books', 0.8]], ['customer  +$5', ['O3b', 'books', 1.2]]], 90, -60, 64, 110);
       if (T > w('O3b', 'exactly')) { stampX('identical', 0, 200, 80, ['O3b', 'exactly']); } else KC += 4;
-    }, { out: c('O4') });
-    banner('then tax it. openly.', 960, 260, 86, ['O4', 'tax it'], { bg: K.red, out: c('O5') });
-    banner('a different policy', 960, 390, 56, ['O4', 'different policy'], { out: c('O5') });
-    banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], {});
-    banner('why them, and not everyone?', 960, 320, 56, ['O5', 'Why them'], { bg: K.red });
+    }, { out: c('O5') });
+    banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], { out: c('O4') });
+    banner('an invisible tax on one group of owners', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
+    banner('then tax it. openly.', 960, 200, 86, ['O4', 'tax it openly'], { bg: K.red });
+    banner('visible · designed not to block trades', 960, 330, 52, ['O4', 'design the tax'], {});
+    stampX('a speeding ticket on every delivery', 960, 880, 66, ['O4', 'speeding ticket']);
   }
   function sMayor() {
     plate('cityhall', c('O6') - 0.6, ce('O6') + 0.6, { z: [1.1, 1.18], x: [0.2, -0.2] });
