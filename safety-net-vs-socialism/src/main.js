@@ -573,6 +573,7 @@
       rows([['cars go to whoever taps first', ['H6', 'whoever taps']], ['extra drivers stay home', ['H6', 'extra drivers']]], -340, -20, 46, 90);
     }, { out: c('H7') });
     banner('surge pricing = happy hour in reverse', 960, 200, 70, ['H7', 'happy hour'], { bg: K.red, out: c('H8') });
+    stampX('friday night = the surge price', 1300, 560, 66, ['H7', 'Friday night'], { out: ['H7', 'one signal'] });
     banner('come now, there\'s room', 600, 860, 52, ['H7', 'come now'], { out: c('H8') });
     banner('only come if it matters · drivers, show up', 1240, 960, 44, ['H7', 'only come'], { bg: K.red, out: c('H8') });
     card(960, 470, 1400, 400, c('H8'), () => {

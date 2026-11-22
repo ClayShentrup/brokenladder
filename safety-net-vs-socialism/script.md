@@ -190,7 +190,7 @@ H5 And the price does something else. It tells the driver who was planning to st
 
 H6 Cap the price, and both effects vanish. The cars go to whoever taps first. The extra drivers stay home. The stranded family waits.
 
-H7 Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up.
+H7 Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.
 
 H8 And if what bothers you is that a poor family can't afford the surge, fine. That's a real concern about equity. Which is a case for giving that family more money, every day of the year. Breaking the one signal that gets cars to the people who need them helps nobody.
 

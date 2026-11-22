@@ -348,9 +348,9 @@
   },
   {
    "id": "H7",
-   "text": "Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up.",
-   "say": "[dryly] Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. Nobody calls it generosity when a bar cuts prices at four in the afternoon. It's the same signal: come now, there's room. Surge pricing says: only come now if it matters, and drivers, please show up.",
-   "gap": 1.3
+   "text": "Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.",
+   "say": "[dryly] Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.",
+   "gap": 1.6
   },
   {
    "id": "H8",
