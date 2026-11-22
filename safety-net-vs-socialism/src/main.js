@@ -626,9 +626,11 @@
   function sShort() {
     plate('dividend', c('Q1') - 0.6, ce('Q4') + 0.6, { z: [1.0, 1.1] });
     banner('the short answer', 960, 160, 84, c('Q1'), { bg: K.red });
-    card(960, 560, 1400, 560, c('Q2'), () => {
-      rows([['1.  give help as cash, the same check to every citizen', c('Q2')], ['2.  fund it with taxes on pollution and land', c('Q3')], ['3.  if that falls short: one flat tax on spending', ['Q3', "If that's"]]], -640, -170, 46, 120);
-      D('same help. far less waste.', 0, 200, 72, { color: K.red, alpha: fadeIn(c('Q4'), 0.2) });
+    card(960, 540, 1400, 440, c('Q2'), () => {
+      D('give help as cash', 0, -120, 80);
+      D('the same check to every citizen', 0, -30, 56, { color: K.grey, alpha: fadeIn(w('Q2', 'same check'), 0.2) });
+      D('same help. far less waste.', 0, 80, 64, { color: K.red, alpha: fadeIn(c('Q4'), 0.2) });
+      Dm('paying for it: the other half of the story', 0, 160, 38, { alpha: fadeIn(w('Q4', 'pay for it'), 0.2) });
     });
   }
   // 8. the parade

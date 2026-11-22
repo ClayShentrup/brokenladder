@@ -150,13 +150,11 @@ G6 To be fair, there are real exceptions. Some things nobody can be fenced out o
 
 ## 7b. the short answer
 
-Q1 So before we go further, here's the alternative, in four sentences.
+Q1 So before we go further, here's the alternative in a nutshell.
 
 Q2 Whatever amount of help you want to give, give it as cash. The same check to every citizen.
 
-Q3 Pay for it with taxes that do the least damage: taxes on pollution, and on the value of land. If that's not enough, one flat tax on spending.
-
-Q4 That's it. Same help, far less waste. The rest of this video is about why that works, and why almost every policy you hear called socialist does the opposite.
+Q4 Same help, far less waste. How to pay for it without creating new waste is the other half of the story.
 
 ---
 
@@ -170,7 +168,7 @@ P2 Food stamps. To be fair, for most families they work almost like cash, becaus
 
 P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.
 
-G2b Here's the economic physics. Any benefit in kind is just cash, with a restriction on how you can spend it. A hundred dollars in food stamps is a hundred dollars, plus one rule: groceries only. The dessert ban just adds another rule. And a rule can never give you more options. It can only take them away.
+G2b Here's the key identity. Any benefit in kind is just cash, with a restriction on how you can spend it. A hundred dollars in food stamps is a hundred dollars, plus one rule: groceries only. The dessert ban just adds another rule. And a rule can never give you more options. It can only take them away.
 
 P2c So when you object to the dessert ban, you're not objecting to the help. You're objecting to the restriction. Drop it, and the family keeps every dollar, with more choices. That's all we're saying. Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?
 
@@ -230,7 +228,7 @@ C6 But those aren't your only choices. That's the whole point.
 
 K1 You'll hear a phrase thrown at anyone who criticizes these policies. Trickle-down economics.
 
-K2 Let's be precise about what it means, because almost nobody is. The trickle-down claim is this: if you remove some distorting tax or subsidy, the economy grows enough that even the people who were being helped come out ahead. The efficiency gain outweighs the lost equity.
+K2 Let's be precise about what it means, because almost nobody is. The trickle-down claim is this: if you scrap some policy that gets in the market's way, the economy grows enough that even the people who were being helped come out ahead. The efficiency gain outweighs the lost equity.
 
 K3 Sometimes that's true. For rent control, it may well be true. Scrap it, more housing gets built, rents fall, and many tenants end up better off.
 
