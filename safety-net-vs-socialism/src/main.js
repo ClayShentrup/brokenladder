@@ -1002,7 +1002,7 @@
     stampX('then it\'s called greed', 960, 860, 88, ['Z3', 'greed'], { out: c('Z4') });
     card(960, 520, 1400, 460, c('Z4'), () => {
       D('the socialist toolkit in one move', 0, -170, 48, { color: K.grey });
-      rows([['good intentions', ['Z4', 'Good intentions']], ['delivered by gift card', ['Z4', 'delivered']], ['paid for by a tax nobody can see', ['Z4', 'paid for']], ['blamed on someone else', ['Z4', 'blamed']]], -560, -80, 56, 80);
+      rows([['good intentions', ['Z4', 'Good intentions']], ['delivered by gift card', ['Z4', 'delivered']], ['paid for by an inefficient tax nobody can see', ['Z4', 'paid for']], ['blamed on someone else', ['Z4', 'blamed']]], -560, -80, 56, 80);
     }, { out: c('Z5') });
     banner('people deserve a home? take it as given.', 960, 180, 60, ['Z5', 'deserve a home'], { out: c('Z6') });
     banner('values: settled. now the engineering.', 960, 860, 56, ['Z5', 'values question'], { bg: K.cream, fg: K.black, shadowCol: K.black, out: c('Z6') });
