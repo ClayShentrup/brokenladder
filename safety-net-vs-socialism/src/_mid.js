@@ -144,7 +144,9 @@
     stampX('why aim charity at online shoppers?', 1180, 880, 60, ['O3b', 'why aim'], { out: c('O5') });
     banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], { out: c('O4') });
     banner('retirees or new grads: an invisible tax', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
-    banner('then tax it. openly.', 960, 200, 86, ['O4', 'tax it openly'], { bg: K.red });
+    banner('company size ≠ owner wealth', 960, 200, 76, ['O4', 'size says'], { out: ['O4', 'tax rich people'] });
+    banner('Bezos and the new grad, alike', 960, 320, 56, ['O4', 'alike'], { bg: K.red, out: ['O4', 'tax rich people'] });
+    banner('then tax rich people. openly.', 960, 200, 80, ['O4', 'tax rich people'], { bg: K.red });
     banner('visible · designed to do the least damage', 960, 330, 52, ['O4', 'design the tax'], {});
     stampX('a speeding ticket on every delivery', 960, 880, 66, ['O4', 'speeding ticket']);
   }

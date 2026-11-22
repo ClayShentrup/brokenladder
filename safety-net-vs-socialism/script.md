@@ -18,7 +18,7 @@ O3b So the accusation isn't that Amazon takes something from anyone. Nobody ends
 
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company, whether that's a retired couple living off a pension fund or someone fresh out of college putting their first paycheck into an index fund. That's a tax, just an invisible one. Hold that thought. We'll see the exact same move again, with a landlord.
 
-O4 So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax to do as little damage as possible. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
+O4 And the fact that Amazon is a multi-trillion dollar company doesn't help the mayor's case. A company's size says nothing about how rich any one of its owners is. A cost forced onto Amazon lands on Jeff Bezos and that new grad's index fund alike. If the goal is for rich people to pay more, then tax rich people, openly, where voters can see the bill, and design the tax to do as little damage as possible. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
 
 O6 This is the mayor of the largest city in America. And this is how he thinks about prices.
 
