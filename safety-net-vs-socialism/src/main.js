@@ -764,6 +764,13 @@
       D('what the check doesn\'t need', 0, -190, 54, { color: K.red });
       rows([['no means test', ['E11b', 'No means']], ['no caseworkers', ['E11b', 'caseworkers']], ['no penalty for a good month', ['E11b', 'good month']]], -560, -90, 52, 86);
       D('replace the patchwork. don\'t stack on it.', 0, 190, 50, { alpha: fadeIn(w('E11b', 'replaces'), 0.2) });
+    }, { out: c('E11b1') });
+    card(960, 520, 1400, 460, c('E11b1'), () => {
+      D('"means testing is a poor substitute', 0, -150, 58, { color: K.red });
+      D('for taxation."', 0, -80, 58, { color: K.red });
+      Dm('Max Ghenis, PolicyEngine', 0, -15, 34, { color: K.grey });
+      D('a phase-out = a tax on the poorest workers', 0, 75, 46, { alpha: fadeIn(w('E11b1', 'Phasing out'), 0.2) });
+      Dm('want the rich to pay more? tax them openly.', 0, 150, 38, { alpha: fadeIn(w('E11b1', 'tax system'), 0.2) });
     }, { out: c('E11b2') });
     card(960, 520, 1400, 460, c('E11b2'), () => {
       Dm('"handouts make people lazy"?', 0, -170, 46, { color: K.grey });

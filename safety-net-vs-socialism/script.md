@@ -302,6 +302,8 @@ E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour
 
 E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
 
+E11b1 Max Ghenis of PolicyEngine has a phrase for this: means testing is a poor substitute for taxation. Phasing out a benefit as you earn more is a tax, aimed squarely at the poorest workers. If the goal is for richer people to pay more, the tax system can do that openly, without docking the first extra dollar a struggling family earns.
+
 E11b2 And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. By its central estimates, people respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.
 
 E11c Graduated brackets have a quieter problem. They punish uneven income. Take a simple system: ten percent on your first fifty thousand dollars, thirty percent on anything above that.
