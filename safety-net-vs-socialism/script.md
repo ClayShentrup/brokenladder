@@ -338,7 +338,7 @@ Z3 Instead it hides the bill inside every online order in the city. And when the
 
 Z4 That's the socialist toolkit in one move. Good intentions, delivered by gift card, paid for by a tax nobody can see, and blamed on someone else.
 
-Z5 So here's our challenge, to anyone who defends rent control because people deserve a home. Agreed, if that's your view. Now explain why you'd rather pin them to one apartment than give them the money to choose their own.
+Z5 So here's our challenge, to anyone who defends rent control because people deserve a home. Fine. Let's take that as given: that's the values question. Now the engineering question. Why would you rather pin them to one apartment than give them the money to choose their own?
 
 Z6 Pick any amount of redistribution you like. Zero, a little, a lot. Whatever it is, cash delivers it cheaper, and the people you meant to help end up with more.
 

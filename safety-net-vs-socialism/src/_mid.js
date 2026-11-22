@@ -685,7 +685,8 @@
       D('the socialist toolkit in one move', 0, -170, 48, { color: K.grey });
       rows([['good intentions', ['Z4', 'Good intentions']], ['delivered by gift card', ['Z4', 'delivered']], ['paid for by a tax nobody can see', ['Z4', 'paid for']], ['blamed on someone else', ['Z4', 'blamed']]], -560, -80, 56, 80);
     }, { out: c('Z5') });
-    banner('people deserve a home? agreed.', 960, 180, 64, ['Z5', 'deserve a home'], { out: c('Z6') });
+    banner('people deserve a home? take it as given.', 960, 180, 60, ['Z5', 'deserve a home'], { out: c('Z6') });
+    banner('values: settled. now the engineering.', 960, 860, 56, ['Z5', 'values question'], { bg: K.cream, fg: K.black, shadowCol: K.black, out: c('Z6') });
     banner('so why pin them to one apartment?', 960, 300, 64, ['Z5', 'pin them'], { bg: K.red, out: c('Z6') });
     card(960, 520, 1300, 360, c('Z6'), () => {
       D('zero · a little · a lot', 0, -90, 64, { color: K.grey });
