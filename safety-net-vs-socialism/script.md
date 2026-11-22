@@ -72,7 +72,7 @@ D4 This isn't a thought experiment. The economist Joel Waldfogel asked people wh
 
 D4b To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.
 
-D6 Hand me a ten-dollar bill instead, and nothing is lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.
+D6 If I'd handed you a ten-dollar bill instead, nothing would have been lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.
 
 ---
 
@@ -120,7 +120,7 @@ R10 So rent control fails both tests. It's a benefit worth less than it costs, a
 
 ## 7. the gift card fallacy
 
-G1 Rent control is one example of a pattern so common it deserves a name. Call it the gift card fallacy.
+G1 Rent control is one example of a pattern so common it deserves a name: helping people with one specific thing instead of money. Call it the gift card fallacy.
 
 G2 And it usually isn't a belief anyone states out loud. It's a reflex. People need housing, so give them housing. People need food, so give them food. The alternative, the same help with no strings attached, never even comes to mind. So the gift card gets measured against the wrong baseline: not against cash, but against nothing. Call it the false baseline.
 
@@ -302,7 +302,7 @@ E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour
 
 E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
 
-E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.
+E13 On net, they don't. You can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.
 
 E13b And even if you decided the rich shouldn't get the check, how would you stop it? Pick an income cutoff, and everyone just above it falls off a cliff. Phase it out gradually instead, and you've built a higher marginal rate into the middle of the income ladder. Either way, you're back to means testing.
 
@@ -324,7 +324,7 @@ E15 By the way, if you still object to rich people getting a check, then you sho
 
 E15b Rent control is worse still. In San Francisco, your discount depends on how long you've lived in your apartment and how much rents have risen since, with no check on what you earn. A tenant with a six-figure income who moved in a decade ago can pay a fraction of market rent, while a struggling family that just arrived pays full price.
 
-E16 Milton Friedman, not exactly a socialist, proposed something close to this in nineteen sixty-two. He called it a negative income tax: a payment that shrinks as you earn more. Set the rate it shrinks at equal to the flat tax rate, and it's mathematically the same as a dividend plus a flat tax. Make it shrink much faster than that, and you've rebuilt the cliff.
+E16 Milton Friedman, not exactly a socialist, proposed something close to this dividend in nineteen sixty-two. He called it a negative income tax: a payment that shrinks as you earn more. Set the rate it shrinks at equal to the flat tax rate, and it's mathematically the same as a dividend plus a flat tax. Make it shrink much faster than that, and you've rebuilt the cliff.
 
 ---
 
