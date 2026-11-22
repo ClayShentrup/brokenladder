@@ -128,7 +128,7 @@
     stampX('= greed', 960, 820, 110, ['O2b', "that's greed"]);
   }
   function sCharity() {
-    plate('charity', c('O3') - 0.6, ce('O4') + 0.6, { z: [1.0, 1.12], x: [-0.3, 0.3] });
+    plate('charity', c('O3') - 0.6, ce('O3b') + 0.6, { z: [1.0, 1.12], x: [-0.3, 0.3] });
     banner('to the mayor: absorbing it = just decent', 960, 170, 60, ['O3', 'decent'], { out: ['O3', 'Charge a customer'] });
     card(960, 470, 1400, 560, ['O3', 'Charge a customer'], () => {
       D('charge $5 less', -340, -200, 56); D('full price + mail a $5 check', 350, -200, 44);
@@ -138,21 +138,69 @@
       if (T > w('O3', 'exactly')) { stampX('identical', 0, 200, 80, ['O3', 'exactly']); } else KC += 4;
     }, { out: ['O3', 'Absorbing a cost'] });
     stampX('absorbing a cost = a donation', 960, 540, 84, ['O3', 'Absorbing a cost'], { out: c('O3b') });
-    banner('nobody is made worse off', 960, 170, 62, ['O3b', 'Nobody'], { out: c('O5') });
-    banner('the charge: not giving enough away', 960, 290, 62, ['O3b', 'failed to give'], { bg: K.red, out: c('O5') });
+    banner('nobody is made worse off', 960, 170, 62, ['O3b', 'Nobody'], { out: c('H1') });
+    banner('the charge: not giving enough away', 960, 290, 62, ['O3b', 'failed to give'], { bg: K.red, out: c('H1') });
     stampX('greedy for skipping a donation?', 1260, 880, 60, ['O3b', 'greedy'], { out: ['O3b', 'why aim'] });
-    stampX('why aim charity at online shoppers?', 1180, 880, 60, ['O3b', 'why aim'], { out: c('O5') });
-    banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], { out: c('O4') });
-    banner('retirees or new grads: an invisible tax', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
-    banner('company size ≠ owner wealth', 960, 200, 76, ['O4', 'size says'], { out: ['O4', 'tax rich people'] });
-    banner('Bezos and the new grad, alike', 960, 320, 56, ['O4', 'alike'], { bg: K.red, out: ['O4', 'tax rich people'] });
-    banner('then tax rich people. openly.', 960, 200, 80, ['O4', 'tax rich people'], { bg: K.red });
-    banner('visible · designed to do the least damage', 960, 330, 52, ['O4', 'design the tax'], {});
-    stampX('a speeding ticket on every delivery', 960, 880, 66, ['O4', 'speeding ticket']);
+    stampX('why aim charity at online shoppers?', 1180, 880, 60, ['O3b', 'why aim'], { out: c('H1') });
   }
-  function sMayor() {
-    plate('cityhall', c('O6') - 0.6, ce('O6') + 0.6, { z: [1.1, 1.18], x: [0.2, -0.2] });
-    banner('the largest city in America', 960, 860, 70, ['O6', 'largest'], { raw: false });
+  function sWho() {
+    plate('charity', c('O5') - 0.6, ce('O4') + 0.6, { z: [1.12, 1.0], x: [0.3, -0.2] });
+    banner('who pays? whoever owns the shares', 960, 170, 64, ['O5', 'whoever owns'], { out: ['O5', 'size says'] });
+    banner('Bezos · a pensioner · a new grad', 960, 290, 56, ['O5', 'Jeff Bezos'], { bg: K.red, out: ['O5', 'size says'] });
+    banner('company size ≠ owner wealth', 960, 170, 76, ['O5', 'size says'], { out: c('O4') });
+    banner('an invisible tax', 960, 300, 64, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
+    banner('a benefit you can only spend at Amazon', 960, 170, 62, ['O4', 'only spend'], { out: ['O4', 'mistake'] });
+    banner('for whoever shops there, rich or poor', 960, 290, 52, ['O4', 'rich or poor'], { bg: K.red, out: ['O4', 'mistake'] });
+    stampX('one-thing help · a hidden tax', 960, 860, 72, ['O4', 'nobody can see']);
+  }
+  function sAlt() {
+    plate('net', c('A1') - 0.6, ce('A1') + 0.6, { z: [1.1, 1.0] });
+    banner('not "replace it with nothing"', 960, 200, 70, c('A1'), {});
+    banner('a third option', 960, 330, 80, ['A1', 'third option'], { bg: K.red });
+  }
+  function sIdentity() {
+    paperBg();
+    D('economic physics', 960, 170, 96, { color: K.red, alpha: fadeIn(w('G3e', 'economic physics'), 0.3) });
+    const a1 = fadeIn(w('G3e', 'two arrangements'), 0.3), a2 = fadeIn(w('G3e', 'exactly the same'), 0.3);
+    card(560, 520, 680, 360, c('G3e'), () => {
+      D('the sweater', 0, -110, 50, { color: K.grey }); D('= $10 + a rule', 0, -20, 60); D('the sublet', 0, 70, 50, { color: K.grey, alpha: a1 }); D('= the cash value', 0, 140, 52, { alpha: a1 });
+    });
+    card(1360, 520, 680, 360, ['G3e', 'exactly the same'], () => {
+      D('same money,', 0, -60, 70, { alpha: a2 }); D('same direction', 0, 30, 70, { alpha: a2 });
+      D('hidden → visible', 0, 130, 52, { color: K.green, alpha: fadeIn(w('G3e', 'visible'), 0.2) });
+    });
+  }
+  function sP1b() {
+    plate('stuck', c('P1b') - 0.6, ce('P1b') + 0.6, { z: [1.0, 1.1], x: [0.2, -0.2] });
+    banner('hard-to-end leases · costly-to-fire rules', 960, 170, 60, c('P1b'), {});
+    banner('they feel humane', 960, 290, 52, ['P1b', 'humane'], { bg: K.green, out: ['P1b', 'right baseline'] });
+    card(1340, 560, 900, 360, ['P1b', 'right baseline'], () => {
+      Dm('a benefit you can only spend on', 0, -110, 40, { color: K.grey });
+      D('staying a little longer', 0, -30, 70, { color: K.red });
+      Dm('in that apartment · in that job', 0, 50, 40, { alpha: fadeIn(w('P1b', 'in that job'), 0.2) });
+      D('never as cash', 0, 130, 52, { alpha: fadeIn(w('P1b', 'as cash'), 0.2) });
+    });
+  }
+  function sBill() {
+    if (T < c('TX2') - 0.3) {
+      paperBg();
+      D('the other side of the ledger', 960, 200, 80, { alpha: fadeIn(c('TX1'), 0.3) });
+      D('benefit', 600, 440, 90, { color: K.green, alpha: fadeIn(c('TX1'), 0.3) });
+      D('the bill', 1320, 440, 90, { color: K.red, alpha: fadeIn(w('TX1', 'comes with a bill'), 0.3) });
+      box(956, 330, 8, 240, K.black, fadeIn(w('TX1', 'other side'), 0.3));
+      Dm('somebody pays it', 1320, 540, 46, { alpha: fadeIn(w('TX1', 'somebody pays'), 0.3) });
+      stampX('hidden → visible', 960, 820, 90, ['TX1', 'make it visible']);
+    } else {
+      plate('parking', c('TX2') - 0.6, ce('TX2') + 0.6, { z: [1.08, 1.16] });
+      banner('"it\'s free, the city owns the curb"', 960, 170, 60, c('TX2'), { raw: true, out: ['TX2', 'But if'] });
+      card(1340, 520, 900, 440, ['TX2', 'But if'], () => {
+        Dm('charge what the land is worth', 0, -150, 42, { color: K.grey });
+        D('→ cut another tax', 0, -60, 64, { color: K.green, alpha: fadeIn(w('TX2', 'cut some other'), 0.2) });
+        Dm('give it away free', 0, 40, 42, { color: K.grey, alpha: fadeIn(w('TX2', 'Giving the curb'), 0.2) });
+        D('→ everyone pays more tax', 0, 130, 64, { color: K.red, alpha: fadeIn(w('TX2', 'higher taxes'), 0.2) });
+      });
+      stampX('a dollar not collected is a dollar raised elsewhere', 960, 940, 50, ['TX2', 'A dollar not']);
+    }
   }
   function sMenu() {
     plate('menu', c('O7') - 0.6, ce('O8') + 0.6, { z: [1.0, 1.1] });
@@ -284,7 +332,7 @@
     }, { out: c('T7') });
     card(960, 420, 1300, 380, c('T7'), () => {
       D('two leaks', 0, -120, 60, { color: K.red });
-      rows([['1. benefits worth less than they cost', ['T7', 'Benefits']], ['2. taxes that kill trades', ['T7', 'Taxes that kill']]], -540, -10, 56, 100);
+      rows([['1. benefits worth less than they cost', ['T7', 'Benefits']], ['2. taxes that kill trades', ['T7', 'taxes that kill']]], -540, -10, 56, 100);
     });
   }
   // 6. rent control
@@ -395,11 +443,12 @@
   }
   const sP0 = () => { plate('giftcard', c('P0') - 0.6, ce('P0') + 0.6, { z: [1.1, 1.18] }); banner('now watch how far it goes', 960, 540, 84, c('P0'), { bg: K.red }); };
   const sP1 = parade('lottery', 'P1', 'public housing lottery', ['gift card', ['P1', 'Gift card']]);
-  const sP2 = parade('snap', 'P2', 'food stamps', ['partial credit', ['P2', 'Partial credit'], K.black], { extra: () => { banner('most families: works almost like cash', 960, 290, 46, ['P2', 'almost like cash'], { bg: K.red }); banner('the loss: rules like the hot-meal ban', 960, 390, 46, ['P2', 'ban on hot'], {}); } });
+  const sP2 = parade('snap', 'P2', 'food stamps', ['mostly like cash', ['P2', 'almost like cash'], K.green], { extra: () => {  banner('the loss: rules like the hot-meal ban', 960, 390, 46, ['P2', 'ban on hot'], {}); } });
   const sP2b = () => {
     plate('snap', c('P2b') - 0.6, ce('P2b') + 0.6, { z: [1.1, 1.18], x: [-0.2, 0.2] });
     banner('food stamp rules, Republican edition', 960, 170, 60, c('P2b'), { bg: K.black });
-    banner('no soda · no candy', 960, 290, 72, ['P2b', 'soda and candy'], { bg: K.red });
+    banner('no soda · no candy', 960, 290, 72, ['P2b', 'no soda'], { bg: K.red, out: ['P2b', 'desserts'] });
+    banner('Florida: no packaged desserts', 960, 290, 72, ['P2b', 'desserts'], { bg: K.red });
     card(1340, 620, 960, 440, ['P2b', 'paternalism'], () => {
       Dm('progressives: "paternalism!"', 0, -150, 44, { color: K.grey });
       D('and they were right', 0, -80, 50, { alpha: fadeIn(w('P2b', 'they were right'), 0.2) });
@@ -409,19 +458,20 @@
       D('the same food stamps, no ban', 0, 110, 54, { color: K.green, alpha: fadeIn(w('P2b', 'without the ban'), 0.2) });
       Dm('the right baseline, seen instantly', 0, 180, 34, { alpha: fadeIn(w('P2b', 'obvious'), 0.2) });
     });
-    cite('USDA SNAP food restriction waivers, 2025–2026', ['P2b', 'soda and candy']);
+    cite('USDA SNAP food restriction waivers, 2025–2026 · Florida waiver, effective April 2026', ['P2b', 'no soda']);
   };
   const sP2c = () => {
     plate('dividend', c('P2c') - 0.6, ce('P2c') + 0.6, { z: [1.0, 1.1] });
     card(960, 470, 1400, 540, c('P2c'), () => {
-      D('use that baseline everywhere', 0, -200, 50, { color: K.grey });
+      D('objecting to the ban ≠ abolishing food stamps', 0, -200, 44, { color: K.grey, alpha: 1 - fadeIn(w('P2c', 'use that baseline'), 0.2) });
+      D('use that baseline everywhere', 0, -200, 50, { color: K.grey, alpha: fadeIn(w('P2c', 'use that baseline'), 0.2) });
       rows([['rent control', ['P2c', 'rent control']], ['city grocery stores', ['P2c', 'grocery']], ['free-but-only-for-this', ['P2c', 'free-but']]], -560, -110, 44, 62);
       D('vs. the same help, no strings', 220, -60, 52, { color: K.green, alpha: fadeIn(w('P2c', 'same help'), 0.2) });
       Dm("Republicans: \"we don't trust them with groceries\"", 0, 90, 38, { alpha: fadeIn(w('P2c', "didn't trust"), 0.2) });
       D('so why trust them less with an apartment?', 0, 175, 54, { color: K.red, alpha: fadeIn(w('P2c', 'why trust'), 0.2) });
     });
   };
-  const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']]);
+  const sP3 = parade('parking', 'P3', 'free street parking', ['gift card for drivers', ['P3', 'gift card']], { extra: () => { banner('Japan: no car without an off-street space', 960, 290, 46, ['P3', 'Japan'], { bg: K.red, out: ['P3', 'Here,'] }); banner('overnight street parking: mostly banned', 960, 390, 44, ['P3', 'overnight'], { out: ['P3', 'Here,'] }); } });
   const sP5 = parade('grocery', 'P5', 'city-owned grocery stores', ['gift card, with a location', ['P5', 'Gift card']], { extra: () => banner('no rent, no property tax = a subsidy', 960, 290, 46, ['P5', 'waived'], { bg: K.red }) });
   const sP6 = parade('bus', 'P6', 'fare-free buses', ['half-decent excuse', ['P6', 'half-decent'], K.black], { extra: () => { banner('fewer cars: a real case', 960, 290, 46, ['P6', 'real case'], { bg: K.green }); banner('better: charge drivers for congestion', 960, 390, 46, ['P6', 'cleaner fix'], { bg: K.red }); } });
   const sP8 = parade('delivery', 'P8', 'the delivery protection act', ['a hidden sales tax', ['P8', 'hidden sales tax']], { cam: { z: [1.0, 1.12], x: [-0.3, 0.3] }, extra: () => { banner("doesn't hand workers money", 960, 290, 48, ['P8', "doesn't hand"], { bg: K.red }); banner('costs on every order, including poorer buyers', 960, 390, 44, ['P8', 'every online'], {}); } });
@@ -751,11 +801,14 @@
   function buildScenes() {
     const S = (id, draw, paper = false, lead = 0.6) => ({ start: Math.max(0, c(id) - lead), draw, paper });
     SCN = [
-      { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O2b', sRules), S('O3', sCharity), S('O6', sMayor), S('O7', sMenu),
+      { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O5', sWho), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
-      S('N1', sNot), S('M1', sMeaning), S('D1', sSweater), S('T1', sRoof), S('R1', sRent), S('G1', sGift), S('Q1', sShort),
-      S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9),
-      S('H1', sSurge), S('H9b', sRoads), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
+      S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('M1', sMeaning),
+      S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G2b', sGift), S('G3e', sIdentity, true), S('G5', sGift),
+      S('P0', sP0), S('P1', sP1), S('P1b', sP1b), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9), S('Q1', sShort),
+      S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent),
+      S('O2b', sRules), S('O3', sCharity), S('H1', sSurge), S('H9b', sRoads),
+      S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
     ];

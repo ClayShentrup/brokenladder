@@ -18,33 +18,13 @@
    "gap": 1.3
   },
   {
-   "id": "O2b",
-   "text": "Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.",
-   "gap": 1.3
-  },
-  {
-   "id": "O3",
-   "text": "Sit with that for a second. To the mayor, absorbing the cost is just the decent thing to do, the default. But look at what it actually is. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Absorbing a cost you could pass on is a donation.",
-   "gap": 1.3
-  },
-  {
-   "id": "O3b",
-   "text": "So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?",
-   "say": "[measured] So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?",
-   "gap": 1.4
-  },
-  {
    "id": "O5",
-   "text": "And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company, whether that's a retired couple living off a pension fund or someone fresh out of college putting their first paycheck into an index fund. That's a tax, just an invisible one. Hold that thought. We'll see the exact same move again, with a landlord."
+   "text": "Start with who actually pays. If Amazon isn't allowed to pass the cost on, as the mayor demands, it lands on whoever owns the shares: Jeff Bezos, sure, but also a retired couple living off a pension fund, and someone fresh out of college with a first index fund. A company's size says nothing about how rich any one of its owners is. It's a tax, just an invisible one. Hold that thought. We'll see the exact same move again, with a landlord."
   },
   {
    "id": "O4",
-   "text": "And the fact that Amazon is a multi-trillion dollar company doesn't help the mayor's case. A company's size says nothing about how rich any one of its owners is. A cost forced onto Amazon lands on Jeff Bezos and that new grad's index fund alike. If the goal is for rich people to pay more, then tax rich people, openly, where voters can see the bill, and design the tax to do as little damage as possible. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.",
-   "gap": 1.3
-  },
-  {
-   "id": "O6",
-   "text": "This is the mayor of the largest city in America. And this is how he thinks about prices."
+   "text": "And look at what kind of help this is. Holding down Amazon's prices is a benefit you can only spend at Amazon, handed to whoever happens to shop there, rich or poor. Help that's only good for one thing, paid for by a tax nobody can see. That's the mistake this whole video is about.",
+   "gap": 1.6
   },
   {
    "id": "O7",
@@ -83,294 +63,8 @@
    "gap": 1.2
   },
   {
-   "id": "M1",
-   "text": "First, a word on terms, because someone in the comments is already typing."
-  },
-  {
-   "id": "M2",
-   "text": "What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.",
-   "gap": 2.2
-  },
-  {
-   "id": "M3",
-   "text": "People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.",
-   "gap": 1.3
-  },
-  {
-   "id": "M4",
-   "text": "Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.",
-   "gap": 1.3
-  },
-  {
-   "id": "M5",
-   "text": "Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.",
-   "gap": 1.3
-  },
-  {
-   "id": "D1",
-   "text": "The concept is called deadweight loss. The clearest way to see it is a gift."
-  },
-  {
-   "id": "D2",
-   "text": "Say I buy you a sweater for ten dollars. How much is it worth to you? We don't have to guess. Offer you a choice: keep the sweater, or take cash instead. The smallest amount of cash you'd accept in its place is what it's worth to you. Say it's seven dollars. Economists call that revealed preference: your own choice tells us the value.",
-   "gap": 1.3
-  },
-  {
-   "id": "D3",
-   "text": "So I've spent ten dollars, and you've gained something worth seven. The other three dollars just disappeared. I didn't get them. You didn't get them. Nobody did.",
-   "gap": 1.3,
-   "say": "[calmly] So I've spent ten dollars, and you've gained something worth seven. The other three dollars just disappeared. I didn't get them. You didn't get them. Nobody did."
-  },
-  {
-   "id": "D4",
-   "text": "This isn't a thought experiment. The economist Joel Waldfogel asked people what cash they'd have accepted in place of each holiday gift they received, and found that somewhere between a tenth and a third of what givers spent simply evaporated."
-  },
-  {
-   "id": "D4b",
-   "text": "To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.",
-   "say": "[warmly] To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.",
-   "gap": 1.3
-  },
-  {
-   "id": "D6",
-   "text": "If I'd handed you a ten-dollar bill instead, nothing would have been lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.",
-   "gap": 1.2
-  },
-  {
-   "id": "T1",
-   "text": "It gets bigger. When two people trade freely, both expect to come out ahead, or they'd walk away."
-  },
-  {
-   "id": "T2",
-   "text": "Economists have a name for a change that makes someone better off and nobody worse off. A Pareto improvement. It's the one kind of change you can call good without weighing one person's happiness against another's."
-  },
-  {
-   "id": "T3",
-   "text": "Every voluntary trade is a little Pareto improvement. Say Dana would fix your roof for twenty dollars an hour, and you'd happily pay twenty-five. The job happens, and five dollars of value appears out of nowhere, split between you."
-  },
-  {
-   "id": "T4",
-   "text": "Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worthwhile. You'll only pay twenty-five. The job never happens.",
-   "gap": 1.3
-  },
-  {
-   "id": "T5",
-   "text": "The government collects nothing. Dana loses the work. Your roof still leaks. And five dollars of value never comes into existence."
-  },
-  {
-   "id": "T6",
-   "text": "And notice this isn't a judgment call. Nobody forced either of you into that deal. The fact that you both chose it is proof that you both came out ahead. That's revealed preference again. Which means a tax that blocks a useful trade like that one makes the world worse, by definition.",
-   "gap": 1.4
-  },
-  {
-   "id": "T7",
-   "text": "Hold onto those two ideas. Benefits that are worth less than they cost. Taxes that kill trades that would have happened. Those are the two leaks. And the socialist toolkit is built out of them.",
-   "gap": 1.2
-  },
-  {
-   "id": "R1",
-   "text": "Rent control. The flagship. Mamdani campaigned on freezing the rent on a million stabilized apartments."
-  },
-  {
-   "id": "R2",
-   "text": "So take one. Market rent, three thousand dollars a month. Controlled rent, two thousand.",
-   "gap": 1.3
-  },
-  {
-   "id": "R3",
-   "text": "The tenant saves a thousand dollars a month. Where does that thousand come from?"
-  },
-  {
-   "id": "R4",
-   "text": "Not from the city. Not from taxpayers. It comes out of one person's pocket: whoever happened to own that particular building."
-  },
-  {
-   "id": "R5",
-   "text": "So rent control is a thousand-dollar housing voucher, funded by a thousand-dollar tax on one landlord, chosen more or less at random. Propose that policy in those words, and almost nobody would vote for it. Rent control is the same policy, under a friendlier name."
-  },
-  {
-   "id": "R5b",
-   "text": "And notice what rent control can't live without. If the landlord could simply decline to renew the lease, the discount would vanish at the end of the year. So rent control always comes with eviction control. In New York, a rent-stabilized tenant has a legal right to renew, and the landlord can't end the lease just because the rent is below market. The thousand-dollar tax never expires.",
-   "gap": 2.2
-  },
-  {
-   "id": "R6",
-   "text": "And it gets worse, because people respond."
-  },
-  {
-   "id": "R7",
-   "text": "The tenant's discount only works in this one apartment. So they stay put long after it suits them. The job across town, the bigger place for the new baby, the smaller place after the kids leave. All of it now costs a thousand dollars a month in lost discount."
-  },
-  {
-   "id": "R8",
-   "text": "Landlords respond too. When economists studied rent control in San Francisco, they found landlords cut the supply of rental housing by fifteen percent, by converting buildings to condos and redeveloping them. Which pushed up rents for everyone who didn't already have a controlled unit."
-  },
-  {
-   "id": "R9",
-   "text": "When leading economists were surveyed on whether rent control had made housing more affordable in the cities that tried it, almost none agreed. This is about as close to consensus as economics gets."
-  },
-  {
-   "id": "R10",
-   "text": "So rent control fails both tests. It's a benefit worth less than it costs, and it's a tax that kills trades. A double leak.",
-   "gap": 1.3
-  },
-  {
-   "id": "G1",
-   "text": "Rent control is one example of a pattern so common it deserves a name: helping people with one specific thing instead of money. Call it the gift card fallacy.",
-   "gap": 1.3
-  },
-  {
-   "id": "G2",
-   "text": "And it usually isn't a belief anyone states out loud. It's a reflex. People need housing, so give them housing. People need food, so give them food. The alternative, the same help with no strings attached, never even comes to mind. So the gift card gets measured against the wrong baseline: not against cash, but against nothing. Call it the false baseline.",
-   "gap": 1.6
-  },
-  {
-   "id": "G2b",
-   "text": "Put another way, a benefit in kind is just cash, with a restriction on how you can spend it. Handing you a ten-dollar sweater is the same as handing you ten dollars, plus one rule: you may only spend it on this sweater. And a rule can never give you more options. It can only take them away.",
-   "gap": 1.3
-  },
-  {
-   "id": "G3",
-   "text": "Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes."
-  },
-  {
-   "id": "G3a",
-   "text": "This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse.",
-   "gap": 2.2
-  },
-  {
-   "id": "G3b",
-   "text": "Here's a test that makes it concrete. Say you land a rent-stabilized apartment, and you'd rather live somewhere cheaper and keep the difference. So you sublet it at the market rate, move, and spend the extra on food, or childcare, or whatever your family needs most."
-  },
-  {
-   "id": "G3c",
-   "text": "That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent, plus a small surcharge if it's furnished, can get you evicted and leave you owing your subtenant up to three times the overcharge. Try it with a public housing unit, and you can lose the unit.",
-   "gap": 1.3
-  },
-  {
-   "id": "G3d",
-   "text": "Think about what that means. Refusing to give people cash comes with an enforcement arm. When someone converts their gift card into cash on their own, you punish them for it. The policy only works if you stop people from spending their own benefit the way they think best."
-  },
-  {
-   "id": "G5",
-   "text": "The usual objection to cash is that the poor will waste it. That's been tested, a lot. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down.",
-   "gap": 1.3
-  },
-  {
-   "id": "Q1",
-   "text": "So before we go further, here's the alternative, in four sentences."
-  },
-  {
-   "id": "Q2",
-   "text": "Whatever amount of help you want to give, give it as cash. The same check to every citizen."
-  },
-  {
-   "id": "Q3",
-   "text": "Pay for it with taxes that don't block useful trades: taxes on pollution, and on the value of land. If that's not enough, one flat tax on spending."
-  },
-  {
-   "id": "Q4",
-   "text": "That's it. Same help, far less waste. The rest of this video is about why that works, and why almost every policy you hear called socialist does the opposite.",
-   "gap": 1.4
-  },
-  {
-   "id": "P0",
-   "text": "Now watch how far the pattern goes."
-  },
-  {
-   "id": "P1",
-   "text": "A public housing lottery. Win it, and you get one particular apartment, in one particular building, in one particular neighborhood. Almost certainly not the one you'd have picked if you'd been handed the money. Gift card.",
-   "gap": 1.3
-  },
-  {
-   "id": "P2",
-   "text": "Food stamps. To be fair, for most families they work almost like cash, because most families spend more on groceries than the benefit is worth anyway. The waste comes from the rules, like the ban on hot meals, and only when those rules change what a family actually buys. A partial gift card. Partial credit.",
-   "gap": 1.3
-  },
-  {
-   "id": "P2b",
-   "text": "And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.",
-   "gap": 1.6,
-   "say": "[dryly] And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious."
-  },
-  {
-   "id": "P2c",
-   "text": "Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?",
-   "gap": 1.6
-  },
-  {
-   "id": "P3",
-   "text": "Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. Paid for by everyone, including the people who don't. A gift card for drivers.",
-   "gap": 1.3
-  },
-  {
-   "id": "P5",
-   "text": "Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.",
-   "gap": 1.3
-  },
-  {
-   "id": "P6",
-   "text": "Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.",
-   "gap": 1.3
-  },
-  {
-   "id": "P8",
-   "text": "Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.",
-   "say": "[dryly] Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.",
-   "gap": 1.3
-  },
-  {
-   "id": "P9",
-   "text": "Policy after policy, take it apart and you find the same machine inside. Help delivered in kind instead of cash. Paid for by a tax on some trade that would otherwise have happened.",
-   "gap": 1.2
-  },
-  {
-   "id": "H1",
-   "text": "Every time there's a storm, a strike, or a wave of cancelled flights, the same outrage cycle kicks off. Uber triples its prices. Gouging! Greed! Somebody pass a law."
-  },
-  {
-   "id": "H2",
-   "text": "So think about the night the flights get grounded. Thousands of stranded travelers open the app at once. There are only so many cars."
-  },
-  {
-   "id": "H3",
-   "text": "Who should get one? The traveler stuck at the airport at midnight with a sick kid, or the guy running an errand he could just as easily do tomorrow?"
-  },
-  {
-   "id": "H4",
-   "text": "You can't tell them apart by looking. Neither can Uber. But the price can. At triple the fare, the errand waits until tomorrow, and the car goes to someone whose trip can't wait."
-  },
-  {
-   "id": "H5",
-   "text": "And the price does something else. It tells the driver who was planning to stay home tonight that tonight is the night to work. A surge rations the cars, and it summons more of them."
-  },
-  {
-   "id": "H6",
-   "text": "Cap the price, and both effects vanish. The cars go to whoever taps first. The extra drivers stay home. The stranded family waits."
-  },
-  {
-   "id": "H7",
-   "text": "Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.",
-   "say": "[dryly] Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.",
-   "gap": 1.6
-  },
-  {
-   "id": "H8",
-   "text": "And if what bothers you is that a poor family can't afford the surge, fine. That's a real concern about equity. Which is a case for giving that family more money, every day of the year. Breaking the one signal that gets cars to the people who need them helps nobody."
-  },
-  {
-   "id": "H9",
-   "text": "A price cap is a discount for whoever's quickest, paid for by everyone left stranded. Gift card fallacy. Again.",
-   "gap": 1.3
-  },
-  {
-   "id": "H9b",
-   "text": "Economists call this rationing by price versus rationing by waiting. Free roads ration by waiting. That's why Houston widened the Katy Freeway to as many as twenty-six lanes, and within a few years, rush-hour trips took longer than before. Free lanes just fill up. When New York started charging drivers to enter the busiest part of Manhattan in twenty twenty-five, traffic dropped and trips got faster, and plenty of progressives cheered. That's surge pricing, for roads.",
-   "gap": 1.6
-  },
-  {
    "id": "C1",
-   "text": "Now, here's the part where conservatives and libertarians usually take a victory lap. See? Rent control is a disaster. Scrap it. Scrap the minimum wage. Scrap the food stamps.",
+   "text": "And this is why criticism of these policies usually falls flat. It tends to come from conservatives and libertarians, and it goes like this. Rent control is a disaster. Scrap it. Scrap the minimum wage. Scrap the food stamps.",
    "gap": 1.3
   },
   {
@@ -379,7 +73,7 @@
   },
   {
    "id": "C3",
-   "text": "That's why their argument never lands. To a voter who wants to help people, \"replace it with nothing\" sounds exactly like \"I don't want to help people.\" And the socialist on social media gets to say: you think kids shouldn't eat?",
+   "text": "To a voter who wants to help people, \"replace it with nothing\" sounds exactly like \"I don't want to help people.\" And the socialist on social media gets to say: you think kids shouldn't eat?",
    "gap": 1.3
   },
   {
@@ -434,8 +128,335 @@
    "gap": 1.6
   },
   {
+   "id": "M1",
+   "text": "A quick word on terms, because someone in the comments is already typing."
+  },
+  {
+   "id": "M2",
+   "text": "What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.",
+   "gap": 2.2
+  },
+  {
+   "id": "M3",
+   "text": "People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually run on. Mamdani's platform is a good sample: a rent freeze, city-run grocery stores, fare-free buses, and mandates like the delivery law.",
+   "gap": 1.3
+  },
+  {
+   "id": "M4",
+   "text": "Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.",
+   "gap": 1.3
+  },
+  {
+   "id": "M5",
+   "text": "Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.",
+   "gap": 1.3
+  },
+  {
+   "id": "A1",
+   "text": "So if replacing these programs with nothing isn't the answer, what is? There's a third option, and one of the clearest ways to see it comes from the right.",
+   "gap": 1.6
+  },
+  {
+   "id": "P2",
+   "text": "Take food stamps. For most families, they already work almost like cash, because most families spend more on groceries than the benefit is worth anyway. Where they don't, it's because of the rules, like the ban on hot meals.",
+   "gap": 1.3
+  },
+  {
+   "id": "P2b",
+   "text": "Starting in twenty twenty-five, the Trump administration approved state after state's request to add more rules: no soda, no candy. Florida even banned packaged desserts, the cookies and snack cakes almost everyone enjoys now and then. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the dessert ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.",
+   "gap": 1.6,
+   "say": "[dryly] Starting in twenty twenty-five, the Trump administration approved state after state's request to add more rules: no soda, no candy. Florida even banned packaged desserts, the cookies and snack cakes almost everyone enjoys now and then. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the dessert ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious."
+  },
+  {
+   "id": "P2c",
+   "text": "That's all we're saying. Objecting to the dessert ban doesn't mean you want to abolish food stamps. It means you want people to spend them however they choose. Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?",
+   "gap": 1.6
+  },
+  {
+   "id": "G1",
+   "text": "This pattern is so common it deserves a name: helping people with one specific thing instead of money. Call it the gift card fallacy.",
+   "gap": 1.3
+  },
+  {
+   "id": "G2",
+   "text": "And it usually isn't a belief anyone states out loud. It's a reflex. People need housing, so give them housing. People need food, so give them food. The alternative, the same help with no strings attached, never even comes to mind. So the gift card gets measured against the wrong baseline: not against cash, but against nothing. Call it the false baseline.",
+   "gap": 1.6
+  },
+  {
+   "id": "D1",
+   "text": "Here's what the false baseline hides. Picture an actual gift. The loss it causes has a name: deadweight loss."
+  },
+  {
+   "id": "D2",
+   "text": "Say I buy you a sweater for ten dollars. How much is it worth to you? We don't have to guess. Offer you a choice: keep the sweater, or take cash instead. The smallest amount of cash you'd accept in its place is what it's worth to you. Say it's seven dollars. Economists call that revealed preference: your own choice tells us the value.",
+   "gap": 1.3
+  },
+  {
+   "id": "D3",
+   "text": "So I've spent ten dollars, and you've gained something worth seven. The other three dollars just disappeared. I didn't get them. You didn't get them. Nobody did.",
+   "gap": 1.3,
+   "say": "[calmly] So I've spent ten dollars, and you've gained something worth seven. The other three dollars just disappeared. I didn't get them. You didn't get them. Nobody did."
+  },
+  {
+   "id": "D4",
+   "text": "This isn't a thought experiment. The economist Joel Waldfogel asked people what cash they'd have accepted in place of each holiday gift they received, and found that somewhere between a tenth and a third of what givers spent simply evaporated."
+  },
+  {
+   "id": "D4b",
+   "text": "To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.",
+   "say": "[warmly] To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.",
+   "gap": 1.3
+  },
+  {
+   "id": "D6",
+   "text": "If I'd handed you a ten-dollar bill instead, nothing would have been lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.",
+   "gap": 1.2
+  },
+  {
+   "id": "G2b",
+   "text": "Put another way, a benefit in kind is just cash, with a restriction on how you can spend it. Handing you a ten-dollar sweater is the same as handing you ten dollars, plus one rule: you may only spend it on this sweater. And a rule can never give you more options. It can only take them away.",
+   "gap": 1.3
+  },
+  {
+   "id": "G3",
+   "text": "Every gift card is the sweater. The family receives something worth less to them than what it cost to provide. The gap vanishes."
+  },
+  {
+   "id": "G3a",
+   "text": "This part isn't a matter of opinion. Give the family the cash instead. If they'd have bought exactly what the gift card buys, the gift card was only as good as cash. If they'd buy something else, then by their own choice, that something else was worth more to them. Either way, cash is at least as good. It is never worse.",
+   "gap": 2.2
+  },
+  {
+   "id": "G3b",
+   "text": "Now make it concrete. Say you land a rent-stabilized apartment. You'd rather live somewhere cheaper, so you sublet it at the market rate, move, and spend the difference on whatever your family needs most. You're better off. Your subtenant, who chose to pay that rent, is better off too."
+  },
+  {
+   "id": "G3c",
+   "text": "That's against the rules. In New York, subletting a rent-stabilized apartment for more than the legal rent, plus a small surcharge if it's furnished, can get you evicted and leave you owing your subtenant up to three times the overcharge. Try it with a public housing unit, and you can lose the unit.",
+   "gap": 1.3
+  },
+  {
+   "id": "G3d",
+   "text": "Why should that be illegal? Notice what the sublet does: it turns the discount into its cash value. Economically, it's identical to the city simply handing you the money. So refusing to give people cash comes with an enforcement arm. When someone converts their gift card into cash on their own, you punish them for it."
+  },
+  {
+   "id": "G3e",
+   "text": "That's a move we'll use again and again: take two arrangements that look completely different, and show that the money moves exactly the same way in both. Call it economic physics. Once you see the identity, what was hidden becomes visible.",
+   "gap": 1.6
+  },
+  {
+   "id": "G5",
+   "text": "The usual objection to cash is that the poor will waste it. That's been tested, a lot. A World Bank review of nineteen studies found that when poor families get cash, spending on alcohol and tobacco doesn't go up. If anything, it goes down.",
+   "gap": 1.3
+  },
+  {
+   "id": "P0",
+   "text": "Now watch how far the pattern goes."
+  },
+  {
+   "id": "P1",
+   "text": "A public housing lottery. Win it, and you get one particular apartment, in one particular building, in one particular neighborhood. Almost certainly not the one you'd have picked if you'd been handed the money. Gift card.",
+   "gap": 1.3
+  },
+  {
+   "id": "P1b",
+   "text": "The same goes for rules that make it hard to end a lease, or costly to let a worker go. They feel like the decent, humane thing, and you'd seem heartless to question them. But compare them to the right baseline. Each one is a benefit you can only spend on one thing: staying in that apartment a little longer, or in that job a little longer. Nobody protected by them can choose to take it as cash instead.",
+   "gap": 1.6
+  },
+  {
+   "id": "P3",
+   "text": "Free street parking. Curb space in a city is some of the most valuable land on earth, handed out free to whoever owns a car. In Japan, by contrast, you generally can't register a car without proof of an off-street space to keep it in, and parking on the street overnight is mostly banned. There, parking is something you pay for, like anything else. Here, it's a gift card for drivers.",
+   "gap": 1.3
+  },
+  {
+   "id": "P5",
+   "text": "Mamdani's city-owned grocery stores, which wouldn't pay rent or property tax. Those waived costs are a subsidy, delivered only to people who live near one of the stores and want to shop there. Why not give people the money and let them shop wherever they like? Gift card, with a location attached.",
+   "gap": 1.3
+  },
+  {
+   "id": "P6",
+   "text": "Fare-free buses, another Mamdani promise. This one gets partial credit too. Buses take cars off the road, and fewer cars means less traffic and pollution for everyone. That's a real case for subsidizing them. But zero fares go to every rider, rich or poor, and the cleaner fix is charging drivers for the congestion they cause. A gift card with a half-decent excuse.",
+   "gap": 1.3
+  },
+  {
+   "id": "P8",
+   "text": "Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.",
+   "say": "[dryly] Which brings us back to Amazon. The Delivery Protection Act is meant to help delivery workers. Fine. But it doesn't hand them money. It loads costs onto every online order in the city, including orders from people poorer than the workers it's meant to help. A hidden sales tax, paid in the dark.",
+   "gap": 1.3
+  },
+  {
+   "id": "P9",
+   "text": "Policy after policy, take it apart and you find the same machine inside. Help delivered in kind instead of cash. Paid for by a tax on some trade that would otherwise have happened.",
+   "gap": 1.2
+  },
+  {
+   "id": "Q1",
+   "text": "So before we go further, here's the alternative, in four sentences."
+  },
+  {
+   "id": "Q2",
+   "text": "Whatever amount of help you want to give, give it as cash. The same check to every citizen."
+  },
+  {
+   "id": "Q3",
+   "text": "Pay for it with taxes that don't block useful trades: taxes on pollution, and on the value of land. If that's not enough, one flat tax on spending."
+  },
+  {
+   "id": "Q4",
+   "text": "That's it. Same help, far less waste. The rest of this video is about why that works, and why almost every policy you hear called socialist does the opposite.",
+   "gap": 1.4
+  },
+  {
+   "id": "TX1",
+   "text": "So far, we've looked at the benefit side: help that's only good for one thing. Now look at the other side of the ledger. Every subsidy and every price control comes with a bill, and somebody pays it. The trick is that the bill is usually hidden. So let's make it visible.",
+   "gap": 1.6
+  },
+  {
+   "id": "TX2",
+   "text": "Take that free street parking. People assume it costs nothing, because the city already owns the curb. But if the city charged what that land is worth, it could collect that money and cut some other tax by the same amount. Giving the curb away means everyone pays higher taxes to cover it. A dollar not collected is a dollar that has to be raised somewhere else.",
+   "gap": 1.6
+  },
+  {
+   "id": "R1",
+   "text": "Rent control. The flagship. Mamdani campaigned on freezing the rent on a million stabilized apartments."
+  },
+  {
+   "id": "R2",
+   "text": "So take one. Market rent, three thousand dollars a month. Controlled rent, two thousand.",
+   "gap": 1.3
+  },
+  {
+   "id": "R3",
+   "text": "The tenant saves a thousand dollars a month. Where does that thousand come from?"
+  },
+  {
+   "id": "R4",
+   "text": "Not from the city. Not from taxpayers. It comes out of one person's pocket: whoever happened to own that particular building."
+  },
+  {
+   "id": "R5",
+   "text": "So rent control is a thousand-dollar housing voucher, funded by a thousand-dollar tax on one landlord, chosen more or less at random. Propose that policy in those words, and almost nobody would vote for it. Rent control is the same policy, under a friendlier name."
+  },
+  {
+   "id": "T1",
+   "text": "To see why that kind of tax does so much damage, look at what any tax on a trade does. When two people trade freely, both expect to come out ahead, or they'd walk away."
+  },
+  {
+   "id": "T2",
+   "text": "Economists have a name for a change that makes someone better off and nobody worse off. A Pareto improvement. It's the one kind of change you can call good without weighing one person's happiness against another's."
+  },
+  {
+   "id": "T3",
+   "text": "Every voluntary trade is a little Pareto improvement. Say Dana would fix your roof for twenty dollars an hour, and you'd happily pay twenty-five. The job happens, and five dollars of value appears out of nowhere, split between you."
+  },
+  {
+   "id": "T4",
+   "text": "Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worthwhile. You'll only pay twenty-five. The job never happens.",
+   "gap": 1.3
+  },
+  {
+   "id": "T5",
+   "text": "The government collects nothing. Dana loses the work. Your roof still leaks. And five dollars of value never comes into existence."
+  },
+  {
+   "id": "T6",
+   "text": "And notice this isn't a judgment call. Nobody forced either of you into that deal. The fact that you both chose it is proof that you both came out ahead. That's revealed preference again. Which means a tax that blocks a useful trade like that one makes the world worse, by definition.",
+   "gap": 1.4
+  },
+  {
+   "id": "T7",
+   "text": "So there are two leaks. Benefits worth less than they cost, which we saw with every gift card. And taxes that kill trades that would have happened. The socialist toolkit is built out of both.",
+   "gap": 1.2
+  },
+  {
+   "id": "R5b",
+   "text": "And notice what rent control can't live without. If the landlord could simply decline to renew the lease, the discount would vanish at the end of the year. So rent control always comes with eviction control. In New York, a rent-stabilized tenant has a legal right to renew, and the landlord can't end the lease just because the rent is below market. The thousand-dollar tax never expires.",
+   "gap": 2.2
+  },
+  {
+   "id": "R6",
+   "text": "And it gets worse, because people respond."
+  },
+  {
+   "id": "R7",
+   "text": "The tenant's discount only works in this one apartment. So they stay put long after it suits them. The job across town, the bigger place for the new baby, the smaller place after the kids leave. All of it now costs a thousand dollars a month in lost discount."
+  },
+  {
+   "id": "R8",
+   "text": "Landlords respond too. When economists studied rent control in San Francisco, they found landlords cut the supply of rental housing by fifteen percent, by converting buildings to condos and redeveloping them. Which pushed up rents for everyone who didn't already have a controlled unit."
+  },
+  {
+   "id": "R9",
+   "text": "When leading economists were surveyed on whether rent control had made housing more affordable in the cities that tried it, almost none agreed. This is about as close to consensus as economics gets."
+  },
+  {
+   "id": "R10",
+   "text": "So rent control fails both tests. It's a benefit worth less than it costs, and it's a tax that kills trades. A double leak.",
+   "gap": 1.3
+  },
+  {
+   "id": "O2b",
+   "text": "Now, back to that word the mayor used. Greed. Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.",
+   "gap": 1.3
+  },
+  {
+   "id": "O3",
+   "text": "Sit with that for a second. To the mayor, absorbing the cost is just the decent thing to do, the default. Time for a little economic physics. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Absorbing a cost you could pass on is a donation.",
+   "gap": 1.3
+  },
+  {
+   "id": "O3b",
+   "text": "So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?",
+   "say": "[measured] So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?",
+   "gap": 1.4
+  },
+  {
+   "id": "H1",
+   "text": "Every time there's a storm, a strike, or a wave of cancelled flights, the same outrage cycle kicks off. Uber triples its prices. Gouging! Greed! Somebody pass a law."
+  },
+  {
+   "id": "H2",
+   "text": "So think about the night the flights get grounded. Thousands of stranded travelers open the app at once. There are only so many cars."
+  },
+  {
+   "id": "H3",
+   "text": "Who should get one? The traveler stuck at the airport at midnight with a sick kid, or the guy running an errand he could just as easily do tomorrow?"
+  },
+  {
+   "id": "H4",
+   "text": "You can't tell them apart by looking. Neither can Uber. But the price can. At triple the fare, the errand waits until tomorrow, and the car goes to someone whose trip can't wait."
+  },
+  {
+   "id": "H5",
+   "text": "And the price does something else. It tells the driver who was planning to stay home tonight that tonight is the night to work. A surge rations the cars, and it summons more of them."
+  },
+  {
+   "id": "H6",
+   "text": "Cap the price, and both effects vanish. The cars go to whoever taps first. The extra drivers stay home. The stranded family waits."
+  },
+  {
+   "id": "H7",
+   "text": "Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.",
+   "say": "[dryly] Here's the thing nobody says. Surge pricing is just happy hour, viewed from the other direction. A bar cuts its prices at four in the afternoon because the place is empty. Which means the regular price on a Friday night is the surge price. Nobody calls that greed. It's one signal, pointing both ways: come now, there's room, or only come now if it matters. And drivers, please show up.",
+   "gap": 1.6
+  },
+  {
+   "id": "H8",
+   "text": "And if what bothers you is that a poor family can't afford the surge, fine. That's a real concern about equity. Which is a case for giving that family more money, every day of the year. Breaking the one signal that gets cars to the people who need them helps nobody."
+  },
+  {
+   "id": "H9",
+   "text": "A price cap is a discount for whoever's quickest, paid for by everyone left stranded. Gift card fallacy. Again.",
+   "gap": 1.3
+  },
+  {
+   "id": "H9b",
+   "text": "Economists call this rationing by price versus rationing by waiting. Free roads ration by waiting. That's why Houston widened the Katy Freeway to as many as twenty-six lanes, and within a few years, rush-hour trips took longer than before. Free lanes just fill up. When New York started charging drivers to enter the busiest part of Manhattan in twenty twenty-five, traffic dropped and trips got faster, and plenty of progressives cheered. That's surge pricing, for roads.",
+   "gap": 1.6
+  },
+  {
    "id": "W1",
-   "text": "Economics has a result for this, and it's been sitting in the textbooks for decades. The second welfare theorem.",
+   "text": "So how do you share the pie without shrinking it? Economics has a result for exactly this, and it's been sitting in the textbooks for decades. The second welfare theorem.",
    "gap": 1.3
   },
   {

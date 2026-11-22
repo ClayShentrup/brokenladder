@@ -168,7 +168,7 @@ window.EPAudio = (function () {
     const oEnd = en('O8') || 60;
     I.drone(ac, dest, at(0.2), oEnd + 1.5, 38, 0.5); I.drone(ac, dest, at(4), oEnd - 2.3, 45, 0.28);
     const motif = [[62, 0], [65, 0.55], [69, 1.1], [67, 1.75], [62, 2.6]];
-    ['N1', 'M1', 'D1', 'T1', 'R1', 'G1', 'Q1', 'P0', 'H1', 'C1', 'K1', 'W1', 'X1', 'E1', 'Z1'].forEach((id, k) => {
+    ['N1', 'C1', 'M1', 'A1', 'D1', 'P0', 'Q1', 'TX1', 'T1', 'O2b', 'H1', 'W1', 'X1', 'E1', 'Z1'].forEach((id, k) => {
       const t0 = st(id); if (t0 == null) return;
       const ix = TL.order.indexOf(id), prev = ix > 0 ? L[TL.order[ix - 1]].end : t0 - 3;
       const base = prev + 0.15;
