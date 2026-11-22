@@ -39,7 +39,7 @@
   },
   {
    "id": "O4",
-   "text": "So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax so it doesn't block useful trades. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.",
+   "text": "So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax to do as little damage as possible. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.",
    "gap": 1.3
   },
   {
@@ -156,6 +156,11 @@
   {
    "id": "T5",
    "text": "The government collects nothing. Dana loses the work. Your roof still leaks. And five dollars of value never comes into existence."
+  },
+  {
+   "id": "T6",
+   "text": "And notice this isn't a judgment call. Nobody forced either of you into that deal. The fact that you both chose it is proof that you both came out ahead. That's revealed preference again. Which means a tax that blocks a useful trade like that one makes the world worse, by definition.",
+   "gap": 1.4
   },
   {
    "id": "T7",

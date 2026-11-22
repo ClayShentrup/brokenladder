@@ -306,7 +306,7 @@
     banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], { out: c('O4') });
     banner('retirees or new grads: an invisible tax', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
     banner('then tax it. openly.', 960, 200, 86, ['O4', 'tax it openly'], { bg: K.red });
-    banner('visible · designed not to block trades', 960, 330, 52, ['O4', 'design the tax'], {});
+    banner('visible · designed to do the least damage', 960, 330, 52, ['O4', 'design the tax'], {});
     stampX('a speeding ticket on every delivery', 960, 880, 66, ['O4', 'speeding ticket']);
   }
   function sMayor() {
@@ -434,6 +434,12 @@
     banner('the job never happens', 960, 180, 80, ['T4', 'never happens'], { bg: K.red, out: c('T5') });
     card(1400, 340, 720, 400, c('T5'), () => {
       rows([['tax collected: $0', ['T5', 'collects nothing']], ['Dana: no work', ['T5', 'Dana loses']], ['roof: still leaking', ['T5', 'roof still']], ['value lost: $5', ['T5', 'five dollars'], { color: K.red }]], -300, -130, 50, 86);
+    }, { out: c('T6') });
+    card(960, 440, 1300, 420, c('T6'), () => {
+      D('not a judgment call', 0, -140, 52, { color: K.grey });
+      D('you both chose it  =  you both gained', 0, -50, 62, { alpha: fadeIn(w('T6', 'proof'), 0.2) });
+      Dm('revealed preference, again', 0, 30, 38, { color: K.grey, alpha: fadeIn(w('T6', 'revealed'), 0.2) });
+      D('blocking a useful trade: worse, by definition', 0, 120, 50, { color: K.red, alpha: fadeIn(w('T6', 'by definition'), 0.2) });
     }, { out: c('T7') });
     card(960, 420, 1300, 380, c('T7'), () => {
       D('two leaks', 0, -120, 60, { color: K.red });

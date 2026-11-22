@@ -18,7 +18,7 @@ O3b So the accusation isn't that Amazon takes something from anyone. Nobody ends
 
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company, whether that's a retired couple living off a pension fund or someone fresh out of college putting their first paycheck into an index fund. That's a tax, just an invisible one. Hold that thought. We'll see the exact same move again, with a landlord.
 
-O4 So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax so it doesn't block useful trades. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
+O4 So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax to do as little damage as possible. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
 
 O6 This is the mayor of the largest city in America. And this is how he thinks about prices.
 
@@ -87,6 +87,8 @@ T3 Every voluntary trade is a little Pareto improvement. Say Dana would fix your
 T4 Now put an eight-dollar tax on that hour of work. Dana needs twenty-eight to make it worthwhile. You'll only pay twenty-five. The job never happens.
 
 T5 The government collects nothing. Dana loses the work. Your roof still leaks. And five dollars of value never comes into existence.
+
+T6 And notice this isn't a judgment call. Nobody forced either of you into that deal. The fact that you both chose it is proof that you both came out ahead. That's revealed preference again. Which means a tax that blocks a useful trade like that one makes the world worse, by definition.
 
 T7 Hold onto those two ideas. Benefits that are worth less than they cost. Taxes that kill trades that would have happened. Those are the two leaks. And the socialist toolkit is built out of them.
 
