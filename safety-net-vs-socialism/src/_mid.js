@@ -143,7 +143,7 @@
     stampX('greedy for skipping a donation?', 1260, 880, 60, ['O3b', 'greedy'], { out: ['O3b', 'why aim'] });
     stampX('why aim charity at online shoppers?', 1180, 880, 60, ['O3b', 'why aim'], { out: c('O5') });
     banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], { out: c('O4') });
-    banner('an invisible tax on one group of owners', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
+    banner('retirees or new grads: an invisible tax', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
     banner('then tax it. openly.', 960, 200, 86, ['O4', 'tax it openly'], { bg: K.red });
     banner('visible · designed not to block trades', 960, 330, 52, ['O4', 'design the tax'], {});
     stampX('a speeding ticket on every delivery', 960, 880, 66, ['O4', 'speeding ticket']);

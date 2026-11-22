@@ -14,9 +14,9 @@ O2b Notice the move. New rules about how deliveries must be run cost money to fo
 
 O3 Sit with that for a second. To the mayor, absorbing the cost is just the decent thing to do, the default. But look at what it actually is. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Absorbing a cost you could pass on is a donation.
 
-O3b So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away, and a lot of those owners are retirees with a pension fund. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?
+O3b So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?
 
-O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. That's a tax, just an invisible one, on one group of owners. Hold that thought. We'll see the exact same move again, with a landlord.
+O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company, whether that's a retired couple living off a pension fund or someone fresh out of college putting their first paycheck into an index fund. That's a tax, just an invisible one. Hold that thought. We'll see the exact same move again, with a landlord.
 
 O4 So if the point is that Amazon is a multi-trillion dollar company and can afford it, fine. Then tax it openly, where voters can see the bill, and design the tax so it doesn't block useful trades. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
 
