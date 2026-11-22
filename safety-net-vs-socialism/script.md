@@ -68,6 +68,8 @@ D3 So I've spent ten dollars, and you've gained something worth seven. The other
 
 D4 This isn't a thought experiment. The economist Joel Waldfogel asked people what cash they'd have accepted in place of each holiday gift they received, and found that somewhere between a tenth and a third of what givers spent simply evaporated.
 
+D4b To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.
+
 D6 Hand me a ten-dollar bill instead, and nothing is lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.
 
 ---

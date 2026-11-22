@@ -378,8 +378,14 @@
       D('holiday gifts', 0, -130, 50, { color: K.grey });
       D('1/10 to 1/3', 0, -20, 120, { color: K.red });
       D('of what givers spent, gone', 0, 100, 44);
+    }, { out: c('D4b') });
+    cite('Waldfogel, "The Deadweight Loss of Christmas," American Economic Review (1993)', c('D4'), c('D4b'));
+    card(960, 470, 1300, 440, c('D4b'), () => {
+      Dm('holiday gifts also carry', 0, -150, 44, { color: K.grey });
+      D('the thought · the ritual · the people', 0, -70, 60, { color: K.green });
+      D('a housing voucher carries none of that', 0, 40, 54, { color: K.red, alpha: fadeIn(w('D4b', 'none of that'), 0.2) });
+      D("no eggnog with uncle sam", 0, 140, 50, { alpha: fadeIn(w('D4b', 'eggnog'), 0.2) });
     }, { out: c('D6') });
-    cite('Waldfogel, "The Deadweight Loss of Christmas," American Economic Review (1993)', c('D4'), c('D6'));
     stampX('hand over $10 cash: nothing lost', 960, 860, 64, ['D6', 'ten-dollar bill']);
   }
   // 5. the roof
