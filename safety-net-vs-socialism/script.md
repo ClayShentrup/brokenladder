@@ -327,7 +327,7 @@ E13d And remember, that income tax was only an example. In a system built on pol
 
 E13e Which exposes a confusion at the heart of most talk about wealth taxes. Wealth lumps together two different things. A mansion, a yacht, a private jet: that's consumption. Factories, farms, grocery stores: that's capital, making things for everyone else. Capital is the goose that lays the golden eggs. Someone rich on paper who lives modestly isn't consuming much at all, and when they cash out and spend, they pay. If progressive taxes are meant to narrow the gap in how people live, the target is consumption, not the goose.
 
-E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
+E11b Back to the check. Notice what it doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
 
 E11b2 And the old worry that handouts make people lazy? The Congressional Budget Office reviewed the research in twenty twelve. By its central estimates, people respond roughly five times more strongly to how much of the next dollar they get to keep than to simply having more money. So what kills the incentive to work is the high marginal rate built into means testing, far more than the cash itself.
 
