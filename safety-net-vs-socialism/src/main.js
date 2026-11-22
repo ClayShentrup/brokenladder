@@ -337,8 +337,8 @@
     banner('they feel humane', 960, 290, 52, ['P1b', 'humane'], { bg: K.green, out: ['P1b', 'right baseline'] });
     card(1340, 560, 900, 360, ['P1b', 'right baseline'], () => {
       Dm('a benefit you can only spend on', 0, -110, 40, { color: K.grey });
-      D('staying a little longer', 0, -30, 70, { color: K.red });
-      Dm('in that apartment · in that job', 0, 50, 40, { alpha: fadeIn(w('P1b', 'in that job'), 0.2) });
+      D('staying put', 0, -30, 70, { color: K.red });
+      Dm('that apartment · that job', 0, 50, 40, { alpha: fadeIn(w('P1b', 'keeping that job'), 0.2) });
       D('never as cash', 0, 130, 52, { alpha: fadeIn(w('P1b', 'as cash'), 0.2) });
     });
   }
