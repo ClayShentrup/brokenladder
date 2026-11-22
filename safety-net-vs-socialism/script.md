@@ -171,7 +171,7 @@ P2 Food stamps. To be fair, for most families they work almost like cash, becaus
 
 P2b And notice who else adds rules. Starting in twenty twenty-five, the Trump administration approved state after state's request to ban soda and candy from food stamps. Progressives called it paternalism, and they were right. And notice how easily they saw it. Nobody compared the soda ban to having no food stamps at all. They compared it to the same food stamps, without the ban. The right baseline was obvious.
 
-G2b Here's the key identity. Any benefit in kind is just cash, with a restriction on how you can spend it. A hundred dollars in food stamps is a hundred dollars, plus one rule: groceries only. The dessert ban just adds another rule. And a rule can never give you more options. It can only take them away.
+G2b Here's the key identity. Any benefit in kind is just cash, with a restriction on how you can spend it. A hundred dollars in food stamps is a hundred dollars, plus one restriction: groceries only. The dessert ban just adds another. And a restriction on how you spend your own benefit can never give you more choices. By definition, it can only take them away.
 
 P2c So when you object to the dessert ban, you're not objecting to the help. You're objecting to the restriction. Drop it, and the family keeps every dollar, with more choices. That's all we're saying. Now use that baseline everywhere. Compare rent control, city grocery stores and free-but-only-for-this programs, not to nothing, but to the same help with no strings attached. Republicans didn't trust poor families to pick their own groceries, and progressives rightly objected. So why trust them any less to pick their own apartment?
 

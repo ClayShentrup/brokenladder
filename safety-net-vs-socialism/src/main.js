@@ -328,7 +328,7 @@
     D('economic physics', 960, 170, 96, { color: K.red, alpha: fadeIn(w('G3e', 'economic physics'), 0.3) });
     const a1 = fadeIn(w('G3e', 'two arrangements'), 0.3), a2 = fadeIn(w('G3e', 'exactly the same'), 0.3);
     card(560, 520, 680, 360, c('G3e'), () => {
-      D('food stamps', 0, -110, 50, { color: K.grey }); D('= cash + a rule', 0, -20, 60); D('the sublet', 0, 70, 50, { color: K.grey, alpha: a1 }); D('= the cash value', 0, 140, 52, { alpha: a1 });
+      D('food stamps', 0, -110, 50, { color: K.grey }); D('= cash + a restriction', 0, -20, 56); D('the sublet', 0, 70, 50, { color: K.grey, alpha: a1 }); D('= the cash value', 0, 140, 52, { alpha: a1 });
     });
     card(1360, 520, 680, 360, ['G3e', 'exactly the same'], () => {
       D('same money,', 0, -60, 70, { alpha: a2 }); D('same direction', 0, 30, 70, { alpha: a2 });
@@ -384,8 +384,8 @@
       D('a benefit in kind =', 0, -170, 56, { color: K.grey });
       D('cash + a restriction', 0, -80, 92, { color: K.red });
       D('$100 food stamps  =  $100  +  "groceries only"', 0, 30, 46, { alpha: fadeIn(w('G2b', 'hundred dollars in food'), 0.2) });
-      Dm('dessert ban = one more rule', 0, 100, 40, { alpha: fadeIn(w('G2b', 'dessert ban'), 0.2) });
-      D('a rule never adds options. it only removes them.', 0, 175, 44, { alpha: fadeIn(w('G2b', 'never give'), 0.2) });
+      Dm('dessert ban = one more restriction', 0, 100, 40, { alpha: fadeIn(w('G2b', 'dessert ban'), 0.2) });
+      D('a restriction never adds choices. it only removes them.', 0, 175, 44, { alpha: fadeIn(w('G2b', 'never give'), 0.2) });
     });
   }
   function sPipe() {
