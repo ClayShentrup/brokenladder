@@ -290,16 +290,19 @@
   }
   function sCharity() {
     plate('charity', c('O3') - 0.6, ce('O4') + 0.6, { z: [1.0, 1.12], x: [-0.3, 0.3] });
-    banner('passing on a cost = greed?', 520, 150, 60, ['O3', 'passing on'], { out: c('O3b') });
-    banner('absorbing it = giving money away', 560, 260, 60, ['O3', 'Absorbing'], { bg: K.red, out: c('O3b') });
-    stampX('charity, demanded by city hall', 900, 900, 70, ['O3', 'charity'], { out: c('O3b') });
-    card(960, 470, 1400, 560, c('O3b'), () => {
+    banner('to the mayor: absorbing it = just decent', 960, 170, 60, ['O3', 'decent'], { out: ['O3', 'Charge a customer'] });
+    card(960, 470, 1400, 560, ['O3', 'Charge a customer'], () => {
       D('charge $5 less', -340, -200, 56); D('full price + mail a $5 check', 350, -200, 44);
       box(-4, -250, 8, 470, K.black);
-      rows([['company  −$5', ['O3b', 'books']], ['customer  +$5', ['O3b', 'books', 0.4]]], -560, -60, 64, 110);
-      rows([['company  −$5', ['O3b', 'books', 0.8]], ['customer  +$5', ['O3b', 'books', 1.2]]], 90, -60, 64, 110);
-      if (T > w('O3b', 'exactly')) { stampX('identical', 0, 200, 80, ['O3b', 'exactly']); } else KC += 4;
-    }, { out: c('O5') });
+      rows([['company  −$5', ['O3', 'books']], ['customer  +$5', ['O3', 'books', 0.4]]], -560, -60, 64, 110);
+      rows([['company  −$5', ['O3', 'books', 0.8]], ['customer  +$5', ['O3', 'books', 1.2]]], 90, -60, 64, 110);
+      if (T > w('O3', 'exactly')) { stampX('identical', 0, 200, 80, ['O3', 'exactly']); } else KC += 4;
+    }, { out: ['O3', 'Absorbing a cost'] });
+    stampX('absorbing a cost = a donation', 960, 540, 84, ['O3', 'Absorbing a cost'], { out: c('O3b') });
+    banner('nobody is made worse off', 960, 170, 62, ['O3b', 'Nobody'], { out: c('O5') });
+    banner('the charge: not giving enough away', 960, 290, 62, ['O3b', 'failed to give'], { bg: K.red, out: c('O5') });
+    stampX('greedy for skipping a donation?', 1260, 880, 60, ['O3b', 'greedy'], { out: ['O3b', 'why aim'] });
+    stampX('why aim charity at online shoppers?', 1180, 880, 60, ['O3b', 'why aim'], { out: c('O5') });
     banner('who pays? whoever owns the shares', 960, 200, 70, ['O5', 'Whoever'], { out: c('O4') });
     banner('an invisible tax on one group of owners', 960, 320, 56, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
     banner('then tax it. openly.', 960, 200, 86, ['O4', 'tax it openly'], { bg: K.red });

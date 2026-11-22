@@ -24,15 +24,14 @@
   },
   {
    "id": "O3",
-   "text": "Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.",
-   "say": "[dryly] Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.",
+   "text": "Sit with that for a second. To the mayor, absorbing the cost is just the decent thing to do, the default. But look at what it actually is. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Absorbing a cost you could pass on is a donation.",
    "gap": 1.3
   },
   {
    "id": "O3b",
-   "text": "And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.",
-   "say": "[measured] And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.",
-   "gap": 2.2
+   "text": "So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away, and a lot of those owners are retirees with a pension fund. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?",
+   "say": "[measured] So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away, and a lot of those owners are retirees with a pension fund. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?",
+   "gap": 1.4
   },
   {
    "id": "O5",

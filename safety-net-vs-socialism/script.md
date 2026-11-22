@@ -12,9 +12,9 @@ O2 The mayor, Zohran Mamdani, answered on X. "Amazon is a multi-trillion dollar 
 
 O2b Notice the move. New rules about how deliveries must be run cost money to follow. But according to the mayor, the law can't be the reason prices go up. And if they go up anyway, that's greed.
 
-O3 Sit with that for a second. If passing on a cost is greed, then not passing it on is generosity. Absorbing a cost you could charge for is giving money away. That's charity, demanded by City Hall.
+O3 Sit with that for a second. To the mayor, absorbing the cost is just the decent thing to do, the default. But look at what it actually is. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Absorbing a cost you could pass on is a donation.
 
-O3b And that's meant literally. Charge a customer five dollars less than you could, or charge full price and mail them a five-dollar check. Run the books both ways, and the company ends the year with exactly the same money, and so does the customer. Economically, it's a donation.
+O3b So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away, and a lot of those owners are retirees with a pension fund. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?
 
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company. That's a tax, just an invisible one, on one group of owners. Hold that thought. We'll see the exact same move again, with a landlord.
 
