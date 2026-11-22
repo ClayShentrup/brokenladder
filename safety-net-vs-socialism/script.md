@@ -289,7 +289,7 @@ X8 To the extent that still falls short, add one flat tax on consumption, with a
 
 E1 At this point someone always asks: but don't we want progressive taxes? Shouldn't the rich pay a bigger share?
 
-E2 Maybe. But first, which kind of progressive do you mean? Because there are two, and almost nobody separates them.
+E2 First, which kind of progressive do you mean? Because there are two, and almost nobody separates them.
 
 E3 Your marginal tax rate is what you pay on the next dollar you earn. Your effective tax rate is what you pay overall, as a share of everything you earn.
 
