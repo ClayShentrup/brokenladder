@@ -61,3 +61,7 @@ P.update({
  'pride': dict(style=LIB, prompt="A joyful pride march down a city street lined with vivid painted murals, rainbow flags, two older men holding hands, families and children, confetti in the golden light."),
  'energy': dict(style=LIB, prompt="A sweeping landscape: rows of solar panels in the foreground, wind turbines on a ridge, a clean nuclear power plant with cooling towers in the distance, a high-speed train crossing a bridge, golden hour."),
 })
+P.update({
+ 'lamp': dict(prompt="An ornate antique brass table lamp with a fringed shade, standing alone on a pedestal like a museum piece, with a giant blank price tag hanging from it on a string; a small crowd of halftone figures looks on, unimpressed; bold red rays and black wedges."),
+ 'house': dict(prompt="A modest single-family house with a porch, a family visible through the window; in front of it a halftone hand extends a huge stack of banknotes toward the front door, which stays closed; red sunburst and black geometry."),
+})

@@ -202,6 +202,17 @@
       stampX('a dollar not collected is a dollar raised elsewhere', 960, 940, 50, ['TX2', 'A dollar not']);
     }
   }
+  function sLamp() {
+    plates([['lamp', c('O3c') - 0.6, { z: [1.0, 1.1] }], ['house', c('O3d') - 0.2, { z: [1.0, 1.1] }]], ce('O3d') + 0.6);
+    banner('worth ~$500 · listed at $1,000,000', 960, 170, 60, ['O3c', 'list it'], { out: c('O3d') });
+    card(1520, 640, 720, 340, ['O3c', 'hurting anyone'], () => {
+      rows([['hurting anyone?  no', ['O3c', 'hurting anyone']], ['taking anything?  no', ['O3c', 'taking anything']], ['just an offer you can refuse', ['O3c', 'nobody has to']]], -320, -100, 44, 80);
+    }, { out: c('O3d') });
+    stampX('a bad offer, not theft', 960, 900, 76, ['O3c', 'bad offer'], { out: c('O3d') });
+    banner('$3,000,000 for your house?', 960, 170, 64, ['O3d', 'three million'], { out: c('H1') });
+    banner('keeping it = holding out for more', 960, 290, 54, ['O3d', 'holding out'], { bg: K.red, out: c('H1') });
+    stampX('so everyone who owns anything is greedy?', 960, 900, 58, ['O3d', 'everyone who owns'], { out: c('H1') });
+  }
   function sMenu() {
     plate('menu', c('O7') - 0.6, ce('O8') + 0.6, { z: [1.0, 1.1] });
     banner('the same mistake, over and over', 960, 220, 76, ['O7', 'same mistake']);
@@ -807,7 +818,7 @@
       S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G2b', sGift), S('G3e', sIdentity, true), S('G5', sGift),
       S('P0', sP0), S('P1', sP1), S('P1b', sP1b), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9), S('Q1', sShort),
       S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent),
-      S('O2b', sRules), S('O3', sCharity), S('H1', sSurge), S('H9b', sRoads),
+      S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
       S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),

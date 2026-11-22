@@ -16,6 +16,10 @@ O3 Sit with that for a second. To the mayor, absorbing the cost is just the dece
 
 O3b So the accusation isn't that Amazon takes something from anyone. Nobody ends up worse off than they were. The accusation is that its owners failed to give enough away. We don't usually call people greedy for skipping a donation. And if we're going to demand charity, why aim it at whoever happens to be shopping online, rather than people who need it far more?
 
+O3c Here's another way to see it. Say I own an antique lamp worth maybe five hundred dollars, and I list it for a million. That's absurd. But am I hurting anyone? Am I taking anything from someone who needs a lamp? No. I'm offering a trade, and nobody has to take it. Asking too much is just a bad offer. It isn't theft.
+
+O3d In fact, you do this every day. If someone offered you three million dollars for your house, you'd probably move out. At some price, almost anyone would sell. So every day you keep it, you're holding out for more than any buyer is offering. If that's greed, then everyone who owns anything is greedy, and the only escape is to keep giving until you're as poor as the next poorest person. Follow the word far enough, and it stops meaning anything.
+
 O5 And notice who's being drafted to fund it. Not taxpayers in general. Whoever happens to own shares in one particular company, whether that's a retired couple living off a pension fund or someone fresh out of college putting their first paycheck into an index fund. That's a tax, just an invisible one. Hold that thought. We'll see the exact same move again, with a landlord.
 
 O4 And the fact that Amazon is a multi-trillion dollar company doesn't help the mayor's case. A company's size says nothing about how rich any one of its owners is. A cost forced onto Amazon lands on Jeff Bezos and that new grad's index fund alike. If the goal is for rich people to pay more, then tax rich people, openly, where voters can see the bill, and design the tax to do as little damage as possible. A hidden mandate does neither. It's a speeding ticket on every delivery in the city.
