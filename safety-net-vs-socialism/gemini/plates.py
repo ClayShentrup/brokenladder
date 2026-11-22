@@ -69,3 +69,6 @@ P.update({
  'pipe': dict(prompt="A long industrial pipe running diagonally across the frame from a cluster of tall buildings on the left to a row of small houses on the right; coins travel through it and spill out of several cracks and holes along the way, falling and scattering below; a halftone worker with a wrench reaches toward one of the leaks; bold red rays and black wedges."),
  'lighthouse': dict(prompt="A lighthouse on a rocky headland sweeping a strong beam across a dark sea, several small fishing boats of different sizes all guided by the same light; bold red rays and black geometric sky."),
 })
+P.update({
+ 'library': dict(prompt="A grand Beaux-Arts public library facade with tall arched windows and wide stone steps, a few halftone patrons going in and out, a giant gift card shape leaning against the columns; bold red rays and black wedges."),
+})
