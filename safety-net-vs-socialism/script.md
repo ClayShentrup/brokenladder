@@ -76,7 +76,7 @@ D4 This isn't a thought experiment. The economist Joel Waldfogel asked people wh
 
 D4b To be fair, a holiday gift carries things cash can't: the thought behind it, the ritual, the people around the tree. Nobody's saying you should mail your grandmother a check. But none of that sentiment comes with a housing voucher. You're not sipping eggnog with Uncle Sam.
 
-D6 If I'd handed you a ten-dollar bill instead, nothing would have been lost. That missing three dollars is deadweight loss. Value that could have existed, and doesn't.
+D6 If I'd handed you a ten-dollar bill instead, nothing would have been lost. That missing three dollars is deadweight loss. Value that could have existed, but doesn't.
 
 ---
 
