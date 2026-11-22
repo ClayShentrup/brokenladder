@@ -264,6 +264,33 @@
     });
     cite('SFPL Annual Report FY 2023–24: $199.4M spent, 3.98M visits · SF population ~809,000', ['P4', 'two hundred million']);
   }
+  function sRate() {
+    if (T < c('E13d') - 0.3) {
+      paperBg();
+      D('a simpler lever: raise the rate', 960, 150, 72, { alpha: fadeIn(c('E13c'), 0.3) });
+      card(960, 520, 1300, 520, c('E13c'), () => {
+        Dm('the millionaire, earning $1,000,000', 0, -200, 38, { color: K.grey });
+        rows([['40% rate:  pays $400,000', ['E13c', 'forty percent to']], ['50% rate:  pays $500,000', ['E13c', 'fifty']]], -330, -110, 54, 84);
+        D('+$100,000  vs.  a $10,000 check', 0, 70, 60, { color: K.red, alpha: fadeIn(w('E13c', 'ten times'), 0.2) });
+        D('the check = a refundable tax credit', 0, 170, 52, { color: K.green, alpha: fadeIn(w('E13c', 'refundable'), 0.2) });
+      });
+    } else if (T < c('E13e') - 0.3) {
+      plate('factory', c('E13d') - 0.6, ce('E13d') + 0.6, { z: [1.1, 1.18] });
+      banner('the income tax was only an example', 960, 170, 56, c('E13d'), { out: ['E13d', 'pollution and land'] });
+      banner('with pollution & land taxes, the rich still pay more', 960, 170, 50, ['E13d', 'pollution and land'], {});
+      banner('they consume more', 960, 290, 72, ['E13d', 'consume more'], { bg: K.red });
+      stampX('steak · golf · a second home', 960, 880, 66, ['E13d', 'steak']);
+    } else {
+      plate('goose', c('E13e') - 0.6, ce('E13e') + 0.6, { z: [1.0, 1.08] });
+      banner('"wealth" lumps two things together', 960, 120, 56, c('E13e'), {});
+      card(1420, 420, 820, 420, ['E13e', 'mansion'], () => {
+        D('consumption', -190, -150, 46, { color: K.red }); D('capital', 200, -150, 46, { color: K.green, alpha: fadeIn(w('E13e', 'Factories'), 0.2) });
+        rows([['mansion', ['E13e', 'mansion']], ['yacht', ['E13e', 'yacht']], ['private jet', ['E13e', 'jet']]], -330, -70, 40, 64);
+        rows([['factories', ['E13e', 'Factories']], ['farms', ['E13e', 'farms']], ['grocery stores', ['E13e', 'grocery stores']]], 90, -70, 40, 64);
+        D('target consumption, not the goose', 0, 160, 44, { alpha: fadeIn(w('E13e', 'the target'), 0.2) });
+      });
+    }
+  }
   function sMenu() {
     plate('menu', c('O7') - 0.6, ce('O8') + 0.6, { z: [1.0, 1.1] });
     banner('the same mistake, over and over', 960, 220, 76, ['O7', 'same mistake']);
@@ -780,7 +807,7 @@
       D('a cutoff  →  a cliff', 0, -70, 64, { color: K.red, alpha: fadeIn(w('E13b', 'cutoff'), 0.2) });
       D('a phase-out  →  a hidden marginal tax', 0, 30, 54, { color: K.red, alpha: fadeIn(w('E13b', 'Phase it out'), 0.2) });
       D('back to means testing', 0, 150, 56, { alpha: fadeIn(w('E13b', 'back to means'), 0.2) });
-    }, { out: c('E11b') });
+    }, { out: c('E13c') });
     card(1300, 480, 1000, 420, c('E15'), () => {
       Dm('object to rich people getting a check?', 0, -130, 40, { color: K.grey });
       D('hold Amazon\'s prices down?', 0, -30, 54);
@@ -870,7 +897,7 @@
       S('TX1', sBill, true), S('TX2', sBill), S('M1', sMeaning), S('R1', sRent), S('T1', sRoof), S('R5b', sRent), S('R11', sDeliveryCost),
       S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
       S('W1', sTheorem), S('X1', sTaxes),
-      S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
+      S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E13c', sRate, true), S('E13d', sRate), S('E13e', sRate), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
     ];
     const E = [];

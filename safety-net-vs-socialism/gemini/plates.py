@@ -72,3 +72,6 @@ P.update({
 P.update({
  'library': dict(prompt="A grand Beaux-Arts public library facade with tall arched windows and wide stone steps, a few halftone patrons going in and out, a giant gift card shape leaning against the columns; bold red rays and black wedges."),
 })
+P.update({
+ 'goose': dict(prompt="A large white goose sitting proudly on a nest of golden eggs inside a factory courtyard, with a small farm, a grocery store and a factory behind it; a halftone hand gently takes one golden egg while the goose stays untouched; bold red rays and black wedges."),
+})
