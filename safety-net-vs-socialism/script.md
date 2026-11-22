@@ -54,15 +54,6 @@ N6 If at any point you think you hear the case for cutting welfare, you don't. T
 
 ## 3. what socialism even means
 
-M1 First, a word on terms, because someone in the comments is already typing.
-
-M2 What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.
-
-M3 People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually campaign on: rent freezes, city-run grocery stores, fare-free buses, and mandates like that delivery law.
-
-M4 Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.
-
-M5 Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.
 
 ---
 
@@ -101,6 +92,16 @@ T7 Hold onto those two ideas. Benefits that are worth less than they cost. Taxes
 ---
 
 ## 6. exhibit a: rent control
+
+M1 First, a word on terms, because someone in the comments is already typing.
+
+M2 What is socialism, exactly? Even its founders weren't tidy about it. Marx and Engels used socialism and communism loosely, and over their careers applied both words to their own ideas. The neat version, where socialism is a waystation on the road to communism, came later, mostly from Lenin.
+
+M3 People use the word for everything from Soviet five-year plans to Scandinavian welfare states. So forget the dictionary. Look at what self-described socialists actually campaign on: rent freezes, city-run grocery stores, fare-free buses, and mandates like that delivery law.
+
+M4 Add the rest of the usual menu. Price controls, like rent control and the minimum wage. Nationalized industries. Benefits handed out in kind instead of in cash.
+
+M5 Underneath every item is the same move: replace a price the market would set with a decision made politically. Rent control is a city official deciding what an apartment is allowed to cost. That's central planning, one building at a time.
 
 R1 Rent control. The flagship policy, on the platform of self-described socialists almost everywhere.
 

@@ -1014,10 +1014,10 @@
     SCN = [
       { start: 0, draw: sDelivery }, S('O2', sPost, true, 0.5), S('O5', sWho), S('O7', sMenu),
       { start: ce('O8') - 0.1, draw: sTitle },
-      S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('K7b', sPipe), S('K8', sTrickle), S('M1', sMeaning),
+      S('N1', sNot), S('C1', sCritics), S('K1', sTrickle), S('K7b', sPipe), S('K8', sTrickle),
       S('A1', sAlt), S('P2', sP2), S('P2b', sP2b), S('G2b', sRestrict), S('P2c', sP2c), S('G1', sGift), S('D1', sSweater), S('G3', sGift), S('G3e', sIdentity, true), S('G5', sGift), S('G6', sExcept),
       S('P0', sP0), S('P1', sP1), S('P1b', sP1b), S('P3', sP3), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9), S('Q1', sShort),
-      S('TX1', sBill, true), S('TX2', sBill), S('R1', sRent), S('T1', sRoof), S('R5b', sRent), S('R11', sDeliveryCost),
+      S('TX1', sBill, true), S('TX2', sBill), S('M1', sMeaning), S('R1', sRent), S('T1', sRoof), S('R5b', sRent), S('R11', sDeliveryCost),
       S('O2b', sRules), S('O3', sCharity), S('O3c', sLamp), S('H1', sSurge), S('H9b', sRoads),
       S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
