@@ -196,6 +196,8 @@ H8 And if what bothers you is that a poor family can't afford the surge, fine. T
 
 H9 A price cap is a discount for whoever's quickest, paid for by everyone left stranded. Gift card fallacy. Again.
 
+H9b Economists call this rationing by price versus rationing by waiting. Free roads ration by waiting. That's why Houston widened the Katy Freeway to as many as twenty-six lanes, and within a few years, rush-hour trips took longer than before. Free lanes just fill up. When New York started charging drivers to enter the busiest part of Manhattan in twenty twenty-five, traffic dropped and trips got faster, and plenty of progressives cheered. That's surge pricing, for roads.
+
 ---
 
 ## 9. where the usual critics blow it

@@ -583,6 +583,25 @@
     }, { out: c('H9') });
     stampX('gift card fallacy. again.', 960, 860, 96, ['H9', 'Gift card']);
   }
+  function sRoads() {
+    plates([['parking', c('H9b') - 0.6, { z: [1.0, 1.08] }], ['night', ['H9b', 'When New York', -0.2], { z: [1.0, 1.1] }]], ce('H9b') + 0.6);
+    card(960, 300, 1300, 260, c('H9b'), () => {
+      D('rationing by price  vs.  rationing by waiting', 0, -50, 54);
+      Dm('free roads ration by waiting', 0, 45, 42, { color: K.red, alpha: fadeIn(w('H9b', 'Free roads'), 0.2) });
+    }, { out: ['H9b', 'Katy'] });
+    card(1340, 380, 860, 380, ['H9b', 'Katy'], () => {
+      D('Houston · Katy Freeway', 0, -120, 50, { color: K.grey });
+      D('up to 26 lanes', 0, -30, 80);
+      D('rush hour got slower', 0, 70, 56, { color: K.red, alpha: fadeIn(w('H9b', 'took longer'), 0.2) });
+      Dm('free lanes fill up', 0, 140, 36, { alpha: fadeIn(w('H9b', 'fill up'), 0.2) });
+    }, { out: ['H9b', 'When New York'] });
+    card(1340, 380, 860, 400, ['H9b', 'When New York'], () => {
+      D('New York congestion pricing, 2025', 0, -130, 44, { color: K.grey });
+      D('fewer cars · faster trips', 0, -30, 64, { color: K.green, alpha: fadeIn(w('H9b', 'traffic dropped'), 0.2) });
+      Dm('progressives cheered', 0, 60, 40, { alpha: fadeIn(w('H9b', 'progressives cheered'), 0.2) });
+      D('surge pricing, for roads', 0, 140, 56, { color: K.red, alpha: fadeIn(w('H9b', 'for roads'), 0.2) });
+    });
+  }
   // 9. the usual critics
   function sCritics() {
     plates([['sawnet', c('C1') - 0.6, { z: [1.0, 1.1] }], ['net', c('C4') - 0.2, { z: [1.0, 1.08] }]], ce('C6') + 0.6);
@@ -832,7 +851,7 @@
       { start: ce('O8') - 0.1, draw: sTitle },
       S('N1', sNot), S('M1', sMeaning), S('D1', sSweater), S('T1', sRoof), S('R1', sRent), S('G1', sGift), S('Q1', sShort),
       S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9),
-      S('H1', sSurge), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
+      S('H1', sSurge), S('H9b', sRoads), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
       S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E11c', sTiming, true), S('E12', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
     ];
