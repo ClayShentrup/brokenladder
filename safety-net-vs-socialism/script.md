@@ -300,6 +300,12 @@ E10c Remember the minimum wage fight? Under an eighty percent marginal rate, a w
 
 E11 A flat dividend never shrinks when you earn more. No cliff. Every extra hour leaves you better off.
 
+E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
+
+E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.
+
+E13b And even if you decided the rich shouldn't get the check, how would you stop it? Pick an income cutoff, and everyone just above it falls off a cliff. Phase it out gradually instead, and you've built a higher marginal rate into the middle of the income ladder. Either way, you're back to means testing.
+
 E11b And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs.
 
 E11b1 Max Ghenis of PolicyEngine has a phrase for this: means testing is a poor substitute for taxation. Phasing out a benefit as you earn more is a tax, aimed squarely at the poorest workers. If the goal is for richer people to pay more, the tax system can do that openly, without docking the first extra dollar a struggling family earns.
@@ -314,11 +320,9 @@ E11e Who earns like that? Freelancers. Farmers. Construction workers. Artists. A
 
 E11f A flat rate with a dividend doesn't care. Earn it all in one year or spread it across two, and over the two years you pay exactly the same.
 
-E12 Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?
+E15 By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every "don't you dare raise prices." Hold Amazon's prices down, and every millionaire ordering online gets the discount too, with no tax on the other side clawing it back. Same objection. Much worse offender.
 
-E13 Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.
-
-E15 By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every "don't you dare raise prices." A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.
+E15b Rent control is worse still. In San Francisco, your discount depends on how long you've lived in your apartment and how much rents have risen since, with no check on what you earn. A tenant with a six-figure income who moved in a decade ago can pay a fraction of market rent, while a struggling family that just arrived pays full price.
 
 E16 Milton Friedman, not exactly a socialist, proposed something close to this in nineteen sixty-two. He called it a negative income tax: a payment that shrinks as you earn more. Set the rate it shrinks at equal to the flat tax rate, and it's mathematically the same as a dividend plus a flat tax. Make it shrink much faster than that, and you've rebuilt the cliff.
 

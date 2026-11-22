@@ -635,7 +635,7 @@
   }
   function sMillionaire() {
     plates([['dividend', c('E12') - 0.6, { z: [1.1, 1.18] }], ['friedman', c('E16') - 0.2, { z: [1.0, 1.08] }]], ce('E16') + 0.6);
-    banner('why should a millionaire get a check?', 960, 170, 64, c('E12'), { bg: K.red, out: c('E15') });
+    banner('why should a millionaire get a check?', 960, 170, 64, c('E12'), { bg: K.red, out: c('E13b') });
     card(1300, 520, 1000, 520, c('E13'), () => {
       D('look at the taxes too', 0, -200, 52, { color: K.grey });
       D('millionaire: +$10,000', 0, -100, 58, { color: K.green, alpha: fadeIn(w('E13', 'gets ten'), 0.2) });
@@ -643,12 +643,24 @@
       Dm('counting only what funds the checks:', 0, 80, 32, { alpha: fadeIn(w('E13', 'count only'), 0.2) });
       Dm('above ~average income: pay in more than you get', 0, 125, 32, { alpha: fadeIn(w('E13', 'above roughly'), 0.2) });
       D('the check is bookkeeping', 0, 200, 50, { alpha: fadeIn(w('E13', 'bookkeeping'), 0.2) });
-    }, { out: c('E15') });
+    }, { out: c('E13b') });
+    card(1300, 480, 1000, 480, c('E13b'), () => {
+      Dm('still want to exclude the rich?', 0, -170, 40, { color: K.grey });
+      D('a cutoff  →  a cliff', 0, -70, 64, { color: K.red, alpha: fadeIn(w('E13b', 'cutoff'), 0.2) });
+      D('a phase-out  →  a hidden marginal tax', 0, 30, 54, { color: K.red, alpha: fadeIn(w('E13b', 'Phase it out'), 0.2) });
+      D('back to means testing', 0, 150, 56, { alpha: fadeIn(w('E13b', 'back to means'), 0.2) });
+    });
     card(1300, 480, 1000, 420, c('E15'), () => {
       Dm('object to rich people getting a check?', 0, -130, 40, { color: K.grey });
-      D('a price cap discounts every buyer', 0, -30, 54);
-      D('with no tax clawing it back', 0, 50, 54, { color: K.red, alpha: fadeIn(w('E15', 'clawing'), 0.2) });
+      D('hold Amazon\'s prices down?', 0, -30, 54);
+      D('millionaires get the discount too', 0, 50, 54, { color: K.red, alpha: fadeIn(w('E15', 'every millionaire'), 0.2) });
       stampX('much worse offender', 0, 140, 50, ['E15', 'worse offender']);
+    }, { out: c('E15b') });
+    card(1300, 470, 1000, 520, c('E15b'), () => {
+      D('rent control, San Francisco', 0, -190, 46, { color: K.grey });
+      D('your discount depends on', 0, -110, 50);
+      rows([['how long you\'ve lived there', ['E15b', 'how long']], ['how much rents rose since', ['E15b', 'how much rents']], ['not what you earn', ['E15b', 'no check'], { color: K.red }]], -330, -30, 50, 70);
+      Dm('six-figure tenant: a fraction of market rent · new family: full price', 0, 210, 28, { alpha: fadeIn(w('E15b', 'six-figure'), 0.2) });
     }, { out: c('E16') });
     card(1340, 400, 900, 380, c('E16'), () => {
       D('Milton Friedman, 1962', 0, -120, 56, { color: K.red });
@@ -723,7 +735,7 @@
       S('N1', sNot), S('M1', sMeaning), S('D1', sSweater), S('T1', sRoof), S('R1', sRent), S('G1', sGift), S('Q1', sShort),
       S('P0', sP0), S('P1', sP1), S('P2', sP2), S('P2b', sP2b), S('P2c', sP2c), S('P3', sP3), S('P4', sP4), S('P5', sP5), S('P6', sP6), S('P8', sP8), S('P9', sP9),
       S('H1', sSurge), S('H9b', sRoads), S('C1', sCritics), S('K1', sTrickle), S('W1', sTheorem), S('X1', sTaxes),
-      S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E11c', sTiming, true), S('E12', sMillionaire),
+      S('E1', sTable, true), S('E9', sCliff), S('E11', sUniversal), S('E12', sMillionaire), S('E11b', sUniversal), S('E11c', sTiming, true), S('E15', sMillionaire),
       S('Z1', sClose), S('L1', sNeo), S('Z7', sEnd),
     ];
     const E = [];

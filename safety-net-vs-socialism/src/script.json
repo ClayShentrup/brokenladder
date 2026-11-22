@@ -546,6 +546,20 @@
    "text": "A flat dividend never shrinks when you earn more. No cliff. Every extra hour leaves you better off."
   },
   {
+   "id": "E12",
+   "text": "Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?"
+  },
+  {
+   "id": "E13",
+   "text": "Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.",
+   "gap": 2.2
+  },
+  {
+   "id": "E13b",
+   "text": "And even if you decided the rich shouldn't get the check, how would you stop it? Pick an income cutoff, and everyone just above it falls off a cliff. Phase it out gradually instead, and you've built a higher marginal rate into the middle of the income ladder. Either way, you're back to means testing.",
+   "gap": 1.4
+  },
+  {
    "id": "E11b",
    "text": "And notice what the check doesn't need. No means test. No caseworkers verifying your income every few months. No paperwork, no penalty for a good month. Means testing is what creates the cliffs in the first place, and it takes a bureaucracy to run. The dividend replaces that patchwork. Stack it on top of the old phase-outs, and you'd keep the cliffs."
   },
@@ -578,19 +592,15 @@
    "text": "A flat rate with a dividend doesn't care. Earn it all in one year or spread it across two, and over the two years you pay exactly the same."
   },
   {
-   "id": "E12",
-   "text": "Which raises the obvious objection. Why should a millionaire get a ten-thousand-dollar check?"
-  },
-  {
-   "id": "E13",
-   "text": "Because you can't look at the check by itself. You have to look at the taxes that pay for it. The millionaire gets ten thousand dollars and pays four hundred thousand. Most of any tax goes to everything else government does, so count only the share that pays for the checks: everyone above roughly average income pays in more than they get back, and everyone below gets back more than they pay. Net, it's a transfer from richer to poorer. The millionaire's check is just bookkeeping.",
-   "gap": 2.2
-  },
-  {
    "id": "E15",
-   "text": "By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.",
-   "say": "[dryly] By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" A below-market price is a discount for every buyer, millionaires included, and there's no tax on the other side clawing it back from them. Same objection. Much worse offender.",
-   "gap": 2.2
+   "text": "By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" Hold Amazon's prices down, and every millionaire ordering online gets the discount too, with no tax on the other side clawing it back. Same objection. Much worse offender.",
+   "gap": 2.2,
+   "say": "[dryly] By the way, if you still object to rich people getting a check, then you should object far more to every price cap and every \"don't you dare raise prices.\" Hold Amazon's prices down, and every millionaire ordering online gets the discount too, with no tax on the other side clawing it back. Same objection. Much worse offender."
+  },
+  {
+   "id": "E15b",
+   "text": "Rent control is worse still. In San Francisco, your discount depends on how long you've lived in your apartment and how much rents have risen since, with no check on what you earn. A tenant with a six-figure income who moved in a decade ago can pay a fraction of market rent, while a struggling family that just arrived pays full price.",
+   "gap": 1.6
   },
   {
    "id": "E16",
