@@ -174,11 +174,19 @@ H6 In nineteen-oh-three, H. G. Wells asked whether polling was really essential 
 
 G1 And it isn't just history. In Georgia, it's routine.
 
-G2 Every county in Georgia seats grand juries, sixteen to twenty-three citizens drawn at random. Besides deciding indictments, Georgia grand juries appoint people to public boards.
+G2 Every county in Georgia seats grand juries, sixteen to twenty-three citizens drawn at random. Besides deciding indictments, Georgia grand juries choose people for public office.
 
-G3 In Lowndes County, the grand jury appoints the board of elections. In Cherokee County, it picks six of the seven members of the water and sewer authority.
+G2b In all one hundred fifty-nine counties, the grand jury picks the board of equalization, the people who decide your property tax appeal.
 
-G4 A random jury choosing officials, as a normal part of county government, for decades.
+G2c In dozens of counties, it nominates the voter registrars. In Lowndes County, it has appointed the entire board of elections since nineteen seventy-nine.
+
+G3 It picks six of the seven directors of the Cherokee County water and sewer authority, and four of seven on the county's airport authority. In Towns County, it appoints the whole water authority.
+
+G3b And in Crisp County, the grand jury picks a majority of the power commission, which runs the only county-owned electric utility in Georgia, including its own hydroelectric dam. It has run that dam for nearly a hundred years.
+
+G3c It used to go further. For about a century, Georgia counties could have their school boards appointed by the grand jury. By the late nineteen-eighties, twenty-eight of the state's school districts still did. A constitutional amendment in nineteen ninety-two ended the option.
+
+G4 A random jury choosing officials, as a normal part of county government, for generations.
 
 G5 And grand juries serve longer than you'd guess. In some Georgia counties, a grand juror serves for two or three months, meeting once or twice a week. So the objection that people won't put up with jury service doesn't hold up. They already do.
 
@@ -285,6 +293,9 @@ no real public figures depicted. Henry County officials appear only as silhouett
 - `wells`: a 1900s soapbox orator drowned out by newspapers
 - `georgia`: a county courthouse with columns, Georgia pines
 - `water`: a water tower and pipes, with a gavel
+- `dam`: a hydroelectric dam with power lines, a courthouse in the background (Crisp County)
+- `taxappeal`: a homeowner at a hearing table across from three citizens, a property tax bill between them
+- `schoolhouse`: a 1950s Georgia schoolhouse, a grand jury's ballot slips drifting over it
 - `ethics`: an empty dais with seven nameplates, five lit
 - `cramped`: a tiny office with a folding table, a dark camera on a tripod
 - `capitol`: the Georgia Capitol dome in halftone, a hand rewriting a page
@@ -310,7 +321,18 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
 10. **N9.** Cube roots: 8,000→20, 125,000→50, 8M→200, 240M→621. Checked.
 11. **H4.** Venice, 1268 procedure: 30→9→40→12→25→9→45→11→41, then the 41 elect the Doge. That is ten stages. Confirm the count.
 12. **G2.** O.C.G.A. § 15-12-61 (grand jury of 16 to 23).
-13. **G3.** The Lowndes board of elections and the Cherokee CCWSA, 6 of 7 members. Confirm both are current.
+13. **G2b–G3c.** These are from electionbyjury.org/learn-more/ebj-in-georgia:
+    - boards of equalization, O.C.G.A. § 48-5-311;
+    - registrars, § 21-2-212, about 32–36 counties;
+    - Lowndes since 1979;
+    - CCWSA 6 of 7;
+    - Cherokee airport 4 of 7;
+    - Towns water authority 5 of 5;
+    - Crisp Power Commission 4 of 7, Warwick Dam, about 100 years.
+
+    School boards: Ballotpedia on 1992 Amendment 2, and Education Week (Feb 1988), which reports grand-jury selection in 28 of 186 districts under an 1870s-era law. Appointed boards continued through Dec 31, 1993. Check whether "about a century" fits the 1870s origin. The site's claim that Crisp rates are "lower than Georgia Power" is left out until sourced.
+
+    Expect pushback here. The 1988 Ed Week headline is "Ga. Board Selection Process Called Discriminatory." Grand juries then were drawn by jury commissioners, under the "key man" practice, rather than purely at random, and Black citizens were underrepresented. The video should probably meet this head-on (a K-section line: "the old grand juries weren't truly random; the fix is a real lottery from the full population").
 14. **G5.** Grand jury term lengths in Clayton, Chatham, Cobb and DeKalb (manifesto).
 15. **V2–V8.** SB 359 (2025–26), from LegiScan and the enrolled text:
     - Senate 49-0 on 3/31/2025;
