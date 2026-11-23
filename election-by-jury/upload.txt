@@ -1,0 +1,59 @@
+TITLE
+the case against voting
+
+A/B ALTERNATES
+nine witnesses walked out
+what if a random jury picked the mayor?
+
+DESCRIPTION
+In Henry County, Georgia, an ethics board subpoenaed nine county employees, and they walked out on orders from the commission chair. The board didn't fold. It opened an investigation into the chair herself. It could do that because most of its members weren't chosen by voters or politicians. They were chosen by a grand jury.
+
+This video makes the case for election by jury: instead of asking millions of people to cast a vote they have almost no reason to research, draw a random, paid, representative jury, give it a week or two to hear every candidate, and let it pick the winner by secret ballot, using score voting.
+
+We cover the two jobs any way of choosing leaders has to do (alignment and competence), why mass elections fail at both, how big a jury needs to be, why random selection resists bribery, Athens and Venice, how Georgia grand juries already appoint everything from tax appeal boards to a power utility that runs its own dam, the Supreme Court case that shows why the randomness has to be real, and what happened when the Georgia legislature rewrote the law to get rid of Henry County's jury-picked ethics board.
+
+CHAPTERS
+0:00 nine witnesses
+1:10 two jobs
+1:59 the competence problem
+3:47 the alignment problem
+4:33 a different machine
+6:00 watching does most of the work
+7:12 you can recognize a better surgeon
+8:27 how many jurors?
+10:18 this isn't new
+11:37 it's already happening in Georgia
+12:59 a caveat: real randomness
+14:07 the Henry County test
+15:50 the rewrite
+17:49 what we'd change
+19:01 close
+
+SOURCES
+Election by Jury manifesto: https://www.electionbyjury.org/manifesto
+Election by Jury in Georgia: https://www.electionbyjury.org/learn-more/ebj-in-georgia
+"The Henry County Test," Election by Jury (Substack), Jan 8, 2026
+Henry County Board of Ethics hearing video, 2025 (statement at 46:48)
+Georgia S.B. 22 (2021); S.B. 359 (2025–26), Act 623, signed May 12, 2026: https://legiscan.com/GA/bill/SB359/2025
+Georgia governor's 2026 signed legislation: https://gov.georgia.gov/executive-action/legislation/signed-legislation/2026
+Atlanta Journal-Constitution reporting on the county manager's firing, April 2026
+O.C.G.A. §§ 15-12-61, 15-12-71, 21-2-212, 48-5-311
+Turner v. Fouche, 396 U.S. 346 (1970): https://supreme.justia.com/cases/federal/us/396/346
+Jury Composition Reform Act of 2011 (HB 415)
+Ballotpedia, Georgia Amendment 2 (1992): https://ballotpedia.org/Georgia_Boards_of_Education_Elections,_Amendment_2_(1992)
+Education Week, "Ga. Board Selection Process Called Discriminatory" (Feb 1988)
+Gelman, Silver & Edlin, "What is the probability your vote will make a difference?" Economic Inquiry (2012)
+Anthony Downs, An Economic Theory of Democracy (1957)
+U.S. Census Bureau, Current Population Survey, Voting and Registration Supplement
+ODNI / FBI / CISA election-threat statements, 2024; U.S. Treasury sanctions press release jy2766 (2024)
+Intelligence Squared, "The Catholic Church is a force for good in the world," London, October 2009
+Hendriks, Kienhues & Bromme, "Measuring Laypeople's Trust in Experts in a Digital Age," PLOS ONE (2015)
+Aristotle, Politics IV.9 (1294b)
+H. G. Wells, Mankind in the Making (1903)
+Score voting: https://www.scorevoting.net
+
+TAGS
+election by jury, sortition, citizens assembly, random selection, democracy, election reform, score voting, rational ignorance, grand jury, georgia, henry county, ethics board, sb 359, athens, venice, doge, kleroterion, h g wells, voter turnout, campaign finance, disinformation, deliberative democracy, turner v fouche
+
+CATEGORY
+News & Politics (or Education)

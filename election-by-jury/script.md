@@ -114,7 +114,7 @@ W6 Call it omni-biased. Every candidate pushes their own case and pokes holes in
 
 ---
 
-## 7. you can recognize a better pilot
+## 7. you can recognize a better surgeon
 
 K1 Here's the objection everyone has. Random people? You'd let a random sample of your neighbors pick the mayor?
 
