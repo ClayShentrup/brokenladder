@@ -39,6 +39,9 @@ def trim(path, lead=True):
     os.replace(tmp, path)
 
 
+# v3 tone tags (in a line's "say"): keep using them, they make delivery more human.
+# Avoid [dryly] and [deadpan]: both swing too hard (abrupt pitch/volume drop, "Eeyore").
+# Milder tags that worked: [calmly], [warmly], [measured], [matter-of-fact].
 MODEL = os.environ.get('ELEVENLABS_MODEL', 'eleven_v3')
 
 def elevenlabs(text, voice, prev_text, next_text, out):
