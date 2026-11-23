@@ -154,7 +154,7 @@
     banner('company size ≠ owner wealth', 960, 170, 76, ['O5', 'size says'], { out: c('O4') });
     banner('an invisible tax', 960, 300, 64, ['O5', 'invisible'], { bg: K.red, out: c('O4') });
     banner('a benefit you can only spend at Amazon', 960, 170, 62, ['O4', 'only spend'], { out: ['O4', 'mistake'] });
-    banner('for whoever shops there, rich or poor', 960, 290, 52, ['O4', 'rich or poor'], { bg: K.red, out: ['O4', 'mistake'] });
+    banner('for whoever happens to shop there', 960, 290, 52, ['O4', 'whoever happens'], { bg: K.red, out: ['O4', 'mistake'] });
     stampX('one-thing help · a hidden tax', 960, 860, 72, ['O4', 'nobody can see']);
   }
   function sAlt() {
