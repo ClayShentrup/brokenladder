@@ -350,10 +350,11 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
 
 ## sources
 
-- electionbyjury.org/manifesto and its fact-check page
+- electionbyjury.org/manifesto, its fact-check page, and electionbyjury.org/learn-more/ebj-in-georgia
 - Clay Shentrup, "The Henry County Test," Election by Jury (Substack), Jan 8, 2026
 - Georgia SB 22 (2021); SB 359 (2025–26), legiscan.com/GA/bill/SB359/2025; gov.georgia.gov 2026 signed legislation
-- O.C.G.A. § 15-12-61, § 15-12-71
+- O.C.G.A. § 15-12-61, § 15-12-71, § 21-2-212, § 48-5-311
+- Ballotpedia, Georgia Amendment 2 (1992); Education Week, "Ga. Board Selection Process Called Discriminatory" (Feb 1988)
 - Aristotle, *Politics* IV.9 (1294b)
 - H. G. Wells, *Mankind in the Making* (1903)
 - Intelligence Squared debate archive
