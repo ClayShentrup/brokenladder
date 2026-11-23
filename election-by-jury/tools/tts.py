@@ -39,16 +39,19 @@ def trim(path, lead=True):
     os.replace(tmp, path)
 
 
+MODEL = os.environ.get('ELEVENLABS_MODEL', 'eleven_v3')
+
 def elevenlabs(text, voice, prev_text, next_text, out):
     key = os.environ['ELEVENLABS_API_KEY']
     body = {
         'text': text,
-        'model_id': os.environ.get('ELEVENLABS_MODEL', 'eleven_multilingual_v2'),
-        # measured, lecture-hall delivery: steadier and less theatrical than the defaults
-        'voice_settings': {'stability': 0.6, 'similarity_boost': 0.8, 'style': 0.12, 'use_speaker_boost': True},
+        'model_id': MODEL,
+        # conversational delivery; v3 only accepts stability 0.0 / 0.5 / 1.0 and no request stitching
+        'voice_settings': {'stability': 0.5, 'similarity_boost': 0.8, 'style': 0.3, 'use_speaker_boost': True},
     }
-    if prev_text: body['previous_text'] = prev_text
-    if next_text: body['next_text'] = next_text
+    if MODEL != 'eleven_v3':
+        if prev_text: body['previous_text'] = prev_text
+        if next_text: body['next_text'] = next_text
     req = urllib.request.Request(
         f'https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128',
         data=json.dumps(body).encode(), headers={'xi-api-key': key, 'Content-Type': 'application/json'})

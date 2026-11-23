@@ -2,7 +2,7 @@
 
 working title. alternates for A/B: "nine witnesses walked out" / "what if 25 random people picked the mayor?"
 
-first draft. about 2,900 words, roughly 18 minutes at Dorothy's pace with the 1.1 tempo step. line ids are for production. same engine and conventions as `safety-net-vs-socialism`: constructivist photomontage, Gemini plates, Dorothy with v3 tone tags, sparse score with a motif at each section break.
+final. about 3,000 words, roughly 18 minutes at Dorothy's pace with the 1.1 tempo step. line ids are for production. same engine and conventions as `safety-net-vs-socialism`: constructivist photomontage, Gemini plates, Dorothy with v3 tone tags, sparse score with a motif at each section break.
 
 **palette (new):** ultramarine `#1d3a8a`, ochre gold `#d9a21b`, ink black `#141414`, newsprint cream `#efe6d2`, with a single accent of signal orange `#e2572b` reserved for stamps and strike-throughs. no red, no hammer and sickle. the visual vocabulary is the jury box, the lottery drum, the ballot, the courthouse column, the stopwatch.
 
@@ -14,7 +14,7 @@ first draft. about 2,900 words, roughly 18 minutes at Dorothy's pace with the 1.
 
 O1 Henry County, Georgia. Late twenty twenty-five. The county's ethics board is holding a hearing into the transportation director, and it has subpoenaed nine county employees as witnesses.
 
-O2 Midway through, the board's administrator is called out of the room. She comes back and reads a message into the record. The chair of the county commission says the ethics board has no authority to subpoena county employees.
+O2 Midway through, the board's administrator is called out of the room. She comes back and reads a message into the record. The request came from the chair of the county commission, on the county attorney's advice: the ethics board has no authority to subpoena county employees.
 
 O3 And the nine witnesses stand up and walk out.
 
@@ -48,7 +48,7 @@ A6 Let's check both of those claims.
 
 R1 Start with a fact nobody disputes. In a big election, your vote almost certainly won't change the result.
 
-R2 In a statewide race with millions of voters, the odds that the whole thing comes down to your one ballot are tiny. Smaller than your odds of being struck by lightning on the way to the polls.
+R2 In a presidential election, the chance that your one ballot decides the outcome is, on average, about one in sixty million. Local races have better odds, but your vote still almost never decides anything.
 
 R3 So think about what that does to homework. Reading up on every candidate for county commission takes hours. And the payoff, measured in the chance that your research changes anything, is close to zero.
 
@@ -106,7 +106,7 @@ W2 The debate series Intelligence Squared polls its audience before and after ea
 
 W3 In one twenty-oh-nine debate on religion, the audience started at six hundred seventy-eight for the motion and eleven hundred two against. After ninety minutes of argument, it was two hundred sixty-eight for and eighteen hundred seventy-six against.
 
-W4 That's one debate, so don't lean on it too hard. But across their debates, about a third of the audience switches sides after hearing both cases.
+W4 That's one debate, so don't lean on it too hard. But big swings after hearing both sides are common across the series.
 
 W5 Now notice the format. Each side is as biased as it likes. Nobody pretends to be neutral. Neutrality comes from the contest itself, the same way it does in a courtroom. Nobody expects the prosecutor to be fair. We expect the trial to be.
 
@@ -184,9 +184,11 @@ G3 It picks six of the seven directors of the Cherokee County water and sewer au
 
 G3b And in Crisp County, the grand jury picks a majority of the power commission, which runs the only county-owned electric utility in Georgia, including its own hydroelectric dam. It has run that dam for nearly a hundred years.
 
-G3c It used to go further. For about a century, Georgia counties could have their school boards appointed by the grand jury. By the late nineteen-eighties, twenty-eight of the state's school districts still did. A constitutional amendment in nineteen ninety-two ended the option.
+G3c It used to go further. For more than a century, Georgia counties could have their school boards appointed by the grand jury. By the late nineteen-eighties, twenty-eight of the state's school districts still did. A constitutional amendment in nineteen ninety-two ended the option.
 
-G3d One caveat, because critics will raise it. For much of that history, Georgia's jury lists were hand-picked by county jury commissioners, and Black residents were badly underrepresented. That was a jury that wasn't random enough. Since twenty twelve, Georgia has drawn its jurors at random from a statewide list of licensed drivers and registered voters.
+G3d One caveat, because critics will raise it. For much of that history, county jury commissioners hand-picked who went on the jury list. In nineteen seventy, the U.S. Supreme Court ruled against the way one Georgia county ran this system. Taliaferro County was majority Black. Its school board was all white, picked by a mostly white grand jury, drawn from a list made by white jury commissioners.
+
+G3e That was a jury that wasn't random. Since twenty twelve, Georgia has drawn its juries from a statewide list of registered voters and licensed drivers. The lesson of Taliaferro County is the case for real randomness.
 
 G4 A random jury choosing officials, as a normal part of county government, for generations.
 
@@ -220,7 +222,7 @@ X8 That's what independence looks like. Follow the evidence wherever it goes, ev
 
 V1 Then the state legislature stepped in.
 
-V2 A bill called S.B. three fifty-nine had passed the Georgia Senate unanimously in twenty twenty-five, as a routine update to the county's ethics code. In early twenty twenty-six, the House replaced it with a substitute.
+V2 A bill called S.B. three fifty-nine had passed the Georgia Senate unanimously in twenty twenty-five, as an update to the county's ethics code. In early twenty twenty-six, the House replaced it with a substitute.
 
 V3 The substitute shrinks the board to five members. Each one is appointed by a county elected official: the clerk of court, the probate judge, the sheriff, the tax commissioner, and the solicitor-general.
 
@@ -234,7 +236,7 @@ V7 One more detail. The new law requires a majority vote of the commission to fi
 
 V8 Governor Kemp signed S.B. three fifty-nine on May twelfth, twenty twenty-six. The grand-jury board is replaced on January first, twenty twenty-seven.
 
-V9 You can read this as a defeat. Look at it the other way. Five randomly chosen citizens' appointees held their ground against the most powerful official in the county, and the only way to stop them was an act of the state legislature.
+V9 You can read this as a defeat. Look at it the other way. Five board members, chosen by randomly selected citizens, held their ground against the most powerful official in the county, and the only way to stop them was an act of the state legislature.
 
 V10 Independent oversight that nobody bothers to dismantle probably wasn't doing much. This one was worth a law.
 
@@ -258,7 +260,7 @@ Z6 A jury asks a fair sample of them to do it properly.
 
 ## 14. close
 
-C1 We trust twelve random citizens to decide whether someone goes to prison for life. We trust twenty-three of them to decide whether a sitting official gets indicted.
+C1 We trust twelve random citizens to decide whether someone goes to prison for life. We trust a grand jury of up to twenty-three to decide whether a sitting official gets indicted.
 
 C2 In Henry County, five people chosen that way took on the most powerful official in the county, and held out until the state rewrote the law.
 
@@ -312,10 +314,10 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
 ## fact-check list (verify before recording)
 
 1. **O1–O3, X3.** Hearing video, Henry County Board of Ethics, late 2025, at 46:48: Banister's statement. Source: Clay's Jan 8, 2026 Substack, which cites the video.
-2. **R2.** "Smaller than lightning." Gelman, Silver and Edlin (2012) estimate the chance one vote decides a presidential election at about 1 in 60 million on average. Annual US lightning-strike odds are about 1 in a million. The comparison needs to be "a single ballot deciding a statewide race," so confirm the state-level framing, or recast to cite the presidential figure directly.
+2. **R2.** Gelman, Silver and Edlin (2012): about 1 in 60 million on average for the 2008 presidential election. The lightning comparison was dropped because it was false for swing states.
 3. **T2.** Census CPS Voting and Registration supplement: turnout by age, race and income. I deliberately did **not** use the manifesto's Pew figures (under-50 64% of eligible vs 36% of voters; white 55% vs 75%). They look inconsistent with the CPS tables I remember (non-Hispanic whites are roughly two-thirds of eligible voters, not 55%). Check the manifesto's fact-check page before using any of them.
 4. **R7.** ODNI/FBI/CISA statements, 2024 cycle, naming Russia, China and Iran. Treasury sanctions, 2024 (press release jy2766, cited in the manifesto).
-5. **W3–W4.** Intelligence Squared, "The Catholic Church is a force for good in the world," London, October 2009: 678/1,102/346 before, 268/1,876 after. The "about a third switch sides" figure is the series' own reported average and needs a source link.
+5. **W3–W4.** Intelligence Squared, "The Catholic Church is a force for good in the world," London, October 2009: 678/1,102/346 before, 268/1,876 after. The manifesto's "32% switch sides" average was dropped as unsourced; W4 now says big swings are common.
 6. **K3.** Hendriks, Kienhues and Bromme (2015), METI, PLOS ONE.
 7. **N3.** I recomputed 16 of 23 with a uniform prior: P(majority) is 98.0% at N=100, 96.9% at N=1,000, 96.8% at N=10,000 and 96.8% for an infinite population. The manifesto's 94.5/92/91.8 must use a different method (it doesn't say which). The script uses ~97%. Reconcile with the manifesto's fact-check page or the jury-size page.
 8. **N5.** VSE simulations (Jameson Quinn). "24 voters, over 90%" is from the manifesto. Find the source or soften to "simulations suggest."
@@ -334,7 +336,7 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
 
     School boards: Ballotpedia on 1992 Amendment 2, and Education Week (Feb 1988), which reports grand-jury selection in 28 of 186 districts under an 1870s-era law. Appointed boards continued through Dec 31, 1993. Check whether "about a century" fits the 1870s origin. The site's claim that Crisp rates are "lower than Georgia Power" is left out until sourced.
 
-    Expect pushback here. The 1988 Ed Week headline is "Ga. Board Selection Process Called Discriminatory." Grand juries then were drawn by jury commissioners, under the "key man" practice, rather than purely at random, and Black citizens were underrepresented. G3d now addresses it. Verify the Jury Composition Reform Act of 2011 (HB 415), which took effect July 1, 2012, and the statewide master jury list (voters plus driver's licenses).
+    Expect pushback here. The 1988 Ed Week headline is "Ga. Board Selection Process Called Discriminatory." Grand juries then were drawn by jury commissioners, under the "key man" practice, rather than purely at random, and Black citizens were underrepresented. G3d–G3e address it with Turner v. Fouche, 396 U.S. 346 (1970), on Taliaferro County (pronounced "Tolliver"). Verify the Jury Composition Reform Act of 2011 (HB 415), which took effect July 1, 2012, and the statewide master jury list (voters plus driver's licenses).
 
 14. **G5.** Grand jury term lengths in Clayton, Chatham, Cobb and DeKalb (manifesto).
 15. **V2–V8.** SB 359 (2025–26), from LegiScan and the enrolled text:

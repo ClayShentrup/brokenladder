@@ -99,6 +99,18 @@ window.EPAudio = (function () {
       g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
       s.connect(f).connect(g).connect(dest); s.start(t, (t * 3.7) % 1, dur + 0.05);
     },
+    drone(ac, dest, t, dur, midi, gain, type) {
+      const f = 440 * Math.pow(2, (midi - 69) / 12), lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 520; lp.Q.value = 0.4;
+      const g = ac.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(gain, t + Math.min(4, dur / 3));
+      g.gain.setValueAtTime(gain, t + dur - Math.min(4, dur / 3)); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      lp.connect(g).connect(dest);
+      [0, 0.25].forEach((det, i) => { const o = ac.createOscillator(); o.type = type || (i ? 'sawtooth' : 'sine'); o.frequency.value = f * (1 + det / 100); const og = ac.createGain(); og.gain.value = i ? 0.35 : 1; o.connect(og).connect(lp); o.start(t); o.stop(t + dur + 0.1); });
+    },
+    stab(ac, dest, t, notes, gain) {
+      const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.setValueAtTime(2400, t); lp.frequency.exponentialRampToValueAtTime(300, t + 1.6);
+      const g = ac.createGain(); env(ac, g, t, gain, 0.01, 2.4); lp.connect(g).connect(dest);
+      notes.forEach((m) => { const o = ac.createOscillator(); o.type = 'sawtooth'; o.frequency.value = 440 * Math.pow(2, (m - 69) / 12); o.connect(lp); o.start(t); o.stop(t + 2.6); });
+    },
     tone(ac, dest, t, f0, f1, dur, gain, type) {
       const o = ac.createOscillator(); o.type = type || 'sine';
       o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + dur);
@@ -139,6 +151,8 @@ window.EPAudio = (function () {
     tick(ac, d, t) { I.tone(ac, d, t, 2400, 1800, 0.03, 0.15, 'square'); },
     slide(ac, d, t) { I.tone(ac, d, t, 300, 900, 0.35, 0.18, 'triangle'); },
     sad(ac, d, t) { I.tone(ac, d, t, 420, 300, 0.35, 0.2, 'triangle'); I.tone(ac, d, t + 0.3, 330, 220, 0.5, 0.2, 'triangle'); },
+    cut(ac, d, t) { I.noiseSweep(ac, d, t, 0.4, 300, 1400, 0.1, 'bandpass', 0.8); },
+    title(ac, d, t) { I.tone(ac, d, t, 110, 38, 0.9, 0.9); I.stab(ac, d, t, [38, 50, 53, 57], 0.22); },
     bulb(ac, d, t) { I.tone(ac, d, t, 1200, 1250, 0.6, 0.12, 'sine'); SFX.sparkle(ac, d, t + 0.1); },
   };
 
@@ -148,41 +162,23 @@ window.EPAudio = (function () {
     [41, [65, 69, 72, 77]], [45, [64, 69, 72, 76]], [46, [62, 65, 70, 74]], [48, [64, 67, 72, 79]],
   ];
 
-  function scheduleMusic(ac, dest, total, at) {
-    const beat = 0.6, bar = beat * 4, r = rng(2024);
-    const endBar = Math.floor((total - 4.2) / bar);
-    for (let b = 0; b <= endBar; b++) {
-      const t0 = b * bar, [root, tones] = CH[b % 8];
-      const intro = b < 1;
-      // bass
-      if (!intro) {
-        I.bass(ac, dest, at(t0), root, beat * 1.6, 0.34);
-        I.bass(ac, dest, at(t0 + 2 * beat), root + (b % 2 ? 7 : 0), beat * 1.4, 0.28);
-        if (b % 4 === 3) I.bass(ac, dest, at(t0 + 3.5 * beat), root + 2, beat * 0.45, 0.22);
-      }
-      // ukulele strums
-      [[0, 1, 0.11], [1.5, -1, 0.06], [2, 1, 0.09], [3, 1, 0.07], [3.5, -1, 0.06]].forEach(([bt, dir, g]) => {
-        const notes = dir > 0 ? tones : tones.slice().reverse();
-        notes.forEach((m, i) => I.pluck(ac, dest, at(t0 + bt * beat + i * 0.014), m - 12, g, (i - 1.5) * 0.15));
-      });
-      // shaker 8ths + soft kick
-      if (!intro) {
-        for (let e = 0; e < 8; e++) I.shaker(ac, dest, at(t0 + e * beat / 2), e % 2 ? 0.05 : 0.025, 0.25);
-        I.kick(ac, dest, at(t0), 0.3); I.kick(ac, dest, at(t0 + 2 * beat), 0.22);
-      }
-      // glockenspiel noodles
-      [0, 1.5, 2.5, 3].forEach((bt) => {
-        if (r() < (b % 8 < 4 ? 0.45 : 0.6)) {
-          const m = tones[Math.floor(r() * tones.length)] + 12;
-          I.glock(ac, dest, at(t0 + bt * beat), m, 0.09, r() * 0.6 - 0.3);
-        }
-      });
-    }
-    // final cadence
-    const tf = (endBar + 1) * bar;
-    [65, 69, 72, 77].forEach((m, i) => I.pluck(ac, dest, at(tf + i * 0.03), m - 12, 0.14, 0));
-    I.bass(ac, dest, at(tf), 41, 2.6, 0.36);
-    [77, 81, 84, 89, 93].forEach((m, i) => I.glock(ac, dest, at(tf + 0.15 + i * 0.11), m, 0.14, (i - 2) * 0.2));
+  // sparse score: a drone under the cold open, a minor motif at section breaks, a warm major pad for the closing lines
+  function scheduleMusic(ac, dest, TL, at) {
+    const L = TL.lines, st = (id) => L[id] ? L[id].start : null, en = (id) => L[id] ? L[id].end : null;
+    const oEnd = en('O6') || 60;
+    I.drone(ac, dest, at(0.2), oEnd + 1.5, 38, 0.5); I.drone(ac, dest, at(4), oEnd - 2.3, 45, 0.28);
+    const motif = [[62, 0], [65, 0.55], [69, 1.1], [67, 1.75], [62, 2.6]];
+    ['A1', 'R1', 'T1', 'J1', 'W1', 'K1', 'N1', 'H1', 'G1', 'X1', 'V1', 'Z1'].forEach((id, k) => {
+      const t0 = st(id); if (t0 == null) return;
+      const ix = TL.order.indexOf(id), prev = ix > 0 ? L[TL.order[ix - 1]].end : t0 - 3;
+      const base = prev + 0.15;
+      I.drone(ac, dest, at(base), Math.max(2.5, t0 - base + 1.2), k % 2 ? 41 : 38, 0.3);
+      motif.forEach(([m, dt]) => I.pluck(ac, dest, at(base + dt * 0.45), m - (k % 3 === 2 ? 2 : 0), 0.16, 0));
+    });
+    const l1 = st('C3'), l4 = en('C4');
+    if (l1 != null && l4 != null) { [41, 53, 57, 60].forEach((m, i) => I.drone(ac, dest, at(l1 - 1.5 + i * 0.6), l4 - l1 + 3, m, i ? 0.12 : 0.3, 'triangle')); }
+    const z8 = en('C4');
+    if (z8 != null) { I.stab(ac, dest, at(z8 + 0.6), [41, 53, 57, 60, 65], 0.2); I.drone(ac, dest, at(z8 + 0.6), 5.5, 29, 0.4); }
   }
 
   // Build the whole mix. `at(tt)` maps timeline seconds to context seconds.
@@ -200,7 +196,7 @@ window.EPAudio = (function () {
     const voice = ac.createGain(); voice.gain.value = 1.0; voice.connect(master);
 
     // ducking automation, computed in timeline time
-    const UP = 0.42, DOWN = 0.13;
+    const UP = 0.42, DOWN = 0.16;
     const pts = [[0, UP]];
     const ids = TL.order;
     ids.forEach((id, i) => {
@@ -228,7 +224,7 @@ window.EPAudio = (function () {
       guard[k] = (ac2, d, t, ...rest) => { if (t >= 0) jobs.push([t, () => saveI[k](ac2, d, t, ...rest)]); };
     });
     Object.assign(I, guard);
-    try { scheduleMusic(ac, music, TL.total, mAt); } finally { Object.assign(I, saveI); }
+    try { scheduleMusic(ac, music, TL, mAt); } finally { Object.assign(I, saveI); }
 
     // sound effects
     events.forEach((e) => { if (e.t >= from && SFX[e.name]) jobs.push([at(e.t), () => SFX[e.name](ac, sfx, at(e.t), e.dur)]); });
@@ -257,7 +253,7 @@ window.EPAudio = (function () {
       const s = ac.createBufferSource(); s.buffer = buf;
       const g = ac.createGain(); s.connect(g).connect(voice);
       const t0 = at(Math.max(L.start, from)), off = Math.max(0, from - L.start), rem = buf.duration - off;
-      const tEnd = t0 + rem, FO = Math.min(0.25, rem / 3);
+      const tEnd = t0 + rem, FO = Math.min(0.06, rem / 3);
       g.gain.setValueAtTime(off > 0 ? 1 : 0, t0);
       if (!off) g.gain.linearRampToValueAtTime(1, t0 + 0.015);
       g.gain.setValueAtTime(1, tEnd - FO);

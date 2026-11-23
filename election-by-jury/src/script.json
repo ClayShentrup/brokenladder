@@ -1,64 +1,444 @@
 {
-  "title": "Election by Jury",
-  "subtitle": "what if we chose our leaders the way we choose juries?",
-  "series": "election by jury",
-  "voice": { "elevenlabs": "19STyYD15bswVz51nqLf", "elevenlabs_name": "Samara X", "polly": "Ruth" },
-  "lines": [
-    { "id": "H1", "text": "In 2021, a county in Georgia tried something unusual. It created an ethics board, and let a jury of randomly chosen citizens pick most of its members." },
-    { "id": "H2", "text": "Four years later, that board did something ethics boards almost never do. It investigated the most powerful politician in the county." },
-    { "id": "H3", "text": "What happened next is one of the best arguments we have for an idea called election by jury. We'll come back to it. First, the idea.", "gap": 1.0 },
-
-    { "id": "P1", "text": "Any system for choosing leaders has to get two things right." },
-    { "id": "P2", "text": "Alignment: the people making the choice should want what the public wants." },
-    { "id": "P3", "text": "And competence: they need enough information, and enough time, to choose well. Good intentions with bad information still produce bad results." },
-    { "id": "P4", "text": "Mass elections struggle with both.", "gap": 1.0 },
-
-    { "id": "A1", "text": "Start with alignment. Elections are decided by whoever shows up, and the people who show up tend to be older, wealthier, and more partisan than the public as a whole." },
-    { "id": "A2", "text": "Candidates need money to buy name recognition, so they spend their time courting donors. Plenty of capable people never run at all." },
-    { "id": "A3", "text": "Now picture a different approach. Draw a few hundred citizens at random, the way we already draw trial juries." },
-    { "id": "A4", "text": "A random sample is a mirror of the population. Every age, every income, every political leaning shows up in roughly its real proportions. Nobody chose them, so nobody owns them." },
-    { "id": "A5", "text": "And you need far fewer people than you'd think. With a randomly chosen jury of just twenty-three, if sixteen favor one candidate, you can be more than ninety percent confident the whole population would too. That holds whether the town has a thousand people or a million." },
-
-    { "id": "A5b", "text": "Simulations by election researcher Marcus Ogren back this up. With ten candidates and score voting, a jury of just twenty-four closes about ninety-five percent of the gap between a random winner and the best possible one. A jury of ninety-six closes ninety-eight percent. Polling the entire population only gets you to ninety-nine.", "gap": 1.0 },
-
-    { "id": "S1", "text": "So why use bigger juries at all? Security. Every juror is one more person a briber would have to reach." },
-    { "id": "S2", "text": "Suppose each bribe attempt has just a five percent chance of being reported. Try to corrupt fourteen jurors, and you're more likely than not to get caught. Thirty jurors, and it's nearly four in five." },
-    { "id": "S3", "text": "Add a secret ballot, so nobody can verify a bought vote, and corruption gets very expensive. One simple rule for jury size is the cube root of the electorate: about twenty jurors for a town of eight thousand, about six hundred for a whole nation.", "gap": 1.0 },
-
-    { "id": "C1", "text": "Now, competence. Today's voters swim in an information environment that rewards whatever spreads, not whatever is true." },
-    { "id": "C2", "text": "Studies find Americans imagine about twice as many of their political opponents hold extreme views as actually do. And the people who follow the news most closely often have the most distorted picture." },
-    { "id": "C3", "text": "Meanwhile, AI has made persuasion and fake content cheap, and foreign governments are already aiming it at our elections." },
-    { "id": "C4", "text": "A jury changes the information diet. For a week or two, jurors get paid, protected time to do one thing: evaluate the candidates." },
-    { "id": "C5", "text": "Every candidate gets the same amount of time. Money buys nothing in the room." },
-    { "id": "C6", "text": "Candidates make their case, then cross-examine each other. Nobody pretends to be neutral. Each one argues as hard as they can, and the jury hears all of them. Call it omni-biased: balance through vigorous opposition, the way a courtroom works." },
-    { "id": "C7", "text": "Does simply watching that kind of exchange change minds? In Intelligence Squared debates, where the audience votes before and after, about a third of the audience typically switches sides, without any discussion among themselves." },
-    { "id": "C8", "text": "And jurors don't need to be experts. People are surprisingly good at recognizing competence they don't have themselves, the way you can tell a good doctor from a bad one without going to medical school.", "gap": 1.0 },
-
-    { "id": "F1", "text": "Why not just require voters to pass a test? Because whoever writes the test controls the outcome. America tried literacy tests, and they became a tool for keeping people from voting. Randomness is the one selection method nobody can rig.", "gap": 1.0 },
-
-    { "id": "R1", "text": "None of this is new. Ancient Athens filled most public offices by lot. Aristotle wrote that choosing by lot is democratic, and election is oligarchic." },
-    { "id": "R2", "text": "Venice chose its head of state for five centuries through rounds that alternated lotteries and votes, and stayed remarkably stable." },
-    { "id": "R3", "text": "In 1903, H. G. Wells argued that the jury method was the only practical improvement on mass polling." },
-    { "id": "R4", "text": "Modern citizens' assemblies, in places like Ireland and British Columbia, have tackled hard questions well. But most are only advisory, so politicians can ignore them." },
-    { "id": "R5", "text": "Election by jury is different in two ways. The jury's choice is binding. And the jury only chooses leaders; it doesn't govern. So service lasts weeks, not years, and can be mandatory, like jury duty." },
-    { "id": "R6", "text": "And in Georgia, a version of it already exists. Grand juries, drawn at random, appoint members of election boards, water authorities, and ethics boards across the state.", "gap": 1.0 },
-
-    { "id": "D1", "text": "A typical design might look like this. Candidates get equal time on a chess clock, and spend it however they like: presenting, rebutting, or questioning their opponents." },
-    { "id": "D2", "text": "Jurors submit questions anonymously, and each question goes to every candidate at once, so no single juror can steer the process." },
-    { "id": "D3", "text": "A referee enforces the rules, and nothing else. Then jurors score every candidate, say from zero to five, by secret ballot. Highest average score wins.", "gap": 1.0 },
-
-    { "id": "K1", "text": "Which brings us back to Georgia, and Henry County." },
-    { "id": "K2", "text": "In 2021, a state senator wrote the law creating the county's ethics board. Five of its seven members would be chosen by the grand jury. He called it a model for accountability." },
-    { "id": "K3", "text": "In late 2025, the board subpoenaed nine county employees as witnesses in an ethics case. Midway through the hearing, the board's administrator announced on the record that the chair of the county commission had asked that they not testify. All nine walked out." },
-    { "id": "K4", "text": "Most boards would have let it go. This one opened an investigation into the chair herself. Her public response: they could investigate all they wanted, but she would not be answering." },
-    { "id": "K5", "text": "Over the following weeks, the board documented being denied money to hire an attorney, barred from the county's broadcast-equipped meeting room, and refused the cameras to stream its hearings." },
-    { "id": "K6", "text": "Critics called it a political hit squad. But when a separate complaint accused the county manager of nepotism, the board checked the record, found her husband had been hired thirteen years before she took the job, and dismissed the case unanimously." },
-    { "id": "K7", "text": "Then the legislature stepped in. A rewritten bill, sponsored by the same senator who created the board, passed both chambers overwhelmingly, and the governor signed it in May 2026." },
-    { "id": "K8", "text": "Read the text, and the grand jury is simply gone. All five seats on the new board go to elected county officials. And the board is now barred from hearing complaints against county employees, the very kind of case that started all this." },
-    { "id": "K9", "text": "On January first, 2027, the independent board is replaced.", "gap": 1.2 },
-
-    { "id": "E1", "text": "Look at what that sequence shows. Citizens chosen by lot owed nothing to anyone, so they did their job, even when the job meant investigating the most powerful official in the county." },
-    { "id": "E2", "text": "That independence wasn't a flaw in the design. It was the design. And it's exactly why it was taken away." },
-    { "id": "E3", "text": "Election by jury: alignment through randomness, competence through deliberation, and leaders who answer to the public, instead of to whoever appointed them.", "gap": 0.2 }
-  ]
+ "title": "the case against voting",
+ "subtitle": "election by jury",
+ "series": "election by jury",
+ "voice": {
+  "elevenlabs": "ThT5KcBeYPX3keUQqHPh",
+  "elevenlabs_name": "Dorothy"
+ },
+ "lines": [
+  {
+   "id": "O1",
+   "text": "Henry County, Georgia. Late twenty twenty-five. The county's ethics board is holding a hearing into the transportation director, and it has subpoenaed nine county employees as witnesses."
+  },
+  {
+   "id": "O2",
+   "text": "Midway through, the board's administrator is called out of the room. She comes back and reads a message into the record. The request came from the chair of the county commission, on the county attorney's advice: the ethics board has no authority to subpoena county employees."
+  },
+  {
+   "id": "O3",
+   "text": "And the nine witnesses stand up and walk out.",
+   "say": "[calmly] And the nine witnesses stand up and walk out."
+  },
+  {
+   "id": "O4",
+   "text": "In most places, that's where the story ends. The board gets the message, and the investigation quietly dies."
+  },
+  {
+   "id": "O5",
+   "text": "This board didn't fold. It voted to open an investigation into the commission chair herself."
+  },
+  {
+   "id": "O6",
+   "text": "To understand why it could do that, and what happened next, you need to know one strange thing about how that board was chosen. Most of its members weren't elected by voters, or appointed by politicians. They were picked by a jury.",
+   "gap": 4.6
+  },
+  {
+   "id": "A1",
+   "text": "Any system for choosing leaders has two jobs."
+  },
+  {
+   "id": "A2",
+   "text": "The first is alignment. The people making the choice should want what the public wants. If the deciders have their own agenda, it doesn't matter how smart they are."
+  },
+  {
+   "id": "A3",
+   "text": "The second is competence. The deciders have to actually know what they're choosing between. Good intentions plus bad information still gets you a bad result."
+  },
+  {
+   "id": "A4",
+   "text": "A king fails the first test. A committee of experts fails it too, in a quieter way, because experts are a group with interests of their own."
+  },
+  {
+   "id": "A5",
+   "text": "Mass elections were supposed to pass both. Everyone gets a say, so the result is aligned. And voters can learn about the candidates, so the result is informed."
+  },
+  {
+   "id": "A6",
+   "text": "Let's check both of those claims.",
+   "gap": 1.8
+  },
+  {
+   "id": "R1",
+   "text": "Start with a fact nobody disputes. In a big election, your vote almost certainly won't change the result."
+  },
+  {
+   "id": "R2",
+   "text": "In a presidential election, the chance that your one ballot decides the outcome is, on average, about one in sixty million. Local races have better odds, but your vote still almost never decides anything."
+  },
+  {
+   "id": "R3",
+   "text": "So think about what that does to homework. Reading up on every candidate for county commission takes hours. And the payoff, measured in the chance that your research changes anything, is close to zero."
+  },
+  {
+   "id": "R4",
+   "text": "Economists have a name for this. Rational ignorance. When the cost of learning is real, and the benefit is almost nothing, staying uninformed is the sensible choice.",
+   "say": "[calmly] Economists have a name for this. Rational ignorance. When the cost of learning is real, and the benefit is almost nothing, staying uninformed is the sensible choice."
+  },
+  {
+   "id": "R5",
+   "text": "No insult to voters is intended here. This is arithmetic. Most people know a candidate's party, a slogan, and whatever an ad told them. For a down-ballot race, many don't know that much."
+  },
+  {
+   "id": "R6",
+   "text": "And into that vacuum flows money. Before a candidate can persuade you of anything, you have to have heard their name. Name recognition is the first thing campaign money buys, and it's sold by the thirty-second spot."
+  },
+  {
+   "id": "R7",
+   "text": "Now add what an information war looks like. Echo chambers. Foreign influence campaigns. U.S. intelligence officials have named Russia, China and Iran as actively targeting American elections, and generative AI makes a convincing fake cheaper every year."
+  },
+  {
+   "id": "R8",
+   "text": "A mass election asks millions of people, each with almost no reason to study, to sort truth from fiction in that environment. Then it adds up their guesses.",
+   "gap": 1.8
+  },
+  {
+   "id": "T1",
+   "text": "Now the other job. Is the electorate even a fair sample of the public?"
+  },
+  {
+   "id": "T2",
+   "text": "It isn't. The people who vote are, on average, older, whiter and wealthier than the people who don't. The Census Bureau measures this gap every election, and it's large."
+  },
+  {
+   "id": "T3",
+   "text": "Elections are opt-in. And whenever a survey lets people choose whether to take part, the results skew toward whoever is most motivated to show up."
+  },
+  {
+   "id": "T4",
+   "text": "A pollster who did that would be fired. We call it democracy.",
+   "say": "[dryly] A pollster who did that would be fired. We call it democracy."
+  },
+  {
+   "id": "T5",
+   "text": "So mass elections are weakest on exactly the two jobs they were supposed to do. Voters have little reason to get informed. And the ones who show up aren't a fair sample.",
+   "gap": 1.8
+  },
+  {
+   "id": "J1",
+   "text": "Here's the alternative. It's called election by jury.",
+   "say": "[measured] Here's the alternative. It's called election by jury."
+  },
+  {
+   "id": "J2",
+   "text": "Instead of asking everyone to vote, you draw a random sample of citizens. Same way you'd draw a trial jury. Service is required, and it's paid."
+  },
+  {
+   "id": "J3",
+   "text": "The jurors spend a week or two doing what voters never have time for. They hear every candidate make their case. They watch the candidates question each other. They submit their own questions. They talk it over."
+  },
+  {
+   "id": "J4",
+   "text": "Then they vote, by secret ballot. And their choice is binding. Whoever the jury picks takes office."
+  },
+  {
+   "id": "J5",
+   "text": "Look at what that does to both jobs."
+  },
+  {
+   "id": "J6",
+   "text": "Alignment first. A random sample doesn't skew toward the motivated, the old, or the well-off, because nobody opts in. Statisticians call this a representative sample. Every serious poll is trying to approximate one. A jury can actually be one."
+  },
+  {
+   "id": "J7",
+   "text": "Now competence. A juror's vote isn't one in a million. It's one in a few dozen. Suddenly the homework is worth doing. And the jury isn't doing it on their lunch break. They have protected time, set aside for nothing else."
+  },
+  {
+   "id": "J8",
+   "text": "And money mostly stops mattering. Every candidate gets the same time in front of the same jurors. You can't buy name recognition from people who are going to hear from you directly either way.",
+   "gap": 1.8
+  },
+  {
+   "id": "W1",
+   "text": "You might think the magic here is in the deliberation, jurors reasoning together around a table. That helps. But there's evidence that simply watching a fair contest does most of the work."
+  },
+  {
+   "id": "W2",
+   "text": "The debate series Intelligence Squared polls its audience before and after each debate. The audience doesn't discuss anything. They just listen to both sides."
+  },
+  {
+   "id": "W3",
+   "text": "In one twenty-oh-nine debate on religion, the audience started at six hundred seventy-eight for the motion and eleven hundred two against. After ninety minutes of argument, it was two hundred sixty-eight for and eighteen hundred seventy-six against."
+  },
+  {
+   "id": "W4",
+   "text": "That's one debate, so don't lean on it too hard. But big swings after hearing both sides are common across the series."
+  },
+  {
+   "id": "W5",
+   "text": "Now notice the format. Each side is as biased as it likes. Nobody pretends to be neutral. Neutrality comes from the contest itself, the same way it does in a courtroom. Nobody expects the prosecutor to be fair. We expect the trial to be."
+  },
+  {
+   "id": "W6",
+   "text": "Call it omni-biased. Every candidate pushes their own case and pokes holes in everyone else's, and the jurors get to watch.",
+   "gap": 1.8
+  },
+  {
+   "id": "K1",
+   "text": "Here's the objection everyone has. Random people? You'd let a random sample of your neighbors pick the mayor?",
+   "say": "[dryly] Here's the objection everyone has. Random people? You'd let a random sample of your neighbors pick the mayor?"
+  },
+  {
+   "id": "K2",
+   "text": "But think about what the jury is being asked to do. Nobody's asking them to run the city. They're judging who'd run it best."
+  },
+  {
+   "id": "K3",
+   "text": "Those are different skills. You can't perform surgery, but you can usually tell which of two surgeons explains your options clearly, answers straight, and stays consistent under questioning. Research on how laypeople judge experts finds exactly this. People read competence, honesty and good faith from how someone handles hard questions, even when they couldn't answer those questions themselves."
+  },
+  {
+   "id": "K4",
+   "text": "And a jury pools that judgment across dozens of people with different lives and different blind spots."
+  },
+  {
+   "id": "K5",
+   "text": "What about the obvious fix, then? Only let qualified people choose?"
+  },
+  {
+   "id": "K6",
+   "text": "Every filter is a lever. Whoever writes the test decides who passes. America tried this. Literacy tests were sold as a way to make sure voters were competent, and in practice they let local officials decide who got to vote at all."
+  },
+  {
+   "id": "K7",
+   "text": "Randomness is the one selection method nobody can tilt. That's the whole point of it.",
+   "gap": 1.8
+  },
+  {
+   "id": "N1",
+   "text": "How big does the jury need to be? Smaller than you'd think."
+  },
+  {
+   "id": "N2",
+   "text": "Say a town is split between two candidates, and you draw twenty-three jurors. Sixteen of them prefer candidate A. How sure can you be that A would win if the whole town voted?"
+  },
+  {
+   "id": "N3",
+   "text": "About ninety-seven percent sure. And that number barely moves whether the town has a thousand people or a hundred million."
+  },
+  {
+   "id": "N4",
+   "text": "That's the counterintuitive part. Past a point, the size of the population barely matters. What matters is the size of the sample, and whether it's truly random."
+  },
+  {
+   "id": "N5",
+   "text": "With more than two candidates, the voting method starts to matter a lot. Choose-one voting splits the vote between similar candidates. A jury can use score voting instead: rate every candidate, say from zero to five, highest average wins. Simulations suggest a few dozen jurors scoring candidates capture most of the satisfaction you'd get from a perfect election."
+  },
+  {
+   "id": "N6",
+   "text": "And there's a reason to go bigger than statistics alone requires. Bribery."
+  },
+  {
+   "id": "N7",
+   "text": "Say every attempt to bribe or threaten a juror has a one-in-twenty chance of being reported. Try it on fourteen jurors, and the odds you get caught pass fifty percent. Thirty jurors, nearly eighty percent."
+  },
+  {
+   "id": "N8",
+   "text": "And with a secret ballot, a briber can't even check whether the bribe worked."
+  },
+  {
+   "id": "N9",
+   "text": "One simple rule of thumb: the cube root of the electorate. A town of eight thousand gets twenty jurors. A city of a hundred twenty-five thousand gets fifty. A state of eight million gets two hundred. A country of two hundred forty million, about six hundred twenty.",
+   "gap": 1.8
+  },
+  {
+   "id": "H1",
+   "text": "If this sounds radical, it's one of the oldest ideas in democracy."
+  },
+  {
+   "id": "H2",
+   "text": "In classical Athens, most public offices were filled by lot. Aristotle wrote that choosing officials by lot was considered democratic, and choosing them by election, oligarchic."
+  },
+  {
+   "id": "H3",
+   "text": "Notice what Aristotle was worried about. Not the act of choosing. A popularity contest, decided by a crowd with no time to look closely, favors the rich, the famous and the well-connected."
+  },
+  {
+   "id": "H4",
+   "text": "Venice chose its head of state, the Doge, with a procedure that alternated between drawing lots and electing. Thirty names drawn from the Great Council, cut to nine by lot, who elected forty, cut to twelve by lot, and so on through ten rounds. The method, adopted in twelve sixty-eight, lasted until the republic fell in seventeen ninety-seven."
+  },
+  {
+   "id": "H5",
+   "text": "The point of all that lottery was simple. If you don't know who'll be choosing, you can't bribe them in advance, and you can't build a faction around them."
+  },
+  {
+   "id": "H6",
+   "text": "In nineteen-oh-three, H. G. Wells asked whether polling was really essential to democracy, and proposed the jury method instead. He described mass politics as government by \"hustings' bawling, newspaper clamour, and ward organization.\"",
+   "say": "In nineteen-oh-three, H G Wells asked whether polling was really essential to democracy, and proposed the jury method instead. He described mass politics as government by \"hustings' bawling, newspaper clamour, and ward organization.\"",
+   "gap": 1.8
+  },
+  {
+   "id": "G1",
+   "text": "And it isn't just history. In Georgia, it's routine."
+  },
+  {
+   "id": "G2",
+   "text": "Every county in Georgia seats grand juries, sixteen to twenty-three citizens drawn at random. Besides deciding indictments, Georgia grand juries choose people for public office."
+  },
+  {
+   "id": "G2b",
+   "text": "In all one hundred fifty-nine counties, the grand jury picks the board of equalization, the people who decide your property tax appeal."
+  },
+  {
+   "id": "G2c",
+   "text": "In dozens of counties, it nominates the voter registrars. In Lowndes County, it has appointed the entire board of elections since nineteen seventy-nine."
+  },
+  {
+   "id": "G3",
+   "text": "It picks six of the seven directors of the Cherokee County water and sewer authority, and four of seven on the county's airport authority. In Towns County, it appoints the whole water authority."
+  },
+  {
+   "id": "G3b",
+   "text": "And in Crisp County, the grand jury picks a majority of the power commission, which runs the only county-owned electric utility in Georgia, including its own hydroelectric dam. It has run that dam for nearly a hundred years."
+  },
+  {
+   "id": "G3c",
+   "text": "It used to go further. For more than a century, Georgia counties could have their school boards appointed by the grand jury. By the late nineteen-eighties, twenty-eight of the state's school districts still did. A constitutional amendment in nineteen ninety-two ended the option."
+  },
+  {
+   "id": "G3d",
+   "text": "One caveat, because critics will raise it. For much of that history, county jury commissioners hand-picked who went on the jury list. In nineteen seventy, the U.S. Supreme Court ruled against the way one Georgia county ran this system. Taliaferro County was majority Black. Its school board was all white, picked by a mostly white grand jury, drawn from a list made by white jury commissioners.",
+   "say": "One caveat, because critics will raise it. For much of that history, county jury commissioners hand-picked who went on the jury list. In nineteen seventy, the U.S. Supreme Court ruled against the way one Georgia county ran this system. Tolliver County was majority Black. Its school board was all white, picked by a mostly white grand jury, drawn from a list made by white jury commissioners."
+  },
+  {
+   "id": "G3e",
+   "text": "That was a jury that wasn't random. Since twenty twelve, Georgia has drawn its juries from a statewide list of registered voters and licensed drivers. The lesson of Taliaferro County is the case for real randomness.",
+   "say": "That was a jury that wasn't random. Since twenty twelve, Georgia has drawn its juries from a statewide list of registered voters and licensed drivers. The lesson of Tolliver County is the case for real randomness."
+  },
+  {
+   "id": "G4",
+   "text": "A random jury choosing officials, as a normal part of county government, for generations."
+  },
+  {
+   "id": "G5",
+   "text": "And grand juries serve longer than you'd guess. In some Georgia counties, a grand juror serves for two or three months, meeting once or twice a week. So the objection that people won't put up with jury service doesn't hold up. They already do."
+  },
+  {
+   "id": "G6",
+   "text": "That brings us back to Henry County.",
+   "gap": 1.8
+  },
+  {
+   "id": "X1",
+   "text": "In twenty twenty-one, State Senator Emanuel Jones sponsored a bill creating the Henry County Board of Ethics. Seven members. Five of them appointed by the grand jury, one for each commission district."
+  },
+  {
+   "id": "X2",
+   "text": "That design choice is the whole story. Most ethics boards are appointed by the people they're supposed to watch. A grand jury appointee owes their seat to no one."
+  },
+  {
+   "id": "X3",
+   "text": "Then came the walkout. Nine subpoenaed witnesses leave after the commission chair's office says the board can't compel them."
+  },
+  {
+   "id": "X4",
+   "text": "The board votes to investigate the commission chair, Carlotta Harrell. Her public response: \"They can investigate all they want to, but I will not be answering anything that they put out.\"",
+   "say": "[dryly] The board votes to investigate the commission chair, Carlotta Harrell. Her public response: \"They can investigate all they want to, but I will not be answering anything that they put out.\""
+  },
+  {
+   "id": "X5",
+   "text": "Next, the resources dry up. At a January twenty twenty-six meeting, the board laid it out on the record. No budget for a three-hundred-ten-dollar-a-week job posting, so they used a free trial. Barred from the county's broadcast-equipped meeting room. Denied the cameras to stream their meetings."
+  },
+  {
+   "id": "X6",
+   "text": "The board's chair, Felicia Harrell, no relation, put it this way: \"They want the Board of Ethics to be a figurehead.\""
+  },
+  {
+   "id": "X7",
+   "text": "Critics called the board a political hit squad. At that same meeting, it had a nepotism complaint against the county manager, a clean shot if it wanted one. It looked at the evidence. Her husband had been hired thirteen years before she became manager. The board dismissed the case, unanimously."
+  },
+  {
+   "id": "X8",
+   "text": "That's what independence looks like. Follow the evidence wherever it goes, even when it clears someone you could have used.",
+   "gap": 1.8
+  },
+  {
+   "id": "V1",
+   "text": "Then the state legislature stepped in."
+  },
+  {
+   "id": "V2",
+   "text": "A bill called S.B. three fifty-nine had passed the Georgia Senate unanimously in twenty twenty-five, as an update to the county's ethics code. In early twenty twenty-six, the House replaced it with a substitute.",
+   "say": "A bill called S B three fifty-nine had passed the Georgia Senate unanimously in twenty twenty-five, as an update to the county's ethics code. In early twenty twenty-six, the House replaced it with a substitute."
+  },
+  {
+   "id": "V3",
+   "text": "The substitute shrinks the board to five members. Each one is appointed by a county elected official: the clerk of court, the probate judge, the sheriff, the tax commissioner, and the solicitor-general."
+  },
+  {
+   "id": "V4",
+   "text": "The words \"grand jury\" don't appear anywhere in it. The randomly chosen appointments aren't repealed by name. They're just gone, overwritten. Nothing in the bill's title tells you.",
+   "say": "[dryly] The words \"grand jury\" don't appear anywhere in it. The randomly chosen appointments aren't repealed by name. They're just gone, overwritten. Nothing in the bill's title tells you."
+  },
+  {
+   "id": "V5",
+   "text": "And the substitute adds a new sentence: the board \"shall not accept or hear complaints\" against county employees. The transportation director who started all this is a county employee."
+  },
+  {
+   "id": "V6",
+   "text": "It passed the House a hundred sixty-one to three, and the Senate forty-four to six."
+  },
+  {
+   "id": "V7",
+   "text": "One more detail. The new law requires a majority vote of the commission to fire the county manager. While the bill sat on the governor's desk, the commission chair fired the county manager on her own. She told the Atlanta Journal-Constitution that under the new legislation, that decision would require a majority vote."
+  },
+  {
+   "id": "V8",
+   "text": "Governor Kemp signed S.B. three fifty-nine on May twelfth, twenty twenty-six. The grand-jury board is replaced on January first, twenty twenty-seven.",
+   "say": "Governor Kemp signed S B three fifty-nine on May twelfth, twenty twenty-six. The grand-jury board is replaced on January first, twenty twenty-seven."
+  },
+  {
+   "id": "V9",
+   "text": "You can read this as a defeat. Look at it the other way. Five board members, chosen by randomly selected citizens, held their ground against the most powerful official in the county, and the only way to stop them was an act of the state legislature."
+  },
+  {
+   "id": "V10",
+   "text": "Independent oversight that nobody bothers to dismantle probably wasn't doing much. This one was worth a law.",
+   "say": "[dryly] Independent oversight that nobody bothers to dismantle probably wasn't doing much. This one was worth a law.",
+   "gap": 1.8
+  },
+  {
+   "id": "Z1",
+   "text": "So here's the proposal. Take the method Georgia already uses for ethics boards and water authorities, and use it for the offices we currently fill with mass elections."
+  },
+  {
+   "id": "Z2",
+   "text": "Draw a jury. Pay them. Give them a week or two. Every candidate gets equal time, can question their rivals, and answers the jury's questions. The jurors score every candidate by secret ballot. The winner takes office."
+  },
+  {
+   "id": "Z3",
+   "text": "No fundraising for name recognition, because the jury hears from everyone directly. No turnout skew, because nobody opts in. No rational ignorance, because each juror's vote really counts, and they have the time to use it well."
+  },
+  {
+   "id": "Z4",
+   "text": "And it holds up better than a mass election against the age of cheap persuasion. It's a lot harder to flood a sequestered room of fifty people with deepfakes than to flood a feed with them."
+  },
+  {
+   "id": "Z5",
+   "text": "None of this means voters are stupid. It means a mass election asks them to do an expert's job, in their spare time, for no reward, in the middle of an information war."
+  },
+  {
+   "id": "Z6",
+   "text": "A jury asks a fair sample of them to do it properly.",
+   "gap": 1.8
+  },
+  {
+   "id": "C1",
+   "text": "We trust twelve random citizens to decide whether someone goes to prison for life. We trust a grand jury of up to twenty-three to decide whether a sitting official gets indicted."
+  },
+  {
+   "id": "C2",
+   "text": "In Henry County, five people chosen that way took on the most powerful official in the county, and held out until the state rewrote the law."
+  },
+  {
+   "id": "C3",
+   "text": "Ordinary people can be trusted to choose their leaders.",
+   "say": "[warmly] Ordinary people can be trusted to choose their leaders."
+  },
+  {
+   "id": "C4",
+   "text": "We just keep asking them to do it without the time, the information, or a reason to pay attention.",
+   "say": "[warmly] We just keep asking them to do it without the time, the information, or a reason to pay attention.",
+   "gap": 6
+  }
+ ]
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Render the explainer to MP4: deterministic frame stepping in headless Chromium, piped to ffmpeg.
 //
-//   node tools/render.cjs                      full 1080p30 render -> out/gift-card-fallacy.mp4
+//   node tools/render.cjs                      full 1080p30 render -> out/case-against-voting.mp4
 //   node tools/render.cjs --draft              540p, faster, for checking timing
 //   node tools/render.cjs --captions           burn captions into the picture
 //   node tools/render.cjs --stills 12,40,95    just write PNG stills at those seconds
@@ -19,7 +19,7 @@ const args = process.argv.slice(2);
 const flag = (n) => args.includes('--' + n);
 const opt = (n, d) => { const i = args.indexOf('--' + n); return i >= 0 ? args[i + 1] : d; };
 
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.woff2': 'font/woff2', '.mp3': 'audio/mpeg', '.wav': 'audio/wav' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.woff2': 'font/woff2', '.mp3': 'audio/mpeg', '.jpg': 'image/jpeg', '.wav': 'audio/wav' };
 function serve() {
   return new Promise((res) => {
     const srv = http.createServer((req, rsp) => {
@@ -82,7 +82,7 @@ function serve() {
   const I = Number((meas.match(/I:\s+(-?[\d.]+) LUFS\s*\n\s*Threshold[\s\S]*$/) || meas.match(/I:\s+(-?[\d.]+) LUFS(?![\s\S]*I:)/) || [])[1]);
   const gainDb = Number.isFinite(I) ? -14 - I : 0;
   console.log(`mix ${I} LUFS -> gain ${gainDb.toFixed(2)} dB`);
-  const name = opt('out', draft ? 'draft.mp4' : 'gift-card-fallacy.mp4');
+  const name = opt('out', draft ? 'draft.mp4' : 'case-against-voting.mp4');
   const outFile = path.join(OUT, name);
   const ff = spawn('ffmpeg', [
     '-y', '-loglevel', 'error',
