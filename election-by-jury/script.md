@@ -186,6 +186,8 @@ G3b And in Crisp County, the grand jury picks a majority of the power commission
 
 G3c It used to go further. For more than a century, Georgia counties could have their school boards appointed by the grand jury. By the late nineteen-eighties, twenty-eight of the state's school districts still did. A constitutional amendment in nineteen ninety-two ended the option.
 
+G3c2 Georgia almost brought it back. In twenty seventeen, the state Senate voted forty to twelve for an amendment letting districts choose grand-jury-appointed school boards again. A House committee killed it, seventeen to one. The part lawmakers objected to was the grand jury.
+
 G3d One caveat, because critics will raise it. For much of that history, county jury commissioners hand-picked who went on the jury list. In nineteen seventy, the U.S. Supreme Court ruled against the way one Georgia county ran this system. Taliaferro County was majority Black. Its school board was all white, picked by a mostly white grand jury, drawn from a list made by white jury commissioners.
 
 G3e That was a jury that wasn't random. Since twenty twelve, Georgia has drawn its juries from a statewide list of registered voters and licensed drivers. The lesson of Taliaferro County is the case for real randomness.
@@ -351,6 +353,8 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
 16. **V9.** "Five appointees": the five grand-jury seats. Confirm that all five sitting members named in the article (F. Harrell, Lee, Valme, Easter, Willingham) were grand-jury appointees.
 
 ## sources
+
+- AJC, "Grand juries could pick school boards under new proposal" (Mar 13, 2017) and "Lawmakers unconvinced by a 'drunk' on the school board and a blown budget" (Mar 16, 2017); LegiScan, GA SR 192 (2017–18)
 
 - electionbyjury.org/manifesto, its fact-check page, and electionbyjury.org/learn-more/ebj-in-georgia
 - Clay Shentrup, "The Henry County Test," Election by Jury (Substack), Jan 8, 2026

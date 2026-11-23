@@ -593,15 +593,23 @@
     cite('electionbyjury.org/learn-more/ebj-in-georgia · O.C.G.A. §§ 15-12-61, 21-2-212, 48-5-311', c('G2b'));
   }
   function sSchools() {
-    plate('schoolhouse', c('G3c') - 0.6, ce('G3c') + 0.6, { z: [1.0, 1.1] });
-    banner('it used to go further', 960, 180, 76, ['G3c', 'further']);
-    banner('grand-jury-appointed school boards', 960, 290, 60, ['G3c', 'school boards'], { bg: BLUE });
+    plates([['schoolhouse', c('G3c') - 0.6, { z: [1.0, 1.1] }], ['capitol', c('G3c2') - 0.3, { z: [1.08, 1.0] }]], ce('G3c2') + 0.6);
+    banner('it used to go further', 960, 180, 76, ['G3c', 'further'], { out: c('G3c2') });
+    banner('grand-jury-appointed school boards', 960, 290, 60, ['G3c', 'school boards'], { bg: BLUE, out: c('G3c2') });
     card(1300, 680, 860, 360, ['G3c', 'twenty-eight'], () => {
       D('28 districts', 0, -90, 80, { color: BLUE });
       Dm('still did it in the late 1980s', 0, -10, 40);
       D('ended by a 1992 amendment', 0, 90, 52, { alpha: fadeIn(w('G3c', 'amendment'), 0.2) });
+    }, { out: c('G3c2') });
+    cite('Education Week, Feb 1988 · Ballotpedia, Georgia Amendment 2 (1992)', ['G3c', 'twenty-eight'], c('G3c2'));
+    card(1250, 600, 1100, 560, c('G3c2'), () => {
+      D('2017: S.R. 192', 0, -210, 64, { color: BLUE });
+      Dm('bring back grand-jury-appointed school boards?', 0, -140, 38, { color: K.grey });
+      D('Senate: 40–12', 0, -40, 72, { alpha: fadeIn(w('G3c2', 'forty to twelve'), 0.2) });
+      D('House committee: 17–1 against', 0, 70, 64, { color: ORANGE, alpha: fadeIn(w('G3c2', 'killed it'), 0.2) });
+      Dm('the objection: the grand jury', 0, 170, 44, { alpha: fadeIn(w('G3c2', 'objected'), 0.2) });
     });
-    cite('Education Week, Feb 1988 · Ballotpedia, Georgia Amendment 2 (1992)', ['G3c', 'twenty-eight']);
+    cite('AJC, Mar 13 & 16, 2017 · LegiScan, GA SR 192 (2017–18)', c('G3c2'));
   }
   function sTurner() {
     plates([['commission', c('G3d') - 0.6, { z: [1.0, 1.1] }], ['statewide', c('G3e') - 0.3, { z: [1.1, 1.0] }]], ce('G3e') + 0.6);
