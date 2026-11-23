@@ -186,6 +186,8 @@ G3b And in Crisp County, the grand jury picks a majority of the power commission
 
 G3c It used to go further. For about a century, Georgia counties could have their school boards appointed by the grand jury. By the late nineteen-eighties, twenty-eight of the state's school districts still did. A constitutional amendment in nineteen ninety-two ended the option.
 
+G3d One caveat, because critics will raise it. For much of that history, Georgia's jury lists were hand-picked by county jury commissioners, and Black residents were badly underrepresented. That was a jury that wasn't random enough. Since twenty twelve, Georgia has drawn its jurors at random from a statewide list of licensed drivers and registered voters.
+
 G4 A random jury choosing officials, as a normal part of county government, for generations.
 
 G5 And grand juries serve longer than you'd guess. In some Georgia counties, a grand juror serves for two or three months, meeting once or twice a week. So the objection that people won't put up with jury service doesn't hold up. They already do.
@@ -332,7 +334,7 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
 
     School boards: Ballotpedia on 1992 Amendment 2, and Education Week (Feb 1988), which reports grand-jury selection in 28 of 186 districts under an 1870s-era law. Appointed boards continued through Dec 31, 1993. Check whether "about a century" fits the 1870s origin. The site's claim that Crisp rates are "lower than Georgia Power" is left out until sourced.
 
-    Expect pushback here. The 1988 Ed Week headline is "Ga. Board Selection Process Called Discriminatory." Grand juries then were drawn by jury commissioners, under the "key man" practice, rather than purely at random, and Black citizens were underrepresented. The video should probably meet this head-on (a K-section line: "the old grand juries weren't truly random; the fix is a real lottery from the full population").
+    Expect pushback here. The 1988 Ed Week headline is "Ga. Board Selection Process Called Discriminatory." Grand juries then were drawn by jury commissioners, under the "key man" practice, rather than purely at random, and Black citizens were underrepresented. G3d now addresses it. Verify the Jury Composition Reform Act of 2011 (HB 415), which took effect July 1, 2012, and the statewide master jury list (voters plus driver's licenses).
 14. **G5.** Grand jury term lengths in Clayton, Chatham, Cobb and DeKalb (manifesto).
 15. **V2–V8.** SB 359 (2025–26), from LegiScan and the enrolled text:
     - Senate 49-0 on 3/31/2025;
