@@ -335,6 +335,7 @@ minor motif at A1, R1, T1, J1, W1, K1, N1, H1, G1, X1, V1, Z1. hold the drone lo
     School boards: Ballotpedia on 1992 Amendment 2, and Education Week (Feb 1988), which reports grand-jury selection in 28 of 186 districts under an 1870s-era law. Appointed boards continued through Dec 31, 1993. Check whether "about a century" fits the 1870s origin. The site's claim that Crisp rates are "lower than Georgia Power" is left out until sourced.
 
     Expect pushback here. The 1988 Ed Week headline is "Ga. Board Selection Process Called Discriminatory." Grand juries then were drawn by jury commissioners, under the "key man" practice, rather than purely at random, and Black citizens were underrepresented. G3d now addresses it. Verify the Jury Composition Reform Act of 2011 (HB 415), which took effect July 1, 2012, and the statewide master jury list (voters plus driver's licenses).
+
 14. **G5.** Grand jury term lengths in Clayton, Chatham, Cobb and DeKalb (manifesto).
 15. **V2–V8.** SB 359 (2025–26), from LegiScan and the enrolled text:
     - Senate 49-0 on 3/31/2025;
