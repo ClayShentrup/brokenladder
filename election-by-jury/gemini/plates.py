@@ -49,7 +49,7 @@ P = {
  'scale2': dict(prompt="A magnifying glass held over a personnel file and an old dated employment photograph, a gavel resting beside it; halftone, ochre circle, ultramarine wedge."),
  # rewrite
  'capitol': dict(prompt="The Georgia State Capitol in Atlanta: a single neoclassical building with a columned portico and one tall gold-leaf dome topped by a small statue, no side wings, in halftone against an ultramarine sky; a giant hand holding a pen rewriting a page of legal text in the foreground; ochre rays."),
- 'eraser': dict(prompt="A close-up of a printed legal document where a pink eraser is rubbing out one line, eraser crumbs scattering; ultramarine and ochre geometry around it; halftone."),
+ 'eraser': dict(prompt="A close-up of a printed legal document where a pink eraser held in a hand is rubbing out one line, eraser crumbs scattering; ultramarine and ochre geometry around it; halftone. No other people, no workers, no machinery."),
  'nameplate': dict(prompt="A hand unscrewing a blank brass nameplate from an office door in a county building corridor; dramatic light, ultramarine and black, ochre accent."),
  'pen': dict(prompt="A fountain pen signing at the bottom of a document on a wooden desk, an official seal shape beside it (blank), seen from above; ultramarine and ochre geometry."),
  # proposal / close

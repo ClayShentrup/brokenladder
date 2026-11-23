@@ -1,17 +1,17 @@
-// "The Gift Card Fallacy" — hand-drawn explainer, rendered with rough.js on a canvas.
+// "the case against voting": constructivist plates with canvas overlays.
 // Everything is a pure function of time t, so the same code drives live preview and frame export.
 'use strict';
 (function () {
   const W = 1920, H = 1080;
   const P = {
-    paper: '#f8f1e3', ink: '#2a2633', red: '#e4572e', teal: '#1b998b', gold: '#f2a541', blue: '#3f6fd8',
+    paper: '#e9dcc0', ink: '#2a2633', red: '#e4572e', teal: '#1b998b', gold: '#f2a541', blue: '#3f6fd8',
     plum: '#8d5a9e', green: '#4fa35b', grey: '#8f897d', cream: '#fffaf0', cash: '#7fb77e', crust: '#b9822f',
     skin: ['#f2d3b3', '#d9a679', '#a8754f', '#f0c8a0', '#7a4e33'],
   };
   const HAND = "'Caveat'", PRINT = "'Patrick Hand'";
   const Q = new URLSearchParams(location.search);
 
-  let cv, ctx, rc, PAPER, TL, SCRIPT, SCN = [], EVENTS = [], NARR = {}, CAPTIONS = Q.has('captions'), SCALE = 1;
+  let cv, ctx, rc, PAPER, TL, SCRIPT, SCN = [], EVENTS = [], NARR = {}, CAPTIONS = Q.has('captions'), SCALE = 1, IMG = {};
   let T = 0, KC = 0;
 
   // ---------- math ----------
@@ -104,7 +104,7 @@
   function dot(x, y, r, col = P.ink) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); }
 
   function txt(s, x, y, size, op = {}) {
-    const { p = 1, color = P.ink, font = HAND, weight, align = 'center', rot = 0, alpha = 1 } = op;
+    const { p = 1, color = P.ink, font = HAND, weight, align = 'center', rot = 0, alpha = 1, halo = 0 } = op;
     KC++;
     if (p <= 0 || alpha <= 0) return 0;
     const wgt = weight != null ? weight : font === HAND ? 700 : 400;
@@ -117,7 +117,9 @@
     const full = ctx.measureText(s).width;
     const sx = align === 'center' ? -full / 2 : align === 'right' ? -full : 0;
     ctx.textAlign = 'left';
-    ctx.fillText(p >= 1 ? s : s.slice(0, Math.ceil(s.length * p)), sx, 0);
+    const shown = p >= 1 ? s : s.slice(0, Math.ceil(s.length * p));
+    if (halo) { ctx.lineJoin = 'round'; ctx.strokeStyle = 'rgba(255,250,240,0.92)'; ctx.lineWidth = halo; ctx.strokeText(shown, sx, 0); }
+    ctx.fillText(shown, sx, 0);
     ctx.restore();
     return full;
   }
@@ -135,241 +137,10 @@
     grp(x, y, sc, op.rot != null ? op.rot : -0.08, () => {
       ctx.font = `700 ${size}px ${HAND}`;
       const w = ctx.measureText(s).width + size * 0.8;
+      ctx.fillStyle = 'rgba(255,250,240,0.93)'; ctx.fillRect(-w / 2, -size * 0.62, w, size * 1.24);
       rect(-w / 2, -size * 0.62, w, size * 1.24, 1, { stroke: col, strokeWidth: 5, roughness: 1.6 });
       txt(s, 0, 2, size, { color: col });
     }, u * 1.2 * (op.alpha != null ? op.alpha : 1));
-  }
-
-  // ---------- illustrations ----------
-  function person(x, y, op = {}) {
-    const { s = 1, color = P.blue, skin = P.skin[0], mood = 0.4, arms = 'down', hat = null, k = 0, lean = 0, label, alpha = 1, hair } = op;
-    grp(x, y, s, lean, () => {
-      const by = Math.sin(T * 2.6 + k * 1.7) * 4;
-      line(-22, 62, -26, 128); line(22, 62, 26, 128);
-      line(-26, 128, -44, 131); line(26, 128, 44, 131);
-      ctx.translate(0, by);
-      if (arms === 'down') { line(-46, -12, -78, 48); line(46, -12, 78, 48); }
-      else if (arms === 'up') { line(-46, -12, -92, -78 + Math.sin(T * 8 + k) * 8); line(46, -12, 92, -78 - Math.sin(T * 8 + k) * 8); }
-      else if (arms === 'out') { line(-46, -12, -112, -4); line(46, -12, 112, -4); }
-      else if (arms === 'give') { line(-46, -12, -78, 48); line(46, -12, 118, -22); }
-      else if (arms === 'take') { line(-46, -12, -118, -22); line(46, -12, 78, 48); }
-      else if (arms === 'pull') { line(-46, -12, -100, 6); line(46, -12, 100, 6); }
-      path('M -54 70 Q -62 -42 0 -46 Q 62 -42 54 70 Q 0 80 -54 70 Z', 1, { fill: color, hachureGap: 7.5, fillWeight: 2.6 });
-      circ(0, -100, 100, 1, { fill: skin, fillStyle: 'solid' });
-      if (hair) path(hair, 1, { fill: P.ink, fillStyle: 'solid', strokeWidth: 2 });
-      const blink = ((T + k * 0.77) % 3.9) < 0.13;
-      if (blink) { line(-24, -106, -10, -106, 1, { strokeWidth: 3 }); line(10, -106, 24, -106, 1, { strokeWidth: 3 }); }
-      else { KC += 4; dot(-17, -106, 5.5); dot(17, -106, 5.5); }
-      const m = clamp(mood, -1, 1) * 18;
-      path(`M -19 ${-78 - m * 0.3} Q 0 ${-78 + m} 19 ${-78 - m * 0.3}`, 1, { strokeWidth: 3.4 });
-      if (hat === 'top') { rect(-34, -200, 68, 56, 1, { fill: P.ink, fillStyle: 'solid' }); line(-56, -144, 56, -144, 1, { strokeWidth: 6 }); }
-      else if (hat === 'cap') { path('M -48 -122 Q 0 -178 48 -122 Z', 1, { fill: P.red, fillStyle: 'solid' }); line(40, -124, 84, -118, 1, { strokeWidth: 6 }); }
-      else if (hat === 'bow') { path('M 18 -150 L 44 -168 L 44 -136 Z M 18 -150 L -8 -168 L -8 -136 Z', 1, { fill: P.red, fillStyle: 'solid' }); }
-      else KC += 4;
-    }, alpha);
-    if (label) txt(label, x, y + 170 * s, Math.max(34, 46 * s), { alpha });
-  }
-  const HAIR_A = 'M -50 -100 Q -56 -160 0 -156 Q 56 -160 50 -100 Q 40 -140 0 -138 Q -40 -140 -50 -100 Z';
-  const HAIR_B = 'M -46 -118 Q -30 -162 10 -152 Q 52 -146 46 -116 Q 20 -136 -46 -118 Z';
-
-  function bag(x, y, s, label, op = {}) {
-    grp(x, y, s, 0, () => {
-      path('M -62 62 Q -86 -6 -30 -44 L -22 -62 Q 0 -72 22 -62 L 30 -44 Q 86 -6 62 62 Q 0 84 -62 62 Z', 1, { fill: '#d9b77a', hachureGap: 7 });
-      line(-26, -46, 26, -46, 1, { strokeWidth: 5 });
-      txt('$', 0, 16, 74);
-    }, op.alpha);
-    if (label) txt(label, x, y + 100 * s, 52, { alpha: op.alpha, color: op.color || P.ink });
-  }
-
-  function pie(cx, cy, r, op = {}) {
-    const { slices = 0, sliceP = 1, p = 1, missing = 0, color = P.gold } = op;
-    if (missing > 0.001) {
-      const a0 = -Math.PI / 2 + missing * Math.PI * 2, a1 = Math.PI * 1.5;
-      draw('arc', [cx, cy, 2 * r, 2 * r, a0, a1, true], p, { fill: color, hachureGap: 9 }, Math.PI * 2 * r);
-    } else circ(cx, cy, 2 * r, p, { fill: color, hachureGap: 9 });
-    circ(cx, cy, 2 * r * 0.8, p, { stroke: P.crust, strokeWidth: 2.2 });
-    for (let i = 0; i < slices; i++) {
-      const a = -Math.PI / 2 + (i / slices) * Math.PI * 2;
-      if (missing > 0.001 && a < -Math.PI / 2 + missing * Math.PI * 2 - 0.01) { KC += 2; continue; }
-      line(cx, cy, cx + r * Math.cos(a), cy + r * Math.sin(a), sliceP, { strokeWidth: 2.6 });
-    }
-  }
-
-  function flame(x, y, s) {
-    grp(x, y, s, 0, () => {
-      const f = 1 + Math.sin(T * 17 + x * 0.1) * 0.14, g = Math.sin(T * 23 + y * 0.1) * 7;
-      path(`M -30 30 Q -44 -8 ${g} ${-74 * f} Q 44 -8 30 30 Q 0 46 -30 30 Z`, 1, { fill: P.red, fillStyle: 'solid', stroke: P.red, strokeWidth: 2, roughness: 1.5 });
-      path(`M -16 28 Q -24 0 ${g * 0.6} ${-42 * f} Q 24 0 16 28 Q 0 36 -16 28 Z`, 1, { fill: P.gold, fillStyle: 'solid', stroke: P.gold, strokeWidth: 2 });
-    });
-  }
-  function smoke(x, y, t0, n = 6, sz = 1) {
-    for (let i = 0; i < n; i++) {
-      const age = T - t0 - i * 0.16;
-      if (age < 0 || age > 1.8) { KC += 2; continue; }
-      const u = age / 1.8;
-      grp(x + Math.sin(i * 2.1 + age * 2) * 30 * sz, y - age * 110 * sz, 1, 0, () => circ(0, 0, (26 + age * 40) * sz, 1, { stroke: P.grey, strokeWidth: 3, fill: '#d8d2c6', fillStyle: 'solid' }), (1 - u) * 0.9);
-    }
-  }
-
-  function giftCard(x, y, s, op = {}) {
-    const { amount = '$100', tag = 'GIFT CARD', color = P.red, burn = 0, r = 0, alpha = 1, sub } = op;
-    grp(x, y, s, r, () => {
-      const w = 380, h = 230;
-      ctx.save();
-      if (burn > 0) { ctx.beginPath(); ctx.rect(-w / 2 - 30, -h / 2 - 40, (w + 60) * (1 - burn), h + 80); ctx.clip(); }
-      rect(-w / 2, -h / 2, w, h, 1, { fill: color, hachureGap: 11, fillWeight: 2.4, hachureAngle: -35 });
-      rect(-w / 2 + 22, -h / 2 + 24, 210, 58, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-      txt(tag, -w / 2 + 127, -h / 2 + 54, tag.length > 11 ? 30 : 36, { font: PRINT });
-      line(w / 2 - 86, -h / 2, w / 2 - 86, h / 2, 1, { stroke: P.gold, strokeWidth: 9, roughness: 0.6 });
-      ell(w / 2 - 110, -h / 2 - 8, 50, 30, 1, { stroke: P.gold, strokeWidth: 6 });
-      ell(w / 2 - 62, -h / 2 - 8, 50, 30, 1, { stroke: P.gold, strokeWidth: 6 });
-      rect(-w / 2 + 22, h / 2 - 92, 190, 72, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-      txt(amount, -w / 2 + 117, h / 2 - 56, 66);
-      ctx.restore();
-      if (burn > 0) {
-        const ex = -w / 2 - 30 + (w + 60) * (1 - burn);
-        for (let i = 0; i < 4; i++) flame(ex, -h / 2 + 20 + i * (h / 3.2), 0.85);
-      } else KC += 80;
-    }, alpha);
-    if (sub) txt(sub, x, y + 150 * s, 44, { alpha });
-  }
-
-  function house(x, y, s, op = {}) {
-    grp(x, y, s, 0, () => {
-      rect(-90, -60, 180, 140, 1, { fill: op.color || P.blue, hachureGap: 10 });
-      poly([[-115, -55], [0, -150], [115, -55]], 1, { fill: P.red, hachureGap: 8 });
-      rect(-25, 15, 50, 65, 1, { fill: P.cream, fillStyle: 'solid' });
-      rect(-72, -35, 40, 36, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-      rect(32, -35, 40, 36, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-      if (op.lock) {
-        path('M -20 -6 Q -20 -40 0 -40 Q 20 -40 20 -6', 1, { strokeWidth: 6, stroke: P.ink });
-        rect(-30, -8, 60, 46, 1, { fill: P.gold, fillStyle: 'solid' });
-      } else KC += 4;
-    }, op.alpha);
-  }
-  function stairs(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      const pts = [[-110, 80]]; let px = -110, py = 80;
-      [26, 34, 44, 58, 76].forEach((dy) => { py -= dy; pts.push([px, py]); px += 44; pts.push([px, py]); });
-      curveP(pts, 1, { strokeWidth: 4.5 }, false);
-      [0, 1, 2, 3, 4].forEach((i) => txt(['10%', '22%', '35%', '45%', '55%'][i], -88 + i * 44, 110 - [26, 60, 104, 162, 238][i] + 0, 24, { font: PRINT }));
-      txt('!!', 120, -150, 50, { color: P.red });
-    }, alpha);
-  }
-  function floorSign(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      line(-120, 40, 120, 40, 1, { strokeWidth: 6 });
-      for (let i = -110; i < 120; i += 22) line(i, 44, i - 16, 66, 1, { strokeWidth: 2 });
-      circ(0, -30, 110, 1, { fill: P.gold, fillStyle: 'solid' });
-      txt('$15', 0, -28, 54);
-      arrow(-80, 30, -80, -60, 1, { strokeWidth: 3 }); arrow(80, 30, 80, -60, 1, { strokeWidth: 3 });
-    }, alpha);
-  }
-  function stampCard(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      rect(-110, -75, 220, 150, 1, { fill: P.green, hachureGap: 9 });
-      rect(-90, -55, 180, 52, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-      txt('FOOD ONLY', 0, -29, 32, { font: PRINT });
-      circ(-40, 35, 50, 1, { fill: P.red, fillStyle: 'solid' }); line(-40, 10, -34, 0, 1, { strokeWidth: 3 });
-      path('M 10 50 Q 30 10 60 20 Q 80 40 60 55 Z', 1, { fill: P.gold, fillStyle: 'solid', strokeWidth: 2.4 });
-    }, alpha);
-  }
-  function factory(x, y, s, alpha, t0 = 0) {
-    grp(x, y, s, 0, () => {
-      poly([[-120, 70], [-120, -10], [-60, -50], [-60, -10], [0, -50], [0, -10], [60, -50], [60, 70]], 1, { fill: P.grey, hachureGap: 9 });
-      rect(70, -130, 40, 200, 1, { fill: P.red, hachureGap: 7 });
-      for (let i = 0; i < 3; i++) smoke(90, -150, (Math.floor((T - i * 0.6) / 1.8) * 1.8) + i * 0.6, 3, 0.8);
-    }, alpha);
-  }
-  function land(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      circ(70, -70, 70, 1, { fill: P.gold, fillStyle: 'solid', stroke: P.gold });
-      path('M -140 60 Q -80 -40 -10 20 Q 50 -50 140 40 L 140 70 L -140 70 Z', 1, { fill: P.green, hachureGap: 8 });
-      for (let i = -110; i <= 110; i += 44) line(i, 70, i, 30, 1, { strokeWidth: 3 });
-      line(-120, 42, 120, 42, 1, { strokeWidth: 2.5 });
-    }, alpha);
-  }
-  function cash(x, y, s, alpha, n = 3) {
-    grp(x, y, s, 0, () => {
-      for (let i = n - 1; i >= 0; i--) {
-        grp(i * 10, -i * 14, 1, -0.05 + i * 0.03, () => {
-          rect(-120, -60, 240, 120, 1, { fill: P.cash, fillStyle: 'solid' });
-          ell(0, 0, 80, 80, 1, { strokeWidth: 2.4 });
-          txt('$', 0, 2, 64, { color: P.ink });
-        });
-      }
-    }, alpha);
-  }
-  function shield(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      path('M 0 -90 L 80 -60 Q 80 40 0 90 Q -80 40 -80 -60 Z', 1, { fill: P.blue, hachureGap: 8 });
-      poly([[0, -40], [12, -10], [44, -10], [18, 10], [28, 42], [0, 22], [-28, 42], [-18, 10], [-44, -10], [-12, -10]], 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-    }, alpha);
-  }
-  function book(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      path('M -90 -50 Q -45 -70 0 -50 L 0 60 Q -45 40 -90 60 Z', 1, { fill: P.cream, fillStyle: 'solid' });
-      path('M 90 -50 Q 45 -70 0 -50 L 0 60 Q 45 40 90 60 Z', 1, { fill: P.cream, fillStyle: 'solid' });
-      for (let i = 0; i < 3; i++) { line(-75, -30 + i * 22, -15, -38 + i * 22, 1, { strokeWidth: 2 }); line(15, -38 + i * 22, 75, -30 + i * 22, 1, { strokeWidth: 2 }); }
-    }, alpha);
-  }
-  function bulb(x, y, s, glow, alpha) {
-    grp(x, y, s, 0, () => {
-      if (glow > 0) for (let i = 0; i < 10; i++) {
-        const a = (i / 10) * Math.PI * 2 + 0.3, r1 = 110, r2 = 110 + 50 * glow + Math.sin(T * 9 + i) * 6;
-        line(Math.cos(a) * r1, Math.sin(a) * r1 - 20, Math.cos(a) * r2, Math.sin(a) * r2 - 20, glow, { stroke: P.gold, strokeWidth: 5 });
-      } else KC += 20;
-      circ(0, -20, 160, 1, { fill: glow > 0 ? '#ffe28a' : P.cream, fillStyle: 'solid' });
-      path('M -20 20 Q -10 -20 0 10 Q 10 -20 20 20', 1, { strokeWidth: 2.6 });
-      rect(-38, 58, 76, 52, 1, { fill: P.grey, hachureGap: 6 });
-    }, alpha);
-  }
-  function check(x, y, s, amount, alpha) {
-    grp(x, y, s, 0, () => {
-      rect(-110, -50, 220, 100, 1, { fill: '#cfe8c8', fillStyle: 'solid', strokeWidth: 2.6 });
-      txt('pay to: everyone', -95, -26, 24, { font: PRINT, align: 'left' });
-      txt(amount, 0, 14, 44);
-    }, alpha);
-  }
-  function coin(x, y, r = 22, alpha = 1) {
-    grp(x, y, 1, 0, () => { circ(0, 0, r * 2, 1, { fill: P.gold, fillStyle: 'solid', strokeWidth: 2.4 }); txt('$', 0, 1, r * 1.3); }, alpha);
-  }
-  function stall(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      for (let i = 0; i < 5; i++) poly([[-125 + i * 50, -80], [-75 + i * 50, -80], [-100 + i * 50, -40]], 1, { fill: i % 2 ? P.cream : P.red, fillStyle: 'solid', strokeWidth: 2.2 });
-      line(-125, -80, 125, -80, 1, { strokeWidth: 4 });
-      line(-110, -40, -110, 70); line(110, -40, 110, 70);
-      rect(-130, 20, 260, 30, 1, { fill: '#c99a62', fillStyle: 'solid' });
-      circ(-60, 4, 34, 1, { fill: P.red, fillStyle: 'solid' }); circ(-20, 4, 34, 1, { fill: P.green, fillStyle: 'solid' }); circ(30, 4, 34, 1, { fill: P.gold, fillStyle: 'solid' });
-    }, alpha);
-  }
-  function parking(x, y, s, alpha) {
-    grp(x, y, s, 0, () => {
-      rect(-60, -60, 120, 120, 1, { fill: P.blue, fillStyle: 'solid' });
-      txt('P', 0, 4, 100, { color: P.cream, font: PRINT });
-      line(0, 60, 0, 150, 1, { strokeWidth: 6 });
-    }, alpha);
-  }
-  function dial(cx, cy, r, v, op = {}) {
-    const a0 = Math.PI * 1.1, a1 = Math.PI * 1.9;
-    draw('arc', [cx, cy, 2 * r, 2 * r, a0, a1, false], 1, { strokeWidth: 5 }, r * 2.5);
-    for (let i = 0; i <= 6; i++) { const a = lerp(a0, a1, i / 6); line(cx + Math.cos(a) * r * 0.85, cy + Math.sin(a) * r * 0.85, cx + Math.cos(a) * r, cy + Math.sin(a) * r, 1, { strokeWidth: 3 }); }
-    const a = lerp(a0, a1, v);
-    line(cx, cy, cx + Math.cos(a) * r * 0.78, cy + Math.sin(a) * r * 0.78, 1, { strokeWidth: 7, stroke: P.red });
-    circ(cx, cy, 30, 1, { fill: P.ink, fillStyle: 'solid' });
-    txt(op.lo || 'a little', cx - r * 0.95, cy + 50, 40); txt(op.hi || 'a lot', cx + r * 0.95, cy + 50, 40);
-  }
-  function jar(x, y, s, alpha, fillLvl = 0) {
-    grp(x, y, s, 0, () => {
-      if (fillLvl > 0) {
-        const top = 130 - 250 * fillLvl;
-        path(`M -150 ${top} Q 0 ${top - 20} 150 ${top} L 150 120 Q 0 150 -150 120 Z`, 1, { fill: P.gold, hachureGap: 8, stroke: 'none' });
-      } else KC += 2;
-      path('M -110 -150 L -110 -120 Q -180 -100 -170 0 L -165 110 Q 0 160 165 110 L 170 0 Q 180 -100 110 -120 L 110 -150', 1, { strokeWidth: 4.5 });
-      ell(0, -150, 220, 40, 1, { strokeWidth: 4 });
-      rect(-110, -30, 220, 70, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.6 });
-      txt('common fund', 0, 5, 46);
-    }, alpha);
   }
 
   // ---------- background ----------
@@ -380,807 +151,631 @@
     for (let i = 0; i < 9000; i++) { g.fillStyle = `rgba(120,100,70,${r() * 0.06})`; g.fillRect(r() * W, r() * H, 1 + r() * 2, 1 + r() * 2); }
     g.strokeStyle = 'rgba(120,100,70,0.05)';
     for (let i = 0; i < 160; i++) { g.lineWidth = 0.6 + r(); g.beginPath(); const x = r() * W, y = r() * H; g.moveTo(x, y); g.quadraticCurveTo(x + r() * 40, y + r() * 10, x + 30 + r() * 60, y + r() * 20 - 10); g.stroke(); }
-    g.fillStyle = 'rgba(63,111,216,0.05)';
-    for (let y = 90; y < H; y += 54) g.fillRect(0, y, W, 2);
+    
     const v = g.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 1.05);
     v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(80,60,30,0.22)');
     g.fillStyle = v; g.fillRect(0, 0, W, H);
     return c2;
   }
 
-  // ---------- extra illustrations ----------
-  function bubble(x, y, bw, bh, s, label, size = 52, op = {}) {
-    grp(x, y, s, 0, () => {
-      ell(0, 0, bw, bh, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 3 });
-      const tx = op.tail != null ? op.tail : 40;
-      circ(tx, bh / 2 + 20, 34, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.5 });
-      circ(tx * 1.3, bh / 2 + 58, 18, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.5 });
-      if (label) txt(label, 0, 0, size, { color: op.color || P.ink });
-      if (op.inner) op.inner();
-    }, op.alpha);
-  }
-  function sweater(x, y, s, alpha = 1, color = P.red) {
-    grp(x, y, s, 0, () => {
-      path('M -60 -70 L -22 -82 Q 0 -60 22 -82 L 60 -70 L 112 -8 L 82 18 L 60 -8 L 60 82 L -60 82 L -60 -8 L -82 18 L -112 -8 Z', 1, { fill: color, hachureGap: 8 });
-      for (let i = 0; i < 3; i++) line(-56, 18 + i * 20, 56, 18 + i * 20, 1, { stroke: P.cream, strokeWidth: 5 });
-    }, alpha);
-  }
-  function priceTag(x, y, s, label, alpha = 1, color = P.gold) {
-    grp(x, y, s, -0.12, () => {
-      poly([[-78, -38], [60, -38], [92, 0], [60, 38], [-78, 38]], 1, { fill: color, fillStyle: 'solid' });
-      circ(56, 0, 16, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2 });
-      txt(label, -10, 2, 46);
-    }, alpha);
-  }
-  function xMark(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => { line(-50, -50, 50, 50, 1, { stroke: P.red, strokeWidth: 13 }); line(50, -50, -50, 50, 1, { stroke: P.red, strokeWidth: 13 }); }, alpha);
-  }
-  function checkMark(x, y, s, alpha = 1, col = P.green) {
-    grp(x, y, s, 0, () => curveP([[-40, 0], [-10, 32], [46, -42]], 1, { stroke: col, strokeWidth: 12 }, false), alpha);
-  }
-  function bread(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      path('M -70 30 Q -80 -40 0 -44 Q 80 -40 70 30 Z', 1, { fill: '#d9a35b', hachureGap: 7 });
-      for (let i = -1; i <= 1; i++) line(i * 30 - 10, -30, i * 30 + 10, -6, 1, { strokeWidth: 3 });
-    }, alpha);
-  }
-  function coat(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      path('M -40 -80 L 40 -80 L 75 -40 L 60 90 L -60 90 L -75 -40 Z', 1, { fill: P.blue, hachureGap: 8 });
-      line(0, -80, 0, 90, 1, { strokeWidth: 3 });
-      for (let i = 0; i < 3; i++) circ(12, -40 + i * 40, 12, 1, { fill: P.gold, fillStyle: 'solid', strokeWidth: 2 });
-      line(-40, -80, -10, -40); line(40, -80, 10, -40);
-    }, alpha);
-  }
-  function desk(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-160, -10, 320, 120, 1, { fill: '#c99a62', hachureGap: 10 });
-      for (let i = 0; i < 4; i++) rect(-120 + i * 6, -40 - i * 14, 110, 30, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2 });
-      rect(40, -60, 70, 50, 1, { fill: P.grey, fillStyle: 'solid', strokeWidth: 2 });
-    }, alpha);
-  }
-  function ballot(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-70, -50, 140, 110, 1, { fill: P.cream, fillStyle: 'solid' });
-      line(-35, -50, 35, -50, 1, { strokeWidth: 8 });
-      rect(-30, -95, 60, 50, 1, { fill: '#fff', fillStyle: 'solid', strokeWidth: 2 });
-      txt('VOTE', 0, 10, 40, { font: PRINT, color: P.red });
-    }, alpha);
-  }
-  function station(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-120, -60, 240, 120, 1, { fill: P.grey, hachureGap: 10 });
-      rect(-80, -100, 160, 44, 1, { fill: P.blue, fillStyle: 'solid' });
-      txt('TRAIN', 0, -77, 36, { color: P.cream, font: PRINT });
-      rect(-100, 0, 200, 50, 1, { fill: P.red, fillStyle: 'solid' });
-      for (let i = 0; i < 4; i++) rect(-88 + i * 48, 8, 34, 22, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2 });
-      circ(-60, 56, 22, 1, { fill: P.ink, fillStyle: 'solid' }); circ(60, 56, 22, 1, { fill: P.ink, fillStyle: 'solid' });
-    }, alpha);
-  }
-  function shops(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      [-90, 90].forEach((dx, j) => {
-        rect(dx - 80, -60, 160, 140, 1, { fill: j ? P.gold : P.teal, hachureGap: 10 });
-        for (let i = 0; i < 4; i++) poly([[dx - 80 + i * 40, -60], [dx - 40 + i * 40, -60], [dx - 60 + i * 40, -30]], 1, { fill: i % 2 ? P.cream : P.red, fillStyle: 'solid', strokeWidth: 2 });
-        rect(dx - 25, 20, 50, 60, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2 });
-      });
-      txt('SHOPS', 0, -90, 40, { font: PRINT });
-    }, alpha);
-  }
-  function hospital(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-110, -90, 220, 180, 1, { fill: P.cream, fillStyle: 'solid' });
-      rect(-22, -70, 44, 110, 1, { fill: P.red, fillStyle: 'solid', stroke: P.red });
-      rect(-55, -37, 110, 44, 1, { fill: P.red, fillStyle: 'solid', stroke: P.red });
-      for (let i = 0; i < 3; i++) rect(-90 + i * 65, 52, 45, 30, 1, { fill: P.blue, fillStyle: 'solid', strokeWidth: 2 });
-    }, alpha);
-  }
-  function houses(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      [-150, 0, 150].forEach((dx, i) => grp(dx, i === 1 ? -20 : 0, 0.55, 0, () => house(0, 0, 1, { color: [P.plum, P.green, P.blue][i] })));
-    }, alpha);
-  }
-  function lot(x, y, s, alpha = 1, glow = 0) {
-    grp(x, y, s, 0, () => {
-      if (glow > 0) rect(-210, -130, 420, 260, 1, { fill: P.gold, fillStyle: 'solid', stroke: 'none', fillAlpha: 0.35 * glow });
-      else KC += 2;
-      rect(-190, -110, 380, 220, 1, { fill: P.green, hachureGap: 12, fillWeight: 1.6 });
-      for (let i = -170; i <= 170; i += 34) { line(i, 110, i, 80, 1, { strokeWidth: 2.5 }); line(i, -110, i, -80, 1, { strokeWidth: 2.5 }); }
-    }, alpha);
-  }
-  function roofCap(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-12, -60, 24, 120, 1, { fill: '#c99a62', fillStyle: 'solid', strokeWidth: 2 });
-      rect(-50, -90, 100, 40, 1, { fill: P.grey, fillStyle: 'solid', strokeWidth: 2.5 });
-    }, alpha);
-  }
-  // a simple ledger column: rows = [[label, color, t0]]
-  function ledger(x, y, title, rows, alpha = 1) {
-    grp(x, y, 1, 0, () => {
-      txt(title, 0, -10, 44, { font: PRINT, color: P.grey });
-      rows.forEach(([label, col, t0], i) => txt(label, 0, 50 + i * 60, 56, { color: col, alpha: fadeIn(t0, 0.3) }));
-    }, alpha);
-  }
-  function smokeBurst(x, y, t0, n = 8, sz = 1) { if (T > t0) smoke(x, y, t0, n, sz); else KC += n * 2; }
 
-  // ---------- election-by-jury illustrations ----------
-  const PALETTE = [P.teal, P.red, P.gold, P.blue, P.plum, P.green];
-  function mini(x, y, s, col, k = 0, op = {}) {
-    person(x, y, Object.assign({ s, color: col, skin: P.skin[k % 5], hair: k % 3 === 0 ? HAIR_A : k % 3 === 1 ? HAIR_B : null, k, mood: 0.4 }, op));
+  // ---------- constructivist kit ----------
+  const K = { blue: '#1d3a8a', red: '#1d3a8a', black: '#141414', cream: '#efe6d2', paper: '#e9e0cc', grey: '#6a645b', gold: '#d9a21b', orange: '#e2572b' };
+  const DISP = "'Oswald'", MONO = "'IBM Plex Mono'";
+  const up = (s) => s.toUpperCase();
+  const D = (s, x, y, size, op = {}) => txt(op.raw ? s : up(s), x, y, size, Object.assign({ font: DISP, weight: 700, color: K.black }, op));
+  const Dm = (s, x, y, size, op = {}) => txt(s, x, y, size, Object.assign({ font: DISP, weight: 500, color: K.black }, op));
+  const M = (s, x, y, size, op = {}) => txt(s, x, y, size, Object.assign({ font: MONO, weight: 500, color: K.black }, op));
+  function textW(s, size, font = DISP, weight = 700) { ctx.save(); ctx.font = `${weight} ${size}px ${font}`; const w = ctx.measureText(s).width; ctx.restore(); return w; }
+  function box(x, y, w, h, fill, alpha = 1) { if (alpha <= 0) return; ctx.save(); ctx.globalAlpha *= alpha; ctx.fillStyle = fill; ctx.fillRect(x, y, w, h); ctx.restore(); }
+  function frame(x, y, w, h, col, lw, alpha = 1) { if (alpha <= 0) return; ctx.save(); ctx.globalAlpha *= alpha; ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.strokeRect(x, y, w, h); ctx.restore(); }
+  // a cue: [lineId, word] or [lineId, word, extra] or a number
+  const at = (q) => (typeof q === 'number' ? q : q.length === 1 ? c(q[0]) : w(q[0], q[1], q[2] || 0));
+  const vis = (t0, out) => (T < t0 ? 0 : fadeIn(t0, 0.2) * (out != null ? fadeOut(out, 0.3) : 1));
+
+  // plate with camera drift
+  function plate(name, t0, t1, cam = {}, alpha = 1) {
+    const im = IMG[name];
+    if (!im || alpha <= 0.001) return;
+    const u = eIO(clamp((T - t0) / Math.max(0.01, t1 - t0)));
+    const z = lerp((cam.z || [1, 1.07])[0], (cam.z || [1, 1.07])[1], u);
+    const fx = lerp((cam.x || [0, 0])[0], (cam.x || [0, 0])[1], u), fy = lerp((cam.y || [0, 0])[0], (cam.y || [0, 0])[1], u);
+    const sc = Math.max(W / im.width, H / im.height) * z * 1.02;
+    const dw = im.width * sc, dh = im.height * sc, mx = (dw - W) / 2, my = (dh - H) / 2;
+    ctx.save(); ctx.globalAlpha *= clamp(alpha);
+    ctx.drawImage(im, -mx + clamp(fx, -1, 1) * mx, -my + clamp(fy, -1, 1) * my, dw, dh);
+    ctx.restore();
   }
-  // grid of small people; colFn(i) -> color, alphaFn(i) -> alpha
-  function crowd(cx, cy, cols, rows, sp, s, colFn, alphaFn, opFn) {
-    for (let r = 0; r < rows; r++) for (let c2 = 0; c2 < cols; c2++) {
-      const i = r * cols + c2, a = alphaFn ? alphaFn(i) : 1;
-      const x = cx + (c2 - (cols - 1) / 2) * sp, y = cy + (r - (rows - 1) / 2) * sp * 1.25;
-      if (a > 0.01) mini(x, y, s, colFn(i), i, Object.assign({ alpha: a }, opFn ? opFn(i) : {})); else KC += 40;
-    }
-  }
-  function courthouse(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      poly([[-170, -90], [0, -170], [170, -90]], 1, { fill: P.cream, fillStyle: 'solid' });
-      rect(-160, -90, 320, 24, 1, { fill: P.cream, fillStyle: 'solid' });
-      for (let i = 0; i < 5; i++) rect(-140 + i * 64, -66, 24, 150, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2.4 });
-      rect(-180, 84, 360, 22, 1, { fill: P.grey, hachureGap: 8 });
-      rect(-200, 106, 400, 22, 1, { fill: P.grey, hachureGap: 8 });
-    }, alpha);
-  }
-  function seats(cx, cy, cols, op = {}) {
-    cols.forEach((col, i) => {
-      const x = cx + (i - (cols.length - 1) / 2) * (op.sp || 110);
-      grp(x, cy, op.s || 1, 0, () => {
-        rect(-40, -70, 80, 70, 1, { fill: col, fillStyle: col === P.grey ? 'hachure' : 'solid', hachureGap: 8 });
-        rect(-45, 0, 90, 22, 1, { fill: col, fillStyle: 'solid' });
-        line(-38, 22, -38, 60); line(38, 22, 38, 60);
-      }, op.alpha);
-      if (op.labels) txt(op.labels[i], x, cy + 100 * (op.s || 1), op.lsize || 30, { font: PRINT, alpha: op.alpha });
+  // plates switching inside a scene: [[name, cue, cam], ...]
+  function plates(list, tEnd) {
+    const L = list.map(([n, q, cam]) => [n, at(q), cam]);
+    L.forEach(([name, ts, cam], i) => {
+      const nx = L[i + 1];
+      if (T < ts - 0.01 || (nx && T > nx[1] + 0.5)) return;
+      plate(name, ts, nx ? nx[1] + 0.5 : tEnd, cam, i === 0 ? 1 : fadeIn(ts, 0.5));
     });
   }
-  function hat(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      path('M -90 -20 L 90 -20 L 70 90 L -70 90 Z', 1, { fill: P.ink, fillStyle: 'solid' });
-      ell(0, -20, 220, 50, 1, { fill: '#3a3644', fillStyle: 'solid' });
-      rect(-70, 50, 140, 22, 1, { fill: P.red, fillStyle: 'solid', stroke: P.red });
-    }, alpha);
+  // slanted banner bar, wipes in left to right
+  function banner(s, x, y, size, q, op = {}) {
+    const t0 = at(q), out = op.out != null ? at(op.out) : null;
+    if (T < t0 || (out != null && T > out + 0.3)) { KC += 2; return; }
+    const S = op.raw ? s : up(s), pad = size * 0.38, tw = textW(S, size), bw = tw + pad * 2, bh = size * 1.32;
+    const u = eOut(prog(T, t0, t0 + 0.28)), a = out != null ? fadeOut(out, 0.3) : 1;
+    const ax = op.align === 'left' ? x : op.align === 'right' ? x - bw : x - bw / 2;
+    ctx.save(); ctx.globalAlpha *= a; ctx.translate(ax, y); ctx.rotate(op.rot != null ? op.rot : -0.035);
+    ctx.beginPath(); ctx.rect(0, -bh / 2, bw * u, bh); ctx.clip();
+    if (op.shadow !== false) box(10, -bh / 2 + 10, bw, bh, op.shadowCol || (op.bg === K.blue ? K.gold : K.blue));
+    box(0, -bh / 2, bw, bh, op.bg || K.black);
+    txt(S, pad, 2, size, { font: DISP, weight: 700, color: op.fg || K.cream, align: 'left' });
+    ctx.restore();
   }
-  function slip(x, y, r, alpha = 1) { grp(x, y, 1, r, () => { rect(-34, -20, 68, 40, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2 }); line(-22, -4, 22, -4, 1, { strokeWidth: 2 }); line(-22, 8, 10, 8, 1, { strokeWidth: 2 }); }, alpha); }
-  function magnifier(x, y, s, alpha = 1) {
-    grp(x, y, s, -0.5, () => {
-      circ(0, 0, 160, 1, { fill: '#d9ecf2', fillStyle: 'solid', fillAlpha: 0.5, strokeWidth: 7 });
-      rect(-14, 80, 28, 120, 1, { fill: '#8a6a3a', fillStyle: 'solid' });
-    }, alpha);
+  // cream card with heavy border and red offset block; fn draws content in card-local coords (origin = centre)
+  function card(x, y, w, h, q, fn, op = {}) {
+    const t0 = at(q), out = op.out != null ? at(op.out) : null;
+    if (T < t0 || (out != null && T > out + 0.35)) { KC += 80; return; }
+    const s = lerp(0.92, 1, eOut(prog(T, t0, t0 + 0.3))), a = fadeIn(t0, 0.2) * (out != null ? fadeOut(out, 0.3) : 1);
+    grp(x, y, s, op.rot || 0, () => {
+      box(-w / 2 + 14, -h / 2 + 14, w, h, op.shadow || K.blue);
+      box(-w / 2, -h / 2, w, h, op.bg || K.cream);
+      frame(-w / 2, -h / 2, w, h, K.black, 6);
+      if (fn) fn();
+    }, a);
   }
-  function phone(x, y, s, alpha = 1) {
-    grp(x, y, s, 0.08, () => {
-      rect(-80, -140, 160, 280, 1, { fill: P.ink, fillStyle: 'solid' });
-      rect(-66, -112, 132, 220, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 2 });
-      for (let i = 0; i < 4; i++) rect(-54, -96 + i * 52, 108, 38, 1, { fill: [P.red, P.gold, P.red, P.plum][i], fillStyle: 'solid', strokeWidth: 2 });
-      txt('!!', 0, -45, 34, { color: P.cream });
-    }, alpha);
+  function stampX(s, x, y, size, q, op = {}) {
+    const t0 = at(q), out = op.out != null ? at(op.out) : null;
+    if (T < t0 || (out != null && T > out + 0.3)) { KC += 4; return; }
+    const u = prog(T, t0, t0 + 0.18), sc = lerp(1.7, 1, eOut(u)), col = op.color || K.orange;
+    const S = up(s), tw = textW(S, size), bw = tw + size * 0.7, bh = size * 1.25;
+    grp(x, y, sc, op.rot != null ? op.rot : -0.09, () => {
+      box(-bw / 2, -bh / 2, bw, bh, op.bg || 'rgba(239,228,204,0.94)');
+      frame(-bw / 2, -bh / 2, bw, bh, col, size * 0.1);
+      frame(-bw / 2 + size * 0.14, -bh / 2 + size * 0.14, bw - size * 0.28, bh - size * 0.28, col, size * 0.03);
+      txt(S, 0, 3, size, { font: DISP, weight: 700, color: col });
+    }, clamp(u * 1.3) * (out != null ? fadeOut(out, 0.3) : 1));
   }
-  function robot(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-70, -60, 140, 120, 1, { fill: P.grey, fillStyle: 'solid' });
-      circ(-28, -10, 34, 1, { fill: P.red, fillStyle: 'solid' }); circ(28, -10, 34, 1, { fill: P.red, fillStyle: 'solid' });
-      line(-30, 35, 30, 35, 1, { strokeWidth: 4 });
-      line(0, -60, 0, -100); circ(0, -108, 20, 1, { fill: P.gold, fillStyle: 'solid' });
-      rect(-90, 70, 180, 120, 1, { fill: P.grey, hachureGap: 8 });
-    }, alpha);
+  // source strip, bottom left
+  function cite(s, q, out) {
+    const t0 = at(q), a = vis(t0, out != null ? at(out) : null);
+    if (a <= 0) { KC++; return; }
+    const tw = textW(s, 24, MONO, 500);
+    box(40, H - 78, tw + 36, 42, K.black, a * 0.88);
+    M(s, 58, H - 56, 24, { color: K.cream, align: 'left', alpha: a });
   }
-  function podium(x, y, s, col, alpha = 1) {
-    grp(x, y, s, 0, () => { poly([[-70, 0], [70, 0], [55, 150], [-55, 150]], 1, { fill: col, fillStyle: 'solid' }); rect(-80, -14, 160, 18, 1, { fill: '#c99a62', fillStyle: 'solid' }); }, alpha);
+  const strikeBar = (x1, y, x2, q) => { const u = eOut(prog(T, at(q), at(q) + 0.25)); if (u > 0) box(x1, y - 5, (x2 - x1) * u, 11, K.orange); };
+  // a list of lines that reveal on cues; rows: [text, cue, op]
+  function rows(list, x, y, size, gap, op = {}) {
+    list.forEach(([s, q, o], i) => { const a = vis(at(q), op.out != null ? at(op.out) : null); if (a > 0) (o && o.mono ? M : D)(s, x, y + i * gap, (o && o.size) || size, Object.assign({ align: op.align || 'left', alpha: a, color: K.black }, op.style || {}, o || {})); else KC++; });
   }
-  function chessClock(x, y, s, a, b, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-170, -70, 340, 140, 1, { fill: '#c99a62', fillStyle: 'solid' });
-      [[-85, a], [85, b]].forEach(([cx, v]) => {
-        circ(cx, 0, 110, 1, { fill: P.cream, fillStyle: 'solid' });
-        const ang = -Math.PI / 2 + v * Math.PI * 2;
-        line(cx, 0, cx + Math.cos(ang) * 42, Math.sin(ang) * 42, 1, { strokeWidth: 4, stroke: P.red });
-        rect(cx - 16, -96, 32, 22, 1, { fill: P.ink, fillStyle: 'solid' });
-      });
-    }, alpha);
+  // the clean red/black paper background for chart scenes
+  function paperBg() {
+    ctx.drawImage(PAPER, 0, 0, W, H);
+    ctx.save(); ctx.globalAlpha = 0.9; ctx.fillStyle = K.blue;
+    ctx.beginPath(); ctx.moveTo(W, 0); ctx.lineTo(W, 260); ctx.lineTo(W - 520, 0); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = K.gold; ctx.beginPath(); ctx.moveTo(W, 260); ctx.lineTo(W, 300); ctx.lineTo(W - 560, 0); ctx.lineTo(W - 520, 0); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = K.black; ctx.beginPath(); ctx.moveTo(0, H); ctx.lineTo(0, H - 140); ctx.lineTo(380, H); ctx.closePath(); ctx.fill();
+    ctx.restore();
   }
-  function scroll(x, y, s, title, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      rect(-150, -100, 300, 200, 1, { fill: '#fdf3d8', fillStyle: 'solid' });
-      ell(-150, 0, 30, 200, 1, { fill: '#f0dfb2', fillStyle: 'solid' }); ell(150, 0, 30, 200, 1, { fill: '#f0dfb2', fillStyle: 'solid' });
-      txt(title, 0, -55, 40, { font: PRINT });
-      for (let i = 0; i < 4; i++) line(-110, -10 + i * 26, 110 - (i % 2) * 40, -10 + i * 26, 1, { strokeWidth: 2 });
-    }, alpha);
+  const span = (a, b, ext = 0.6) => [c(a) - 0.6, ce(b) + ext];
+
+  // ---------- extra helpers ----------
+  const BLUE = K.blue, GOLD = K.gold, ORANGE = K.orange;
+  const quoteCard = (x, y, w, h, q, linesTxt, who, op = {}) => card(x, y, w, h, q, () => {
+    const n = linesTxt.length, sz = op.size || 46, gap = sz * 1.3, y0 = -((n - 1) * gap) / 2 - (who ? 30 : 0);
+    linesTxt.forEach((s, i) => Dm(s, 0, y0 + i * gap, sz, { color: K.black }));
+    if (who) M(who, 0, y0 + n * gap + 20, 26, { color: K.grey });
+  }, op);
+  // a row of seats; spec: [[label, colour], ...]
+  function seats(list, x, y, size, gap, a0, op = {}) {
+    list.forEach(([lab, col, q], i) => {
+      const a = q != null ? vis(at(q), op.out != null ? at(op.out) : null) : a0;
+      if (a <= 0) { KC += 2; return; }
+      const cx = x + i * gap;
+      box(cx - size / 2 + 6, y - size / 2 + 6, size, size, K.black, a * 0.9);
+      box(cx - size / 2, y - size / 2, size, size, col, a);
+      frame(cx - size / 2, y - size / 2, size, size, K.black, 4, a);
+      if (lab) M(lab, cx, y + size / 2 + 34, op.labSize || 22, { color: K.black, alpha: a });
+    });
   }
-  function calendar(x, y, s, top, big, alpha = 1, col = P.red) {
-    grp(x, y, s, 0, () => {
-      rect(-110, -100, 220, 200, 1, { fill: P.cream, fillStyle: 'solid' });
-      rect(-110, -100, 220, 56, 1, { fill: col, fillStyle: 'solid' });
-      txt(top, 0, -72, 36, { color: P.cream, font: PRINT });
-      txt(big, 0, 28, 74);
-    }, alpha);
+  // horizontal bar, grows on cue
+  function hbar(x, y, wFull, h, col, q, lab, val, op = {}) {
+    const t0 = at(q), u = eOut(prog(T, t0, t0 + 0.6));
+    if (u <= 0) { KC += 3; return; }
+    box(x, y - h / 2, wFull * u, h, col);
+    frame(x, y - h / 2, wFull * u, h, K.black, 3);
+    if (lab) D(lab, x - 20, y + 2, op.labSize || 40, { align: 'right', alpha: u });
+    if (val) D(val, x + wFull * u + 20, y + 2, op.valSize || 44, { align: 'left', alpha: clamp(u * 1.5 - 0.5), color: op.valCol || K.black });
   }
-  function camera(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => { rect(-80, -50, 120, 100, 1, { fill: P.ink, fillStyle: 'solid' }); poly([[40, -30], [100, -60], [100, 60], [40, 30]], 1, { fill: P.grey, fillStyle: 'solid' }); circ(-20, 0, 50, 1, { fill: P.red, fillStyle: 'solid' }); }, alpha);
-  }
-  function temple(x, y, s, alpha = 1) { courthouse(x, y, s, alpha); }
-  function dome(x, y, s, alpha = 1) {
-    grp(x, y, s, 0, () => {
-      path('M -110 0 Q -110 -130 0 -140 Q 110 -130 110 0 Z', 1, { fill: P.teal, hachureGap: 8 });
-      rect(-130, 0, 260, 120, 1, { fill: P.cream, fillStyle: 'solid' });
-      for (let i = 0; i < 4; i++) path(`M ${-100 + i * 60} 120 L ${-100 + i * 60} 50 Q ${-80 + i * 60} 25 ${-60 + i * 60} 50 L ${-60 + i * 60} 120`, 1, { strokeWidth: 2.4 });
-    }, alpha);
-  }
-  function bar(x, y, wdt, h, frac, col, alpha = 1) {
-    grp(0, 0, 1, 0, () => {
-      rect(x, y - h, wdt, h, 1, { strokeWidth: 3 });
-      if (frac > 0.002) rect(x, y - h * frac, wdt, h * frac, 1, { fill: col, fillStyle: 'solid', stroke: 'none' }); else KC++;
-    }, alpha);
-  }
+  const dim = (a) => box(0, 0, W, H, 'rgba(20,20,20,0.35)', a);
 
   // ---------- scenes ----------
+  // 1. cold open
+  function sOpen() {
+    plates([['dais', 0, { z: [1.12, 1.0], x: [0.3, -0.2] }], ['memo', c('O2') - 0.3, { z: [1.0, 1.1] }], ['walkout', c('O3') - 0.3, { z: [1.0, 1.12], x: [-0.2, 0.2] }]], ce('O4') + 0.6);
+    banner('Henry County, Georgia', 960, 190, 86, ['O1', 'Henry County'], { out: c('O2') });
+    banner('late 2025 · ethics board hearing', 960, 300, 46, ['O1', 'Late'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: c('O2') });
+    banner('9 county employees subpoenaed', 960, 880, 62, ['O1', 'subpoenaed'], { bg: BLUE, out: c('O2') });
+    cite('Henry County Board of Ethics hearing video, 2025', ['O1', 'hearing'], c('O2'));
+    quoteCard(1180, 520, 1240, 420, ['O2', 'reads a message'], ['"It was Chair Harrell\'s request...', 'the County Attorney advised them that', 'the Board of Ethics does not have', 'the authority to subpoena employees."'], 'ethics administrator, on the record · video at 46:48', { out: c('O3'), size: 42 });
+    stampX('9 witnesses walk out', 960, 820, 100, ['O3', 'walk out'], { out: ce('O4', 0.3) });
+    banner('usually: the investigation quietly dies', 960, 190, 58, ['O4', 'quietly dies'], { bg: K.black, out: ce('O4', 0.3) });
+  }
+  function sCounter() {
+    plates([['dais', c('O5') - 0.6, { z: [1.0, 1.1] }], ['jurybox', w('O6', 'picked by a jury', -0.3), { z: [1.06, 1.0] }]], ce('O6') + 0.6);
+    banner("this board didn't fold", 960, 200, 86, c('O5'), { out: c('O6') });
+    stampX('investigate the chair herself', 960, 820, 80, ['O5', 'investigation'], { out: c('O6') });
+    banner('elected by voters? no.', 960, 200, 64, ['O6', 'elected by voters'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: ce('O6', 0.2) });
+    banner('appointed by politicians? no.', 960, 310, 64, ['O6', 'appointed'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: ce('O6', 0.2) });
+    banner('picked by a jury', 960, 880, 110, ['O6', 'picked by a jury'], { bg: BLUE, out: ce('O6', 0.2) });
+  }
   function sTitle() {
-    const t = T;
-    stamp('an explainer', 960, 250, 54, 0.3, { color: P.teal, rot: -0.04 });
-    wt('Election by Jury', 960, 470, 180, 0.6, 1.6);
-    line(560, 570, 1360, 570, eOut(prog(t, 1.5, 1.9)), { stroke: P.red, strokeWidth: 7 });
-    wt(SCRIPT.subtitle, 960, 670, 60, 1.8, 2.9, { font: PRINT, color: P.teal });
-    crowd(960, 880, 9, 1, 120, 0.42 * popS(2.2), (i) => PALETTE[i % 6], (i) => (i === 4 ? 1 : 0.35 + 0.65 * (t > 2.6 ? 0 : 1)));
+    const t0 = ce('O6') + 0.1;
+    plate('title', t0 - 0.5, t0 + 5, { z: [1.06, 1.0] });
+    const a = fadeIn(t0 + 0.3, 0.3);
+    box(0, 150, W, 360, 'rgba(20,20,20,0.88)', a * eOut(prog(T, t0 + 0.2, t0 + 0.6)));
+    D('the case', 960, 250, 120, { color: K.cream, alpha: fadeIn(t0 + 0.5, 0.25) });
+    D('against voting', 960, 395, 150, { color: GOLD, alpha: fadeIn(t0 + 0.9, 0.25) });
+    M('election by jury', 960, 478, 30, { color: K.cream, alpha: fadeIn(t0 + 1.6, 0.3) });
   }
 
-  // H1-H3
-  function sHook() {
-    const t = T;
-    stamp('Georgia, 2021', 360, 140, 56, c('H1'), { color: P.blue, rot: -0.05 });
-    courthouse(360, 470, 1.1 * popS(w('H1', 'county')), 1);
-    const pick = t > w('H1', 'randomly');
-    const chosen = [2, 6, 9, 13, 17];
-    crowd(1220, 300, 7, 3, 110, 0.38 * popS(w('H1', 'jury')), (i) => (pick && chosen.includes(i) ? P.green : P.grey), (i) => (t > w('H2', 'Four') ? 0.25 : 1));
-    if (pick) txt('chosen at random', 1220, 520, 46, { color: P.green, alpha: fadeIn(w('H1', 'randomly')) }); else KC++;
-    const sp = popS(w('H1', 'pick most'));
-    seats(960, 820, [P.green, P.green, P.green, P.green, P.green, P.grey, P.grey], { s: 0.9 * sp, sp: 120, alpha: sp > 0 ? 1 : 0 });
-    txt('the ethics board: 5 of 7 seats picked by the jury', 960, 960, 44, { alpha: fadeIn(w('H1', 'members')), font: PRINT });
-    if (t > w('H2', 'Four') - 0.2) {
-      stamp('2025', 1220, 140, 60, w('H2', 'Four'), { color: P.red });
-      person(1500, 420, { s: 1.1 * popS(w('H2', 'most powerful')), color: P.ink, hat: 'top', mood: -0.3, k: 50 });
-      txt('most powerful politician', 1500, 640, 44, { alpha: fadeIn(w('H2', 'politician')), color: P.red });
-      magnifier(1350, 330, 0.9 * popS(w('H2', 'investigated')), 1);
-    } else KC += 200;
-    if (t > c('H3') - 0.2) {
-      const a = popS(w('H3', 'election by jury'));
-      ctx.save(); ctx.globalAlpha = 0.88 * fadeIn(w('H3', 'election by jury') - 0.2, 0.4); ctx.drawImage(PAPER, -W, 0, W * 3, H); ctx.restore();
-      grp(960, 540, a, -0.02, () => {
-        rect(-620, -120, 1240, 240, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 5, stroke: P.red });
-        txt('election by jury', 0, 0, 130, { color: P.red });
-      });
-      wt("first, the idea...", 960, 760, 54, w('H3', 'First'), ce('H3'), { color: P.plum });
-    } else KC += 30;
-  }
-
-  // P1-P4
-  function sPillars() {
-    const t = T;
-    const shake = t > w('P4', 'struggle') ? Math.sin(t * 22) * 0.025 : 0;
-    grp(960, 600, 1, shake, () => {
-      poly([[-460, -300], [0, -420], [460, -300]], popS(w('P1', 'two things')) > 0 ? 1 : 0, { fill: P.cream, fillStyle: 'solid' });
-      txt('good choices', 0, -335, 54, { alpha: fadeIn(w('P1', 'right')) });
-      [[-260, 'alignment', 'P2', 'want what the public wants', P.teal], [260, 'competence', 'P3', 'enough information + time', P.blue]].forEach(([x, name, id, sub, col]) => {
-        const s = popS(c(id));
-        grp(x, 0, s, 0, () => {
-          rect(-80, -290, 160, 440, 1, { fill: col, hachureGap: 10 });
-          rect(-110, 150, 220, 40, 1, { fill: P.grey, fillStyle: 'solid' });
-        });
-        txt(name, x, 240, 64, { alpha: fadeIn(c(id)), color: col });
-        txt(sub, x, 310, 42, { alpha: fadeIn(c(id) + 0.5), font: PRINT });
-      });
+  // 2. two jobs
+  function sJobs() {
+    plate('scales', c('A1') - 0.6, ce('A6') + 0.6, { z: [1.0, 1.1] });
+    card(960, 470, 1500, 560, c('A1'), () => {
+      D('any system for choosing leaders has two jobs', 0, -210, 46, { color: K.grey });
+      box(-4, -160, 8, 190, K.black);
+      D('1. alignment', -370, -100, 70, { color: BLUE, alpha: fadeIn(w('A2', 'alignment'), 0.2) });
+      Dm('deciders want what the public wants', -370, -20, 34, { alpha: fadeIn(w('A2', 'want what'), 0.2) });
+      D('2. competence', 370, -100, 70, { color: GOLD, alpha: fadeIn(w('A3', 'competence'), 0.2) });
+      Dm('deciders know what they\'re choosing', 370, -20, 34, { alpha: fadeIn(w('A3', 'know what'), 0.2) });
+      const row = (lab, y, q, a1, a2) => { const a = fadeIn(at(q), 0.2); if (a <= 0) { KC += 3; return; } D(lab, 0, y, 40, { alpha: a, color: K.grey }); D(a1, -370, y, 54, { alpha: a, color: a1 === '✗' ? ORANGE : BLUE }); D(a2, 370, y, 54, { alpha: a, color: a2 === '✗' ? ORANGE : BLUE }); };
+      row('a king', 80, ['A4', 'king'], '✗', '·');
+      row('experts', 150, ['A4', 'experts'], '✗', '✓');
+      row('mass elections', 220, ['A5', 'Mass elections'], '✓?', '✓?');
     });
-    if (t > w('P4', 'Mass')) {
-      ballot(960, 520, popS(w('P4', 'Mass')), 1);
-      txt('mass elections', 960, 410, 44, { color: P.red });
-      xMark(700, 520, 0.6 * popS(w('P4', 'both')), 1); xMark(1220, 520, 0.6 * popS(w('P4', 'both', 0.15)), 1);
-    } else KC += 30;
+    banner("let's check", 960, 900, 80, c('A6'), { bg: BLUE });
   }
 
-  // A1-A5
-  function sAlign() {
-    const t = T;
-    const ph1 = fadeOut(c('A3') - 0.2, 0.4);
-    if (t < c('A3') + 0.4) {
-      grp(0, 0, 1, 0, () => {
-        const show = t > w('A1', 'show up');
-        const voters = (i) => i % 10 >= 4 && (i % 3 !== 0 || i % 10 > 7);
-        crowd(560, 400, 10, 4, 85, 0.3 * popS(c('A1')), (i) => PALETTE[i % 6], (i) => (show && !voters(i) ? 0.2 : 1));
-        txt('the public', 560, 150, 52, { alpha: fadeIn(c('A1')) });
-        if (show) { ballot(1050, 300, 0.8, 1); txt('who actually votes:', 1400, 260, 46, { align: 'center' }); }
-        else KC += 10;
-        ['older', 'wealthier', 'more partisan'].forEach((s, i) => txt(s, 1400, 330 + i * 60, 52, { color: P.red, alpha: fadeIn(w('A1', ['older', 'wealthier', 'partisan'][i])) }));
-        // A2: money for name recognition
-        if (t > c('A2') - 0.2) {
-          person(700, 820, { s: 0.75 * popS(w('A2', 'Candidates')), color: P.blue, arms: 'out', mood: 0.6, k: 60 });
-          [-1, 1].forEach((d, i) => bag(700 + d * 190, 860, 0.7 * popS(w('A2', 'donors') + i * 0.15), null, {}));
-          txt('courting donors', 700, 980, 44, { alpha: fadeIn(w('A2', 'courting')), color: P.plum });
-          for (let i = 0; i < 3; i++) mini(1300 + i * 140, 840, 0.55, P.grey, 70 + i, { alpha: 0.6 * fadeIn(w('A2', 'Plenty')), mood: -0.2 });
-          txt('capable people who never run', 1440, 990, 44, { alpha: fadeIn(w('A2', 'never run')), color: P.grey });
-        } else KC += 300;
-      }, ph1);
-    } else KC += 700;
-    // A3-A4: draw at random, a mirror
-    if (t > c('A3') - 0.3 && t < c('A5') + 0.4) {
-      const ph2 = fadeOut(c('A5') - 0.2, 0.4);
-      grp(0, 0, 1, 0, () => {
-        const picks = [3, 8, 14, 17, 22, 27, 31, 36];
-        crowd(480, 430, 10, 4, 80, 0.28, (i) => PALETTE[i % 6], (i) => (t > w('A3', 'random') && picks.includes(i) ? 0.35 : 1));
-        txt('the population', 480, 190, 50);
-        hat(960, 740, 0.9 * popS(w('A3', 'Draw')), fadeOut(c('A4') - 0.2, 0.4));
-        picks.forEach((p, j) => {
-          const u = eIO(prog(t, w('A3', 'random') + j * 0.12, w('A3', 'random') + j * 0.12 + 0.7));
-          if (u > 0 && u < 1) slip(lerp(480, 960, u), lerp(430, 700, u) - Math.sin(u * Math.PI) * 150, u * 6, 1); else KC += 3;
-        });
-        txt('like trial juries', 960, 900, 46, { alpha: fadeIn(w('A3', 'trial juries')) * fadeOut(c('A4') - 0.2, 0.4), color: P.plum });
-        // mirror
-        if (t > c('A4') - 0.2) {
-          const mp = popS(w('A4', 'mirror'));
-          grp(1440, 430, mp, 0, () => { ell(0, 0, 640, 520, 1, { strokeWidth: 9, stroke: '#b58a3c' }); });
-          crowd(1440, 430, 4, 2, 110, 0.32 * mp, (i) => PALETTE[(i * 2) % 6]);
-          txt('the jury', 1440, 140, 50, { alpha: fadeIn(w('A4', 'mirror')) });
-          wt('every age, income, and leaning, in roughly real proportions', 1440, 760, 40, w('A4', 'Every age'), w('A4', 'proportions'), { font: PRINT });
-          stamp('nobody chose them, so nobody owns them', 1300, 960, 50, w('A4', 'Nobody chose'), { color: P.green });
-        } else KC += 400;
-      }, ph2);
-    } else KC += 900;
-    // A5: 23 jurors, 16 favor
-    if (t > c('A5') - 0.2) {
-      const jp = popS(w('A5', 'twenty-three'));
-      const fav = t > w('A5', 'sixteen');
-      crowd(640, 450, 8, 3, 115, 0.36 * jp, (i) => (fav ? (i < 16 ? P.teal : P.red) : P.grey), (i) => (i < 23 ? 1 : 0));
-      txt('a jury of 23', 640, 170, 56, { alpha: fadeIn(w('A5', 'twenty-three')) });
-      txt('16 favor candidate A', 640, 780, 52, { color: P.teal, alpha: fadeIn(w('A5', 'sixteen')) });
-      grp(1450, 450, popS(w('A5', 'ninety percent')), 0, () => {
-        bar(-60, 200, 120, 400, 0.9 * eOut(prog(t, w('A5', 'ninety percent'), w('A5', 'ninety percent', 1))), P.green, 1);
-        txt('>90%', 0, -250, 80, { color: P.green });
-        txt('confident', 0, 260, 46);
-      });
-      wt('town of 1,000 or 1,000,000: same answer', 960, 960, 52, w('A5', 'thousand people'), w('A5', 'million'), { color: P.blue });
-    } else KC += 400;
+  // 3. competence
+  function sOdds() {
+    plate('needle', c('R1') - 0.6, ce('R2') + 0.6, { z: [1.12, 1.0] });
+    banner('your vote almost certainly won\'t change the result', 960, 180, 54, ['R1', 'almost certainly'], { out: c('R2') });
+    card(960, 500, 1200, 380, ['R2', 'one in sixty million'], () => {
+      Dm('chance one ballot decides a presidential election', 0, -110, 38, { color: K.grey });
+      D('1 in 60,000,000', 0, 10, 130, { color: BLUE });
+      Dm('local races: better odds, still almost never', 0, 120, 36, { alpha: fadeIn(w('R2', 'Local races'), 0.2) });
+    });
+    cite('Gelman, Silver & Edlin, Economic Inquiry, 2012 (2008 average)', ['R2', 'one in sixty']);
   }
-
-
-  // A5b: Marcus Ogren's VSE-by-jury-size simulations
-  const VSE = [[6, 0.818], [12, 0.903], [24, 0.948], [48, 0.969], [96, 0.980], [192, 0.985], [384, 0.988], [768, 0.990], [1536, 0.990], [3072, 0.991], [6144, 0.991], [12288, 0.991], [24576, 0.991]];
-  function sVSE() {
-    const t = T;
-    wt('how good are small juries?', 960, 100, 72, c('A5b'), w('A5b', 'back this up'), { color: P.blue });
-    txt('simulations by Marcus Ogren: score voting, 10 candidates, 10,000 trials each', 960, 175, 34, { alpha: fadeIn(w('A5b', 'ten candidates')), font: PRINT, color: P.grey });
-    const ox = 260, oy = 900, ww = 1400, h = 600;
-    const xOf = (n) => ox + (Math.log2(n) - Math.log2(6)) / (Math.log2(24576) - Math.log2(6)) * ww;
-    const yOf = (v) => oy - (v - 0.75) / 0.25 * h;
-    const ap = eOut(prog(t, c('A5b'), w('A5b', 'Ogren')));
-    arrow(ox, oy, ox + ww + 40, oy, ap, { strokeWidth: 4 });
-    arrow(ox, oy, ox, yOf(1.0) - 30, ap, { strokeWidth: 4 });
-    [0.8, 0.9, 1.0].forEach((v) => { txt(Math.round(v * 100) + '%', ox - 60, yOf(v), 36, { alpha: ap, font: PRINT }); line(ox - 10, yOf(v), ox, yOf(v), ap, { strokeWidth: 3 }); });
-    [6, 24, 96, 384, 1536, 6144, 24576].forEach((n) => txt(n.toLocaleString('en-US'), xOf(n), oy + 40, 32, { alpha: ap, font: PRINT }));
-    txt('jurors', ox + ww / 2, oy + 95, 44, { alpha: ap });
-    txt('VSE', ox - 20, yOf(1.0) - 70, 44, { alpha: ap });
-    // whole-population line
-    const wp = prog(t, w('A5b', 'entire population'), w('A5b', 'ninety-nine'));
-    for (let i = 0; i < 28; i++) { const x1 = ox + i * 50, u = clamp(wp * 28 - i); line(x1, yOf(0.991), x1 + 30 * u, yOf(0.991), u > 0 ? 1 : 0, { stroke: P.grey, strokeWidth: 3 }); }
-    txt('everyone votes: 99%', ox + ww - 160, yOf(0.991) - 36, 40, { alpha: fadeIn(w('A5b', 'ninety-nine')), color: P.grey });
-    curveP(VSE.map(([n, v]) => [xOf(n), yOf(v)]), eIO(prog(t, w('A5b', 'score voting'), w('A5b', 'twenty-four', 0.5))), { stroke: P.blue, strokeWidth: 6 });
-    [[24, 0.948, '24 jurors: 95%', w('A5b', 'twenty-four'), P.teal], [96, 0.980, '96 jurors: 98%', w('A5b', 'ninety-six'), P.green]].forEach(([n, v, lab, t0, col]) => {
-      const s = popS(t0);
-      circ(xOf(n), yOf(v), 30 * s + 0.01, s > 0 ? 1 : 0, { fill: col, fillStyle: 'solid' });
-      txt(lab, xOf(n) + 30, yOf(v) + 70, 48, { alpha: fadeIn(t0), color: col, align: 'left' });
+  function sIgnorance() {
+    plate('homework', c('R3') - 0.6, ce('R5') + 0.6, { z: [1.0, 1.1], x: [0.2, -0.2] });
+    card(560, 480, 900, 520, c('R3'), () => {
+      D('the homework', 0, -190, 56, { color: K.grey });
+      rows([['cost: hours of reading', ['R3', 'takes hours']], ['payoff: ≈ 0', ['R3', 'close to zero']]], -380, -80, 60, 100);
+      D('rational ignorance', 0, 140, 72, { color: BLUE, alpha: fadeIn(w('R4', 'Rational ignorance'), 0.2) });
+    }, { out: c('R5') });
+    cite('Anthony Downs, An Economic Theory of Democracy, 1957', ['R4', 'Rational'], c('R5'));
+    banner('this is arithmetic', 960, 180, 72, ['R5', 'arithmetic'], { bg: BLUE });
+    card(1300, 560, 900, 420, ['R5', 'Most people'], () => {
+      Dm('what most voters know:', 0, -140, 40, { color: K.grey });
+      rows([['· the party', ['R5', 'party']], ['· a slogan', ['R5', 'slogan']], ['· whatever an ad said', ['R5', 'an ad']]], -300, -50, 56, 80);
+    });
+  }
+  function sMoney() {
+    plate('billboard', c('R6') - 0.6, ce('R6') + 0.6, { z: [1.0, 1.12], y: [0.3, -0.3] });
+    banner('step one: be heard of', 960, 200, 80, ['R6', 'heard their name']);
+    stampX('name recognition', 960, 800, 100, ['R6', 'Name recognition']);
+    banner('sold by the 30-second spot', 960, 940, 50, ['R6', 'thirty-second'], { bg: BLUE });
+  }
+  function sFeed() {
+    plate('feed', c('R7') - 0.6, ce('R8') + 0.6, { z: [1.0, 1.1] });
+    banner('echo chambers', 500, 220, 66, ['R7', 'Echo'], { out: c('R8') });
+    banner('foreign influence campaigns', 1300, 340, 58, ['R7', 'Foreign'], { bg: BLUE, out: c('R8') });
+    banner('Russia · China · Iran', 1300, 450, 50, ['R7', 'Russia'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: c('R8') });
+    banner('AI fakes, cheaper every year', 800, 860, 62, ['R7', 'generative'], { bg: ORANGE, shadowCol: K.black, out: c('R8') });
+    cite('ODNI / FBI / CISA election-threat statements, 2024 · U.S. Treasury sanctions, 2024', ['R7', 'intelligence'], c('R8'));
+    card(960, 520, 1300, 420, c('R8'), () => {
+      D('millions of voters', 0, -120, 66);
+      Dm('× almost no reason to study', 0, -30, 46, { alpha: fadeIn(w('R8', 'no reason'), 0.2) });
+      Dm('× an information war', 0, 40, 46, { alpha: fadeIn(w('R8', 'environment'), 0.2) });
+      D('= add up the guesses', 0, 130, 70, { color: BLUE, alpha: fadeIn(w('R8', 'adds up'), 0.2) });
     });
   }
 
-  // S1-S3
-  function sSecurity() {
-    const t = T;
-    const ph1 = fadeOut(c('S3') - 0.2, 0.4);
-    grp(0, 0, 1, 0, () => {
-      crowd(600, 330, 10, 1, 95, 0.36 * popS(c('S1')), (i) => PALETTE[i % 6]);
-      txt('jurors', 600, 180, 50, { alpha: fadeIn(c('S1')) });
-      person(1500, 330, { s: 0.9 * popS(w('S1', 'briber')), color: P.ink, hat: 'top', arms: 'give', mood: 0.6, k: 80 });
-      bag(1360, 360, 0.6 * popS(w('S1', 'briber', 0.2)), null, {});
-      txt('a briber has to reach every one', 1450, 560, 44, { alpha: fadeIn(w('S1', 'reach')), color: P.red });
-      // odds of getting caught
-      txt('each bribe attempt: 5% chance of being reported', 960, 660, 46, { alpha: fadeIn(w('S2', 'five percent')), font: PRINT });
-      [[14, 0.512, w('S2', 'fourteen')], [20, 0.642, w('S2', 'more likely') + 0.6], [30, 0.785, w('S2', 'Thirty')]].forEach(([n, p, t0], i) => {
-        const x = 620 + i * 340, s = fadeIn(t0);
-        bar(x - 60, 1000, 120, 260, p * eOut(prog(t, t0, t0 + 0.8)), [P.gold, P.plum, P.red][i], s);
-        txt(Math.round(p * 100) + '% caught', x, 710, 44, { alpha: s, color: [P.gold, P.plum, P.red][i] });
-        txt(n + ' jurors', x, 1040, 40, { alpha: s, font: PRINT });
-      });
-      line(520, 1000 - 130, 1360, 1000 - 130, fadeIn(w('S2', 'more likely')), { stroke: P.grey, strokeWidth: 2 });
-      txt('50%', 1410, 870, 34, { alpha: fadeIn(w('S2', 'more likely')), font: PRINT });
-    }, ph1);
-    if (t > c('S3') - 0.2) {
-      ballot(480, 450, 1.4 * popS(w('S3', 'secret ballot')), 1);
-      txt("nobody can verify a bought vote", 480, 680, 46, { alpha: fadeIn(w('S3', 'verify')) });
-      grp(1340, 480, popS(w('S3', 'cube root')), 0, () => {
-        rect(-380, -300, 760, 600, 1, { fill: P.cream, fillStyle: 'solid' });
-        txt('jury size = cube root of voters', 0, -240, 48, { color: P.blue });
-        [['8,000 voters', '20 jurors', w('S3', 'twenty jurors')], ['125,000', '50', w('S3', 'twenty jurors') + 0.5], ['8 million', '200', w('S3', 'twenty jurors') + 1.0], ['240 million', '~620', w('S3', 'six hundred')]].forEach(([a, b, t0], i) => {
-          txt(a, -150, -130 + i * 100, 46, { alpha: fadeIn(t0) });
-          txt(b, 200, -130 + i * 100, 46, { alpha: fadeIn(t0), color: P.green });
-        });
-      });
-    } else KC += 300;
-  }
-
-  // C1-C3: the information environment
-  function sInfo() {
-    const t = T;
-    phone(420, 470, 1.3 * popS(c('C1')), 1);
-    wt('spreads  ≠  true', 420, 820, 64, w('C1', 'rewards'), w('C1', 'true', 0.4), { color: P.red });
-    if (t > c('C2') - 0.2) {
-      txt('opponents with "extreme" views', 1230, 180, 48, { alpha: fadeIn(c('C2')) });
-      const ip = eOut(prog(t, w('C2', 'imagine'), w('C2', 'extreme')));
-      bar(1030, 640, 160, 400, 0.6 * ip, P.red, fadeIn(c('C2')));
-      bar(1300, 640, 160, 400, 0.3 * eOut(prog(t, w('C2', 'actually'), w('C2', 'actually', 0.8))), P.teal, fadeIn(c('C2')));
-      txt('imagined', 1110, 690, 44, { alpha: fadeIn(c('C2')), color: P.red });
-      txt('actual', 1380, 690, 44, { alpha: fadeIn(w('C2', 'actually')), color: P.teal });
-      stamp('~2x', 1600, 380, 70, w('C2', 'actually', 0.6), { color: P.red });
-      wt('heaviest news readers: most distorted', 1230, 790, 44, w('C2', 'follow the news'), w('C2', 'distorted'), { color: P.plum });
-    } else KC += 200;
-    if (t > c('C3') - 0.2) {
-      robot(1020, 900, 0.75 * popS(w('C3', 'AI')), 1);
-      [['FAKE', P.red], ['FAKE', P.plum], ['FAKE', P.gold]].forEach(([s, col], i) => {
-        const u = prog(t, w('C3', 'cheap') + i * 0.2, w('C3', 'cheap') + i * 0.2 + 0.6);
-        grp(1120 + u * (260 + i * 200), 900 + (i - 1) * 30 * u, 0.8, (i - 1) * 0.2, () => { rect(-70, -40, 140, 80, 1, { fill: P.cream, fillStyle: 'solid' }); txt(s, 0, 2, 40, { color: col, font: PRINT }); }, u > 0 ? 1 : 0);
-      });
-      txt('foreign influence operations', 1500, 1030, 44, { alpha: fadeIn(w('C3', 'foreign')), color: P.red });
-    } else KC += 200;
-  }
-
-  // C4-C8: inside the jury room
-  function sRoom() {
-    const t = T;
-    const phA = fadeOut(c('C7') - 0.2, 0.4);
-    grp(0, 0, 1, 0, () => {
-      calendar(260, 260, popS(c('C4')), 'jury service', '1-3 wks', 1, P.blue);
-      txt('paid, protected time', 260, 420, 44, { alpha: fadeIn(w('C4', 'paid')), color: P.green });
-      // C5 equal time
-      if (t > c('C5') - 0.2) {
-        [0, 1, 2].forEach((i) => chessClock(760 + i * 0, 0, 0, 0, 0, 0));
-        txt('equal time for every candidate', 1150, 150, 50, { alpha: fadeIn(c('C5')) });
-        grp(1640, 260, popS(w('C5', 'Money')), 0, () => { txt('$', 0, 0, 120, { color: P.green }); xMark(0, 0, 0.9, 1); });
-      } else KC += 100;
-      // C6 podiums + cross-exam
-      const cand = [[760, P.teal], [1150, P.red], [1540, P.gold]];
-      cand.forEach(([x, col], i) => {
-        const s = popS(c('C5') + i * 0.15);
-        podium(x, 560, s, col, 1);
-        person(x, 450, { s: 0.7 * s, color: col, arms: t > w('C6', 'cross-examine') ? 'out' : 'down', mood: 0.5, k: 90 + i, hair: i === 1 ? HAIR_B : HAIR_A, skin: P.skin[(i * 2) % 5] });
-        // hourglass-ish timer bar
-        bar(x - 70, 760, 140, 26, 1 - 0.6 * prog(t, c('C5'), ce('C6')), col, fadeIn(c('C5')));
-      });
-      if (t > w('C6', 'cross-examine')) {
-        const ap = prog(t, w('C6', 'cross-examine'), w('C6', 'cross-examine', 0.6));
-        arrow(860, 400, 1050, 400, ap, { stroke: P.plum, strokeWidth: 4 }); arrow(1250, 400, 1440, 400, ap, { stroke: P.plum, strokeWidth: 4 });
-        arrow(1440, 340, 860, 340, prog(t, w('C6', 'cross-examine', 0.4), w('C6', 'cross-examine', 1.0)), { stroke: P.plum, strokeWidth: 4 });
-      } else KC += 30;
-      crowd(1150, 900, 9, 1, 110, 0.3 * popS(w('C6', 'jury hears')), (i) => PALETTE[i % 6]);
-      txt('the jury hears all of them', 1150, 1040, 42, { alpha: fadeIn(w('C6', 'jury hears')), font: PRINT });
-      stamp('omni-biased', 300, 760, 66, w('C6', 'omni-biased'), { color: P.plum });
-      wt('balance through opposition', 300, 860, 42, w('C6', 'balance'), w('C6', 'opposition'), { color: P.plum });
-    }, phA);
-    // C7 Intelligence Squared
-    if (t > c('C7') - 0.2 && t < c('C8') + 0.4) {
-      const out = fadeOut(c('C8') - 0.2, 0.4);
-      grp(0, 0, 1, 0, () => {
-        txt('Intelligence Squared debates', 960, 140, 62, { color: P.blue });
-        const sw = eIO(prog(t, w('C7', 'third'), w('C7', 'switches sides')));
-        [['before', 0.55], ['after', 0.55 - 0.33 * sw * 0.5]].forEach(([lab, f], i) => {
-          const y = 380 + i * 200;
-          txt(lab, 420, y, 50, { alpha: fadeIn(w('C7', i ? 'after' : 'before')), align: 'right' });
-          rect(480, y - 50, 1000, 100, 1, { strokeWidth: 3 });
-          rect(480, y - 50, 1000 * f, 100, 1, { fill: P.teal, fillStyle: 'solid', stroke: 'none', fillAlpha: fadeIn(w('C7', i ? 'after' : 'before')) });
-          rect(480 + 1000 * f, y - 50, 1000 * (1 - f), 100, 1, { fill: P.red, fillStyle: 'solid', stroke: 'none', fillAlpha: fadeIn(w('C7', i ? 'after' : 'before')) });
-        });
-        stamp('about 1 in 3 switch sides', 960, 760, 62, w('C7', 'switches sides'), { color: P.green });
-        wt('no discussion needed, just watching', 960, 880, 48, w('C7', 'without'), w('C7', 'themselves'), { color: P.plum });
-      }, out);
-    } else KC += 200;
-    // C8 recognizing competence
-    if (t > c('C8') - 0.2) {
-      person(620, 520, { s: 1.1 * popS(w('C8', 'doctor')), color: P.cream, mood: 0.6, k: 95, hair: HAIR_B });
-      if (t > w('C8', 'doctor')) path('M 560 470 Q 620 560 680 470', 1, { strokeWidth: 4, stroke: P.grey }); else KC++;
-      checkMark(800, 380, popS(w('C8', 'good doctor')), 1);
-      txt('a good doctor', 620, 760, 50, { alpha: fadeIn(w('C8', 'good doctor')) });
-      wt('you can recognize competence', 1320, 450, 56, w('C8', 'recognizing'), w('C8', 'themselves'));
-      wt("you don't have", 1320, 530, 56, w('C8', "don't have"), w('C8', 'themselves', 0.3));
-      stamp('no medical school required', 1320, 720, 54, w('C8', 'medical school'), { color: P.blue });
-    } else KC += 200;
-  }
-
-  // F1
-  function sFilter() {
-    const t = T;
-    grp(520, 500, popS(w('F1', 'pass a test')), -0.06, () => {
-      rect(-200, -260, 400, 520, 1, { fill: P.cream, fillStyle: 'solid' });
-      txt('VOTER TEST', 0, -200, 50, { font: PRINT });
-      for (let i = 0; i < 6; i++) { rect(-160, -130 + i * 60, 26, 26, 1, { strokeWidth: 2 }); line(-110, -117 + i * 60, 150 - (i % 3) * 30, -117 + i * 60, 1, { strokeWidth: 2 }); }
+  // 4. alignment
+  function sTurnout() {
+    plate('turnout', c('T1') - 0.6, ce('T5') + 0.6, { z: [1.0, 1.1], x: [-0.2, 0.2] });
+    banner('is the electorate a fair sample?', 960, 190, 66, c('T1'), { out: c('T3') });
+    card(1300, 560, 860, 440, ['T2', "It isn't"], () => {
+      Dm('voters vs. non-voters:', 0, -150, 40, { color: K.grey });
+      rows([['older', ['T2', 'older']], ['whiter', ['T2', 'whiter']], ['wealthier', ['T2', 'wealthier']]], -120, -50, 72, 90);
+    }, { out: c('T3') });
+    cite('U.S. Census Bureau, CPS Voting and Registration Supplement', ['T2', 'Census'], c('T3'));
+    banner('opt-in = skewed toward the motivated', 960, 190, 62, c('T3'), { out: c('T5') });
+    banner('a pollster who did that: fired', 960, 520, 76, c('T4'), { bg: BLUE, out: c('T5') });
+    stampX('we call it democracy', 960, 700, 92, ['T4', 'democracy'], { out: c('T5') });
+    card(960, 540, 1200, 400, c('T5'), () => {
+      D('mass elections', 0, -130, 50, { color: K.grey });
+      D('informed?', -280, -20, 66, { alpha: fadeIn(w('T5', 'informed'), 0.2) }); D('✗', 280, -20, 80, { color: ORANGE, alpha: fadeIn(w('T5', 'informed'), 0.2) });
+      D('a fair sample?', -280, 90, 66, { alpha: fadeIn(w('T5', 'fair sample'), 0.2) }); D('✗', 280, 90, 80, { color: ORANGE, alpha: fadeIn(w('T5', 'fair sample'), 0.2) });
     });
-    person(880, 380, { s: 0.7 * popS(w('F1', 'whoever writes')), color: P.ink, hat: 'top', arms: 'give', mood: 0.5, k: 99 });
-    wt('whoever writes it controls it', 520, 860, 52, w('F1', 'whoever writes'), w('F1', 'outcome'), { color: P.red });
-    stamp('literacy tests', 1400, 300, 70, w('F1', 'literacy tests'), { color: P.red, rot: 0.04 });
-    wt('a tool for keeping people from voting', 1400, 420, 46, w('F1', 'tool'), w('F1', 'voting'), { font: PRINT });
-    grp(1400, 700, popS(w('F1', 'Randomness')), Math.sin(t * 3) * 0.1, () => {
-      rect(-90, -90, 180, 180, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 4 });
-      [[-45, -45], [45, 45], [0, 0], [45, -45], [-45, 45]].forEach(([x, y]) => dot(x, y, 14));
-    });
-    stamp("randomness can't be rigged", 1400, 920, 60, w('F1', 'nobody can rig'), { color: P.green });
   }
 
-  // R1-R6: history
-  function sHistory() {
-    const t = T;
-    const ty = 360;
-    line(140, ty, 1780, ty, eOut(prog(t, c('R1') - 0.3, w('R1', 'Athens'))), { strokeWidth: 5 });
-    const nodes = [
-      [270, 'Athens', '5th c. BC', w('R1', 'Athens'), (s) => temple(0, -170, s * 0.55, 1)],
-      [630, 'Venice', '1268-1797', w('R2', 'Venice'), (s) => dome(0, -150, s * 0.7, 1)],
-      [990, 'H.G. Wells', '1903', w('R3', '1903'), (s) => book(0, -130, s * 0.9, 1)],
-      [1350, 'assemblies', 'Ireland, B.C.', w('R4', 'Modern'), (s) => crowd(0, -140, 3, 1, 70, 0.25 * s, (i) => PALETTE[i])],
-      [1700, 'Georgia', 'today', w('R6', 'Georgia'), (s) => courthouse(0, -160, s * 0.5, 1)],
-    ];
-    nodes.forEach(([x, name, when, t0, fn]) => {
-      const s = popS(t0);
-      circ(x, ty, 34, s > 0 ? 1 : 0, { fill: P.red, fillStyle: 'solid' });
-      grp(x, ty, 1, 0, () => fn(s));
-      txt(name, x, ty + 70, 50, { alpha: fadeIn(t0) });
-      txt(when, x, ty + 120, 38, { alpha: fadeIn(t0), font: PRINT, color: P.grey });
+  // 5. the machine
+  function sMachine() {
+    plates([['drum', c('J1') - 0.6, { z: [1.12, 1.0] }], ['jurybox', c('J3') - 0.3, { z: [1.0, 1.08] }], ['lectern', w('J3', 'watch the candidates', -0.3), { z: [1.0, 1.08], x: [0.2, -0.2] }], ['ballot', c('J4') - 0.3, { z: [1.0, 1.12] }]], ce('J4') + 0.6);
+    banner('election by jury', 960, 200, 110, ['J1', 'election by jury'], { bg: BLUE, out: c('J3') });
+    card(960, 600, 1100, 380, c('J2'), () => {
+      rows([['a random sample of citizens', ['J2', 'random sample']], ['like a trial jury', ['J2', 'trial jury']], ['service required · and paid', ['J2', 'required']]], -460, -110, 58, 100);
+    }, { out: c('J3') });
+    card(560, 520, 860, 560, c('J3'), () => {
+      D('a week or two', 0, -220, 56, { color: BLUE });
+      rows([['hear every candidate', ['J3', 'hear every']], ['watch them question each other', ['J3', 'watch the candidates']], ['ask their own questions', ['J3', 'own questions']], ['talk it over', ['J3', 'talk it over']]], -360, -110, 50, 90);
+    }, { out: c('J4') });
+    banner('secret ballot', 960, 200, 80, ['J4', 'secret ballot'], { out: ce('J4', 0.3) });
+    stampX('binding', 960, 820, 130, ['J4', 'binding'], { out: ce('J4', 0.3) });
+  }
+  function sBoth() {
+    paperBg();
+    D('look at what that does to both jobs', 960, 150, 66, { alpha: fadeIn(c('J5'), 0.3) });
+    const col = (x, title, colr, items) => {
+      D(title, x, 290, 76, { color: colr, alpha: fadeIn(at(items[0][1]) - 0.3, 0.3) });
+      rows(items, x - 380, 400, 44, 80);
+    };
+    col(520, 'alignment', BLUE, [['no one opts in → no skew', ['J6', 'nobody opts in']], ['a true representative sample', ['J6', 'representative sample']], ['what every poll is chasing', ['J6', 'Every serious poll']]]);
+    col(1400, 'competence', GOLD, [['1 in a million → 1 in a few dozen', ['J7', 'one in a few dozen']], ['homework worth doing', ['J7', 'worth doing']], ['protected time', ['J7', 'protected time']]]);
+    card(960, 860, 1400, 180, c('J8'), () => {
+      D('equal time for every candidate', 0, -30, 58, { color: BLUE });
+      Dm('nothing left for money to buy', 0, 40, 40, { alpha: fadeIn(w('J8', "can't buy"), 0.2) });
     });
-    // quotes and notes beneath
-    const q1 = fadeOut(c('R2') - 0.2, 0.4);
-    wt('"lot is democratic; election is oligarchic"', 960, 680, 52, w('R1', 'Aristotle'), w('R1', 'oligarchic'), { alpha: q1, color: P.plum });
-    txt('- Aristotle', 1300, 740, 40, { alpha: q1 * fadeIn(w('R1', 'oligarchic')), font: PRINT });
-    const q2 = fadeOut(c('R3') - 0.2, 0.4) * fadeIn(w('R2', 'alternated'));
-    txt('lottery, vote, lottery, vote... for 500 years', 960, 680, 50, { alpha: q2, color: P.teal });
-    const q3 = fadeOut(c('R4') - 0.2, 0.4) * fadeIn(w('R3', 'jury method'));
-    txt('"the only practicable line of improvement"', 960, 680, 50, { alpha: q3, color: P.plum });
-    const q4 = fadeOut(c('R5') - 0.2, 0.4) * fadeIn(w('R4', 'advisory'));
-    txt('but mostly advisory: easy to ignore', 960, 680, 52, { alpha: q4, color: P.red });
-    if (t > c('R5') - 0.2) {
-      const out = fadeOut(c('R6') - 0.2, 0.4);
-      grp(560, 760, popS(w('R5', 'binding')), -0.02, () => {
-        rect(-340, -110, 680, 220, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 4, stroke: P.green });
-        txt('1. the choice is binding', 0, -30, 54, { color: P.green });
-        txt('not advisory', 0, 40, 42, { font: PRINT });
-      }, out);
-      grp(1360, 760, popS(w('R5', 'only chooses')), 0.02, () => {
-        rect(-360, -110, 720, 220, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 4, stroke: P.blue });
-        txt("2. it chooses, it doesn't govern", 0, -30, 50, { color: P.blue });
-        txt('weeks, not years: can be mandatory', 0, 40, 42, { font: PRINT, alpha: fadeIn(w('R5', 'weeks')) });
-      }, out);
-    } else KC += 100;
-    if (t > c('R6') - 0.2) {
-      txt('Georgia grand juries already appoint:', 960, 700, 52, { alpha: fadeIn(w('R6', 'Grand juries')) });
-      [['election boards', 'election boards'], ['water authorities', 'water'], ['ethics boards', 'ethics']].forEach(([s, word], i) => {
-        const t0 = w('R6', word);
-        grp(480 + i * 480, 860, popS(t0), 0, () => { rect(-210, -60, 420, 120, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 3 }); txt(s, 0, 2, 48, { color: [P.blue, P.teal, P.red][i] }); });
-      });
-    } else KC += 60;
   }
 
-  // D1-D3: a design
-  function sDesign() {
-    const t = T;
-    const run = t > w('D1', 'chess clock');
-    const a = run ? ((t - w('D1', 'chess clock')) * 0.08) % 1 : 0, b = run ? ((t - w('D1', 'chess clock')) * 0.05 + 0.3) % 1 : 0;
-    chessClock(420, 330, 1.1 * popS(w('D1', 'chess clock')), a, b, 1);
-    txt('equal time, spent however they like', 420, 520, 44, { alpha: fadeIn(w('D1', 'however')) });
-    ['present', 'rebut', 'question'].forEach((s, i) => txt(s, 220 + i * 200, 600, 46, { alpha: fadeIn(w('D1', ['presenting', 'rebutting', 'questioning'][i])), color: [P.teal, P.red, P.gold][i] }));
-    // D2 anonymous questions to all
-    if (t > c('D2') - 0.2) {
-      const cx = 1400, d2out = fadeOut(w('D3', 'score') - 0.4, 0.4);
-      ctx.save(); ctx.globalAlpha *= 1;
-      [0, 1, 2].forEach((i) => podium(cx - 280 + i * 280, 360, 0.6 * popS(c('D2') + i * 0.1), [P.teal, P.red, P.gold][i], 1));
-      grp(cx, 760, popS(w('D2', 'anonymously')) * (d2out > 0.01 ? 1 : 0), 0, () => { rect(-100, -70, 200, 140, 1, { fill: P.cream, fillStyle: 'solid' }); txt('?', 0, 0, 100, { color: P.plum }); txt('anonymous', 0, 100, 36, { font: PRINT }); });
-      if (d2out > 0.01) [0, 1, 2].forEach((i) => arrow(cx, 680, cx - 280 + i * 280, 470, prog(t, w('D2', 'every candidate'), w('D2', 'every candidate', 0.6)), { stroke: P.plum, strokeWidth: 4 })); else KC += 18;
-      txt('every question goes to every candidate', cx, 960, 42, { alpha: fadeIn(w('D2', 'every candidate')) * d2out, font: PRINT });
-      ctx.restore();
-    } else KC += 200;
-    // D3 referee + score ballot
-    if (t > c('D3') - 0.2) {
-      const out = 1;
-      person(420, 820, { s: 0.7 * popS(w('D3', 'referee')), color: P.cream, mood: 0.2, k: 120, hat: 'cap' });
-      for (let i = 0; i < 4; i++) line(380, 780 + i * 18, 460, 780 + i * 18, popS(w('D3', 'referee')) > 0 ? 1 : 0, { strokeWidth: 5 });
-      txt('referee: rules only', 420, 1000, 42, { alpha: fadeIn(w('D3', 'rules')), color: P.grey });
-      void out;
-    } else KC += 30;
+  // 6. watching
+  function sDebate() {
+    plate('auditorium', c('W1') - 0.6, ce('W4') + 0.6, { z: [1.0, 1.1] });
+    banner('the magic is in deliberation?', 960, 180, 64, c('W1'), { out: c('W2') });
+    banner('watching a fair contest does most of the work', 960, 880, 52, ['W1', 'simply watching'], { bg: BLUE, out: c('W2') });
+    banner('Intelligence Squared: vote before & after', 960, 180, 58, c('W2'), { out: ce('W4', 0.3) });
+    banner('no discussion. just listening.', 960, 290, 46, ['W2', "doesn't discuss"], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: c('W3') });
+    card(960, 590, 1500, 560, c('W3'), () => {
+      Dm('one 2009 debate on religion', 0, -230, 40, { color: K.grey });
+      D('before', -560, -120, 44, { align: 'left' }); D('after', -560, 120, 44, { align: 'left', alpha: fadeIn(w('W3', 'After ninety'), 0.2) });
+      const sc = 0.5;
+      hbar(-300, -150, 678 * sc, 50, BLUE, ['W3', 'six hundred'], 'for', '678', { labSize: 32, valSize: 36 });
+      hbar(-300, -80, 1102 * sc, 50, GOLD, ['W3', 'eleven hundred'], 'against', '1,102', { labSize: 32, valSize: 36 });
+      hbar(-300, 90, 268 * sc, 50, BLUE, ['W3', 'two hundred sixty'], 'for', '268', { labSize: 32, valSize: 36 });
+      hbar(-300, 160, 1876 * sc, 50, GOLD, ['W3', 'eighteen hundred'], 'against', '1,876', { labSize: 32, valSize: 36 });
+    }, { out: ce('W4', 0.3) });
+    cite('Intelligence Squared, "The Catholic Church is a force for good," London, Oct 2009', ['W3', 'twenty-oh-nine'], c('W4'));
+    stampX('one debate · big swings are common', 960, 960, 52, c('W4'), { out: ce('W4', 0.3) });
+  }
+  function sOmni() {
+    plate('courtroom', c('W5') - 0.6, ce('W6') + 0.6, { z: [1.0, 1.1], x: [0.2, -0.2] });
+    banner('each side: as biased as it likes', 960, 190, 66, ['W5', 'as biased'], { out: c('W6') });
+    banner('neutrality comes from the contest', 960, 300, 60, ['W5', 'Neutrality'], { bg: BLUE, out: c('W6') });
+    banner('nobody expects the prosecutor to be fair', 960, 820, 52, ['W5', 'prosecutor'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: c('W6') });
+    banner('we expect the trial to be', 960, 920, 60, ['W5', 'expect the trial'], { bg: GOLD, fg: K.black, shadowCol: K.black, out: c('W6') });
+    stampX('omni-biased', 960, 520, 150, ['W6', 'omni-biased']);
+  }
+
+  // 7. random people?
+  function sSurgeon() {
+    plates([['jurybox', c('K1') - 0.6, { z: [1.1, 1.0] }], ['surgeons', c('K3') - 0.3, { z: [1.0, 1.1] }]], ce('K4') + 0.6);
+    stampX('random people?!', 960, 520, 130, c('K1'), { out: c('K2') });
+    card(960, 520, 1300, 360, c('K2'), () => {
+      D('run the city', 0, -70, 70, { color: K.grey });
+      if (T > w('K2', 'Nobody')) strikeBar(-230, -70, 230, w('K2', 'Nobody')); else KC++;
+      D("judge who'd run it best", 0, 60, 76, { color: BLUE, alpha: fadeIn(w('K2', 'judging'), 0.2) });
+    }, { out: c('K3') });
+    banner("you can't operate. you can tell who explains straight.", 960, 180, 48, ['K3', 'surgeons'], { out: c('K4') });
+    banner('laypeople read competence, honesty, good faith', 960, 880, 50, ['K3', 'Research'], { bg: BLUE, out: c('K4') });
+    cite('Hendriks, Kienhues & Bromme, PLOS ONE, 2015 (METI)', ['K3', 'Research'], c('K4'));
+    banner('pooled across dozens of different lives', 960, 880, 60, c('K4'), { bg: GOLD, fg: K.black, shadowCol: K.black });
+  }
+  function sLiteracy() {
+    plate('literacy', c('K5') - 0.6, ce('K7') + 0.6, { z: [1.0, 1.12] });
+    banner('only let qualified people choose?', 960, 190, 66, c('K5'), { out: c('K6') });
+    stampX('every filter is a lever', 960, 760, 100, c('K6'), { out: c('K7') });
+    banner('literacy tests: sold as "competence"', 960, 190, 56, ['K6', 'Literacy tests'], { raw: false, out: c('K7') });
+    banner('used to decide who could vote', 960, 300, 52, ['K6', 'in practice'], { bg: ORANGE, shadowCol: K.black, out: c('K7') });
+    card(960, 520, 1300, 300, c('K7'), () => {
+      D('randomness', 0, -40, 100, { color: BLUE });
+      Dm('the one selection method nobody can tilt', 0, 60, 44);
+    });
+  }
+
+  // 8. how many jurors
+  function sSample() {
+    plates([['ladle', c('N1') - 0.6, { z: [1.0, 1.1] }]], ce('N4') + 0.6);
+    banner('smaller than you\'d think', 960, 190, 76, ['N1', 'Smaller'], { out: c('N2') });
+    card(960, 560, 1600, 620, c('N2'), () => {
+      Dm('a town split between A and B · draw 23 jurors', 0, -250, 40, { color: K.grey });
+      const t0 = w('N2', 'twenty-three'), t1 = w('N2', 'Sixteen');
+      for (let i = 0; i < 23; i++) {
+        const a = fadeIn(t0 + i * 0.04, 0.15); if (a <= 0) { KC++; continue; }
+        const x = -660 + i * 60, isA = i < 16, colored = T > t1 + i * 0.03;
+        ctx.save(); ctx.globalAlpha *= a; ctx.fillStyle = colored ? (isA ? BLUE : GOLD) : K.grey;
+        ctx.beginPath(); ctx.arc(x, -130, 22, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      }
+      D('16 prefer A', -400, -50, 50, { color: BLUE, alpha: fadeIn(t1, 0.2) }); D('7 prefer B', 400, -50, 50, { color: GOLD, alpha: fadeIn(t1 + 0.5, 0.2) });
+      D('≈ 97% sure A wins the whole town', 0, 60, 70, { alpha: fadeIn(c('N3'), 0.2) });
+      Dm('town of 1,000 · city of 1,000,000 · nation of 100,000,000', 0, 150, 38, { alpha: fadeIn(w('N3', 'barely moves'), 0.2) });
+      D('97% · 97% · 97%', 0, 220, 52, { color: BLUE, alpha: fadeIn(w('N3', 'thousand people'), 0.2) });
+    }, { out: c('N4') });
+    banner('what matters: sample size + true randomness', 960, 520, 60, ['N4', 'What matters'], { bg: BLUE });
+    banner('not the population size', 960, 640, 56, ['N4', 'population'], { bg: K.cream, fg: K.black, shadowCol: BLUE });
   }
   function sScore() {
-    // D3 second half: score ballot, kept separate so it can take the whole right side
-    const t = T;
-    if (t < w('D3', 'score') - 0.3) { KC += 200; return; }
-    const cands = [['Ana', 5], ['Ben', 2], ['Cy', 4]];
-    grp(1400, 760, popS(w('D3', 'score')), 0, () => {
-      rect(-320, -200, 640, 400, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 3 });
-      txt('secret ballot: score 0-5', 0, -150, 40, { font: PRINT });
-      cands.forEach(([n, sc], i) => {
-        const y = -70 + i * 90;
-        txt(n, -240, y, 46, { align: 'left' });
-        for (let k = 0; k <= 5; k++) { circ(-60 + k * 56, y, 36, 1, { strokeWidth: 2 }); if (k === sc && t > w('D3', 'zero to five') + i * 0.3) dot(-60 + k * 56, y, 12, P.blue); else KC++; txt(String(k), -60 + k * 56, y - 34, 22, { font: PRINT, color: P.grey }); }
+    plate('scorecard', c('N5') - 0.6, ce('N5') + 0.6, { z: [1.0, 1.1] });
+    banner('choose-one voting splits the vote', 960, 180, 60, ['N5', 'Choose-one'], { out: w('N5', 'score voting') });
+    card(1250, 560, 1050, 560, ['N5', 'score voting'], () => {
+      D('score voting', 0, -220, 60, { color: BLUE });
+      const cand = [['Alice', 5], ['Bob', 2], ['Eve', 4]];
+      for (let s = 0; s <= 5; s++) M(String(s), -150 + s * 80, -140, 30, { color: K.grey });
+      cand.forEach(([nm, sc], i) => {
+        const y = -60 + i * 90; D(nm, -260, y, 44, { align: 'right' });
+        for (let s = 0; s <= 5; s++) { ctx.save(); ctx.strokeStyle = K.black; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(-150 + s * 80, y - 4, 20, 0, Math.PI * 2); ctx.stroke();
+          if (s === sc && T > w('N5', 'rate every') + i * 0.4) { ctx.fillStyle = BLUE; ctx.fill(); } ctx.restore(); }
       });
+      Dm('highest average wins', 0, 230, 40, { alpha: fadeIn(w('N5', 'highest average'), 0.2) });
     });
-    stamp('highest average wins', 1400, 1010, 50, w('D3', 'Highest'), { color: P.green });
+    banner('a few dozen jurors: most of a perfect result', 700, 950, 46, ['N5', 'Simulations'], { bg: GOLD, fg: K.black, shadowCol: K.black });
+  }
+  function sBribe() {
+    plate('bribe', c('N6') - 0.6, ce('N8') + 0.6, { z: [1.0, 1.1] });
+    stampX('bribery', 960, 500, 140, ['N6', 'Bribery'], { out: c('N7') });
+    card(960, 540, 1500, 540, c('N7'), () => {
+      Dm('each attempt: a 1-in-20 chance of being reported', 0, -200, 40, { color: K.grey });
+      D('odds you get caught', 0, -130, 44);
+      hbar(-380, -30, 512 * 1.05, 60, BLUE, ['N7', 'fourteen'], '14 jurors', '51%');
+      hbar(-380, 60, 642 * 1.05, 60, BLUE, ['N7', 'Thirty', -0.4], '20 jurors', '64%');
+      hbar(-380, 150, 785 * 1.05, 60, BLUE, ['N7', 'Thirty'], '30 jurors', '79%');
+    }, { out: c('N8') });
+    stampX('secret ballot: no way to check', 960, 520, 80, c('N8'));
+  }
+  function sCube() {
+    paperBg();
+    D('a rule of thumb: the cube root', 960, 160, 70, { alpha: fadeIn(c('N9'), 0.3) });
+    Dm('of the electorate', 960, 240, 44, { alpha: fadeIn(w('N9', 'electorate'), 0.3) });
+    const R = [['town', '8,000', '20', ['N9', 'eight thousand']], ['city', '125,000', '50', ['N9', 'hundred twenty-five']], ['state', '8,000,000', '200', ['N9', 'eight million']], ['nation', '240,000,000', '≈ 620', ['N9', 'two hundred forty']]];
+    R.forEach(([k, n, j, q], i) => { const a = fadeIn(at(q), 0.25), y = 380 + i * 140; if (a <= 0) { KC += 3; return; }
+      D(k, 420, y, 60, { align: 'left', alpha: a, color: K.grey }); D(n, 1120, y, 66, { align: 'right', alpha: a }); D('→', 1240, y, 66, { alpha: a }); D(j + ' jurors', 1360, y, 66, { align: 'left', alpha: a, color: BLUE }); });
   }
 
-  // K1-K9: Henry County
-  function sHenry() {
-    const t = T;
-    wt('Henry County, Georgia', 960, 90, 76, c('K1'), w('K1', 'Henry County', 0.6), { color: P.red });
-    // K2: the 2021 law
-    if (t < c('K3') + 0.4) {
-      const out = fadeOut(c('K3') - 0.2, 0.4);
-      grp(0, 0, 1, 0, () => {
-        scroll(420, 400, popS(w('K2', 'law')), '2021 law', 1);
-        seats(1250, 430, [P.green, P.green, P.green, P.green, P.green, P.grey, P.grey], { s: 0.85 * popS(w('K2', 'Five')), sp: 115 });
-        txt('5 of 7 picked by the grand jury', 1250, 580, 48, { alpha: fadeIn(w('K2', 'grand jury')), color: P.green });
-        bubble(960, 830, 760, 170, popS(w('K2', 'model')), '"a model for accountability"', 54, { tail: -200 });
-      }, out);
-    } else KC += 300;
-    // K3: the walkout
-    if (t > c('K3') - 0.2 && t < c('K4') + 0.4) {
-      const out = fadeOut(c('K4') - 0.2, 0.4);
-      grp(0, 0, 1, 0, () => {
-        rect(160, 220, 560, 90, popS(w('K3', 'board')) > 0 ? 1 : 0, { fill: '#c99a62', fillStyle: 'solid' });
-        txt('ethics board', 440, 265, 42, { alpha: fadeIn(w('K3', 'board')) });
-        stamp('9 subpoenas', 440, 380, 50, w('K3', 'nine'), { color: P.blue });
-        const walk = eIO(prog(t, w('K3', 'walked out'), ce('K3', 0.6)));
-        crowd(700 + walk * 1100, 680, 3, 3, 110, 0.38 * popS(w('K3', 'employees')), (i) => P.grey, (i) => 1 - walk * 0.8, () => ({ lean: walk > 0 ? 0.1 : 0 }));
-        txt('county employees', 700, 940, 44, { alpha: fadeIn(w('K3', 'employees')) * (1 - walk) });
-        bubble(1340, 300, 760, 220, popS(w('K3', 'announced')), null, 40, { tail: -260, inner: () => { txt('"the chair of the commission', 0, -35, 40); txt('asked that they not testify"', 0, 25, 40); } });
-        stamp('all nine walked out', 1350, 980, 60, w('K3', 'walked out'));
-      }, out);
-    } else KC += 400;
-    // K4: investigation of the chair
-    if (t > c('K4') - 0.2 && t < c('K5') + 0.4) {
-      const out = fadeOut(c('K5') - 0.2, 0.4);
-      grp(0, 0, 1, 0, () => {
-        person(640, 560, { s: 1.2 * popS(w('K4', 'chair')), color: P.ink, hat: 'top', mood: -0.3, k: 130 });
-        txt('commission chair', 640, 820, 46, { alpha: fadeIn(w('K4', 'chair')) });
-        magnifier(470, 440, popS(w('K4', 'investigation')), 1);
-        bubble(1340, 440, 820, 260, popS(w('K4', 'response')), null, 40, { tail: -330, inner: () => { txt('"they can investigate all they want,', 0, -40, 40); txt('but I will not be answering"', 0, 25, 40); } });
-      }, out);
-    } else KC += 300;
-    // K5: denials
-    if (t > c('K5') - 0.2 && t < c('K6') + 0.4) {
-      const out = fadeOut(c('K6') - 0.2, 0.4);
-      const items = [['money for an attorney', 'money', (s) => { txt('$', 0, 0, 150, { color: P.green }); }], ['meeting room', 'barred', (s) => house(0, 20, 0.9, {})], ['cameras', 'cameras', (s) => camera(0, 0, 1, 1)]];
-      items.forEach(([lab, word, fn], i) => {
-        const x = 420 + i * 540, t0 = w('K5', word), s = popS(t0);
-        grp(x, 500, s, 0, () => { rect(-200, -170, 400, 340, 1, { fill: P.cream, fillStyle: 'solid' }); fn(s); }, out);
-        if (t > t0 + 0.5) xMark(x, 500, 1.2 * popS(t0 + 0.5), out); else KC += 2;
-        txt(lab, x, 720, 46, { alpha: out * fadeIn(t0) });
-      });
-      txt('denied', 960, 860, 70, { color: P.red, alpha: out * fadeIn(w('K5', 'cameras', 0.5)) });
-    } else KC += 300;
-    // K6: the dismissed complaint
-    if (t > c('K6') - 0.2 && t < c('K7') + 0.4) {
-      const out = fadeOut(c('K7') - 0.2, 0.4);
-      grp(0, 0, 1, 0, () => {
-        txt('"political hit squad"?', 960, 220, 64, { alpha: fadeIn(w('K6', 'hit squad')), color: P.grey });
-        txt('nepotism complaint vs. county manager', 960, 330, 48, { alpha: fadeIn(w('K6', 'nepotism')) });
-        line(360, 560, 1560, 560, fadeIn(w('K6', 'checked')), { strokeWidth: 5 });
-        calendar(460, 560, 0.8 * popS(w('K6', 'husband')), 'husband hired', '2004', 1, P.blue);
-        calendar(1460, 560, 0.8 * popS(w('K6', 'thirteen')), 'she became mgr', '2017', 1, P.plum);
-        txt('13 years earlier', 960, 520, 50, { alpha: fadeIn(w('K6', 'thirteen')), color: P.blue });
-        stamp('dismissed unanimously', 960, 820, 66, w('K6', 'dismissed'), { color: P.green });
-        txt('followed the evidence', 960, 940, 46, { alpha: fadeIn(w('K6', 'unanimously')), color: P.green });
-      }, out);
-    } else KC += 300;
-    // K7-K9: the bill
-    if (t > c('K7') - 0.2) {
-      const k8 = t > c('K8') - 0.2;
-      scroll(330, 360, 0.95 * popS(w('K7', 'bill')), 'SB 359', 1);
-      txt('same sponsor', 330, 520, 42, { alpha: fadeIn(w('K7', 'same senator')), font: PRINT });
-      [['House 161-3', w('K7', 'both chambers')], ['Senate 44-6', w('K7', 'overwhelmingly')], ['signed May 2026', w('K7', 'signed')]].forEach(([s, t0], i) => stamp(s, 330, 620 + i * 110, 44, t0, { color: [P.blue, P.blue, P.red][i], rot: (i - 1) * 0.04 }));
-      if (k8) {
-        seats(1200, 380, [P.ink, P.ink, P.ink, P.ink, P.ink], { s: 0.85 * popS(w('K8', 'five seats')), sp: 150, labels: ['clerk', 'probate judge', 'sheriff', 'tax comm.', 'solicitor'], lsize: 28 });
-        stamp('grand jury: 0 of 5', 1200, 210, 56, w('K8', 'simply gone'));
-        wt('all appointed by elected officials', 1200, 560, 46, w('K8', 'elected county'), w('K8', 'officials'));
-        grp(1200, 720, popS(w('K8', 'barred')), 0, () => {
-          rect(-430, -70, 860, 140, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 4, stroke: P.red });
-          txt('"shall not accept or hear complaints', 0, -22, 40); txt('against county employees"', 0, 28, 40);
-        });
-        txt('the kind of case that started all this', 1200, 840, 42, { alpha: fadeIn(w('K8', 'very kind')), color: P.plum });
-      } else KC += 300;
-      if (t > c('K9') - 0.2) calendar(1200, 960, 0.7 * popS(w('K9', 'January')), 'Jan 1, 2027', 'replaced', 1, P.red); else KC += 10;
-    } else KC += 500;
+  // 9. history
+  function sAthens() {
+    plate('athens', c('H1') - 0.6, ce('H3') + 0.6, { z: [1.12, 1.0] });
+    banner('one of the oldest ideas in democracy', 960, 180, 64, ['H1', 'oldest'], { out: c('H2') });
+    banner('classical Athens: most offices filled by lot', 960, 180, 58, ['H2', 'Athens'], { out: c('H3') });
+    quoteCard(1200, 560, 1100, 360, ['H2', 'Aristotle'], ['"appointment by lot is democratic,', 'election, oligarchic."'], 'Aristotle, Politics IV.9 (1294b)', { size: 54, out: c('H3') });
+    banner('the worry: a popularity contest', 960, 180, 64, c('H3'));
+    card(1300, 580, 800, 420, ['H3', 'favors'], () => {
+      Dm('it favors', 0, -140, 44, { color: K.grey });
+      rows([['the rich', ['H3', 'the rich']], ['the famous', ['H3', 'the famous']], ['the well-connected', ['H3', 'well-connected']]], -260, -50, 62, 90);
+    });
+  }
+  function sVenice() {
+    plate('venice', c('H4') - 0.6, ce('H5') + 0.6, { z: [1.0, 1.1], x: [-0.2, 0.2] });
+    banner('Venice: choosing the Doge, 1268–1797', 960, 170, 60, ['H4', 'Venice'], { out: c('H5') });
+    card(960, 560, 1760, 380, ['H4', 'Thirty names'], () => {
+      const st = [['30', 'lot'], ['9', 'lot'], ['40', 'elect'], ['12', 'lot'], ['25', 'elect'], ['9', 'lot'], ['45', 'elect'], ['11', 'lot'], ['41', 'elect'], ['Doge', 'elect']];
+      const t0 = w('H4', 'Thirty names');
+      st.forEach(([n, k], i) => { const a = fadeIn(t0 + i * 0.55, 0.2); if (a <= 0) { KC += 2; return; }
+        const x = -780 + i * 173; D(n, x, -20, n === 'Doge' ? 50 : 70, { color: k === 'lot' ? GOLD : BLUE, alpha: a }); M(k, x, 60, 26, { color: K.grey, alpha: a }); if (i) D('→', x - 86, -20, 40, { alpha: a, color: K.grey }); });
+      Dm('drawn by lot · elected', 0, 140, 34, { color: K.grey });
+    }, { out: c('H5') });
+    banner("can't bribe who you can't predict", 960, 300, 66, ['H5', 'bribe'], { bg: BLUE });
+    banner("can't build a faction around them", 960, 860, 60, ['H5', 'faction'], { bg: K.cream, fg: K.black, shadowCol: BLUE });
+  }
+  function sWells() {
+    plate('wells', c('H6') - 0.6, ce('H6') + 0.6, { z: [1.0, 1.1] });
+    banner('H. G. Wells, 1903: the jury method', 960, 180, 60, ['H6', 'Wells']);
+    quoteCard(1180, 620, 1200, 300, ['H6', 'described'], ['"government by hustings\' bawling,', 'newspaper clamour, and ward organization"'], 'H. G. Wells, Mankind in the Making, 1903', { size: 44 });
   }
 
-  // E1-E3
+  // 10. georgia
+  function sGeorgia() {
+    plates([['courthouse', c('G1') - 0.6, { z: [1.1, 1.0] }], ['taxappeal', c('G2b') - 0.3, { z: [1.0, 1.08] }], ['courthouse', c('G2c') - 0.3, { z: [1.0, 1.08] }], ['water', c('G3') - 0.3, { z: [1.0, 1.08] }], ['dam', c('G3b') - 0.3, { z: [1.08, 1.0] }]], ce('G3b') + 0.6);
+    banner('in Georgia, it\'s routine', 960, 180, 76, ['G1', 'routine'], { out: c('G2b') });
+    banner('every county: grand juries of 16 to 23, drawn at random', 960, 900, 46, ['G2', 'sixteen'], { bg: BLUE, out: c('G2b') });
+    card(1390, 560, 900, 820, c('G2b'), () => {
+      D('who Georgia grand juries pick', 0, -360, 40, { color: K.grey });
+      rows([
+        ['tax appeal boards: all 159 counties', ['G2b', 'board of equalization'], { size: 34 }],
+        ['voter registrars: dozens of counties', ['G2c', 'registrars'], { size: 34 }],
+        ['Lowndes elections board: since 1979', ['G2c', 'Lowndes'], { size: 34 }],
+        ['Cherokee water authority: 6 of 7', ['G3', 'six of the seven'], { size: 34 }],
+        ['Cherokee airport authority: 4 of 7', ['G3', 'airport'], { size: 34 }],
+        ['Towns water authority: all of it', ['G3', 'Towns'], { size: 34 }],
+        ['Crisp power commission: 4 of 7', ['G3b', 'power commission'], { size: 34, color: BLUE }],
+        ['  with its own hydroelectric dam', ['G3b', 'hydroelectric'], { size: 34, color: BLUE }],
+      ], -400, -270, 34, 80);
+    });
+    cite('electionbyjury.org/learn-more/ebj-in-georgia · O.C.G.A. §§ 15-12-61, 21-2-212, 48-5-311', c('G2b'));
+  }
+  function sSchools() {
+    plate('schoolhouse', c('G3c') - 0.6, ce('G3c') + 0.6, { z: [1.0, 1.1] });
+    banner('it used to go further', 960, 180, 76, ['G3c', 'further']);
+    banner('grand-jury-appointed school boards', 960, 290, 60, ['G3c', 'school boards'], { bg: BLUE });
+    card(1300, 680, 860, 360, ['G3c', 'twenty-eight'], () => {
+      D('28 districts', 0, -90, 80, { color: BLUE });
+      Dm('still did it in the late 1980s', 0, -10, 40);
+      D('ended by a 1992 amendment', 0, 90, 52, { alpha: fadeIn(w('G3c', 'amendment'), 0.2) });
+    });
+    cite('Education Week, Feb 1988 · Ballotpedia, Georgia Amendment 2 (1992)', ['G3c', 'twenty-eight']);
+  }
+  function sTurner() {
+    plates([['commission', c('G3d') - 0.6, { z: [1.0, 1.1] }], ['statewide', c('G3e') - 0.3, { z: [1.1, 1.0] }]], ce('G3e') + 0.6);
+    banner('a caveat critics will raise', 960, 180, 70, ['G3d', 'caveat'], { out: c('G3e') });
+    banner('jury lists hand-picked by commissioners', 960, 290, 54, ['G3d', 'hand-picked'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: c('G3e') });
+    card(1290, 640, 980, 470, ['G3d', 'Supreme Court'], () => {
+      D('Turner v. Fouche, 1970', 0, -170, 52, { color: BLUE });
+      rows([['Taliaferro County: majority Black', ['G3d', 'majority Black']], ['school board: all white', ['G3d', 'all white']], ['picked by a mostly white grand jury', ['G3d', 'mostly white']], ['from a list made by white commissioners', ['G3d', 'list made']]], -430, -70, 40, 70);
+    }, { out: c('G3e') });
+    cite('Turner v. Fouche, 396 U.S. 346 (1970)', ['G3d', 'Supreme Court'], c('G3e'));
+    stampX("not random", 960, 320, 120, c('G3e'), { out: ce('G3e', 0.3) });
+    banner('since 2012: a statewide list of voters and drivers', 960, 860, 52, ['G3e', 'Since twenty twelve'], { bg: BLUE, out: ce('G3e', 0.3) });
+    banner('the case for real randomness', 960, 960, 52, ['G3e', 'real randomness'], { bg: GOLD, fg: K.black, shadowCol: K.black, out: ce('G3e', 0.3) });
+    cite('Jury Composition Reform Act of 2011 (HB 415)', ['G3e', 'Since'], ce('G3e', 0.3));
+  }
+  function sRoutine() {
+    plate('courthouse', c('G4') - 0.6, ce('G6') + 0.6, { z: [1.0, 1.1], x: [0.2, -0.2] });
+    banner('a random jury choosing officials, for generations', 960, 190, 54, c('G4'), { out: c('G6') });
+    card(960, 600, 1200, 340, c('G5'), () => {
+      D('grand jury service', 0, -100, 50, { color: K.grey });
+      D('2–3 months', 0, 0, 90, { color: BLUE, alpha: fadeIn(w('G5', 'two or three'), 0.2) });
+      Dm('once or twice a week', 0, 90, 44, { alpha: fadeIn(w('G5', 'once or twice'), 0.2) });
+    }, { out: c('G6') });
+    stampX('they already do', 960, 900, 90, ['G5', 'already do'], { out: c('G6') });
+    banner('back to Henry County', 960, 540, 100, c('G6'), { bg: BLUE });
+  }
+
+  // 11. henry county
+  function sBoard() {
+    plate('dais', c('X1') - 0.6, ce('X2') + 0.6, { z: [1.0, 1.1] });
+    banner('S.B. 22 (2021): the Henry County Board of Ethics', 960, 170, 52, ['X1', 'sponsored']);
+    card(960, 560, 1500, 440, ['X1', 'Seven members'], () => {
+      D('seven seats', 0, -160, 50, { color: K.grey });
+      const t0 = w('X1', 'Five of them');
+      seats([1, 2, 3, 4, 5, 6, 7].map((i) => [i <= 5 ? 'grand jury' : 'other', i <= 5 && T > t0 + i * 0.12 ? BLUE : K.paper]), -540, -20, 110, 180, 1);
+      Dm('one per commission district', 0, 160, 40, { alpha: fadeIn(w('X1', 'one for each'), 0.2) });
+    });
+    banner('a grand jury appointee owes their seat to no one', 960, 920, 50, ['X2', 'owes'], { bg: BLUE });
+  }
+  function sWalk2() {
+    plate('walkout', c('X3') - 0.6, ce('X4') + 0.6, { z: [1.1, 1.0] });
+    banner('the walkout', 960, 180, 80, c('X3'), { out: c('X4') });
+    banner('the board investigates the chair', 960, 180, 66, ['X4', 'investigate'], { bg: BLUE });
+    quoteCard(1180, 600, 1240, 340, ['X4', 'They can investigate'], ['"They can investigate all they want to,', 'but I will not be answering', 'anything that they put out."'], 'Carlotta Harrell, chair, Henry County Board of Commissioners', { size: 44 });
+  }
+  function sStarve() {
+    plate('cramped', c('X5') - 0.6, ce('X6') + 0.6, { z: [1.0, 1.1] });
+    banner('next: the resources dry up', 960, 180, 70, c('X5'), { out: c('X6') });
+    card(1250, 600, 1100, 520, ['X5', 'laid it out'], () => {
+      Dm('January 2026 meeting, on the record', 0, -200, 38, { color: K.grey });
+      rows([['no budget for a $310/week job ad', ['X5', 'No budget']], ['(they used a free trial)', ['X5', 'free trial'], { size: 36, color: K.grey }], ['barred from the broadcast room', ['X5', 'Barred']], ['denied cameras to stream meetings', ['X5', 'Denied']]], -490, -110, 44, 80);
+    }, { out: c('X6') });
+    quoteCard(960, 560, 1300, 280, c('X6'), ['"They want the Board of Ethics', 'to be a figurehead."'], 'Felicia Harrell (no relation), board chair', { size: 54 });
+  }
+  function sFair() {
+    plate('scale2', c('X7') - 0.6, ce('X8') + 0.6, { z: [1.0, 1.12] });
+    banner('the charge: a political hit squad', 960, 180, 66, ['X7', 'hit squad'], { out: c('X8') });
+    card(1250, 600, 1060, 480, ['X7', 'nepotism'], () => {
+      M('case 2026-EB-1: county manager, nepotism', 0, -180, 30, { color: K.grey });
+      rows([['husband hired: 2004', ['X7', 'husband']], ['she became manager: 13 years later', ['X7', 'thirteen years']]], -460, -80, 46, 90);
+      D('dismissed, unanimously', 0, 140, 70, { color: BLUE, alpha: fadeIn(w('X7', 'dismissed'), 0.2) });
+    });
+    banner('follow the evidence wherever it goes', 960, 180, 66, c('X8'), { bg: BLUE });
+  }
+
+  // 12. the rewrite
+  function sBill() {
+    plates([['capitol', c('V1') - 0.6, { z: [1.12, 1.0] }], ['eraser', c('V4') - 0.3, { z: [1.0, 1.12] }], ['capitol', c('V6') - 0.3, { z: [1.0, 1.08] }]], ce('V6') + 0.6);
+    banner('then the legislature stepped in', 960, 180, 70, c('V1'), { out: c('V2') });
+    card(960, 560, 1400, 360, c('V2'), () => {
+      D('S.B. 359', 0, -90, 90, { color: BLUE, raw: true });
+      rows([['2025: passes the Senate 49–0', ['V2', 'unanimously']], ['2026: the House swaps in a substitute', ['V2', 'substitute']]], -460, 10, 48, 80);
+    }, { out: c('V3') });
+    card(960, 560, 1700, 560, c('V3'), () => {
+      D('the new board: five seats', 0, -220, 52, { color: K.grey });
+      const lab = ['clerk of court', 'probate judge', 'sheriff', 'tax commissioner', 'solicitor-general'];
+      const t0 = w('V3', 'clerk');
+      seats(lab.map((l, i) => [l, ORANGE, t0 + i * 0.45]), -640, -40, 150, 320, 1, { labSize: 26 });
+      D('grand jury seats: 0', 0, 190, 64, { color: ORANGE, alpha: fadeIn(w('V3', 'elected official'), 0.2) });
+    }, { out: c('V4') });
+    stampX('"grand jury": 0 mentions', 960, 280, 92, ['V4', 'grand jury'], { out: c('V5') });
+    banner('not repealed by name. overwritten.', 960, 880, 60, ['V4', 'overwritten'], { bg: BLUE, out: c('V5') });
+    quoteCard(960, 520, 1500, 360, ['V5', 'shall not'], ['"the board of ethics shall not accept or hear', 'complaints of violations of this code of ethics', 'against county employees"'], 'S.B. 359, lines 331–335', { size: 42, out: c('V6') });
+    banner('the transportation director: a county employee', 960, 900, 52, ['V5', 'transportation director'], { bg: ORANGE, shadowCol: K.black, out: c('V6') });
+    card(960, 540, 1100, 340, c('V6'), () => {
+      D('House 161–3', 0, -60, 90, { alpha: fadeIn(w('V6', 'House'), 0.2) });
+      D('Senate 44–6', 0, 70, 90, { alpha: fadeIn(w('V6', 'Senate'), 0.2) });
+    });
+    cite('S.B. 359 (2025–26), enrolled text · legiscan.com/GA/bill/SB359/2025', c('V2'), ce('V6'));
+  }
+  function sFire() {
+    plates([['nameplate', c('V7') - 0.6, { z: [1.0, 1.1] }], ['pen', c('V8') - 0.3, { z: [1.1, 1.0] }]], ce('V8') + 0.6);
+    banner('one more detail', 960, 170, 70, c('V7'), { out: c('V8') });
+    card(960, 580, 1700, 520, ['V7', 'majority vote'], () => {
+      Dm('new law: firing the county manager takes a majority vote', 0, -200, 40, { color: K.grey });
+      box(-720, -10, 1440, 8, K.black);
+      const ev = [[-560, 'Apr 3', 'bill passes', ['V7', 'majority vote', 0.5]], [0, 'Apr 22', 'chair fires the manager alone', ['V7', 'on her own']], [560, 'May 12', 'signed', ['V8', 'signed']]];
+      ev.forEach(([x, d, lab, q], i) => { const a = fadeIn(at(q), 0.2); if (a <= 0) { KC += 3; return; }
+        box(x - 16, -22, 32, 32, i === 1 ? ORANGE : BLUE, a); D(d, x, -80, 50, { alpha: a }); Dm(lab, x, 70, 34, { alpha: a, color: i === 1 ? ORANGE : K.black }); });
+      Dm('"that decision would require a majority vote" (to the AJC)', 0, 180, 34, { alpha: fadeIn(w('V7', 'She told'), 0.2) });
+    });
+    banner('grand-jury board replaced: Jan 1, 2027', 960, 920, 56, ['V8', 'replaced'], { bg: BLUE });
+    cite('Atlanta Journal-Constitution, Apr 2026 · Act 623, signed May 12, 2026', ['V7', 'She told']);
+  }
+  function sWorth() {
+    plate('dais', c('V9') - 0.6, ce('V10') + 0.6, { z: [1.1, 1.0] });
+    banner('a defeat?', 960, 190, 90, ['V9', 'defeat'], { out: w('V9', 'Five board') });
+    banner('chosen by randomly selected citizens', 960, 190, 60, ['V9', 'randomly selected'], { out: c('V10') });
+    banner('they held their ground', 960, 300, 70, ['V9', 'held their ground'], { bg: BLUE, out: c('V10') });
+    banner('it took an act of the legislature to stop them', 960, 880, 54, ['V9', 'only way'], { bg: GOLD, fg: K.black, shadowCol: K.black, out: c('V10') });
+    stampX('this one was worth a law', 960, 540, 110, ['V10', 'worth a law']);
+  }
+
+  // 13. the proposal
+  function sProposal() {
+    plate('proposal', c('Z1') - 0.6, ce('Z6') + 0.6, { z: [1.0, 1.12] });
+    banner('take what Georgia already does. go further.', 960, 170, 60, c('Z1'), { out: c('Z2') });
+    card(1250, 580, 1100, 640, c('Z2'), () => {
+      D('the proposal', 0, -260, 50, { color: BLUE });
+      rows([['1. draw a jury · pay them', ['Z2', 'Draw a jury']], ['2. a week or two', ['Z2', 'week or two']], ['3. equal time for every candidate', ['Z2', 'equal time']], ['4. candidates question each other', ['Z2', 'question their rivals']], ['5. jurors ask their own questions', ['Z2', 'answers the jury']], ['6. score every candidate, secret ballot', ['Z2', 'score every']], ['7. the winner takes office', ['Z2', 'winner takes']]], -470, -170, 40, 66);
+    }, { out: c('Z3') });
+    card(960, 540, 1500, 420, c('Z3'), () => {
+      const L = [['fundraising for name recognition', ['Z3', 'No fundraising']], ['turnout skew', ['Z3', 'No turnout']], ['rational ignorance', ['Z3', 'No rational']]];
+      L.forEach(([s, q], i) => { const a = fadeIn(at(q), 0.2); if (a <= 0) { KC += 2; return; } D(s, 0, -110 + i * 110, 60, { alpha: a }); strikeBar(-560, -110 + i * 110, 560, at(q) + 0.5); });
+    }, { out: c('Z4') });
+    banner('flood a feed with deepfakes? easy.', 960, 300, 62, c('Z4'), { out: c('Z5') });
+    banner('flood a sequestered room of 50? hard.', 960, 420, 62, ['Z4', 'sequestered'], { bg: BLUE, out: c('Z5') });
+    card(960, 560, 1400, 380, c('Z5'), () => {
+      D('voters aren\'t stupid', 0, -110, 70, { color: K.grey });
+      Dm("they're asked to do an expert's job, in their spare time,", 0, -20, 40, { alpha: fadeIn(w('Z5', "expert's job"), 0.2) });
+      Dm('for no reward, in an information war', 0, 40, 40, { alpha: fadeIn(w('Z5', 'no reward'), 0.2) });
+      D('a jury asks a fair sample to do it properly', 0, 130, 54, { color: BLUE, alpha: fadeIn(c('Z6'), 0.2) });
+    });
+  }
+
+  // 14. close
   function sEnd() {
-    const t = T;
-    const out = fadeOut(c('E3') - 0.2, 0.4);
-    grp(0, 0, 1, 0, () => {
-      crowd(960, 420, 5, 1, 200, 0.75 * popS(c('E1')), (i) => [P.green, P.green, P.green, P.green, P.green][i], null, () => ({ arms: t > w('E1', 'did their job') ? 'up' : 'down', mood: 0.7 }));
-      wt('owed nothing to anyone', 960, 180, 70, w('E1', 'owed nothing'), w('E1', 'anyone', 0.3), { color: P.blue });
-      wt('so they did their job', 960, 700, 60, w('E1', 'did their job'), w('E1', 'job,', 0.3));
-      stamp("independence wasn't a flaw. it was the design.", 960, 860, 54, w('E2', 'It was the design'), { color: P.green });
-      txt("and it's why it was taken away", 960, 980, 50, { alpha: fadeIn(w('E2', 'taken away')), color: P.red });
-    }, out);
-    if (t > c('E3') - 0.2) {
-      wt('election by jury', 960, 200, 130, c('E3'), w('E3', 'alignment'), { color: P.red });
-      [['alignment', 'through randomness', w('E3', 'alignment'), P.teal], ['competence', 'through deliberation', w('E3', 'competence'), P.blue], ['accountable', 'to the public', w('E3', 'answer to the public'), P.green]].forEach(([a, b, t0, col], i) => {
-        grp(400 + i * 560, 520, popS(t0), 0, () => {
-          rect(-240, -110, 480, 220, 1, { fill: P.cream, fillStyle: 'solid', strokeWidth: 4, stroke: col });
-          txt(a, 0, -35, 60, { color: col });
-          txt(b, 0, 40, 44, { font: PRINT });
-        });
-      });
-      const ep = fadeIn(ce('E3', 1.0), 0.8);
-      txt('electionbyjury.org', 960, 850, 70, { alpha: ep, color: P.teal });
-      txt('read the manifesto and the Henry County story', 960, 940, 42, { alpha: ep, font: PRINT });
-    } else KC += 200;
+    const t0 = c('C1') - 0.6;
+    plate('chairs', t0, ce('C4') + 6, { z: [1.16, 1.0] });
+    const a0 = fadeIn(t0, 0.4) * fadeOut(c('C3') - 0.2, 0.4);
+    if (a0 > 0) {
+      box(0, 290, W, 460, 'rgba(20,20,20,0.88)', a0);
+      D('12 random citizens: prison for life', 960, 390, 66, { color: K.cream, alpha: a0 * fadeIn(c('C1'), 0.3) });
+      D('up to 23: whether an official is indicted', 960, 490, 60, { color: K.cream, alpha: a0 * fadeIn(w('C1', 'grand jury'), 0.3) });
+      D('Henry County: five jury picks held out', 960, 620, 64, { color: GOLD, alpha: a0 * fadeIn(c('C2'), 0.3) });
+    } else KC += 3;
+    const a1 = fadeIn(c('C3') - 0.2, 0.4);
+    if (a1 > 0) {
+      box(0, 300, W, 440, 'rgba(20,20,20,0.9)', a1);
+      D('ordinary people can be trusted', 960, 410, 80, { color: K.cream, alpha: a1 });
+      D('to choose their leaders.', 960, 510, 80, { color: K.cream, alpha: a1 });
+      Dm('they just need the time, the information, and a reason to pay attention.', 960, 620, 40, { color: GOLD, alpha: fadeIn(c('C4'), 0.3) });
+      M('electionbyjury.org', 960, 700, 34, { color: K.cream, alpha: fadeIn(ce('C4', 0.5), 0.4) });
+    } else KC += 4;
   }
 
   // ---------- assembly ----------
   function buildScenes() {
+    const S = (id, draw, paper = false, lead = 0.6) => ({ start: Math.max(0, c(id) - lead), draw, paper });
     SCN = [
-      { start: 0, draw: sTitle },
-      { start: c('H1') - 0.7, draw: sHook },
-      { start: c('P1') - 0.7, draw: sPillars },
-      { start: c('A1') - 0.7, draw: sAlign },
-      { start: c('A5b') - 0.7, draw: sVSE },
-      { start: c('S1') - 0.7, draw: sSecurity },
-      { start: c('C1') - 0.7, draw: sInfo },
-      { start: c('C4') - 0.7, draw: sRoom },
-      { start: c('F1') - 0.7, draw: sFilter },
-      { start: c('R1') - 0.7, draw: sHistory },
-      { start: c('D1') - 0.7, draw: () => { sDesign(); sScore(); } },
-      { start: c('K1') - 0.7, draw: sHenry },
-      { start: c('E1') - 0.7, draw: sEnd },
+      { start: 0, draw: sOpen }, S('O5', sCounter),
+      { start: ce('O6') - 0.1, draw: sTitle },
+      S('A1', sJobs), S('R1', sOdds), S('R3', sIgnorance), S('R6', sMoney), S('R7', sFeed), S('T1', sTurnout),
+      S('J1', sMachine), S('J5', sBoth, true), S('W1', sDebate), S('W5', sOmni), S('K1', sSurgeon), S('K5', sLiteracy),
+      S('N1', sSample), S('N5', sScore), S('N6', sBribe), S('N9', sCube, true),
+      S('H1', sAthens), S('H4', sVenice), S('H6', sWells),
+      S('G1', sGeorgia), S('G3c', sSchools), S('G3d', sTurner), S('G4', sRoutine),
+      S('X1', sBoard), S('X3', sWalk2), S('X5', sStarve), S('X7', sFair),
+      S('V1', sBill), S('V7', sFire), S('V9', sWorth),
+      S('Z1', sProposal), S('C1', sEnd),
     ];
     const E = [];
-    const ev = (name, t, dur) => E.push({ name, t, dur });
-    const at = (id, word, name, extra = 0) => ev(name, w(id, word, extra));
-    SCN.slice(1).forEach((s) => ev('whoosh', s.start - 0.05));
-    ev('stamp', 0.3); ev('scribble', 0.6, 1.0); ev('sparkle', 1.6); ev('scribble', 1.8, 1.0); ev('pop', 2.2);
-    // hook
-    ev('stamp', c('H1')); at('H1', 'county', 'pop'); at('H1', 'jury', 'pop2'); at('H1', 'randomly', 'sparkle'); at('H1', 'pick most', 'pop');
-    at('H2', 'Four', 'stamp'); at('H2', 'investigated', 'pop2'); at('H2', 'most powerful', 'pop'); at('H3', 'election by jury', 'stamp'); at('H3', 'election by jury', 'sparkle', 0.1);
-    // pillars
-    at('P1', 'two things', 'pop'); ev('pop2', c('P2')); ev('pop2', c('P3')); at('P4', 'Mass', 'pop'); at('P4', 'struggle', 'boing'); at('P4', 'both', 'stamp');
-    // align
-    ev('pop', c('A1')); at('A1', 'show up', 'pop2'); ['older', 'wealthier', 'partisan'].forEach((x) => at('A1', x, 'tick'));
-    at('A2', 'Candidates', 'pop'); at('A2', 'donors', 'chaching'); at('A2', 'never run', 'sad');
-    at('A3', 'Draw', 'pop'); at('A3', 'random', 'whoosh'); for (let j = 0; j < 8; j++) ev('tick', w('A3', 'random', j * 0.12 + 0.7));
-    at('A4', 'mirror', 'sparkle'); at('A4', 'Nobody chose', 'stamp');
-    at('A5', 'twenty-three', 'pop'); at('A5', 'sixteen', 'pop2'); at('A5', 'ninety percent', 'slide'); at('A5', 'ninety percent', 'ding', 1.0);
-    ev('pop', c('A5b')); at('A5b', 'Ogren', 'scribble'); at('A5b', 'score voting', 'slide'); at('A5b', 'twenty-four', 'pop'); at('A5b', 'ninety-six', 'pop'); at('A5b', 'ninety-nine', 'ding');
-    // security
-    ev('pop', c('S1')); at('S1', 'briber', 'pop2'); at('S1', 'reach', 'coin');
-    at('S2', 'five percent', 'tick'); at('S2', 'fourteen', 'slide'); at('S2', 'more likely', 'slide', 0.6); at('S2', 'Thirty', 'slide');
-    at('S3', 'secret ballot', 'pop'); at('S3', 'cube root', 'pop2'); at('S3', 'twenty jurors', 'tick'); at('S3', 'six hundred', 'ding');
-    // info
-    ev('pop', c('C1')); at('C1', 'rewards', 'scribble'); ev('pop2', c('C2')); at('C2', 'imagine', 'slide'); at('C2', 'actually', 'slide'); at('C2', 'actually', 'stamp', 0.6);
-    at('C3', 'AI', 'pop'); for (let i = 0; i < 3; i++) ev('pop2', w('C3', 'cheap', i * 0.2)); at('C3', 'foreign', 'sad');
-    // room
-    ev('pop', c('C4')); at('C4', 'paid', 'chaching'); ev('pop2', c('C5')); at('C5', 'Money', 'stamp');
-    at('C6', 'cross-examine', 'whoosh'); at('C6', 'jury hears', 'pop'); at('C6', 'omni-biased', 'stamp'); at('C6', 'omni-biased', 'sparkle', 0.1);
-    ev('pop', c('C7')); at('C7', 'switches sides', 'slide'); at('C7', 'switches sides', 'stamp', 0.3);
-    at('C8', 'doctor', 'pop'); at('C8', 'good doctor', 'ding'); at('C8', 'medical school', 'stamp');
-    // filter
-    at('F1', 'pass a test', 'pop'); at('F1', 'whoever writes', 'pop2'); at('F1', 'literacy tests', 'stamp'); at('F1', 'Randomness', 'boing'); at('F1', 'nobody can rig', 'stamp');
-    // history
-    at('R1', 'Athens', 'pop'); at('R1', 'Aristotle', 'scribble'); at('R2', 'Venice', 'pop'); at('R3', '1903', 'pop'); at('R4', 'Modern', 'pop'); at('R4', 'advisory', 'sad');
-    at('R5', 'binding', 'stamp'); at('R5', 'only chooses', 'pop2'); at('R6', 'Georgia', 'pop'); ['election boards', 'water', 'ethics'].forEach((x) => at('R6', x, 'pop2'));
-    // design
-    at('D1', 'chess clock', 'pop'); at('D1', 'chess clock', 'tick', 0.5); ['presenting', 'rebutting', 'questioning'].forEach((x) => at('D1', x, 'tick'));
-    ev('pop2', c('D2')); at('D2', 'anonymously', 'pop'); at('D2', 'every candidate', 'whoosh');
-    at('D3', 'referee', 'pop'); at('D3', 'score', 'pop2'); for (let i = 0; i < 3; i++) ev('tick', w('D3', 'zero to five', i * 0.3)); at('D3', 'Highest', 'stamp'); at('D3', 'Highest', 'ding', 0.2);
-    // henry
-    ev('scribble', c('K1'), 1.0); at('K2', 'law', 'pop'); at('K2', 'Five', 'pop2'); at('K2', 'model', 'pop');
-    at('K3', 'board', 'pop'); at('K3', 'nine', 'stamp'); at('K3', 'announced', 'pop2'); at('K3', 'walked out', 'stamp'); at('K3', 'walked out', 'whoosh', 0.3);
-    at('K4', 'chair', 'pop'); at('K4', 'investigation', 'pop2'); at('K4', 'response', 'pop');
-    ['money', 'barred', 'cameras'].forEach((x) => { at('K5', x, 'pop'); at('K5', x, 'stamp', 0.5); });
-    at('K6', 'hit squad', 'tick'); at('K6', 'husband', 'pop'); at('K6', 'thirteen', 'pop'); at('K6', 'dismissed', 'stamp'); at('K6', 'unanimously', 'ding');
-    at('K7', 'bill', 'pop'); at('K7', 'both chambers', 'stamp'); at('K7', 'overwhelmingly', 'stamp'); at('K7', 'signed', 'stamp');
-    at('K8', 'simply gone', 'stamp'); at('K8', 'five seats', 'pop'); at('K8', 'barred', 'pop2'); at('K8', 'barred', 'sad', 0.3); at('K9', 'January', 'stamp');
-    // end
-    ev('pop', c('E1')); at('E1', 'did their job', 'ding'); at('E2', 'It was the design', 'stamp'); at('E2', 'taken away', 'sad');
-    ev('scribble', c('E3'), 1.0); ['alignment', 'competence', 'answer to the public'].forEach((x) => at('E3', x, 'pop2')); ev('sparkle', ce('E3', 1.0));
+    SCN.slice(1).forEach((s) => E.push({ name: 'cut', t: s.start + 0.05 }));
+    E.push({ name: 'title', t: ce('O6') + 0.3 });
     EVENTS = E.sort((a, b) => a.t - b.t);
   }
 
@@ -1195,7 +790,7 @@
     if (!id) return;
     const rows = wrapLines(TL.lines[id].text, 64);
     ctx.save();
-    ctx.font = `400 38px ${PRINT}`;
+    ctx.font = `500 38px 'Oswald'`;
     const w = Math.max(...rows.map((r) => ctx.measureText(r).width)) + 60, h = rows.length * 48 + 24;
     ctx.fillStyle = 'rgba(42,38,51,0.78)';
     ctx.fillRect(960 - w / 2, 1060 - h, w, h);
@@ -1210,13 +805,18 @@
     ctx.globalAlpha = 1;
     ctx.drawImage(PAPER, 0, 0, W, H);
     let i = 0; for (let k = 0; k < SCN.length; k++) if (SCN[k].start <= t) i = k;
-    const TR = 0.75, dt = t - SCN[i].start;
-    const one = (k, dx) => { ctx.save(); ctx.translate(dx, 0); KC = k * 5000; SCN[k].draw(t); ctx.restore(); };
-    if (i > 0 && dt < TR) { const e = eIO(dt / TR); one(i - 1, -W * e); one(i, W * (1 - e)); }
-    else one(i, 0);
+    const TR = 0.6, dt = t - SCN[i].start;
+    const one = (k, a) => {
+      ctx.save(); ctx.globalAlpha = a; KC = k * 5000;
+      if (SCN[k].paper) ctx.drawImage(PAPER, 0, 0, W, H);
+      SCN[k].draw(t); ctx.restore();
+    };
+    if (i > 0 && dt < TR) { one(i - 1, 1); one(i, eIO(dt / TR)); }
+    else one(i, 1);
     if (CAPTIONS) drawCaption(t);
-    const fi = 1 - prog(t, 0, 0.4), fo = prog(t, TL.total - 0.8, TL.total);
-    if (fi > 0 || fo > 0) { ctx.fillStyle = `rgba(248,241,227,${Math.max(fi, fo)})`; ctx.fillRect(0, 0, W, H); }
+    const fi = 1 - prog(t, 0, 0.6), fo = prog(t, TL.total - 0.8, TL.total);
+    if (fi > 0 || fo > 0) { ctx.fillStyle = `rgba(248,241,227,${Math.max(fi * 0.0, fo)})`; ctx.fillRect(0, 0, W, H); }
+    if (fi > 0) { ctx.fillStyle = `rgba(0,0,0,${fi})`; ctx.fillRect(0, 0, W, H); }
   }
 
   function srt() {
@@ -1255,8 +855,12 @@
     ctx = cv.getContext('2d');
     rc = rough.canvas(cv);
     const fonts = [
+      new FontFace('Oswald', 'url(fonts/oswald-latin-700-normal.woff2)', { weight: '700' }),
+      new FontFace('Oswald', 'url(fonts/oswald-latin-500-normal.woff2)', { weight: '500' }),
+      new FontFace('Oswald', 'url(fonts/oswald-latin-400-normal.woff2)', { weight: '400' }),
+      new FontFace('IBM Plex Mono', 'url(fonts/ibm-plex-mono-latin-500-normal.woff2)', { weight: '500' }),
+      new FontFace('IBM Plex Mono', 'url(fonts/ibm-plex-mono-latin-400-normal.woff2)', { weight: '400' }),
       new FontFace('Caveat', 'url(fonts/caveat-latin-700-normal.woff2)', { weight: '700' }),
-      new FontFace('Caveat', 'url(fonts/caveat-latin-400-normal.woff2)', { weight: '400' }),
       new FontFace('Patrick Hand', 'url(fonts/patrick-hand-latin-400-normal.woff2)', { weight: '400' }),
     ];
     await Promise.all(fonts.map((f) => f.load().then((ff) => document.fonts.add(ff))));
@@ -1265,6 +869,8 @@
     const n = await loadNarration(tmp);
     NARR = n.bufs;
     TL = buildTimeline(SCRIPT, n.durs);
+    const names = (await (await fetch('../gemini/plates.json', { cache: 'no-store' })).json());
+    await Promise.all(names.map((n) => new Promise((res) => { const im = new Image(); im.onload = () => { IMG[n] = im; res(); }; im.onerror = () => { console.warn('missing plate', n); res(); }; im.src = '../gemini/plates/' + n + '.jpg'; })));
     buildScenes();
     PAPER = makePaper();
     return { duration: TL.total, hasNarration: !!n.durs };

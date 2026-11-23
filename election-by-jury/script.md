@@ -262,7 +262,7 @@ Z6 A jury asks a fair sample of them to do it properly.
 
 C1 We trust twelve random citizens to decide whether someone goes to prison for life. We trust a grand jury of up to twenty-three to decide whether a sitting official gets indicted.
 
-C2 In Henry County, five people chosen that way took on the most powerful official in the county, and held out until the state rewrote the law.
+C2 In Henry County, five people chosen by grand juries took on the most powerful official in the county, and held out until the state rewrote the law.
 
 C3 Ordinary people can be trusted to choose their leaders.
 

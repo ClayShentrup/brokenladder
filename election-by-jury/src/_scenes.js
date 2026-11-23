@@ -43,7 +43,7 @@
   function sCounter() {
     plates([['dais', c('O5') - 0.6, { z: [1.0, 1.1] }], ['jurybox', w('O6', 'picked by a jury', -0.3), { z: [1.06, 1.0] }]], ce('O6') + 0.6);
     banner("this board didn't fold", 960, 200, 86, c('O5'), { out: c('O6') });
-    stampX('investigate the chair herself', 960, 820, 80, ['O5', 'investigation']);
+    stampX('investigate the chair herself', 960, 820, 80, ['O5', 'investigation'], { out: c('O6') });
     banner('elected by voters? no.', 960, 200, 64, ['O6', 'elected by voters'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: ce('O6', 0.2) });
     banner('appointed by politicians? no.', 960, 310, 64, ['O6', 'appointed'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: ce('O6', 0.2) });
     banner('picked by a jury', 960, 880, 110, ['O6', 'picked by a jury'], { bg: BLUE, out: ce('O6', 0.2) });
@@ -63,7 +63,7 @@
     plate('scales', c('A1') - 0.6, ce('A6') + 0.6, { z: [1.0, 1.1] });
     card(960, 470, 1500, 560, c('A1'), () => {
       D('any system for choosing leaders has two jobs', 0, -210, 46, { color: K.grey });
-      box(-4, -160, 8, 400, K.black);
+      box(-4, -160, 8, 190, K.black);
       D('1. alignment', -370, -100, 70, { color: BLUE, alpha: fadeIn(w('A2', 'alignment'), 0.2) });
       Dm('deciders want what the public wants', -370, -20, 34, { alpha: fadeIn(w('A2', 'want what'), 0.2) });
       D('2. competence', 370, -100, 70, { color: GOLD, alpha: fadeIn(w('A3', 'competence'), 0.2) });
@@ -186,7 +186,7 @@
       hbar(-300, 90, 268 * sc, 50, BLUE, ['W3', 'two hundred sixty'], 'for', '268', { labSize: 32, valSize: 36 });
       hbar(-300, 160, 1876 * sc, 50, GOLD, ['W3', 'eighteen hundred'], 'against', '1,876', { labSize: 32, valSize: 36 });
     }, { out: ce('W4', 0.3) });
-    cite('Intelligence Squared, "The Catholic Church is a force for good," London, Oct 2009', ['W3', 'twenty-oh-nine'], ce('W4', 0.3));
+    cite('Intelligence Squared, "The Catholic Church is a force for good," London, Oct 2009', ['W3', 'twenty-oh-nine'], c('W4'));
     stampX('one debate · big swings are common', 960, 960, 52, c('W4'), { out: ce('W4', 0.3) });
   }
   function sOmni() {
@@ -267,9 +267,9 @@
     card(960, 540, 1500, 540, c('N7'), () => {
       Dm('each attempt: a 1-in-20 chance of being reported', 0, -200, 40, { color: K.grey });
       D('odds you get caught', 0, -130, 44);
-      hbar(-380, -30, 512 * 1.3, 60, BLUE, ['N7', 'fourteen'], '14 jurors', '51%');
-      hbar(-380, 60, 642 * 1.3, 60, BLUE, ['N7', 'Thirty', -0.4], '20 jurors', '64%');
-      hbar(-380, 150, 785 * 1.3, 60, BLUE, ['N7', 'Thirty'], '30 jurors', '79%');
+      hbar(-380, -30, 512 * 1.05, 60, BLUE, ['N7', 'fourteen'], '14 jurors', '51%');
+      hbar(-380, 60, 642 * 1.05, 60, BLUE, ['N7', 'Thirty', -0.4], '20 jurors', '64%');
+      hbar(-380, 150, 785 * 1.05, 60, BLUE, ['N7', 'Thirty'], '30 jurors', '79%');
     }, { out: c('N8') });
     stampX('secret ballot: no way to check', 960, 520, 80, c('N8'));
   }
@@ -309,7 +309,7 @@
   }
   function sWells() {
     plate('wells', c('H6') - 0.6, ce('H6') + 0.6, { z: [1.0, 1.1] });
-    banner('H. G. Wells, 1903: the jury method', 960, 180, 60, ['H6', 'Wells'], { raw: true });
+    banner('H. G. Wells, 1903: the jury method', 960, 180, 60, ['H6', 'Wells']);
     quoteCard(1180, 620, 1200, 300, ['H6', 'described'], ['"government by hustings\' bawling,', 'newspaper clamour, and ward organization"'], 'H. G. Wells, Mankind in the Making, 1903', { size: 44 });
   }
 
@@ -349,8 +349,8 @@
     banner('a caveat critics will raise', 960, 180, 70, ['G3d', 'caveat'], { out: c('G3e') });
     banner('jury lists hand-picked by commissioners', 960, 290, 54, ['G3d', 'hand-picked'], { bg: K.cream, fg: K.black, shadowCol: BLUE, out: c('G3e') });
     card(1290, 640, 980, 470, ['G3d', 'Supreme Court'], () => {
-      D('Turner v. Fouche, 1970', 0, -170, 52, { color: BLUE, raw: true });
-      rows([['Taliaferro County: majority Black', ['G3d', 'majority Black'], { raw: true }], ['school board: all white', ['G3d', 'all white']], ['picked by a mostly white grand jury', ['G3d', 'mostly white']], ['from a list made by white commissioners', ['G3d', 'list made']]], -430, -70, 40, 70);
+      D('Turner v. Fouche, 1970', 0, -170, 52, { color: BLUE });
+      rows([['Taliaferro County: majority Black', ['G3d', 'majority Black']], ['school board: all white', ['G3d', 'all white']], ['picked by a mostly white grand jury', ['G3d', 'mostly white']], ['from a list made by white commissioners', ['G3d', 'list made']]], -430, -70, 40, 70);
     }, { out: c('G3e') });
     cite('Turner v. Fouche, 396 U.S. 346 (1970)', ['G3d', 'Supreme Court'], c('G3e'));
     stampX("not random", 960, 320, 120, c('G3e'), { out: ce('G3e', 0.3) });
@@ -373,7 +373,7 @@
   // 11. henry county
   function sBoard() {
     plate('dais', c('X1') - 0.6, ce('X2') + 0.6, { z: [1.0, 1.1] });
-    banner('S.B. 22 (2021): the Henry County Board of Ethics', 960, 170, 52, ['X1', 'sponsored'], { raw: true });
+    banner('S.B. 22 (2021): the Henry County Board of Ethics', 960, 170, 52, ['X1', 'sponsored']);
     card(960, 560, 1500, 440, ['X1', 'Seven members'], () => {
       D('seven seats', 0, -160, 50, { color: K.grey });
       const t0 = w('X1', 'Five of them');
@@ -487,7 +487,7 @@
       box(0, 290, W, 460, 'rgba(20,20,20,0.88)', a0);
       D('12 random citizens: prison for life', 960, 390, 66, { color: K.cream, alpha: a0 * fadeIn(c('C1'), 0.3) });
       D('up to 23: whether an official is indicted', 960, 490, 60, { color: K.cream, alpha: a0 * fadeIn(w('C1', 'grand jury'), 0.3) });
-      D('in Henry County: five of them held out', 960, 620, 64, { color: GOLD, alpha: a0 * fadeIn(c('C2'), 0.3) });
+      D('Henry County: five jury picks held out', 960, 620, 64, { color: GOLD, alpha: a0 * fadeIn(c('C2'), 0.3) });
     } else KC += 3;
     const a1 = fadeIn(c('C3') - 0.2, 0.4);
     if (a1 > 0) {
