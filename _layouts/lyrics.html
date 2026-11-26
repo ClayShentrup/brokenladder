@@ -46,6 +46,15 @@ em { font-style:normal; color:var(--accent); }
 .gear ul { list-style:none; font-family:var(--font-body); font-size:17px; font-weight:300; line-height:1.6; color:var(--text); opacity:0.85; }
 .gear li + li { margin-top:4px; }
 .gear li em { color:var(--accent-bright); }
+.gear p, .gear ol { font-family:var(--font-body); font-size:17px; font-weight:300; line-height:1.65; color:var(--text); opacity:0.85; }
+.gear p + p, .gear p + ol, .gear ol + p { margin-top:12px; }
+.gear ol { padding-left:22px; }
+.gear ol li + li { margin-top:8px; }
+.gear strong { font-weight:400; color:var(--accent-bright); }
+.gear table { width:100%; border-collapse:collapse; font-family:var(--font-body); font-size:16px; font-weight:300; color:var(--text); opacity:0.85; }
+.gear th { font-family:var(--font-mono); font-size:9px; font-weight:400; letter-spacing:0.18em; color:var(--text-dim); text-align:left; padding:0 8px 8px 0; }
+.gear td { padding:6px 8px 6px 0; border-top:1px solid var(--line); vertical-align:top; }
+.gear tr.turn td { color:var(--accent-bright); }
 /* ── banner ── */
 .banner { position:relative; z-index:1; width:100%; max-width:1280px; margin:0 auto; opacity:0; animation:fadeUp 1.6s cubic-bezier(0.16,1,0.3,1) 0.05s forwards; }
 .banner img { display:block; width:100%; height:auto; max-height:72vh; object-fit:cover;
