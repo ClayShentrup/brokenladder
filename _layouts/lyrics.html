@@ -31,6 +31,10 @@ em { font-style:normal; color:var(--accent); }
 .chord-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
 .chord-box-name { font-family:var(--font-body); font-size:13px; font-weight:300; font-style:italic; color:var(--text); opacity:0.7; text-align:center; white-space:nowrap; }
 .chord-box-name em { font-style:normal; color:var(--accent-bright); font-weight:400; opacity:1; }
+/* ── tab and part notes ── */
+.tab { font-family:var(--font-mono); font-size:13px; font-weight:300; line-height:1.55; color:var(--text); opacity:0.8; white-space:pre; overflow-x:auto; }
+.part-note { margin-top:18px; font-family:var(--font-body); font-size:16px; font-weight:300; font-style:italic; color:var(--text); opacity:0.7; }
+.section-label + .part-note { margin-top:0; }
 /* ── banner ── */
 .banner { position:relative; z-index:1; width:100%; max-width:1280px; margin:0 auto; opacity:0; animation:fadeUp 1.6s cubic-bezier(0.16,1,0.3,1) 0.05s forwards; }
 .banner img { display:block; width:100%; height:auto; max-height:72vh; object-fit:cover;
