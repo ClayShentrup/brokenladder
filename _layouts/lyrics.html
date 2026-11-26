@@ -31,6 +31,10 @@ em { font-style:normal; color:var(--accent); }
 .chord-box { display:flex; flex-direction:column; align-items:center; gap:8px; }
 .chord-box-name { font-family:var(--font-body); font-size:13px; font-weight:300; font-style:italic; color:var(--text); opacity:0.7; text-align:center; white-space:nowrap; }
 .chord-box-name em { font-style:normal; color:var(--accent-bright); font-weight:400; opacity:1; }
+/* ── tab and part notes ── */
+.tab-svg svg { display:block; width:100%; max-width:480px; height:auto; }
+.part-note { margin-top:18px; font-family:var(--font-body); font-size:16px; font-weight:300; font-style:italic; color:var(--text); opacity:0.7; }
+.section-label + .part-note { margin-top:0; }
 /* ── banner ── */
 .banner { position:relative; z-index:1; width:100%; max-width:1280px; margin:0 auto; opacity:0; animation:fadeUp 1.6s cubic-bezier(0.16,1,0.3,1) 0.05s forwards; }
 .banner img { display:block; width:100%; height:auto; max-height:72vh; object-fit:cover;
@@ -72,7 +76,8 @@ em { font-style:normal; color:var(--accent); }
   document.querySelectorAll('.chord-grid[data-chords]').forEach(g => {
     if (window[g.dataset.chords]) grids.push([g, window[g.dataset.chords]]);
   });
-  if (!grids.length) return;
+  const tabs = [...document.querySelectorAll('.tab-svg[data-tab]')].filter(t => window[t.dataset.tab]);
+  if (!grids.length && !tabs.length) return;
   const cs = getComputedStyle(document.documentElement);
   const accent      = cs.getPropertyValue('--accent').trim();
   const accentBr    = cs.getPropertyValue('--accent-bright').trim();
@@ -126,6 +131,42 @@ em { font-style:normal; color:var(--accent); }
     s += '</svg>';
     return s;
   }
+
+  // tab: { strings:["e","B","G"], slots:[6,2], count:[["1","&","2","&","3","&"],["1",""]],
+  //        notes:[{bar,at,s,f,h?,ring?}] }  at = slot within the bar, s = string index (0 = top)
+  function renderTab(t) {
+    const slotW=44, gap=32, padL=30, padT=26, padR=8, countH=28, r=10.5;
+    const barX=[]; let x=padL;
+    t.slots.forEach(n => { barX.push(x); x += n*slotW + 12; });
+    const W = x - 12 + padR, H = padT + (t.strings.length-1)*gap + 14 + countH;
+    const sx = (bar, at) => barX[bar] + 12 + at*slotW + slotW*0.15;
+    const sy = s => padT + s*gap;
+    let s = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="tab">`;
+    s += `<defs><linearGradient id="ringfade" x1="0" x2="1"><stop offset="0" stop-color="${accentBr}" stop-opacity="0.7"/><stop offset="1" stop-color="${accentBr}" stop-opacity="0"/></linearGradient></defs>`;
+    t.strings.forEach((nm, i) => {
+      s += `<line x1="${padL}" y1="${sy(i)}" x2="${W-padR}" y2="${sy(i)}" stroke="${dimCol}" stroke-width="0.75" opacity="0.5"/>`;
+      s += `<text x="${padL-10}" y="${sy(i)+3.5}" font-family="Inconsolata,monospace" font-size="10" fill="${dimCol}" text-anchor="end" opacity="0.8">${nm}</text>`;
+    });
+    const yTop = sy(0)-8, yBot = sy(t.strings.length-1)+8;
+    [...barX, W-padR].forEach(bx => { s += `<line x1="${bx}" y1="${yTop}" x2="${bx}" y2="${yBot}" stroke="${dimCol}" stroke-width="0.75" opacity="0.6"/>`; });
+    t.count.forEach((c, b) => c.forEach((lab, k) => { if (lab) s += `<text x="${sx(b,k)}" y="${yBot+countH-4}" font-family="Inconsolata,monospace" font-size="10" fill="${dimCol}" text-anchor="middle" opacity="0.8">${lab}</text>`; }));
+    const dot = (cx, cy, f) => (f === 0
+      ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${cs.getPropertyValue('--bg').trim() || '#000'}" stroke="${accentBr}" stroke-width="1" opacity="0.9"/>`
+      : `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${accent}" opacity="0.85"/>`) + `<text x="${cx}" y="${cy+3.5}" font-family="Inconsolata,monospace" font-size="10" fill="${textCol}" text-anchor="middle">${f}</text>`;
+    t.notes.forEach(n => {
+      const cx = sx(n.bar, n.at), cy = sy(n.s);
+      if (n.ring) s += `<rect x="${cx}" y="${cy-1.5}" width="${barX[n.bar] + t.slots[n.bar]*slotW + 12 - cx - 4}" height="3" rx="1.5" fill="url(#ringfade)"/>`;
+      if (n.h !== undefined) {
+        const cx2 = cx + slotW*0.62;
+        s += `<path d="M ${cx} ${cy-r-2} Q ${(cx+cx2)/2} ${cy-r-14} ${cx2} ${cy-r-2}" fill="none" stroke="${accentBr}" stroke-width="1" opacity="0.7"/>`;
+        s += `<text x="${(cx+cx2)/2}" y="${cy-r-11}" font-family="Inconsolata,monospace" font-size="9" fill="${accentBr}" text-anchor="middle" opacity="0.9">h</text>`;
+        s += dot(cx2, cy, n.h);
+      }
+      s += dot(cx, cy, n.f);
+    });
+    return s + '</svg>';
+  }
+  tabs.forEach(el => { el.innerHTML = renderTab(window[el.dataset.tab]); });
 
   for (const [el, chords] of grids) {
     for (const [name, frets] of Object.entries(chords)) {
