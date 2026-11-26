@@ -191,12 +191,23 @@ line: "rgba(126,166,200,0.18)"
 
     <div class="section" style="--anim-delay:1.65s">
       <div class="section-label">electric — final chorus</div>
-<pre class="tab">e|---------------0---------------|-12~~~~~~~|
-B|----------12-------------12----|----------|
-G|13h14--------------------------|----------|
-  1    &    2    &    3    &       1</pre>
+      <div class="tab-svg" data-tab="leadFinalChorus"></div>
       <p class="part-note">six times. on the second and last time it rings on the 14th fret (f#) instead of the 12th.</p>
     </div>
+    <script>
+    window.leadFinalChorus = {
+      strings: ["e", "B", "G"],
+      slots: [6, 3],
+      count: [["1", "&", "2", "&", "3", "&"], ["1", "", ""]],
+      notes: [
+        { bar: 0, at: 0, s: 2, f: 13, h: 14 },
+        { bar: 0, at: 2, s: 1, f: 12 },
+        { bar: 0, at: 3, s: 0, f: 0 },
+        { bar: 0, at: 5, s: 1, f: 12 },
+        { bar: 1, at: 0, s: 0, f: 12, ring: true }
+      ]
+    };
+    </script>
 
     <div class="section" style="--anim-delay:1.7s">
       <div class="section-label">electric — end of the final chorus</div>
